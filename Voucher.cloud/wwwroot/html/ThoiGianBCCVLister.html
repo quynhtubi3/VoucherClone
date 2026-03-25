@@ -1,0 +1,277 @@
+﻿<style>
+    #desk______controlid_____ .popup-modal-form {
+        height: 250px;
+        width: 460px;
+    }
+
+    #desk______controlid_____ .modal-label {
+        flex: 0 0 120px !important;
+    }
+</style>
+
+<div id="_____controlid______ScrollArea" class="clusterize-scroll" tabindex="0">
+    <table controlid="_____controlid_____" htmlid='_____htmlid_____'>
+        <colgroup>
+            <col width='40' noresizeable />
+            <col width='120' />
+            <col width='120' />
+            <col width='70' />
+            <col width='40' />
+            <col width='40' />            
+            <col width='120' />
+            <col width='120' />
+            <col width='120' />
+            <!--<col width='60' />-->
+        </colgroup>
+        <thead>
+            <tr>
+                <td></td>
+                <th colname='NguoiGui' data-i18n-layout='layout3' data-i18n-key='BAOCAOCHITIET_Var_NguoiGuiBaoCao'></th>
+                <th colname='TenPhongBan' data-i18n-layout='layout3' data-i18n-key='PHONGBAN_Var_Name'></th>
+                <th colname='NgayBaoCaoHienThi' data-i18n-layout='layout3' data-i18n-key='BAOCAOCHITIET_Var_BaoCaoChoNgay'></th>
+                <th colname='TrongGio' type='number' data-i18n-layout='layout3' data-i18n-key='BAOCAOEditor_Var_TrongGio1'></th>
+                <th colname='NgoaiGio' type='number' data-i18n-layout='layout3' data-i18n-key='BAOCAOEditor_Var_NgoaiGio1'></th>
+                <th colname='ThoiGianGuiBaoCaoHienThi' data-i18n-layout='layout3' data-i18n-key='BAOCAOCHITIET_Var_ThoiGianGui'></th>
+                <th colname='ThoiGianDuyetBaoCaoHienThi' data-i18n-layout='layout3' data-i18n-key='BAOCAOCHITIET_Var_ThoiGianDuyet'></th>
+                <th colname='NguoiDuyet' data-i18n-layout='layout3' data-i18n-key='BAOCAOCHITIET_Var_NguoiDuyet'></th>
+                <!--<th colname='TrangThaiHienThi' data-i18n-layout='layout3' data-i18n-key='DUAN_Var_TheoDoi'></th>-->
+            </tr>
+        </thead>
+        <tbody id="_____controlid______ContentArea" class="clusterize-content">
+        </tbody>
+    </table>
+</div>
+
+<div class="popup-modal-background" tabindex="0">
+    <div child-form="search">
+        <div class="popup-modal-form">
+            <div class="form-title">
+                <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="Common_Filter_Title">
+                </div>
+                <div class="button-group">
+                    <div class="s3t-tooltip toolbar-button button-close" placement='sw' data-tooltip-key='Common_Button_Close'><i class="fa fa-remove"></i></div>
+                </div>
+            </div>
+            <div class="popup-modal-body">
+                <div class='form-group'>
+                    <div class='modal-label billingual-wrapper' data-i18n-layout='layout1' data-i18n-key='BAOCAOCHITIET_Var_NgayBaoCao'></div>
+                    <input type="text" class="form-control modal-textbox text-date TuNgay" validate="false" style="width:120px;" maxlength="10" value="__/__/____" />
+                    <input type="text" class="form-control modal-textbox text-date DenNgay" validate="false" style="width:120px;" maxlength="10" value="__/__/____" />
+                </div>
+                <!--<div class='form-group'>
+                    <div class='modal-label billingual-wrapper' data-i18n-layout='layout1' data-i18n-key='DUAN_Var_TheoDoi'></div>
+                    <div class='modal-textbox text-select TrangThai' style="width:240px;" data-toggle='[{"id":"0", "name":"DUAN_Var_TheoDoi_0"},{"id":"CHODUYET", "name":"BAOCAOCHITIET_Var_TrangThai_CHODUYET"},{"id":"TAMLUU","name":"BAOCAOCHITIET_Var_TrangThai_TAMLUU"},{"id":"TRALAI","name":"BAOCAOCHITIET_Var_TrangThai_TRALAI"},{"id":"DAPHEDUYET","name":"BAOCAOCHITIET_Var_TrangThai_DAPHEDUYET"}]' data-title='0'>Tất cả</div>
+                </div>-->
+                <div class='form-group'>
+                    <div class='modal-label billingual-wrapper' data-i18n-layout='layout1' data-i18n-key='BAOCAOCHITIET_Var_NguoiDuyet'></div>
+                    <input type='text' class='form-control modal-textbox text-search Name' validate='false' no-required="false" add-function='TextSearchCallback_UserList("_____controlid_____", $("#desk______controlid_____ .Name"))' data-first-filter='' data-table='UserList' data-field-name='Name' data-prefix-class='_____controlid______TextSearch_User_' data-destination-id='FullName' style='width:120px;' />
+                    <div class='modal-textbox billingual-wrapper text-search-result'>
+                        <label id='_____controlid______TextSearch_User_FullName' class='main-language'></label>
+                    </div>
+                </div>
+                <div class='form-group'>
+                    <div class='modal-label billingual-wrapper' data-i18n-layout='layout1' data-i18n-key='BAOCAO_Var_NhanVien'></div>
+                    <input type='text' class='form-control modal-textbox text-search NVName' validate='false' no-required="false" add-function='TextSearchCallback_UserList("_____controlid_____", $("#desk______controlid_____ .Name"))' data-first-filter='' data-table='UserList' data-field-name='Name' data-prefix-class='_____controlid______TextSearch_User_NVName' data-destination-id='FullName' style='width:120px;' />
+                    <div class='modal-textbox billingual-wrapper text-search-result'>
+                        <label id='_____controlid______TextSearch_User_NVName_FullName' class='main-language'></label>
+                    </div>
+                </div>
+                <div class='form-group'>
+                    <div class='modal-label billingual-wrapper' data-i18n-layout='layout1' data-i18n-key='BAOCAOEditor_Var_DuAn'></div>
+                    <input type='text' class='form-control modal-textbox text-search DAName' validate='true' no-required="true" add-function='TextSearchCallback_DMDUAN("_____controlid_____", $("#desk______controlid_____ .DAName"))' data-first-filter='' data-table='DMDUAN' data-field-name='Code' data-prefix-class='_____controlid______TextSearch_DA_' data-destination-id='Name,Code' style='width:130px;' />
+                    <div class='modal-textbox billingual-wrapper text-search-result'>
+                        <label id='_____controlid______TextSearch_DA_Name' class='main-language'></label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-footer">
+                <div class="footer-button button-save">
+                    <div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Button_Agree"></div>
+                </div>
+                <div class="footer-button button-cancel">
+                    <div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Button_Cancel"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+
+        $('#desk______controlid_____ .popup-modal-background>div[child-form="search"] .button-save').on('click', function () {
+            $('#desk______controlid_____ .form-container:first').focus();
+            $('#desk______controlid_____ .popup-modal-background').hide();            
+            _____controlid______OnLoad();
+        })
+
+        $('#desk______controlid_____ .popup-modal-background').on('keydown', function (e) {
+            if (e.ctrlKey && e.keyCode == 13 && _____controlid______Modal == 'search') {
+                e.preventDefault();
+                $('#desk______controlid_____ .form-container:first').focus();
+                $('#desk______controlid_____ .popup-modal-background').hide();                
+                _____controlid______OnLoad();
+            }
+        })
+
+        if ($('#desk______controlid_____ .form-toolbar .button-export-excel2').length == 0) {
+
+            $('#desk______controlid_____ .form-toolbar .button-quick-search').after("<div class='s3t-tooltip toolbar-button button-export-excel2' data-tooltip-value='Kết xuất'><i class='fa fa-file-excel-o'></i></div>");            
+            buildToolTip2($('.button-export-excel2'));
+        }
+
+        $('#desk______controlid_____ .form-toolbar .button-export-excel2').on('click', function (e) {
+
+            _____controlid______Export();
+
+        });
+
+    })
+
+    function _____controlid______SearchPreprocess() {
+        if ($('#desk______controlid_____ .popup-modal-background .TuNgay').value() == null) {
+            let tempMonth = (new Date()).getMonth() - 1;
+            let tempYear = (new Date()).getFullYear();
+
+            if (tempMonth < 0) {//Thang bat dau tu 0
+                tempMonth = 11;
+                tempYear = tempYear - 1;
+            }
+
+
+            $('#desk______controlid_____ .popup-modal-background .TuNgay').value(new Date(tempYear, tempMonth, 1));
+        }
+        if ($('#desk______controlid_____ .popup-modal-background .DenNgay').value() == null) {
+            //$('#desk______controlid_____ .popup-modal-background .DenNgay').value(new Date());
+            $('#desk______controlid_____ .popup-modal-background .DenNgay').value(new Date(2050, 12, 31));
+        }
+    }
+
+    _____controlid______Table = "ThoiGianBCCV";
+    var _____controlid______TableColumnCode = 'NguoiGui';
+
+    async function _____controlid______OnLoad() {
+
+        _____controlid______SearchPreprocess();
+
+        let toolbar = new Object();
+        toolbar.Search = false;
+        toolbar.Refresh = true;
+        toolbar.Add = true;
+        toolbar.Edit = true;
+        toolbar.Delete = true;
+        toolbar.Excel = true;
+        toolbar.Import = true;
+        toolbar.QuickSearch = true;
+        _____controlid______DisableToolBar(toolbar);
+
+        let model = new Object();
+
+        //let TrangThai = $('#desk______controlid_____ .popup-modal-background .TrangThai').value();
+        let NguoiDung = '';
+        let NguoiDuyet = '';
+
+        NguoiDung = $('#desk______controlid_____ .popup-modal-background .NVName').data('data-value') ? JSON.parse($('#desk______controlid_____ .popup-modal-background .NVName').data('data-value')).Id : '';
+        NguoiDuyet = $('#desk______controlid_____ .popup-modal-background .Name').data('data-value') ? JSON.parse($('#desk______controlid_____ .popup-modal-background .Name').data('data-value')).Id : '';
+
+        model.NguoiDung = NguoiDung;
+        model.NguoiDuyet = NguoiDuyet;
+        model.TuNgay = $('#desk______controlid_____ .popup-modal-background .TuNgay').value();
+        model.DenNgay = $('#desk______controlid_____ .popup-modal-background .DenNgay').value();
+        //model.TrangThai = TrangThai;        
+        model.TrangThai = '';
+        model.DUAN_Id = $('#desk______controlid_____ .DAName').data('data-value') ? JSON.parse($('#desk______controlid_____ .DAName').data('data-value')).Id : '';//20230908
+
+        _____controlid______S3Table.Init();
+
+        _____controlid______Loading.show();
+        
+        $.ajax({
+            type: 'POST',
+            url: 'api/BCCONGVIEC/GetListThoiGianBCCV',
+            //async: false,
+            data: JSON.stringify(model),
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                _____controlid______S3Table.Load(data);
+                _____controlid______Loading.hide();
+            },
+
+            error: function (result) {
+                _____controlid______Loading.hide();
+                handleResponseError(_____controlid______AlertMessage, result, "_____controlid_____");
+            }
+        });
+
+    }
+
+    function _____controlid______Export() {
+
+        let model = new Object();
+
+        //let TrangThai = $('#desk______controlid_____ .popup-modal-background .TrangThai').value();
+        let NguoiDung = '';
+        let NguoiDuyet = '';
+
+        NguoiDung = $('#desk______controlid_____ .popup-modal-background .NVName').data('data-value') ? JSON.parse($('#desk______controlid_____ .popup-modal-background .NVName').data('data-value')).Id : '';
+        NguoiDuyet = $('#desk______controlid_____ .popup-modal-background .Name').data('data-value') ? JSON.parse($('#desk______controlid_____ .popup-modal-background .Name').data('data-value')).Id : '';
+
+        model.NguoiDung = NguoiDung;
+        model.NguoiDuyet = NguoiDuyet;
+        model.TuNgay = $('#desk______controlid_____ .popup-modal-background .TuNgay').value();
+        model.DenNgay = $('#desk______controlid_____ .popup-modal-background .DenNgay').value();
+        //model.TrangThai = TrangThai;
+        model.TrangThai = 'DAPHEDUYET';
+        model.DUAN_Id = $('#desk______controlid_____ .DAName').data('data-value') ? JSON.parse($('#desk______controlid_____ .DAName').data('data-value')).Id : '';//20230908
+
+        $.ajax({
+            type: 'POST',
+            url: 'api/BCCONGVIEC/ExportThoiGianBCCV',
+            dataType: "json",
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(model),
+            complete: function () {
+
+            },
+            success: function (response) {
+
+                if (response.Success === true) {
+
+                    var binaryData = atob(response.Data);
+                    const blob = new Blob([new Uint8Array(binaryData.length).map((_, index) => binaryData.charCodeAt(index))], {
+                        type: 'application/vnd.ms-excel'
+                    });
+
+                    // Create a URL for the blob
+                    var url = window.URL.createObjectURL(blob);
+
+                    // Create a link element to trigger the download
+                    var a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'ThoiGianBCCV.xls'; // Set the desired file name
+                    a.click();
+
+                    // Revoke the object URL to free up resources
+                    window.URL.revokeObjectURL(url);
+
+                } else {
+
+                    alert(response.Message);
+
+                }
+            },
+            error: function (result) {
+
+            }
+        });
+
+        //let a = document.createElement('a');
+        //a.href = 'api/BCDUAN/Export?TuNgay=' + extra.TuNgay + '&DenNgay=' + extra.DenNgay + '&ScreenTransitionName=' + ScreenTransitionName;
+        //a.click();
+        //a.remove();
+
+    }
+
+
+</script>
+

@@ -1,0 +1,215 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+.w3-padding {
+    padding: 8px 16px !important;
+}
+
+.w3-bottombar {
+    border-bottom: 6px solid #ccc !important;
+}
+
+.w3-third {
+    float: left;
+    width: 25%;
+}
+
+.w3-border-red, .w3-hover-border-red:hover {
+    border-color: #f44336 !important;
+}
+.w3-row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.button-lang {
+    position: relative;
+    padding: 0px 5px 0px 5px;
+    display: flex;
+    align-items: center;
+}
+
+.button-lang img {
+    width: 30px;
+    height: 18px;
+}
+
+.button-lang:hover {
+    background-color: #4BA8A6;
+    color: black;
+    border-radius: 5px;
+}
+
+.inactive {
+    opacity: 0.3;
+}
+
+body {
+    background: #00356B; /*radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(4, 106, 129, 1) 100%);*/
+}
+
+#particles-js {
+    /*   background: cornflowerblue; */
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.modal {
+    position: fixed;
+    z-index: 998;
+    height: 100% !important;
+    width: 100% !important;
+    top: 0;
+    display: block;
+    filter: grayscale(100%);
+}
+
+.loading {
+    font-family: Arial;
+    font-size: 10pt;
+    border: 5px solid #67CFF5;
+    width: 280px;
+    height: 130px;
+    display: none;
+    position: fixed;
+    background-color: White;
+    z-index: 999;
+}
+
+.form-login-group {
+    display: flex;
+    align-items: center;
+    background-color: #ededed;
+    border: 2px solid #93a5ab;
+    border-radius: 0.25rem;
+}
+
+    .form-login-group i {
+        font-size: 20px;
+        text-align: center;
+        color: #484444;
+        width: 44px;
+        border-right-width: 1px;
+        border-right-style: solid;
+        border-right-color: #858383;
+    }
+
+#validate-session.text-danger {
+    color: #FF0000 !important;
+}
+
+.login-textbox {
+    background-color: #ededed;
+    border: none;
+    border-radius: 0px;
+    outline: none;
+    color: #000;
+}
+
+    .login-textbox:focus {
+        background-color: #ededed;
+        outline: none;
+        border-color: inherit;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        color: #000;
+    }
+
+select.login-textbox option {
+    color: #000;
+    padding: 5px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #ededed inset !important;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/MavenPro-VariableFont_wght.ttf") format("truetype");
+}

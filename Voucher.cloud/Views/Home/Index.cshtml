@@ -1,0 +1,963 @@
+﻿@{
+    ViewData["Title"] = "Voucher";;        
+}
+
+<style>
+    #desk_T00 .s3tcloud-prefix.form-container {
+        display: unset;
+        border: unset;
+        box-shadow: unset;
+    }
+
+        #desk_T00 .s3tcloud-prefix.form-container > .form-body {
+            justify-content: flex-start;
+        }
+
+    #desk_T00 {
+        display: flex !important;
+        flex-direction: column;
+        height: calc(100% - 70px);
+        background-color: #E5E5E5;
+    }
+
+        #desk_T00 > div {
+            display: flex;
+        }
+
+            #desk_T00 > div > div {
+                width: 33%;
+                height: 100%;
+                background-color: transparent;
+                padding: 20px;
+            }
+
+                #desk_T00 > div > div > div {
+                    width: 100%;
+                    height: 100%;
+                    background-color: white;
+                    border-radius: 10px;
+                }
+
+                    #desk_T00 > div > div > div > div {
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 10px;
+                    }
+
+            #desk_T00 > div .title-left {
+                color: #292B33;
+                font-size: 18px;
+                /*font-weight:bold;*/
+            }
+
+            #desk_T00 > div .title-right {
+                color: #2E578B;
+                font-size: 14px;
+            }
+
+                #desk_T00 > div .title-right i {
+                    /*cursor: pointer;*/
+                    font-size: 24px;
+                }
+</style>
+
+<script type="text/javascript">
+    var BorderBarColors = [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)'
+    ];
+    var BackgroundBarColors = [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)'
+    ];
+    var DoughnutColors = [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(61, 8, 123, 1)',
+        'rgb(182, 25, 25, 1)',
+        'rgb(5, 80, 82, 1)'
+    ];
+    var HighlightColors = [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)'
+    ];
+
+    //
+    var S3TCloud_Chart_Last_Built, S3TCloud_Chart_01, S3TCloud_Chart_02, S3TCloud_Chart_03, S3TCloud_Chart_04, S3TCloud_Chart_05, S3TCloud_Chart_06;
+
+    $(function () {
+        //Set width and height
+
+        $('#desk_T00 > div .title-right i').hover(function () {
+            $(this).toggleClass("fa-spin");
+        })
+    })
+
+    function Chart_Build_Data(mustdo) {
+        //if (!mustdo && S3TCloud_Chart_Last_Built != null && Math.round((((new Date() - S3TCloud_Chart_Last_Built) % 86400000) % 3600000) / 60000) < 30) {
+        //    return;
+        //}
+
+        //Set last built time
+        S3TCloud_Chart_Last_Built = new Date();
+
+        //Clear old charts
+        S3TCloud_Chart_01 != null && S3TCloud_Chart_01.destroy();
+        S3TCloud_Chart_02 != null && S3TCloud_Chart_02.destroy();
+        S3TCloud_Chart_03 != null && S3TCloud_Chart_03.destroy();
+        S3TCloud_Chart_04 != null && S3TCloud_Chart_04.destroy();
+        S3TCloud_Chart_05 != null && S3TCloud_Chart_05.destroy();
+        S3TCloud_Chart_06 != null && S3TCloud_Chart_06.destroy();
+
+        let BackgroundTooltipColor = ApplicationInstance.Uservar.Theme == 's3t-theme1' ? '#3B928B' : ApplicationInstance.Uservar.Theme == 's3t-theme2' ? '#399D7F' : '#1C3A60';
+
+        //#region Chart 1: Tồn quỹ
+        let bars = Chart1_Data_Get(6, true);
+        let data = {
+            labels: bars.Labels,
+            fullnames: bars.FullNames,
+            //fullnamees: bars.FullNamees,
+            datasets: [{
+                label: '# of Votes',
+                data: bars.Data,
+                total: bars.Total,
+                labels: bars.Labels,
+                backgroundColor: bars.BackgroundColors,
+                borderColor: bars.BorderColors,
+                borderWidth: 1
+            }]
+        };
+
+        let beforeLabelFunction = function (tooltipItem, data) {
+            return (ApplicationInstance.Uservar.BillingualLanguage != 2 || !this._chart.data.fullnamees[tooltipItem.dataIndex] ? '' : this._chart.data.fullnames[tooltipItem.dataIndex]);
+        };
+        let lableFunction = function (tooltipItem, data) {
+            let msg = "";
+
+            if (ApplicationInstance.Uservar.BillingualLanguage == 2) { /* Song ngữ */
+                msg = (!this._chart.data.fullnamees[tooltipItem.dataIndex] ? this._chart.data.fullnames[tooltipItem.dataIndex] : this._chart.data.fullnamees[tooltipItem.dataIndex]);
+            } else if (ApplicationInstance.Uservar.BillingualLanguage == 0) { /* Chỉ hiển thị ngôn ngữ thứ nhất */
+                msg = (this._chart.data.fullnames[tooltipItem.dataIndex] ? this._chart.data.fullnames[tooltipItem.dataIndex] : this._chart.data.fullnamees[tooltipItem.dataIndex]);
+            } else if (ApplicationInstance.Uservar.BillingualLanguage == 1) { /* Chỉ hiển thị ngôn ngữ thứ hai */
+                msg = (this._chart.data.fullnamees[tooltipItem.dataIndex] ? this._chart.data.fullnamees[tooltipItem.dataIndex] : this._chart.data.fullnames[tooltipItem.dataIndex]);
+            }
+
+            return msg;
+        };
+
+        S3TCloud_Chart_01 = new Chart($("#chart1")[0].getContext('2d'), {
+            type: 'bar',
+            data: data,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function (value) {
+                                let valueLegend = this.getLabelForValue(value);
+                                let valueLegendRep = '';
+
+                                if (valueLegend.length <= 6) {
+                                    valueLegendRep = valueLegend;
+                                } else if (valueLegend.length > 18) {
+                                    valueLegendRep = valueLegend.substr(0, valueLegend.length - 16) + 'T';
+                                } else if (valueLegend.length > 14) {
+                                    valueLegendRep = valueLegend.substr(0, valueLegend.length - 12) + 'B';
+                                } else if (valueLegend.length > 10) {
+                                    valueLegendRep = valueLegend.substr(0, valueLegend.length - 8) + 'M';
+                                } else if (valueLegend.length > 6) {
+                                    valueLegendRep = valueLegend.substr(0, valueLegend.length - 4) + 'K';
+                                }
+
+                                return valueLegendRep;
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function (tooltipItem, data) {
+                                return this._chart.data.labels[tooltipItem[0].dataIndex];
+                            },
+                            beforeLabel: beforeLabelFunction,
+                            label: lableFunction,
+                            afterLabel: function (tooltipItem, data) {
+                                return number_to_text(this._chart.data.datasets[0].data[tooltipItem.dataIndex], number_decimalscale('LCAmountDecimals'), false) + ' ' +
+                                    'VNĐ' + ' (' + Math.round((this._chart.data.datasets[0].data[tooltipItem.dataIndex] / this._chart.data.datasets[0].total) * 100) + '%)';
+                            }
+                        },
+                        backgroundColor: BackgroundTooltipColor
+                    }
+                }
+            }
+        });
+
+        //#endregion
+
+        //#region Chart 2: Tồn kho
+
+        bars = Chart2_Data_Get(6, true);
+        data = {
+            labels: bars.Labels,
+            fullnames: bars.FullNames,
+            fullnamees: bars.FullNamees,
+            datasets: [{
+                label: '# of Votes',
+                data: bars.Data,
+                total: bars.Total,
+                labels: bars.Labels,
+                units: bars.Units,
+                backgroundColor: bars.BackgroundColors,
+                borderColor: bars.BorderColors,
+                borderWidth: 1
+            }]
+        };
+
+        S3TCloud_Chart_02 = new Chart($("#chart2")[0].getContext('2d'), {
+            type: 'bar',
+            data: data,
+            options: {
+                scales: {
+                    x: {
+                        ticks: {
+                            display: true //this will remove only the label
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function (value) {
+                                let valueLegend = this.getLabelForValue(value);
+                                let valueLegendRep = '';
+
+                                if (valueLegend.length <= 6) {
+                                    valueLegendRep = valueLegend;
+                                } else if (valueLegend.length > 18) {
+                                    valueLegendRep = valueLegend.substr(0, valueLegend.length - 16) + 'T';
+                                } else if (valueLegend.length > 14) {
+                                    valueLegendRep = valueLegend.substr(0, valueLegend.length - 12) + 'B';
+                                } else if (valueLegend.length > 10) {
+                                    valueLegendRep = valueLegend.substr(0, valueLegend.length - 8) + 'M';
+                                } else if (valueLegend.length > 6) {
+                                    valueLegendRep = valueLegend.substr(0, valueLegend.length - 4) + 'K';
+                                }
+
+                                return valueLegendRep;
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function (tooltipItem, data) {
+                                return this._chart.data.labels[tooltipItem[0].dataIndex];
+                            },
+                            beforeLabel: beforeLabelFunction,
+                            label: lableFunction,
+                            afterLabel: function (tooltipItem, data) {
+                                return number_to_text(this._chart.data.datasets[0].data[tooltipItem.dataIndex], number_decimalscale('QuantityDecimals'), false) + ' ' +
+                                    'VNĐ' + ' (' + Math.round((this._chart.data.datasets[0].data[tooltipItem.dataIndex] / this._chart.data.datasets[0].total) * 100) + '%)';
+                            }
+                        },
+                        backgroundColor: BackgroundTooltipColor
+                    }
+                }
+            }
+        });
+
+        //#endregion
+
+        //#region Chart 3: Phải thu
+
+        bars = Chart3_Data_Get(6, true);
+        data = {
+            labels: bars.Labels,
+            fullnames: bars.FullNames,
+            fullnamees: bars.FullNamees,
+            datasets: [{
+                label: '# of Votes',
+                data: bars.Data,
+                total: bars.Total,
+                labels: bars.Labels,
+                backgroundColor: bars.BackgroundColors,
+                borderColor: bars.BorderColors,
+                borderWidth: 1
+            }]
+        };
+
+        S3TCloud_Chart_03 = new Chart($("#chart3")[0].getContext('2d'), {
+            type: 'bar',
+            data: data,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function (value) {
+                                let valueLegend = this.getLabelForValue(value);
+                                let valueLegendRep = '';
+
+                                if (valueLegend.length <= 6) {
+                                    valueLegendRep = valueLegend;
+                                } else if (valueLegend.length > 18) {
+                                    valueLegendRep = valueLegend.substr(0, valueLegend.length - 16) + 'T';
+                                } else if (valueLegend.length > 14) {
+                                    valueLegendRep = valueLegend.substr(0, valueLegend.length - 12) + 'B';
+                                } else if (valueLegend.length > 10) {
+                                    valueLegendRep = valueLegend.substr(0, valueLegend.length - 8) + 'M';
+                                } else if (valueLegend.length > 6) {
+                                    valueLegendRep = valueLegend.substr(0, valueLegend.length - 4) + 'K';
+                                }
+
+                                return valueLegendRep;
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function (tooltipItem, data) {
+                                return this._chart.data.labels[tooltipItem[0].dataIndex];
+                            },
+                            beforeLabel: beforeLabelFunction,
+                            label: lableFunction,
+                            afterLabel: function (tooltipItem, data) {
+                                return number_to_text(this._chart.data.datasets[0].data[tooltipItem.dataIndex], number_decimalscale('LCAmountDecimals'), false) + ' ' +
+                                   'VNĐ' + ' (' + Math.round((this._chart.data.datasets[0].data[tooltipItem.dataIndex] / this._chart.data.datasets[0].total) * 100) + '%)';
+                            }
+                        },
+                        backgroundColor: BackgroundTooltipColor
+                    }
+                }
+            }
+        });
+
+        //#endregion
+
+        bars = Chart4_Data_Get(6, true);
+        data = {
+            labels: bars.Labels,
+            fullnames: bars.FullNames,
+            fullnamees: bars.FullNamees,
+            datasets: [{
+                label: '# of Votes',
+                data: bars.Data,
+                total: bars.Total,
+                labels: bars.Labels,
+                backgroundColor: bars.BackgroundColors,
+                borderColor: bars.BorderColors,
+                borderWidth: 1
+            }]
+        };
+
+        S3TCloud_Chart_04 = new Chart($("#chart4")[0].getContext('2d'), {
+            type: 'bar',
+            data: data,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function (value) {
+                                let valueLegend = this.getLabelForValue(value);
+                                let valueLegendRep = '';
+
+                                if (valueLegend.length <= 6) {
+                                    valueLegendRep = valueLegend;
+                                } else if (valueLegend.length > 18) {
+                                    valueLegendRep = valueLegend.substr(0, valueLegend.length - 16) + 'T';
+                                } else if (valueLegend.length > 14) {
+                                    valueLegendRep = valueLegend.substr(0, valueLegend.length - 12) + 'B';
+                                } else if (valueLegend.length > 10) {
+                                    valueLegendRep = valueLegend.substr(0, valueLegend.length - 8) + 'M';
+                                } else if (valueLegend.length > 6) {
+                                    valueLegendRep = valueLegend.substr(0, valueLegend.length - 4) + 'K';
+                                }
+
+                                return valueLegendRep;
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function (tooltipItem, data) {
+                                return this._chart.data.labels[tooltipItem[0].dataIndex];
+                            },
+                            beforeLabel: beforeLabelFunction,
+                            label: lableFunction,
+                            afterLabel: function (tooltipItem, data) {
+                                return number_to_text(this._chart.data.datasets[0].data[tooltipItem.dataIndex], number_decimalscale('LCAmountDecimals'), false) + ' ' +
+                                    'Voucher' + ' (' + Math.round((this._chart.data.datasets[0].data[tooltipItem.dataIndex] / this._chart.data.datasets[0].total) * 100) + '%)';
+                            }
+                        },
+                        backgroundColor: BackgroundTooltipColor
+                    }
+                }
+            }
+        });
+
+        //#endregion
+
+        //#region Chart 5: Bán hàng
+
+        bars = Chart5_Data_Get(3, 30, true);
+        data = {
+            labels: bars.Labels,
+            fullnames: bars.FullNames,
+            fullnamees: bars.FullNamees,
+            datasets: [{
+                data: bars.Data,
+                total: bars.Total,
+                labels: bars.Labels,
+                backgroundColor: bars.BackgroundColors,
+                highlightColor: bars.HighlightColors,
+                borderWidth: 1
+            }]
+        };
+
+        S3TCloud_Chart_05 = new Chart($("#chart5")[0].getContext('2d'), {
+            type: 'doughnut',
+            data: data,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function (tooltipItem, data) {
+                                return this._chart.data.labels[tooltipItem[0].dataIndex];
+                            },
+                            beforeLabel: beforeLabelFunction,
+                            label: lableFunction,
+                            afterLabel: function (tooltipItem, data) {
+                                return number_to_text(this._chart.data.datasets[0].data[tooltipItem.dataIndex], number_decimalscale('LCAmountDecimals'), false) + ' ' +
+                                    'Voucher' + ' (' + Math.round((this._chart.data.datasets[0].data[tooltipItem.dataIndex] / this._chart.data.datasets[0].total) * 100) + '%)';
+                            }
+                        },
+                        backgroundColor: BackgroundTooltipColor
+                    }
+                }
+            }
+        });
+
+        //#endregion
+
+        //#region Chart 6: Mua hàng
+
+        bars = Chart6_Data_Get(2, 30, true);
+        data = {
+            labels: bars.Labels,
+            fullnames: bars.FullNames,
+            fullnamees: bars.FullNamees,
+            datasets: [{
+                data: bars.Data,
+                total: bars.Total,
+                labels: bars.Labels,
+                backgroundColor: bars.BackgroundColors,
+                highlightColor: bars.HighlightColors,
+                borderWidth: 1
+            }]
+        };
+
+        S3TCloud_Chart_06 = new Chart($("#chart6")[0].getContext('2d'), {
+            type: 'doughnut',
+            data: data,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function (tooltipItem, data) {
+                                return this._chart.data.labels[tooltipItem[0].dataIndex];
+                            },
+                            beforeLabel: beforeLabelFunction,
+                            label: lableFunction,
+                            afterLabel: function (tooltipItem, data) {
+                                return number_to_text(this._chart.data.datasets[0].data[tooltipItem.dataIndex], number_decimalscale('LCAmountDecimals'), false) + ' ' +
+                                    'VNĐ' + ' (' + Math.round((this._chart.data.datasets[0].data[tooltipItem.dataIndex] / this._chart.data.datasets[0].total) * 100) + '%)';
+                            }
+                        },
+                        backgroundColor: BackgroundTooltipColor
+                    }
+                }
+            }
+        });
+
+        //#endregion
+    }
+
+    function Chart_Model_Bar_Get(count) {
+        let model = {};
+
+        model.Ma_Dvcs_List = ApplicationInstance.Systemvar.Subsidiaries;
+        model.Count = count;
+        model.VND_NT = 0;
+        model.English = 0;
+
+        return model;
+    }
+
+    function Chart_Model_Doughnut_Get(count, days) {
+        let model = Chart_Model_Bar_Get(count);
+        model.Days = days;
+
+        return model;
+    }
+
+    function Chart_Data_Get(model, api) {
+        var boxes = null;
+        $.ajax
+            ({
+                type: 'POST',
+                url: 'api/Common/' + api,
+                headers: {
+                    '3t-action-menu-type': 'N'
+                },
+                async: false,
+                data: JSON.stringify(model),
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    if (data != null && data.length > 0) {
+                        boxes = data;
+                    }
+                }
+            });
+
+        return boxes;
+    }
+
+    function Chart1_Data_Get(max, hasRight) {
+        let bars = {};
+        let data = [];
+        let total = 0;
+        let labels = [];
+        let fullnames = [];
+        let fullnamees = [];
+        let backgroundColors = [];
+        let borderColors = [];
+
+        let rows = null;
+        if (hasRight) {
+            rows = Chart_Data_Get(Chart_Model_Bar_Get(max), "RPT_Chart_01_Get");
+        }
+
+        if (rows != null && rows.length > 0)
+        {
+            for (let i = 0; i < rows.length; i++) {
+                total += rows[i].Total;
+
+                data.push(rows[i].Total);
+                labels.push(rows[i].Code);
+                fullnames.push(rows[i].Name);
+                backgroundColors.push(BackgroundBarColors[i]);
+                borderColors.push(BorderBarColors[i]);
+            }
+        }
+
+        if (data.length < max) {
+            for (let i = data.length; i < max; i++) {
+                data.push(0);
+                labels.push('');
+                fullnames.push('');
+                fullnamees.push('');
+                backgroundColors.push(BackgroundBarColors[i]);
+                borderColors.push(BorderBarColors[i]);
+            }
+        }
+
+        bars.Data = data;
+        bars.Total = total;
+        bars.Labels = labels;
+        bars.FullNames = fullnames;
+        bars.FullNamees = fullnamees;
+        bars.BackgroundColors = backgroundColors;
+        bars.BorderColors = borderColors;
+
+        return bars;
+    }
+
+    function Chart2_Data_Get(max, hasRight) {
+        let bars = {};
+        let data = [];
+        let total = 0;
+        let labels = [];
+        let fullnames = [];
+        let fullnamees = [];
+        let units = [];
+        let backgroundColors = [];
+        let borderColors = [];
+
+        let rows = null;
+        if (hasRight) {
+            rows = Chart_Data_Get(Chart_Model_Bar_Get(max), "RPT_Chart_02_Get");
+        }
+
+        if (rows != null && rows.length > 0)
+        {
+            for (let i = 0; i < rows.length; i++) {
+                total += rows[i].Total;
+
+                data.push(rows[i].Total);
+                labels.push(rows[i].Code);
+                fullnames.push(rows[i].Name);
+                units.push(rows[i].Unit);
+                backgroundColors.push(BackgroundBarColors[i]);
+                borderColors.push(BorderBarColors[i]);
+            }
+        }
+
+        if (data.length < max) {
+            for (let i = data.length; i < max; i++) {
+                data.push(0);
+                labels.push('');
+                fullnames.push('');
+                fullnamees.push('');
+                units.push('');
+                backgroundColors.push(BackgroundBarColors[i]);
+                borderColors.push(BorderBarColors[i]);
+            }
+        }
+
+        bars.Data = data;
+        bars.Total = total;
+        bars.Labels = labels;
+        bars.FullNames = fullnames;
+        bars.FullNamees = fullnamees;
+        bars.Units = units;
+        bars.BackgroundColors = backgroundColors;
+        bars.BorderColors = borderColors;
+
+        return bars;
+    }
+
+    function Chart3_Data_Get(max, hasRight) {
+        let bars = {};
+        let data = [];
+        let total = 0;
+        let labels = [];
+        let fullnames = [];
+        let fullnamees = [];
+        let backgroundColors = [];
+        let borderColors = [];
+
+        let rows = null;
+        if (hasRight) {
+            rows = Chart_Data_Get(Chart_Model_Bar_Get(max), "RPT_Chart_03_Get");
+        }
+
+        if (rows != null && rows.length > 0) {
+            for (let i = 0; i < rows.length; i++) {
+                total += rows[i].Total;
+
+                data.push(rows[i].Total);
+                labels.push(rows[i].Code);
+                fullnames.push(rows[i].Name);
+                backgroundColors.push(BackgroundBarColors[i]);
+                borderColors.push(BorderBarColors[i]);
+            }
+        }
+
+        if (data.length < max) {
+            for (let i = data.length; i < max; i++) {
+                data.push(0);
+                labels.push('');
+                fullnames.push('');
+                fullnamees.push('');
+                backgroundColors.push(BackgroundBarColors[i]);
+                borderColors.push(BorderBarColors[i]);
+            }
+        }
+
+        bars.Data = data;
+        bars.Total = total;
+        bars.Labels = labels;
+        bars.FullNames = fullnames;
+        bars.FullNamees = fullnamees;
+        bars.BackgroundColors = backgroundColors;
+        bars.BorderColors = borderColors;
+
+        return bars;
+    }
+
+    function Chart4_Data_Get(max, hasRight) {
+        let bars = {};
+        let data = [];
+        let total = 0;
+        let labels = [];
+        let fullnames = [];
+        let fullnamees = [];
+        let backgroundColors = [];
+        let borderColors = [];
+
+        let rows = null;
+        if (hasRight) {
+            rows = Chart_Data_Get(Chart_Model_Bar_Get(max), "RPT_Chart_04_Get");
+        }
+
+        if (rows != null && rows.length > 0)
+        {
+            for (let i = 0; i < rows.length; i++) {
+                total += rows[i].Total;
+
+                data.push(rows[i].Total);
+                labels.push(rows[i].Code);
+                fullnames.push(rows[i].Name);
+                backgroundColors.push(BackgroundBarColors[i]);
+                borderColors.push(BorderBarColors[i]);
+            }
+        }
+
+        if (data.length < max) {
+            for (let i = data.length; i < max; i++) {
+                data.push(0);
+                labels.push('');
+                fullnames.push('');
+                fullnamees.push('');
+                backgroundColors.push(BackgroundBarColors[i]);
+                borderColors.push(BorderBarColors[i]);
+            }
+        }
+
+        bars.Data = data;
+        bars.Total = total;
+        bars.Labels = labels;
+        bars.FullNames = fullnames;
+        bars.FullNamees = fullnamees;
+        bars.BackgroundColors = backgroundColors;
+        bars.BorderColors = borderColors;
+
+        return bars;
+    }
+
+    function Chart5_Data_Get(max, days, hasRight) {
+        let bars = {};
+        let data = [];
+        let total = 0;
+        let labels = [];
+        let fullnames = [];
+        let fullnamees = [];
+        let backgroundColors = [];
+        let highlightColors = [];
+
+        let rows = null;
+        if (hasRight) {
+            rows = Chart_Data_Get(Chart_Model_Doughnut_Get(max, days), "RPT_Chart_05_Get");
+        }
+
+        if (rows != null && rows.length > 0) {
+            for (let i = 0; i < rows.length; i++) {
+                total += rows[i].Total;
+
+                data.push(rows[i].Total);
+                labels.push(rows[i].Code);
+                fullnames.push(rows[i].Name);
+                backgroundColors.push(DoughnutColors[i]);
+                highlightColors.push(HighlightColors[i]);
+            }
+        }
+
+        if (data.length < max) {
+            for (let i = data.length; i < max; i++) {
+                data.push(0);
+                labels.push('');
+                fullnames.push('');
+                fullnamees.push('');
+                backgroundColors.push(DoughnutColors[i]);
+                highlightColors.push(HighlightColors[i]);
+            }
+        }
+
+        bars.Data = data;
+        bars.Total = total;
+        bars.Labels = labels;
+        bars.FullNames = fullnames;
+        bars.FullNamees = fullnamees;
+        bars.BackgroundColors = backgroundColors;
+        bars.HighlightColors = highlightColors;
+
+        return bars;
+    }
+
+    function Chart6_Data_Get(max, days, hasRight) {
+        let bars = {};
+        let data = [];
+        let total = 0;
+        let labels = [];
+        let fullnames = [];
+        let fullnamees = [];
+        let backgroundColors = [];
+        let highlightColors = [];
+
+        let rows = null;
+        if (hasRight) {
+            rows = Chart_Data_Get(Chart_Model_Doughnut_Get(max, days), "RPT_Chart_06_Get");
+        }
+
+        if (rows != null && rows.length > 0) {
+            for (let i = 0; i < rows.length; i++) {
+                total += rows[i].Total;
+
+                data.push(rows[i].Total);
+                labels.push(rows[i].Code);
+                fullnames.push(rows[i].Name);
+                backgroundColors.push(DoughnutColors[i]);
+                highlightColors.push(HighlightColors[i]);
+            }
+        }
+
+        if (data.length < max) {
+            for (let i = data.length; i < max; i++) {
+                data.push(0);
+                labels.push('');
+                fullnames.push('');
+                fullnamees.push('');
+                backgroundColors.push(DoughnutColors[i]);
+                highlightColors.push(HighlightColors[i]);
+            }
+        }
+
+        bars.Data = data;
+        bars.Total = total;
+        bars.Labels = labels;
+        bars.FullNames = fullnames;
+        bars.FullNamees = fullnamees;
+        bars.BackgroundColors = backgroundColors;
+        bars.HighlightColors = highlightColors;
+
+        return bars;
+    }
+
+</script>
+
+<div id="maindesktop">
+    <div id='desk_T00' class="main-desktop" style="display:block" dockstyle='full'>
+        <div>
+            <div>
+                <div>
+                    <div>
+                        <div class='modal-label title-left'>
+                            <label>Thống kê doanh thu theo ngày</label>
+                        </div>
+                        <div class="title-right"><i class="fa fa-cog fa-spin"></i></div>
+                    </div>
+                    <div>
+                        <canvas id="chart1"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div>
+                        <div class='modal-label title-left'>
+                            <label>Thống kê doanh thu theo tháng</label>
+                        </div>
+                        <div class="title-right"><i class="fa fa-cog fa-spin"></i></div>
+                    </div>
+                    <div>
+                        <canvas id="chart2"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div>
+                        <div class='modal-label title-left'>
+                            <label>Thống kê doanh thu theo quý</label>
+                        </div>
+                        <div class="title-right"><i class="fa fa-cog fa-spin"></i></div>
+                    </div>
+                    <div>
+                        <canvas id="chart3"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <div>
+                    <div>
+                        <div class='modal-label title-left'>
+                            <label>Thống kê voucher kích hoạt </label>
+                        </div>
+                        <div class="title-right"><i class="fa fa-cog fa-spin"></i></div>
+                    </div>
+                    <div>
+                        <canvas id="chart4"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div>
+                        <div class='modal-label title-left'>
+                            <label>Thống kê voucher</label>
+                        </div>
+                        <div class="title-right"><i class="fa fa-cog fa-spin"></i></div>
+                    </div>
+                    <div>
+                        <canvas id="chart5"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div>
+                        <div class='modal-label title-left'>
+                            <label>Thống kê tổng hoa hồng</label>
+                        </div>
+                        <div class="title-right"><i class="fa fa-cog fa-spin"></i></div>
+                    </div>
+                    <div>
+                        <canvas id="chart6"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="maintaskbar">
+    <div id="righttaskbar">
+        <div id="invisibleitemsbutton">
+            <img src="img/@ViewData["Theme"]/desktop.png" />
+        </div>
+    </div>
+</div>
+<div id="invisibleitemsmenu"></div>

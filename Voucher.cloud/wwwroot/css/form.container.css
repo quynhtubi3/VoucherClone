@@ -1,0 +1,391 @@
+﻿
+.s3tcloud-prefix.form-container .label-display-only {
+    background-color: var(--form-header-footer);
+    padding: 3px;
+    text-align: center;
+    border: 1px solid darkgrey;
+}
+
+.s3tcloud-prefix.form-container {
+    display: none;
+    background-color: #F9FAFC;
+    position: relative;
+    box-shadow: 0px 2px 5px 5px #f0f2f5;
+    -webkit-box-shadow: 0px 2px 5px 5px #f0f2f5;
+}
+
+.s3tcloud-prefix.form-container.list-editor {
+    border: 2px solid hsl(0, 0%, 70%);
+    box-shadow: 0 0 0 2px hsl(0, 0%, 90%), 0 0 0 4px hsl(0, 0%, 80%);
+    -webkit-box-shadow: 0 0 0 2px hsl(0, 0%, 90%), 0 0 0 4px hsl(0, 0%, 80%);
+}
+
+.s3tcloud-prefix .form-title {
+    position: relative;
+    width: 100%;
+    background-color: var(--theme);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: default;
+    transition: background 0.5s ease-in;
+    overflow: hidden;
+    padding-left: 5px;
+    color: #fff;
+}
+/*
+.s3tcloud-prefix .form-title:hover {
+    color: #fff;
+}*/
+
+.s3tcloud-prefix .form-title .button-group {
+    position: relative;
+    float: right;
+    display:flex;
+}
+
+.s3tcloud-prefix .form-title .button-group .button-favorite.active {
+    color: hotpink !important;
+}
+
+.s3tcloud-prefix .form-toolbar {
+    position: relative;
+    text-align: left;
+    width: 100%;
+    cursor: default;
+    display: flex;
+}
+
+.s3tcloud-prefix .form-toolbar .button-group {
+    position: relative;
+    display: inline-block;
+    float: left;
+}
+
+.s3tcloud-prefix .form-body {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 50px);
+    background-color: #f7f4f4;
+    display: flex;
+    overflow: auto;
+}
+
+.s3tcloud-prefix .form-body.form-editor {
+    height: calc(100% - 64px);
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0px 3px 3px 3px;
+}
+
+.s3tcloud-prefix .form-body.form-editor .form-group {
+    min-height: auto;
+}
+
+.s3tcloud-prefix .form-group {
+    position: static;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 1px;
+    min-height: 33px;
+}
+
+.s3tcloud-prefix .form-group.child {
+    border: 2px solid var(--theme);
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+
+.s3tcloud-prefix .form-group.group-title {
+    background: var(--form-header-footer);
+    border-radius: 10px 10px 0px 0px;
+    margin-top: 0px !important;
+    color: var(--theme);
+}
+
+.s3tcloud-prefix .form-group:last-child {
+    margin-bottom: 1px;
+}
+
+.s3tcloud-prefix .form-group-container {
+    justify-content: space-between;
+    flex-direction: column;
+    display: flex;
+}
+
+.s3tcloud-prefix .form-footer, .s3tcloud-prefix.form-footer {
+    position: absolute;
+    width: 100%;
+    background-color: var(--form-header-footer);
+    bottom: 0px;
+    display: flex;
+    align-items: center;
+}
+
+.s3tcloud-prefix .form-footer .button-group {
+    position: relative;
+    display: flex;
+}
+
+.s3tcloud-prefix .form-footer .invoice-note {
+    padding-left: 10px;
+    position: relative;
+    display: flex;
+    height: 32px;
+    flex: 1;
+    align-items: center;
+    color: var(--theme);
+}
+
+.s3tcloud-prefix .form-footer i {
+    padding-top: 1px;
+}
+
+    .s3tcloud-prefix .form-footer .invoice-note .invoice-note-detail {
+        padding-top: 1px;
+        padding-left: 5px;
+    }
+
+.s3tcloud-prefix .form-footer p {
+    width: 100%;
+    text-align: center;
+}
+
+.s3tcloud-prefix .toolbar-button {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2px 2px 2px 2px;
+    transition: background 0.3s ease-in;
+    border-radius: 3px;
+    cursor: default;
+    position: relative;
+}
+
+.s3tcloud-prefix .toolbar-button:hover {
+    background-color: var(--tool-bar);
+    color: #FFFFFF;
+}
+
+.s3tcloud-prefix .toolbar-button:not(.active):hover i {   
+    color: white;
+}
+
+.s3tcloud-prefix .toolbar-button-disabled {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2px 2px 2px 2px;
+    transition: background 0.3s ease-in;
+    border-radius: 3px;
+    cursor: default;
+    background-color: grey;
+    color: #fff !important;
+}
+
+.s3tcloud-prefix .toolbar-button-disabled:hover {
+    background-color: grey !important;
+    color: #fff;
+}
+
+.s3tcloud-prefix .button-quick-search {
+    padding: 0px 5px;
+    display: flex;
+    align-items: center;
+}
+
+.s3tcloud-prefix .footer-button {
+    width: 140px;
+    height: 28px;
+    border: 2px solid var(--theme);
+    color: var(--theme);
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2px;
+    transition: background 0.3s ease-in;
+    cursor: default;
+}
+
+.s3tcloud-prefix .footer-button-danger {
+    width: 140px;
+    height: 28px;
+    border: 1px solid grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #dc3545;
+    margin: 2px;
+    border-radius: 3px;
+    transition: background 0.3s ease-in;
+    cursor: default;
+}
+
+.s3tcloud-prefix .footer-button-danger:hover {
+    background-color: #622569;
+    color: #fff;
+}
+
+.s3tcloud-prefix .footer-button:hover {
+    background-color: var(--theme);
+    color: #fff;
+}
+
+.blink-text {
+    color: #000;
+    /*    font-weight: bold;
+    font-size: 2rem;*/
+    animation: blinkingText 2s infinite;
+}
+
+@keyframes blinkingText {
+    0% {
+        color: #10c018;
+    }
+
+    25% {
+        color: #1056c0;
+    }
+
+    50% {
+        color: #ef0a1a;
+    }
+
+    75% {
+        color: #254878;
+    }
+
+    100% {
+        color: #04a1d5;
+    }
+}
+
+.blink-background:before,
+.blink-background:after {
+    content: "";
+    position: absolute;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    transform: translate(-50%, -50%);
+    border: #ef0a1a 2px solid;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    -moz-animation: water-drop 2s infinite;
+    -webkit-animation: water-drop 2s infinite;
+    animation: water-drop 2s infinite;
+}
+
+.blink-background:before {
+    -moz-animation-delay: 0.5s;
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+}
+
+    .blink-background:before:hover,
+    .blink-background:after:hover {
+        -moz-animation: none;
+        -moz-animation: none;
+        animation: none;
+    }
+
+
+@keyframes water-drop {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        width: 36px;
+        height: 36px;
+        border-width: 1px;
+    }
+}
+
+.blink-background i {
+    animation: blinkingBackground 2s infinite;
+}
+
+    .blink-background i:hover {
+        animation: none;
+    }
+
+@keyframes blinkingBackground {
+    0% {
+        color: #10c018;
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+
+    15% {
+        color: #1056c0;
+        -webkit-transform: scale3d(1.25, 0.75, 1);
+        transform: scale3d(1.25, 0.75, 1);
+    }
+
+    20% {
+        color: #ef0a1a;
+        -webkit-transform: scale3d(0.75, 1.25, 1);
+        transform: scale3d(0.75, 1.25, 1);
+    }
+
+    25% {
+        color: #254878;
+        -webkit-transform: scale3d(1.15, 0.85, 1);
+        transform: scale3d(1.15, 0.85, 1);
+    }
+
+    32.5% {
+        color: #04a1d5;
+        -webkit-transform: scale3d(0.95, 1.05, 1);
+        transform: scale3d(0.95, 1.05, 1);
+    }
+
+    37.5% {
+        color: #04a1d5;
+        -webkit-transform: scale3d(1.05, 0.95, 1);
+        transform: scale3d(1.05, 0.95, 1);
+    }
+
+    50% {
+        color: #000000;
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+div.active i.fa.fa-heart,
+.check-tax-code img,
+img.check-tax-code {
+    -moz-animation: .8s heart-beat infinite;
+    -webkit-animation: .8s heart-beat infinite;
+    animation: .8s heart-beat infinite;
+}
+
+@keyframes heart-beat {
+    0% {
+        transform: scale(1);
+    }
+
+    75% {
+        transform: scale(1.075);
+    }
+
+    100% {
+        transform: scale(1.15);
+    }
+}

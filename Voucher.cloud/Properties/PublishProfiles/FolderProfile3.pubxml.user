@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\Project\3TSmartkey\3TVoucher\Voucher.cloud\bin\Release\netcoreapp3.1\publish\</_PublishTargetUrl>
+    <History>True|2025-08-23T04:36:48.7996801Z;True|2025-08-22T17:16:41.6171910+07:00;True|2025-08-22T16:23:23.8553372+07:00;True|2025-08-22T14:04:18.6699208+07:00;</History>
+  </PropertyGroup>
+</Project>

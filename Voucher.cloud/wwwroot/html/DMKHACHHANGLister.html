@@ -1,0 +1,272 @@
+﻿<style>
+    #desk______controlid_____ .popup-modal-form {
+        height: 210px;
+        width: 460px;
+    }
+
+    #desk______controlid_____ .modal-label {
+        flex: 0 0 120px !important;
+    }
+    #desk______controlid_____ .pagination-container {
+        margin: 0px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--breaker-bay);
+        height: 40px;
+        padding: 10px;
+    }
+    #desk______controlid_____ .link {
+        cursor:pointer;
+    }
+
+    #desk______controlid_____ .pagination {
+        display: flex;
+        list-style: none;
+        padding: 0;
+    }
+
+        #desk______controlid_____ .pagination li {
+            margin: 0 1px;
+        }
+
+        #desk______controlid_____ .pagination button {
+            border: 1px solid #ddd;
+            padding: 5px 10px;
+            background: #fff;
+            background: #fff;
+            cursor: pointer;
+            border-radius: 2px;
+        }
+
+            #desk______controlid_____ .pagination button.active {
+                background: var(--breaker-bay);
+                color: #fff;
+            }
+
+            #desk______controlid_____ .pagination button:disabled {
+                opacity: 0.8;
+                cursor: not-allowed;
+            }
+</style>
+<div id='_____controlid______ScrollArea' class='clusterize-scroll' tabindex='0'>
+    <table controlid='_____controlid_____' htmlid='_____htmlid_____' multi-select='true'>
+        <colgroup>
+            <col width='40' noresizeable />
+            <col width='80' />
+            <col width='120' />
+            <col width='120' />
+            <col width='80' />
+            <col width='80' />
+            <col width='80' />
+            <col width='80' />
+            <col width='80' />
+            <col width='80' />
+            <col width='80' />
+            <col width='80' />
+        </colgroup>
+        <thead>
+            <tr>
+                <td></td>
+                <th colname='Code' data-i18n-layout='layout3' data-i18n-key='Common_Var_Code'></th>
+                <th colname='Name' data-i18n-layout='layout3' data-i18n-key='Common_Var_Name'></th>
+                <th colname='DiaChi' data-i18n-layout='layout3' data-i18n-key='Common_Var_Address'></th>
+                <th colname='NgaySinh' data-i18n-layout='layout3' data-i18n-key='UserProfile_Var_NgaySinh'></th>
+                <th colname='GioiTinh' data-i18n-layout='layout3' data-i18n-key='CCCD/CMND'></th>
+                <th colname='GioiTinh' data-i18n-layout='layout3' data-i18n-key='UserProfile_Var_GioiTinh'></th>
+                <th colname='DienThoai' data-i18n-layout='layout3' data-i18n-key='Common_Var_Phone'></th>
+                <th colname='Email' data-i18n-layout='layout3' data-i18n-key='Common_Var_Email'></th>
+                <th colname='Other' data-i18n-layout='layout3' data-i18n-key='Serial'></th>
+                <th colname='NumberOfUse' data-i18n-layout='layout3' data-i18n-key='Number_of_uses_remaining'></th>
+                <th colname='NumberOfFree' data-i18n-layout='layout3' data-i18n-key='Number_of_free_remaining'></th>
+            </tr>
+        </thead>
+        <tbody id='_____controlid______ContentArea' class='clusterize-content'>
+        </tbody>
+    </table>
+    <!--<div class="pagination-container">
+        <ul class="pagination" id="_____controlid______pagination"></ul>
+        <div>
+            <span data-i18n-layout='layout3' data-i18n-key='Common_Var_Display'></span>
+            <select id="_____controlid______pageSizeSelect">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+            <span data-i18n-layout='layout3' data-i18n-key='Common_Var_Display_Panigation'></span>
+        </div>
+    </div>-->
+</div>
+<div class="popup-modal-background" tabindex="0">
+    <div child-form="search">
+        <div class="popup-modal-form">
+            <div class="form-title">
+                <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="Common_Filter_Title">
+                </div>
+                <div class="button-group">
+                    <div class="s3t-tooltip toolbar-button button-close" placement='sw' data-tooltip-key='Common_Button_Close'><i class="fa fa-remove"></i></div>
+                </div>
+            </div>
+            <div class="popup-modal-body">
+                <div class='form-group'>
+                    <div class='modal-label billingual-wrapper' data-i18n-layout='layout1' data-i18n-key='Common_Var_Code'></div>
+                    <input type='text' class='form-control modal-textbox Code' />
+                </div>
+                <div class='form-group'>
+                    <div class='modal-label billingual-wrapper' data-i18n-layout='layout1' data-i18n-key='Common_Var_Name'></div>
+                    <input type='text' class='form-control modal-textbox Name' />
+                </div>
+                <div class='form-group'>
+                    <div class='modal-label billingual-wrapper' data-i18n-layout='layout1' data-i18n-key='Common_Var_Address'></div>
+                    <input type='text' class='form-control modal-textbox DiaChi' />
+                </div>
+                <div class='form-group'>
+                    <div class='modal-label billingual-wrapper' data-i18n-layout='layout1' data-i18n-key='Common_Var_Phone'></div>
+                    <input type='text' class='form-control modal-textbox DienThoai' />
+                </div>
+                <!--<div class='form-group'>
+        <div class='modal-label billingual-wrapper' data-i18n-layout='layout1' data-i18n-key='DMKHACHHANG_Var_DKKD'></div>
+        <input type='text' class='form-control modal-textbox DKKD' />
+    </div>-->
+            </div>
+            <div class="form-footer">
+                <div class="footer-button button-save">
+                    <div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Button_Agree"></div>
+                </div>
+                <div class="footer-button button-cancel">
+                    <div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Button_Cancel"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    let _____controlid______currentPage = 1;
+    let _____controlid______pageSize = 10;
+    let _____controlid______totalPage = 1;
+    $(function () {
+        $('#desk______controlid_____ .button-export-excel').hide();
+        $('#desk______controlid_____ .popup-modal-background>div[child-form="search"] .button-save').on('click', function () {
+            $('#desk______controlid_____ .form-container:first').focus();
+            $('#desk______controlid_____ .popup-modal-background').hide();
+            _____controlid______Code = $('#desk______controlid_____ .popup-modal-background .Code').value();
+            _____controlid______OnLoad();
+        })
+
+        $('#desk______controlid_____ .popup-modal-background').on('keydown', function (e) {
+            if (e.ctrlKey && e.keyCode == 13 && _____controlid______Modal == 'search') {
+                e.preventDefault();
+                $('#desk______controlid_____ .form-container:first').focus();
+                $('#desk______controlid_____ .popup-modal-background').hide();
+                _____controlid______Code = $('#desk______controlid_____ .popup-modal-background .Code').value();
+                _____controlid______OnLoad();
+            }
+        })
+        $('#_____controlid______pageSizeSelect').on('change', function () {
+            _____controlid______pageSize = parseInt($(this).val());
+            _____controlid______currentPage = 1;
+            _____controlid______OnLoad();
+        });
+        _____controlid______renderPagination();
+    })
+    var _____controlid______Table = 'DMKHACHHANG';
+    var _____controlid______TableColumnCode = 'Name';
+    var _____controlid______api = '/GetPagination';
+
+    function _____controlid______renderPagination() {
+        const pagination = document.getElementById("_____controlid______pagination");
+        pagination.innerHTML = "";
+        pagination.innerHTML += `<li><button onclick="_____controlid______goToPage(1)" ${_____controlid______currentPage === 1 ? "disabled" : ""}>«</button></li>`;
+        pagination.innerHTML += `<li><button onclick="_____controlid______goToPage(${_____controlid______currentPage - 1})" ${_____controlid______currentPage === 1 ? "disabled" : ""}>‹</button></li>`;
+        let start = Math.max(1, _____controlid______currentPage - 2);
+        let end = Math.min(_____controlid______totalPage, _____controlid______currentPage + 2);
+        for (let i = start; i <= end; i++) {
+            pagination.innerHTML += `<li><button onclick="_____controlid______goToPage(${i})" class="${i === _____controlid______currentPage ? "active" : ""}">${i}</button></li>`;
+        }
+        pagination.innerHTML += `<li><button onclick="_____controlid______goToPage(${_____controlid______currentPage + 1})" ${_____controlid______currentPage === _____controlid______totalPage ? "disabled" : ""}>›</button></li>`;
+        pagination.innerHTML += `<li><button onclick="_____controlid______goToPage(${_____controlid______totalPage})" ${_____controlid______currentPage === _____controlid______totalPage ? "disabled" : ""}>»</button></li>`;
+    }
+    function _____controlid______goToPage(page) {
+        if (page < 1 || page > _____controlid______totalPage) return;
+        _____controlid______currentPage = page;
+        _____controlid______renderPagination();
+        _____controlid______OnLoad();
+    }
+    function _____controlid______KhoiTaoPopupTimKiem() {
+
+        if ($('#desk______controlid_____ .popup-modal-background .TuNgay').value() == null) {
+            $('#desk______controlid_____ .popup-modal-background .TuNgay').value(new Date((new Date()).getFullYear(), (new Date()).getMonth(), 1));
+        }
+
+        if ($('#desk______controlid_____ .popup-modal-background .DenNgay').value() == null) {
+            $('#desk______controlid_____ .popup-modal-background .DenNgay').value(new Date());
+        }
+
+    }
+
+    async function _____controlid______OnLoad() {
+        let toolbar = new Object();
+        toolbar.Import = true;
+        _____controlid______DisableToolBar(toolbar);
+
+        let extra = new Object();
+        extra.Code = $('#desk______controlid_____ .popup-modal-background .Code').value();
+        extra.Name = $('#desk______controlid_____ .popup-modal-background .Name').value();
+        extra.DiaChi = $('#desk______controlid_____ .popup-modal-background .DiaChi').value();
+        extra.DienThoai = $('#desk______controlid_____ .popup-modal-background .DienThoai').value();
+        extra.DKKD = $('#desk______controlid_____ .popup-modal-background .DKKD').value();
+        extra.PageNumber = _____controlid______currentPage;
+        extra.PageSize = _____controlid______pageSize;
+        let model = new Object();
+        model.ExtraVar = extra;
+        model.Code = _____controlid______Code;        
+        model.SortCondition = sort_by({ name: _____controlid______TableColumnCode, reverse: false });
+        var data = await _____controlid______Loaded_Pagination(model);
+        _____controlid______totalPage = Math.ceil(data.TotalCount / _____controlid______pageSize);
+        _____controlid______renderPagination();
+    }
+
+    function _____controlid______ParseExcelData(data) {
+        //Delete header
+        data.shift();
+
+        let rows = [];
+        data.filter(arow => arow["A"]).forEach(function (arow) {
+            let row = new Object();
+
+            row.Name = arow["A"] ? arow["A"].toUpperCase() : "";
+            row.DiaChi = arow["B"] ? arow["B"] : "";
+            row.DienThoai = arow["C"] ? arow["C"] : "";
+            row.DKKD = arow["D"] ? arow["D"] : "";
+            row.Other = arow["E"] ? arow["E"] : "";
+
+            rows.push(row);
+        });
+
+        return rows;
+    }
+
+    function ShowVoucherEditor(voucher, khachhang) {
+        var data = $('#desk______controlid_____').data('screen-info');
+        var screenInfo = new Object();
+        screenInfo.Id = "ManagerVoucherEditor";
+        screenInfo.Type = "listeditor";
+        screenInfo.Dock = "none";
+        screenInfo.ParentId = '_____controlid_____';
+        screenInfo.NewChecked = false;
+
+        if (data) {
+            data = JSON.parse(data);
+            screenInfo.Title = "Quản lý voucher2";
+            screenInfo.Title_E = null;
+            screenInfo.DataSource = voucher;
+            screenInfo.DataSourceOther = khachhang;
+            screenInfo.TabId = data.TabId + '1_Editor';
+            screenInfo.Callback = screenInfo.TabId + "_OnShow";
+        }
+
+        AddTab(screenInfo);
+    }
+
+</script>

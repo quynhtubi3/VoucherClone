@@ -1,0 +1,243 @@
+﻿<style>
+
+    #desk______controlid_____ .form-container {
+        width: 630px;
+        height: 333px;
+        margin: auto;
+    }
+
+    #desk______controlid_____ .form-body {
+        height: calc(100% - 64px);
+        flex-direction: column;
+        justify-content: start;
+        padding: 5px;
+    }
+
+    #desk______controlid_____ .form-group.group-title {
+        height: 42px;
+    }
+
+    #desk______controlid_____ .form-group.niece {
+        height: 30px;
+    }
+
+    #desk______controlid_____ div.family {
+        display: flex;
+        margin: 5px 0px;
+    }
+
+    #desk______controlid_____ div.child {
+        display: block;
+        margin: 0px 3px;
+    }
+
+    #desk______controlid_____ .form-group.child .group-title {
+        padding: 6px;        
+    }
+
+    #desk______controlid_____ div.child > .form-group {
+        padding: 2px 5px;
+    }
+
+    #desk______controlid_____ div.niece {
+        justify-content: space-between;
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
+    #desk______controlid_____ div.niece input[type="radio"], #desk______controlid_____ div.niece input[type="checkbox"] {
+        margin-right: 12px;
+        height: 16px;
+        width: 16px;
+    }
+
+    #desk______controlid_____ div.child-yes-no {
+        margin: 3px 5px;
+    }
+    
+</style>
+
+<!--Nội dung màn hình thêm/sửa-->
+<div class="s3tcloud-prefix form-container list-editor" id="container______controlid_____" tabindex="0" allow-change="true">
+    <div class="form-title">
+        <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="SystemParameters_Title"></div>
+        <div class="button-group">
+            <div class="s3t-tooltip toolbar-button button-favorite" data-tooltip-key='Menu_Var_Favorite'><i class="fa fa-heart"></i></div>
+            <!--<div class="s3t-tooltip toolbar-button button-help" href="SystemParameters" data-tooltip-key='Menu_Var_Help'><i class="fa fa-question-circle-o"></i></div>-->
+            <div class="s3t-tooltip toolbar-button button-close" placement='sw' data-tooltip-key='Common_Button_Close'><i class="fa fa-remove"></i></div>
+        </div>
+    </div>
+    <div class="form-body">
+
+        <div class="family">
+            <div class="form-group child">
+                <div class="form-group niece">
+                    <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="SystemParameters_Var_KhauTruCaNhan"></div>
+                    <input type="text" class="text-number KhauTruCaNhan" validate="true" allownegative='false' notequalzero='false' hidezero='true' scale='NormQuantity' style="width: 120px;" />
+                </div>
+                <div class="form-group niece">
+                    <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="SystemParameters_Var_KhauTruNguoiPhuThuoc"></div>
+                    <input type="text" class="text-number KhauTruNguoiPhuThuoc" validate="true" allownegative='false' notequalzero='false' hidezero='true' scale='NormQuantity' style="width: 120px;" />
+                </div>
+                <div class="form-group niece">
+                    <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="SystemParameters_Var_MucDongBHXH"></div>
+                    <input type="text" class="text-number MucDongBHXH" validate="true" allownegative='false' notequalzero='false' hidezero='true' scale='NormQuantity' style="width: 120px;" />
+                </div>
+                <div class="form-group niece">
+                    <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="SystemParameters_Var_MucDongBHYT"></div>
+                    <input type="text" class="text-number MucDongBHYT" validate="true" allownegative='false' notequalzero='false' hidezero='true' scale='NormQuantity' style="width: 120px;" />
+                </div>
+                <div class="form-group niece">
+                    <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="SystemParameters_Var_MucDongBHTN"></div>
+                    <input type="text" class="text-number MucDongBHTN" validate="true" allownegative='false' notequalzero='false' hidezero='true' scale='NormQuantity' style="width: 120px;" />
+                </div>
+                <div class="form-group niece">
+                    <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="SystemParameters_Var_MucDongCongDoan"></div>
+                    <input type="text" class="text-number MucDongCongDoan" validate="true" allownegative='false' notequalzero='false' hidezero='true' scale='NormQuantity' style="width: 120px;" />
+                </div>
+                <div class="form-group niece">
+                    <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="SystemParameters_Var_SoNgayKhoa"></div>
+                    <input type="text" class="text-number SoNgayKhoa" validate="true" allownegative='false' notequalzero='false' hidezero='true' scale='NormQuantity' style="width: 120px;" />
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="form-footer">
+        <div class="footer-button button-save">
+            <div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Button_Agree"></div>
+        </div>
+        <div class="footer-button button-cancel">
+            <div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Button_Cancel"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    var _____controlid______Loading = new ItpOverlay("container______controlid_____", "partial-loading");
+    var _____controlid______AlertMessage = new AlertMessage("container______controlid_____");
+
+    $(function () {       
+
+        $('#desk______controlid_____ .form-title .button-favorite').on('click', function (e) {
+            if ($(this).hasClass("active")) {
+                $(this).removeClass("active");
+                RemoveTabFromFavorite('#desk______controlid_____');
+            } else {
+                $(this).addClass("active");
+                AddTabToFavorite('#desk______controlid_____');
+            }
+        });
+
+        if (GetFavorite('#desk______controlid_____') == true) {
+            $('#desk______controlid_____ .form-title .button-favorite').addClass("active");
+        }
+
+        $('#desk______controlid_____ .form-title .button-close, #desk______controlid_____ .form-container .form-footer .button-cancel').on('click', function (e) {
+            RemoveTab('_____controlid_____');
+        });
+
+        $('#desk______controlid_____ .form-container .form-footer .button-save').on('click', function (e) {
+            _____controlid______OnSave();
+        });
+
+        _____controlid______OnLoad();
+
+    })
+
+    function _____controlid______CtrlEnter() {
+        _____controlid______OnSave();
+    }
+
+    function _____controlid______OnShow_Option(className, elementValue) {
+        $('#desk______controlid_____ .' + className).value(elementValue);
+        $('#desk______controlid_____ .' + className).closest('.form-group').find('a').removeClass('active').addClass('notactive');
+        $('#desk______controlid_____ .' + className).closest('.form-group').find('a[data-toggle=' + className + '][data-title=' + elementValue + ']').removeClass('notactive').addClass('active');
+    }
+
+    async function _____controlid______OnLoad() {
+        TranslateMainTitle('_____controlid_____');
+        $("#desk______controlid_____ .KhauTruCaNhan").value(ApplicationInstance.Systemvar.KhauTruCaNhan);
+        $("#desk______controlid_____ .KhauTruNguoiPhuThuoc").value(ApplicationInstance.Systemvar.KhauTruNguoiPhuThuoc);
+        $("#desk______controlid_____ .MucDongBHXH").value(ApplicationInstance.Systemvar.MucDongBHXH);
+        $("#desk______controlid_____ .MucDongBHYT").value(ApplicationInstance.Systemvar.MucDongBHYT);
+        $("#desk______controlid_____ .MucDongBHTN").value(ApplicationInstance.Systemvar.MucDongBHTN);
+        $("#desk______controlid_____ .MucDongCongDoan").value(ApplicationInstance.Systemvar.MucDongCongDoan);
+        $("#desk______controlid_____ .SoNgayKhoa").value(ApplicationInstance.Systemvar.SoNgayKhoa);
+    }
+
+    async function _____controlid______OnSave() {        
+        FormElementValidate($("#desk______controlid_____")).then(function (result) {
+            if (result == true) {
+                _____controlid______Loading.show();
+                window.setTimeout(function () { _____controlid______Save() }, 0);
+            }
+        });   
+    }
+
+    async function _____controlid______Save() {
+        let items = [];
+        let KhauTruCaNhan = new Object();
+        KhauTruCaNhan.Var_Name = "KhauTruCaNhan";
+        KhauTruCaNhan.Var_Value = $("#desk______controlid_____ .KhauTruCaNhan").value();
+        items.push(KhauTruCaNhan);
+
+        let KhauTruNguoiPhuThuoc = new Object();
+        KhauTruNguoiPhuThuoc.Var_Name = "KhauTruNguoiPhuThuoc";
+        KhauTruNguoiPhuThuoc.Var_Value = $("#desk______controlid_____ .KhauTruNguoiPhuThuoc").value();
+        items.push(KhauTruNguoiPhuThuoc);
+
+        let MucDongBHXH = new Object();
+        MucDongBHXH.Var_Name = "MucDongBHXH";
+        MucDongBHXH.Var_Value = $("#desk______controlid_____ .MucDongBHXH").value();
+        items.push(MucDongBHXH);
+
+        let MucDongBHYT = new Object();
+        MucDongBHYT.Var_Name = "MucDongBHYT";
+        MucDongBHYT.Var_Value = $("#desk______controlid_____ .MucDongBHYT").value();
+        items.push(MucDongBHYT);
+
+        let MucDongBHTN = new Object();
+        MucDongBHTN.Var_Name = "MucDongBHTN";
+        MucDongBHTN.Var_Value = $("#desk______controlid_____ .MucDongBHTN").value();
+        items.push(MucDongBHTN);
+
+        let MucDongCongDoan = new Object();
+        MucDongCongDoan.Var_Name = "MucDongCongDoan";
+        MucDongCongDoan.Var_Value = $("#desk______controlid_____ .MucDongCongDoan").value();
+        items.push(MucDongCongDoan);
+
+        let SoNgayKhoa = new Object();
+        SoNgayKhoa.Var_Name = "SoNgayKhoa";
+        SoNgayKhoa.Var_Value = $("#desk______controlid_____ .SoNgayKhoa").value();
+        items.push(SoNgayKhoa);
+        
+        $.ajax
+            ({
+                type: 'POST',
+                url: 'api/Memvar/SetMemvars',
+                async: false,
+                data: JSON.stringify(items),
+                contentType: 'application/json; charset =utf-8',
+                success: function (data) {
+                    ApplicationInstance.Systemvar.KhauTruCaNhan = $("#desk______controlid_____ .KhauTruCaNhan").value();
+                    ApplicationInstance.Systemvar.KhauTruNguoiPhuThuoc = $("#desk______controlid_____ .KhauTruNguoiPhuThuoc").value();
+                    ApplicationInstance.Systemvar.MucDongBHXH = $("#desk______controlid_____ .MucDongBHXH").value();
+                    ApplicationInstance.Systemvar.MucDongBHYT = $("#desk______controlid_____ .MucDongBHYT").value();
+                    ApplicationInstance.Systemvar.MucDongBHTN = $("#desk______controlid_____ .MucDongBHTN").value();
+                    ApplicationInstance.Systemvar.MucDongCongDoan = $("#desk______controlid_____ .MucDongCongDoan").value();
+                    ApplicationInstance.Systemvar.SoNgayKhoa = $("#desk______controlid_____ .SoNgayKhoa").value();
+
+                    _____controlid______Loading.hide();
+                    RemoveTab('_____controlid_____');
+                },
+
+                error: function (result) {
+                    _____controlid______Loading.hide();
+                    handleResponseError(_____controlid______AlertMessage, result);
+                }
+            });        
+    }
+
+</script>

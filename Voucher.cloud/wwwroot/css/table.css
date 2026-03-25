@@ -1,0 +1,343 @@
+﻿/*.s3tcloud-prefix .background-table-header {
+    position: fixed;*/
+    /*background-color: #868585;*/
+/*}*/
+.s3tcloud-prefix table tr.hovered {
+    background-color: #ddd;
+}
+.s3tcloud-prefix .table-header-filter {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: -1px;
+    bottom: 0px;
+    border: 1px solid #868585;
+    cursor: pointer;
+    background: url('../img/filteronheader.png') no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+
+.s3tcloud-prefix .table-header-sort {
+    display: none;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-bottom: 5px solid grey;
+    position: absolute;
+    top: -5px;
+    right: 0px;
+    cursor: pointer;
+}
+
+.s3tcloud-prefix .table-header-sort:after {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 6px;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-top: 5px solid grey;
+}
+
+.s3tcloud-prefix .table-header-sort-asc {
+    border-bottom-color: black;
+}
+
+.s3tcloud-prefix .table-header-sort-desc:after {
+    border-top-color: black;
+}
+
+.s3tcloud-prefix table.no-border{
+    border:none !important;
+}
+
+.s3tcloud-prefix table.no-border td {
+    border:none !important;
+}
+
+.s3tcloud-prefix table tr:hover {
+    /*background-color: transparent !important;*/
+}
+
+.s3tcloud-prefix table, .ui-autocomplete table {
+    width: 100%;
+    table-layout: fixed;
+    /*border: 1px solid #868585;*/
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.s3tcloud-prefix table tbody th:first-child, .s3tcloud-prefix table thead td:first-child {
+    position: -webkit-sticky;
+    position: sticky;
+    left: 0;
+    /*box-shadow: 0px 1px 1px 1px #868585;*/
+    /*border-top: 1px solid #868585;*/
+    /*border-left: 1px solid #868585;*/
+    z-index: 1;
+}
+
+.s3tcloud-prefix table thead td:first-child {        
+    top: 0;        
+    z-index: 11 !important;
+}
+
+.s3tcloud-prefix table th, .s3tcloud-prefix table td {
+    border-bottom: 1px solid #868585;    
+    border-right: 1px solid #868585;    
+    /*border: 1px solid #868585;*/
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.s3tcloud-prefix table thead tr:first-child td, .s3tcloud-prefix table thead tr:first-child th {
+/*    border-top: 1px solid #868585;
+    border-left: 1px solid #868585;*/
+    border-collapse: collapse;
+}
+
+/*.s3tcloud-prefix table thead tr:first-child td {
+    border-left: 1px solid #868585;
+}*/
+
+/*.s3tcloud-prefix table tbody tr th:first-child {
+    border-left: 1px solid #868585;
+}
+*/
+
+.s3tcloud-prefix thead th, .s3tcloud-prefix thead td, .ui-autocomplete thead th, .ui-autocomplete thead td {
+    padding: 0px 0px;
+}
+
+.s3tcloud-prefix tbody th, .s3tcloud-prefix tbody td, .ui-autocomplete tbody th, .ui-autocomplete tbody td {
+    padding: 0px 5px;
+}
+
+.s3tcloud-prefix table td, .ui-autocomplete table td {
+    white-space: nowrap;
+}
+
+.s3tcloud-prefix table thead td, .s3tcloud-prefix table thead th {
+    z-index:10;
+}
+
+.s3tcloud-prefix table thead td, .ui-autocomplete table thead td {
+    background-color: lightgrey;
+    width: 40px;
+}
+
+.s3tcloud-prefix table tbody tr th:hover, .ui-autocomplete table tbody tr th:hover,
+.s3tcloud-prefix table thead td:hover, .ui-autocomplete table thead td:hover {
+    background-color: darkgrey;
+}
+
+.s3tcloud-prefix table tbody tr, .ui-autocomplete table tbody tr {
+    background-color: #fff;
+    width: 20px;
+}
+
+.s3tcloud-prefix table tbody th, .ui-autocomplete table tbody th {
+    font-weight: normal;
+}
+
+.s3tcloud-prefix table thead tr th, .ui-autocomplete table thead tr th {
+    text-align: center;
+    background-color: var(--table-header);
+}
+
+.s3tcloud-prefix table thead tr th:hover, .ui-autocomplete table thead tr th:hover {
+    text-align: center;
+    background-color: skyblue;
+}
+
+.s3tcloud-prefix table tbody tr th, .ui-autocomplete tbody table tr th {
+    text-align: center;
+    background-color: lightgrey;
+}
+
+.s3tcloud-prefix table tr {
+    height: 26px; /*if we change value 26 to other here then MUST need to change in clusterize.js [S3TTableRowHeight] file also */
+}
+
+.s3tcloud-prefix table tr td .input-group-append {
+    float: right;
+}
+
+.s3tcloud-prefix table .header-row-top, .ui-autocomplete table .header-row-top {
+    position: sticky;
+    top: 0px;
+}
+
+.s3tcloud-prefix table .header-row-bottom, .ui-autocomplete table .header-row-bottom {
+    position: sticky;
+    top: 26px;
+}
+
+.s3tcloud-prefix table thead td, .ui-autocomplete table thead td {
+    position: sticky;
+    top: 0px;
+}
+
+.s3tcloud-prefix table thead th, .ui-autocomplete table thead th {
+    top: 0px;
+    position: sticky;
+}
+
+.s3tcloud-prefix table th.invisible-cell, .ui-autocomplete table th.invisible-cell, td.invisible-cell, tr.invisible-cell {
+    display: none;
+}
+
+/*.s3tcloud-prefix table tr.selected, .ui-autocomplete table tr.selected {
+    background-color: var(--table-header);
+}*/
+
+.s3tcloud-prefix .invoice-editor {
+    flex-grow: 1;
+}
+
+.s3tcloud-prefix .invoice-editor table tr.selected {
+    background-color: #fff !important;
+}
+
+.s3tcloud-prefix .invoice-editor table tr td.cell-selected input{
+    color: white;
+}
+
+.s3tcloud-prefix table tr td input, .ui-autocomplete table tr td input {
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    padding: 2px 0px;
+    color: transparent;
+    text-shadow: 0px 0px 0px #000;
+}
+
+.s3tcloud-prefix td.active.active-nobg input {
+    caret-color: black;
+}
+
+.s3tcloud-prefix td.active input {
+    caret-color: var(--theme);
+}
+
+/*
+.s3tcloud-prefix td.active-nobg input {
+    background-color: white !important;
+    color: black !important;
+    text-shadow: none;
+}
+
+.s3tcloud-prefix td.active input {    
+    color: transparent !important;
+    text-shadow: none;
+}*/
+.s3tcloud-prefix td.active.active-nobg input {
+    background-color: white !important;
+    color: black !important;
+    text-shadow: none;
+}
+
+.s3tcloud-prefix table tr td input {
+    position: unset !important;
+}
+
+.s3tcloud-prefix table tr td input.text-search, .ui-autocomplete table tr td input.text-search {
+    float: left;
+}
+
+.s3tcloud-prefix table tr:not(.selected):hover {
+    background-color: #ddd;
+    cursor: default;
+}
+
+.ui-autocomplete table.table-autocomplete {
+    width: auto;
+}
+
+.ui-autocomplete table.table-autocomplete thead tr {
+    border-bottom: solid 1px #B6B6B6;
+}
+
+.ui-autocomplete table.table-autocomplete thead tr th {
+    padding: 5px;
+}
+
+    .ui-autocomplete table.table-autocomplete .ui-menu-item td:not(:first-child) {
+        border-left: solid 1px #868585;
+        padding: 5px;
+        white-space: nowrap;
+    }
+
+.ui-autocomplete table.table-autocomplete .ui-state-focus {
+    color: White;
+    background: var(--theme);
+    outline: none;
+}
+
+.ui-autocomplete {
+    overflow-y: auto;
+    overflow-x: auto;
+    display: inline-block;
+    border: solid 1px #868585;
+    background-color: #FFF;
+}
+
+.s3tcloud-prefix td.cell-selected {
+    background-color: var(--theme);
+    color: white;
+}
+
+.s3tcloud-prefix td.active-nobg {
+    background-color: white !important;
+    color: black !important;
+}
+
+.s3tcloud-prefix .toggle-root .fa{
+    font-size: 10px !important;
+}
+
+.s3tcloud-prefix .toggle-root {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+
+.s3tcloud-prefix .table-search {
+    width: 20%;
+    position: fixed;    
+}
+
+    .s3tcloud-prefix .table-search .search-box {
+        width: 100%;
+        position: relative;
+        display: flex;
+        border: 4px solid hsl(0, 0%, 70%);
+        box-shadow: 0 0 0 2px hsl(0, 0%, 90%), 0 0 0 4px hsl(0, 0%, 80%);
+        -webkit-box-shadow: 0 0 0 2px hsl(0, 0%, 90%), 0 0 0 4px hsl(0, 0%, 80%);
+        cursor: move;
+    }
+
+    .s3tcloud-prefix .table-search .table-search-input {
+        outline: none;
+        border: none;
+        flex-grow: 1;
+        padding: 2px 5px !important;
+    }
+
+        .s3tcloud-prefix .table-search .table-search-input:focus {
+            outline: none;
+        }
+
+    .s3tcloud-prefix .table-search .table-search-button {
+        width: 40px;
+        height: 36px;
+        border: 1px solid #00B4CC;
+        background: #00B4CC;
+        text-align: center;
+        color: #fff;
+        cursor: pointer;
+        font-size: 20px;
+        transform: translate(0%, 0%);
+    }

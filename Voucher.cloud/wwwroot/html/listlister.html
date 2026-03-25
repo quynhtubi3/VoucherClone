@@ -1,0 +1,108 @@
+﻿<style>
+    #container______controlid_____ .form-toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #ccc;
+        border-top: 1px solid #ccc;
+    }
+
+    #container______controlid_____ .list-button {
+        display: flex;
+    }
+
+    #container______controlid_____ .pagination-container {
+        display: flex;
+        align-items: center;
+    }
+    #container______controlid_____ .pagination {
+        padding: 0 10px !important;
+    }
+</style>
+
+
+<!--Giao diện căn bản cho danh sách-->
+<div class="s3tcloud-prefix form-container list-lister" id="container______controlid_____" tabindex="0">
+    <div class="form-title">
+        <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="Common_Title">
+        </div>
+        <div class="button-group">
+            <div class="s3t-tooltip toolbar-button button-favorite" data-tooltip-key='Menu_Var_Favorite'><i class="fa fa-heart"></i></div>
+            <!--<div class="s3t-tooltip toolbar-button button-help" href='_____htmlid_____' code='_____controlid______Loai_Ts' data-tooltip-key='Menu_Var_Help'><i class="fa fa-question-circle-o"></i></div>-->
+            <div class="s3t-tooltip toolbar-button button-close" placement='sw' data-tooltip-key='Common_Button_Close'><i class="fa fa-remove"></i></div>
+        </div>
+    </div>
+    <div class="form-toolbar">
+        <div class="list-button">
+            <div class='s3t-tooltip toolbar-button button-refresh blink-background' data-tooltip-key='Common_Button_Refresh' placement='s' data-hot-key='Ctrl<br>Enter'><i class='fa fa-play'></i></div>
+            <div class="s3t-tooltip toolbar-button button-add" data-tooltip-key='Common_Button_Add' data-hot-key='F2'><i class="fa fa-plus"></i></div>
+            <div class="s3t-tooltip toolbar-button button-edit" data-tooltip-key='Common_Button_Edit' data-hot-key='F3'><i class="fa fa-pencil"></i></div>
+            <div class="s3t-tooltip toolbar-button button-delete" data-tooltip-key='Common_Button_Delete' data-hot-key='F8'><i class="fa fa-trash-o"></i></div>
+            <div class="s3t-tooltip button-quick-search" data-tooltip-value='F4'><input type="text" class="s3table-search" id="_____controlid______TableColumnSearch" placeholder="Tìm nhanh"></div>
+            <div class="s3t-tooltip toolbar-button button-export-excel" data-tooltip-key='Common_Tooltip_Button_Export_Excel' data-hot-key='Ctrl<br>F5'><i class="fa fa-file-excel-o"></i></div>
+            <div class="s3t-tooltip toolbar-button button-import" data-tooltip-key='Common_Import_Title'><i class="fa fa fa-upload"></i></div>
+            <div class="s3t-tooltip toolbar-button button-search" data-tooltip-key='Common_Button_Search'><i class="fa fa-search"></i></div>
+        </div>
+
+        <div class="pagination-container">
+            <ul class="pagination" id="_____controlid______pagination"></ul>
+            <div>
+                <span data-i18n-layout='layout3' data-i18n-key='Common_Var_Display'></span>
+                <select id="_____controlid______pageSizeSelect">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
+                <span data-i18n-layout='layout3' data-i18n-key='Common_Var_Display_Panigation'></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-body" tabindex="1">
+    </div>
+</div>
+<div class="s3tcloud-prefix popup-modal" id="modal______controlid_____" tabindex="0">
+    <div class="popup-modal-background" tabindex="0">
+        <div child-form="importdata" class="importdata">
+            <div class="popup-modal-form" style="height:230px; width:400px;">
+                <div class="form-title">
+                    <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="Common_Import_Title"></div>
+                    <div class="button-group">
+                        <!--<div class='s3t-tooltip toolbar-button button-help' href="ImportExcel" data-tooltip-key='Menu_Var_Help'><i class='fa fa-question-circle-o'></i></div>-->
+                        <div class='s3t-tooltip toolbar-button button-close' placement='sw' data-tooltip-key='Common_Button_Close'><i class='fa fa-remove'></i></div>
+                    </div>
+                </div>
+                <div class="popup-modal-body">
+                    <div class="form-group child-yes-no">
+                        <div class="form-group">
+                            <div class='billingual-wrapper' data-i18n-layout="layout1" data-i18n-key="Common_Var_Formula_Copy"></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="radiobutton button-group">
+                                <a class="button button-primary notactive" data-toggle="MethodImport" data-title="1"><div class='billingual-wrapper' data-i18n-layout="layout7" data-i18n-key="Common_Var_Formula_Copy_All"></div></a>
+                                <a class="button button-primary active" data-toggle="MethodImport" data-title="0"><div class='billingual-wrapper' data-i18n-layout="layout7" data-i18n-key="Common_Var_Formula_Copy_Missing"></div></a>
+                            </div>
+                            <input type="hidden" value="0" class="MethodImport">
+                        </div>
+                    </div>
+                    <div class="form-group importdata">
+                        <div class="form-group">
+                            <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="Common_Import_Sample"></div>
+                            <div class="import-sample-file">Download</div>
+                        </div>
+                        <div class="form-group" style="padding:10px;">
+                            <div class="form-group">
+                                <input type='file' accept=".xlsx,.xls" class='modal-textbox xlsFile' />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-footer">
+                    <div class="footer-button button-save"><div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Button_Import"></div></div>
+                    <div class="footer-button button-cancel"><div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Button_Cancel"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

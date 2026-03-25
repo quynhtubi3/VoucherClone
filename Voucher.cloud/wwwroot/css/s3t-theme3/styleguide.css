@@ -1,0 +1,78 @@
+:root {
+    --tool-bar: #1C3A60;
+    --menu-focus: #DFE9FF;
+    --table-header: #DFE9FF;
+    --form-header-footer: #DFE9FF;
+    --theme: #28558D;
+    --abbey: #4f4f4f;
+    --bon-jour: #e0e0e0;
+    --breaker-bay: #28558D;
+    --charade: #292b33;
+    --manatee: #9196a0;
+    --white: #ffffff;
+    --font-size-l: 16px;
+    --font-size-m: 15px;
+    --font-size-s: 14px;
+    --font-size-xl: 18px;
+    --font-size-xs: 13px;
+    --font-size-xxl: 20px;
+    --font-family-noto_sans: "Noto Sans", Helvetica;
+    --radio-checked: url(/img/s3t-theme3/radio-checked.png);
+    --radio-uncheck: url(/img/s3t-theme3/radio-uncheck.png);
+}
+.notosans-medium-manatee-13px {
+  color: var(--manatee);
+  font-family: var(--font-family-noto_sans);
+  font-size: var(--font-size-xs);
+  font-style: normal;
+  font-weight: 500;
+}
+.notosans-medium-charade-15px {
+  color: var(--charade);
+  font-family: var(--font-family-noto_sans);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 500;
+}
+.notosans-semi-bold-abbey-15px {
+  color: var(--abbey);
+  font-family: var(--font-family-noto_sans);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 600;
+}
+.notosans-medium-abbey-15px {
+  color: var(--abbey);
+  font-family: var(--font-family-noto_sans);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 500;
+}
+.notosans-semi-bold-charade-15px {
+  color: var(--charade);
+  font-family: var(--font-family-noto_sans);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 600;
+}
+.notosans-semi-bold-charade-18px {
+  color: var(--charade);
+  font-family: var(--font-family-noto_sans);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 600;
+}
+.notosans-semi-bold-charade-14px {
+  color: var(--charade);
+  font-family: var(--font-family-noto_sans);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 600;
+}
+.notosans-medium-charade-13px {
+  color: var(--charade);
+  font-family: var(--font-family-noto_sans);
+  font-size: var(--font-size-xs);
+  font-style: normal;
+  font-weight: 500;
+}

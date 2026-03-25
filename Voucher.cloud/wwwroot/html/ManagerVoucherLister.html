@@ -1,0 +1,606 @@
+﻿<style>
+    #desk______controlid_____ .popup-modal-form {
+        height: 330px;
+        width: 460px;
+    }
+    #desk______controlid_____ .popup-modal-form-preview {
+        height: 500px !important;
+        width: 600px !important;
+    }
+
+
+    #desk______controlid_____ .modal-label {
+        flex: 0 0 120px !important;
+    }
+    #desk______controlid_____ .pagination-container {
+        margin: 0px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--breaker-bay);
+        height: 40px;
+        padding: 10px;
+    }
+    #desk______controlid_____ .pagination {
+        display: flex;
+        list-style: none;
+        padding: 0;
+    }
+
+        #desk______controlid_____ .pagination li {
+            margin: 0 1px;
+        }
+
+        #desk______controlid_____ .pagination button {
+            border: 1px solid #ddd;
+            padding: 5px 10px;
+            background: #fff;
+            background: #fff;
+            cursor: pointer;
+            border-radius: 2px;
+        }
+
+            #desk______controlid_____ .pagination button.active {
+                background: var(--breaker-bay);
+                color: #fff;
+            }
+
+            #desk______controlid_____ .pagination button:disabled {
+                opacity: 0.8;
+                cursor: not-allowed;
+            }
+</style>
+
+
+<div id="_____controlid______ScrollArea" class="clusterize-scroll" tabindex="0">
+    <table controlid="_____controlid_____" htmlid='_____htmlid_____'>
+        <colgroup>
+            <col width='40' noresizeable />
+            <col width='100' />
+            <col width='100' />
+            <col width='70' />
+            <col width='70' />
+            <col width='70' />
+            <col width='70' />
+            <col width='100' />
+            <col width='100' />
+            <col width='70' />
+            <col width='70' />
+            <col width='70' />
+            <col width='70' />
+            <col width='70' />
+
+        </colgroup>
+        <thead>
+            <tr>
+                <td></td>
+                <th colname="Serial" data-i18n-layout="layout2" data-i18n-key="Serial"></th>
+                <th colname="Type_Voucher" data-i18n-layout="layout2" data-i18n-key="Type_Voucher"></th>
+                <th colname="SalePrice" data-i18n-layout="layout2" data-i18n-key="Gia_ban"></th>
+                <th colname="DefaultNumberOfUse" data-i18n-layout="layout2" data-i18n-key="Number_of_uses"></th>
+                <th colname="DefaultNumberOfFree" data-i18n-layout="layout2" data-i18n-key="Number_of_free"></th>
+                <th colname="Expire_date" data-i18n-layout="layout2" data-i18n-key="Expire_date"></th>
+                <th colname="BuyerName" data-i18n-layout="layout2" data-i18n-key="Ten_nguoi_mua"></th>
+                <th colname="BuyerPhone" data-i18n-layout="layout2" data-i18n-key="Sdt_nguoi_mua"></th>
+                <th colname="ApplicableLocation" data-i18n-layout="layout2" data-i18n-key="Dia_chi_co_so_ap_dung"></th>
+                <th colname="ActivationDate" data-i18n-layout="layout2" data-i18n-key="Ngay_kich_hoat"></th>
+                <th colname="ExpiryDate" data-i18n-layout="layout2" data-i18n-key="Ngay_het_han"></th>
+                <th colname="DUAN_Var_TheoDoi" data-i18n-layout="layout2" data-i18n-key="DUAN_Var_TheoDoi"></th>
+                <th colname='ThaoTac' data-i18n-layout='layout3' data-i18n-key='QTLUONG_Var_ThaoTac'></th>
+            </tr>
+        </thead>
+        <tbody id="_____controlid______ContentArea" class="clusterize-content">
+        </tbody>
+    </table>
+
+    <!--<div class="pagination-container">
+        <ul class="pagination" id="_____controlid______pagination"></ul>
+        <div>
+            <span data-i18n-layout='layout3' data-i18n-key='Common_Var_Display'></span>
+            <select id="_____controlid______pageSizeSelect">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+            <span data-i18n-layout='layout3' data-i18n-key='Common_Var_Display_Panigation'></span>
+        </div>
+    </div>-->
+</div>
+
+<script>
+
+    var ______controlid_____ListSeller = [];
+    var ______controlid_____VoucherType = [];
+    var _____controlid______Table = 'Voucher';
+
+    let _____controlid______currentPage = 1;
+    let _____controlid______pageSize = 10;
+    let _____controlid______totalPage = 1;
+    $(function () {
+
+        // Hàm hiển thị popup showHistory
+        GetDataSeller();
+        GetDataType_Voucher();
+        $('#desk______controlid_____ .s3tcloud-prefix.form-container:first').on('keyup', function (e) {
+            switch (e.keyCode) {
+                case 33: //PageUp
+                    e.preventDefault();
+                    _____controlid______GetPermision();
+                    break;
+                case 34: //PageDown
+                    e.preventDefault();
+                    _____controlid______GetPermision();
+                    break;
+                case 38: //Up
+                    _____controlid______GetPermision();
+                    break;
+                case 40: //Down
+                    _____controlid______GetPermision();
+                    break;
+            }
+        });
+
+        $('#desk______controlid_____ .s3tcloud-prefix.form-container .form-toolbar .button-export-excel').off('click').on('click', function () {
+            let dt = new Date();
+            let day = dt.getDate();
+            let month = dt.getMonth() + 1;
+            let year = dt.getFullYear();
+            let hour = dt.getHours();
+            let mins = dt.getMinutes();
+            let postfix = day + "." + month + "." + year + "_" + hour + "." + mins;
+            let a = document.createElement('a');
+            a.href = 'api/Admin/Export';
+            a.click();
+            a.remove();
+        })
+
+        $('#desk______controlid_____ .popup-modal-background>div[child-form="search"] .button-save').on('click', function () {
+            $('#desk______controlid_____ .form-container:first').focus();
+            $('#desk______controlid_____ .popup-modal-background').hide();
+            _____controlid______OnLoad();
+        })
+
+        $('#desk______controlid_____ .popup-modal-background').on('keydown', function (e) {
+            if (e.ctrlKey && e.keyCode == 13 && _____controlid______Modal == 'search') {
+                e.preventDefault();
+                $('#desk______controlid_____ .form-container:first').focus();
+                $('#desk______controlid_____ .popup-modal-background').hide();
+                _____controlid______OnLoad();
+            }
+        })
+        $('#_____controlid______pageSizeSelect').on('change', function () {
+            _____controlid______pageSize = parseInt($(this).val());
+            _____controlid______currentPage = 1;
+            _____controlid______OnLoad();
+        });
+        _____controlid______renderPagination();
+    })
+
+    function _____controlid______renderPagination() {
+        const pagination = document.getElementById("_____controlid______pagination");
+        pagination.innerHTML = "";
+        pagination.innerHTML += `<li><button onclick="_____controlid______goToPage(1)" ${_____controlid______currentPage === 1 ? "disabled" : ""}>«</button></li>`;
+        pagination.innerHTML += `<li><button onclick="_____controlid______goToPage(${_____controlid______currentPage - 1})" ${_____controlid______currentPage === 1 ? "disabled" : ""}>‹</button></li>`;
+        let start = Math.max(1, _____controlid______currentPage - 2);
+        let end = Math.min(_____controlid______totalPage, _____controlid______currentPage + 2);
+        for (let i = start; i <= end; i++) {
+            pagination.innerHTML += `<li><button onclick="_____controlid______goToPage(${i})" class="${i === _____controlid______currentPage ? "active" : ""}">${i}</button></li>`;
+        }
+        pagination.innerHTML += `<li><button onclick="_____controlid______goToPage(${_____controlid______currentPage + 1})" ${_____controlid______currentPage === _____controlid______totalPage ? "disabled" : ""}>›</button></li>`;
+        pagination.innerHTML += `<li><button onclick="_____controlid______goToPage(${_____controlid______totalPage})" ${_____controlid______currentPage === _____controlid______totalPage ? "disabled" : ""}>»</button></li>`;
+    }
+    function _____controlid______goToPage(page) {
+        if (page < 1 || page > _____controlid______totalPage) return;
+        _____controlid______currentPage = page;
+        _____controlid______renderPagination();
+        _____controlid______OnLoad();
+    }
+
+    function _____controlid______GetPermision() {
+        if (_____controlid______S3Table.ClusterizeData.CurrentRowData() == null || _____controlid______S3Table.ClusterizeData.CurrentRowData().Id == ApplicationInstance.UserId) {
+            _____controlid______Right1 = true;
+            _____controlid______Right2 = false;
+            _____controlid______Right3 = false;
+            $('#desk______controlid_____ .button-edit').removeClass("toolbar-button").addClass("toolbar-button-disabled");
+            $('#desk______controlid_____ .button-delete').removeClass("toolbar-button").addClass("toolbar-button-disabled");
+        } else {
+            if (_____controlid______S3Table.ClusterizeData.CurrentRowData().LockoutEnd != null) {
+                _____controlid______Right1 = true;
+                _____controlid______Right2 = false;
+                _____controlid______Right3 = false;
+                $('#desk______controlid_____ .button-edit').removeClass("toolbar-button-disabled").addClass("toolbar-button");
+                $('#desk______controlid_____ .button-delete').removeClass("toolbar-button").addClass("toolbar-button-disabled");
+            } else {
+                if (_____controlid______S3Table.ClusterizeData.CurrentRowData().EmailConfirmed == true) {
+                    _____controlid______Right1 = true;
+                    _____controlid______Right2 = false;
+                    _____controlid______Right3 = true;
+                    $('#desk______controlid_____ .button-edit').removeClass("toolbar-button-disabled").addClass("toolbar-button");
+                    $('#desk______controlid_____ .button-delete').removeClass("toolbar-button").addClass("toolbar-button-disabled");
+                } else {
+                    _____controlid______Right1 = true;
+                    _____controlid______Right2 = true;
+                    _____controlid______Right3 = true;
+                    $('#desk______controlid_____ .button-edit').removeClass("toolbar-button-disabled").addClass("toolbar-button");
+                    $('#desk______controlid_____ .button-delete').removeClass("toolbar-button-disabled").addClass("toolbar-button");
+                }
+            }
+        }
+    }
+
+    _____controlid______Type = "USER";
+    async function _____controlid______OnLoad() {
+
+        _____controlid______S3Table.SetOptions({
+            HasImage: true,
+            SortCondition: sort_by({ name: 'Serial', reverse: false }),
+            DetailCallback: _____controlid______GetPermision
+        })
+
+        await translator.translateWithKey($('#tab______controlid_____ .billingual-wrapper')[0], "VoucherList_Var_Title");
+
+        _____controlid______Loading.show();
+
+        window.setTimeout(function () {
+
+            let model = new Object();
+            model.Serial = $('#desk______controlid_____ .popup-modal-background .Serial').value();
+            model.VoucherType = $('#desk______controlid_____ .popup-modal-background .Type').value();
+            model.ValidityPeriod = $('#desk______controlid_____ .popup-modal-background .DefaultValidityPeriod').value();
+            model.fromDate = $('#desk______controlid_____ .popup-modal-background .fromDate').value();
+            model.toDate = $('#desk______controlid_____ .popup-modal-background .toDate').value();
+            model.NumberOfUse = $('#desk______controlid_____ .popup-modal-background .NumberOfUse').value();
+            model.NumberOfFree = $('#desk______controlid_____ .popup-modal-background .NumberOfFree').value();
+            model.PageNumber = _____controlid______currentPage;
+            model.PageSize = _____controlid______pageSize;
+
+            $.ajax({
+                type: 'POST',
+                url: 'api/Voucher/Get',
+                //async: false,
+                data: JSON.stringify(model),
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    _____controlid______S3Table.Load(data.Data);
+                    _____controlid______Loading.hide();
+                    _____controlid______totalPage = Math.ceil(data.TotalCount / _____controlid______pageSize);
+                    _____controlid______renderPagination();
+                },
+
+                error: function (result) {
+                    _____controlid______Loading.hide();
+                    handleResponseError(_____controlid______AlertMessage, result, "_____controlid_____");
+                }
+            });
+
+        }, 0);
+    }
+
+
+    function _____controlid______OnPrepareToDelete(itistree) {
+        let source = function (row, itistree) {
+            let model = new Object();
+            model.Id = row.Id;
+
+            //Trường hợp có thêm điều kiện đặc thù thì sẽ tạo trong html
+            if (typeof _____controlid______PrepareToDelete === 'function') {
+                model.Source = _____controlid______PrepareToDelete(row);
+            }
+
+            if (itistree) {
+                model.ParentId = row.ParentId;
+                model.ParentIsEnd = false;
+                if (row.ParentId != null && row.ParentId == "") {
+                    let tree = TreeTableGetAllChildId(_____controlid______S3Table.ClusterizeData.data, row.ParentId);
+                    tree.shift();
+
+                    if (tree.length == 1 && tree[0] == row.Id) {
+                        model.ParentIsEnd = true;
+                    }
+                }
+            }
+
+            return model;
+        }
+
+        let rows = [];
+        if (_____controlid______S3Table.ClusterizeData.selected_row_ids.length > 0) {
+            _____controlid______S3Table.ClusterizeData.selected_row_ids.forEach((id) => {
+                var index = _____controlid______S3Table.ClusterizeData.data.findIndex(function (o) {
+                    return o.Id === id;
+                });
+                rows.push(source(_____controlid______S3Table.ClusterizeData.data[index], itistree));
+            });
+        } else {
+            rows.push(source(_____controlid______S3Table.ClusterizeData.CurrentRowData(), itistree));
+        }
+
+        return rows;
+    }
+
+
+    function _____controlid______OnDelete() {
+        _____controlid______AlertMessage.showConfirm(_____controlid______Delete);
+    }
+
+    function _____controlid______Delete() {
+        let itistree = $('#desk______controlid_____ table').attr("type") == 'tree';
+        let rows = _____controlid______OnPrepareToDelete(itistree);
+        _____controlid______Loading.show();
+        $.ajax
+            ({
+                type: 'DELETE',
+                url: 'api/Voucher/Delete',
+                async: false,
+                data: JSON.stringify(rows),
+                contentType: 'application/json; charset =utf-8',
+                success: function (data) {
+                    if (data.Data.length > 0) {
+                        ShowNotification('Thành công!', 'success');
+                        _____controlid______S3Table.Delete(data.Data);
+                    }
+                    if (rows.length == 1) {
+                        data.Data.length != rows.length && handleResponseApiCode(_____controlid______AlertMessage, data);
+                    } else {
+                        data.Data.length == rows.length ? _____controlid______AlertMessage.showInfo('Common_Msg_ProcessDone') : _____controlid______AlertMessage.showError('Common_Msg_ProcessNotDone');
+                    }
+
+                    _____controlid______Loading.hide();
+                },
+
+                error: function (result) {
+                    _____controlid______Loading.hide();
+                    window.setTimeout(function () {
+                        window.setTimeout(handleResponseError(_____controlid______AlertMessage, result));
+                    }, 100);
+                }
+            });
+    }
+
+    function showHistory(id) {
+        $("#desk______controlid_____ .popup-modal-background>div[child-form='preview']").show();
+        $("#desk______controlid_____ .popup-modal-background>div[child-form!='preview']").hide();
+
+        ShowModalCenterOfParent("desk______controlid_____", "desk______controlid_____ .s3tcloud-prefix.form-container", "modal______controlid_____ .popup-modal-background>div[child-form='preview'] .popup-modal-form");
+
+        $('#desk______controlid_____ .popup-modal-background').show();
+        $('#desk______controlid_____ .popup-modal-background .popup-modal-body input:visible:first').focus();
+
+
+        const modalSelector = "#modal______controlid_____";
+        const historyContainer = $(`${modalSelector} .popup-modal-body .history-content`);
+        _____controlid______Loading.show();
+        $.ajax({
+            type: 'POST',
+            url: 'api/Voucher/GetVoucherHistory?voucherID=' + id,
+            //async: false,
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                _____controlid______Loading.hide();
+                historyContainer.html(''); // clear cũ
+                if (!data || data.length === 0) {
+                    historyContainer.html("<div style='padding: 10px;text-align: center'>Chưa có lịch sử chỉnh sửa</div>");
+                    return;
+                }
+                data.forEach((entry, index) => {
+
+                    let oldData = safeParse(entry.DataFieldOld);
+                    let newData = safeParse(entry.DataFieldNew);
+
+                    let changes = getDifferences(oldData, newData);
+
+                    let html = `
+                    <div class="history-entry" style="margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 8px;">
+                        <div style="margin-bottom: 8px; font-weight: bold;">Người chỉnh sửa: ${entry.HOVATEN}</div>
+                        <div style="margin-bottom: 8px; color: gray;">Thời gian: ${formatDate(entry.CreatedAt)}</div>
+                        <div>
+                            <table style="width:100%; border-collapse: collapse;">
+                                <thead>
+                                    <tr style="background:#f0f0f0;">
+                                        <th style="border:1px solid #ddd; padding:6px;">Trường</th>
+                                        <th style="border:1px solid #ddd; padding:6px;">Giá trị cũ</th>
+                                        <th style="border:1px solid #ddd; padding:6px;">Giá trị mới</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${changes.map(c => `
+                                        <tr>
+                                            <td style="border:1px solid #ddd; padding:6px;">${c.key}</td>
+                                            <td style="border:1px solid #ddd; padding:6px;" title="${String(c.oldVal ?? 'null')}">${c.oldVal ?? '<i>null</i>'}</td>
+                                            <td style="border:1px solid #ddd; padding:6px;" title="${String(c.newVal ?? 'null')}">${c.newVal ?? '<i>null</i>'}</td>
+                                        </tr>`).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                `;
+
+                    historyContainer.append(html);
+                });
+            },
+
+            error: function (result) {
+                _____controlid______Loading.hide();
+                handleResponseError(_____controlid______AlertMessage, result, "_____controlid_____");
+            }
+        });
+
+
+
+        // Update close button functionality
+        const closeButton = document.querySelector('#desk______controlid_____ .popup-modal-form-preview .button-close');
+        if (closeButton) {
+            closeButton.onclick = () => {
+                $('#desk______controlid_____ .popup-modal-background').hide();
+                historyContainer.innerHTML = ''; // Clear content when closing
+            };
+        }
+
+    }
+
+
+    function GetDataSeller() {
+        $('#desk______controlid_____ .SellerId').empty();
+        let model = new Object();
+        model.ChucVu = '';
+        model.HoVaTen = '';
+        model.MaPhongBan = '';
+        model.TinhTrangCongViec = '';
+        model.UserName = '';
+        $.ajax({
+            type: 'POST',
+            url: '/api/Admin/GetDropdownSeller',
+            async: false,
+            data: JSON.stringify(model),
+            contentType: 'application/json; charset=utf-8',
+            complete: function () {
+
+            },
+            success: function (response) {
+                ______controlid_____ListSeller = response;
+            },
+            error: function (result) {
+
+            }
+        });
+    }
+    function GetDataType_Voucher() {
+        let model = new Object();
+        model.Name = '';
+        model.Code = '';
+        model.Type = 0;
+        model.DefaultValidityPeriod = 0;
+        model.DefaultPrice = 0;
+        model.DefaultRealPrice = 0;
+        model.DefaultNumberOfUse = 0;
+        model.DefaultNumberOfFree = 0;
+        model.PageNumber = 1;
+        model.PageSize = 99999;
+        $.ajax({
+            type: 'POST',
+            url: '/api/VoucherType/Get',
+            async: false,
+            data: JSON.stringify(model),
+            contentType: 'application/json; charset=utf-8',
+            complete: function () {
+
+            },
+            success: function (response) {
+                ______controlid_____VoucherType = response;
+            },
+            error: function (result) {
+
+            }
+        });
+    }
+
+
+    function safeParse(str) {
+        try {
+            return JSON.parse(str);
+        } catch (e) {
+            return {};
+        }
+    }
+
+    function getDifferences(oldObj, newObj) {
+        let diffs = [];
+
+        const validityMap = {
+            1: "3 Tháng",
+            2: "6 Tháng",
+            3: "9 Tháng",
+            4: "12 Tháng"
+        };
+
+        const typeMap = {
+            1: "Voucher miễn phí",
+            2: "Voucher có giá trị"
+        };
+
+        const statusMap = {
+            1: "Chưa bán",
+            2: "Đã bán",
+            3: "Đã kích hoạt"
+        };
+
+        const fieldsMap = {
+            ActivationDate: { label: "Ngày kích hoạt", format: formatDate2 },
+            ApplicableLocation: { label: "Địa chỉ cơ sở áp dụng" },
+            BuyerName: { label: "Người mua" },
+            BuyerPhone: { label: "SĐT người mua" },
+            BuyerAddress: { label: "Địa chỉ người mua" },
+            BuyerEmail: { label: "Email người mua" },
+            ExpiryDate: { label: "Thời gian hết hạn", format: formatDate2 },
+            GroupCommission: { label: "Hoa hồng nhóm" },
+            IndividualCommission: { label: "Hoa hồng cá nhân" },
+            SaleDate: { label: "Ngày bán", format: formatDate2 },
+            SalePrice: { label: "Giá bán" },
+            NumberOfUseRemaining: { label: "Số lần sử dụng còn lại" },
+            NumberOfFreeRemaining: { label: "Số lần miễn phí còn lại" },
+            Status: {
+                label: "Trạng thái",
+                format: (v) => statusMap[v] || v
+            },
+            ValidityPeriod: {
+                label: "Thời hạn sử dụng",
+                format: (v) => validityMap[v] || v
+            },
+            VoucherType: {
+                label: "Loại voucher",
+                format: (v) => typeMap[v] || v
+            },
+            SellerId: {
+                label: "Người bán",
+                format: (v) => {
+                    const seller = ______controlid_____ListSeller.find(x => x.Id === v);
+                    return seller ? `${seller.HoVaTen} -- ${seller.Email}` : '';
+                }
+            },
+            VoucherTypeId: {
+                label: "Khởi tạo Loại voucher",
+                format: (v) => {
+                    const vt = ______controlid_____VoucherType.find(x => x.Id === v);
+                    return vt ? `${vt.Code} -- ${vt.Name}` : '';
+                }
+            }
+        };
+
+        for (let key in newObj) {
+            if (
+                ["Id", "RowState", "CreatedAt", "CreatedBy", "UpdateAt", "Updateby"].includes(key)
+            ) continue;
+
+            if (newObj[key] !== oldObj[key] && fieldsMap[key]) {
+                const config = fieldsMap[key];
+                const label = config.label;
+                const format = config.format;
+
+                const oldVal = format ? format(oldObj[key]) : oldObj[key];
+                const newVal = format ? format(newObj[key]) : newObj[key];
+
+                diffs.push({
+                    key: label,
+                    oldVal: oldVal,
+                    newVal: newVal
+                });
+            }
+        }
+
+        return diffs;
+    }
+
+    function formatDate(input) {
+        const d = new Date(input);
+        return d.toLocaleString('vi-VN');
+    }
+    function formatDate2(input) {
+        const d = new Date(input);
+        const day = String(d.getDate()).padStart(2, '0');
+        const month = String(d.getMonth() + 1).padStart(2, '0'); // tháng bắt đầu từ 0
+        const year = d.getFullYear();
+        return `${day}/${month}/${year}`;
+    }
+</script>
+

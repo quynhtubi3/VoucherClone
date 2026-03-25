@@ -1,0 +1,65 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Voucher";;
+}
+<partial name="_header" />
+<div class="row">
+    <div class="col-md-8" style="background-color:#ffffff; border: 2px solid #ccc;">
+        <section style="padding-left: 100px;padding-right: 100px;padding-top: 20px;">
+            <form id="account" method="post" onsubmit="return submitForm(this)" autocomplete="off" runat="server">
+                <h4 style="text-align:center; color:#000000; padding-bottom:10px;" class="noselect" data-i18n-key="LoginForm_Button_Login"></h4>
+                <input id="DatabaseName" asp-for="Input.Database" type="hidden" />
+                <input id="Input_Password_Hidden" value="@Model.Input.Password" type="hidden" />
+                <div class="form-group form-login-group">
+                    <i class="fa fa-sitemap prefix white-text active"></i>
+                    <input id="CompanyCode" asp-for="Input.TK" class="form-control login-textbox" style="text-transform: uppercase;" placeholder="" placeholder-i18n-key="LoginForm_Var_CompanyCode"/>
+                </div>
+                <div class="form-group form-login-group">
+                    <i class="fa fa-database prefix white-text active"></i>
+                    <select id="Database" class="form-control login-textbox">
+                        <option data-i18n-key="LoginForm_Var_DatabaseName" value=""></option>
+                    </select>
+                </div>
+                <div class="form-group form-login-group">
+                    <i class="fa fa-user prefix white-text active"></i>
+                    <input asp-for="Input.UserName" class="form-control login-textbox" placeholder="" placeholder-i18n-key="LoginForm_Var_Username" autocomplete="off" runat="server"/>
+                </div>
+                <div class="form-group form-login-group">
+                    <i class="fa fa-lock prefix white-text"></i>
+                    <input asp-for="Input.Password" class="form-control login-textbox" placeholder="" placeholder-i18n-key="LoginForm_Var_Password" autocomplete="off" runat="server"/>
+                </div>
+                <div class="form-group" style="display: flex; justify-content: space-between;">
+                    <div class="checkbox noselect">
+                        <div asp-for="Input.RememberMe" style="color: #000000;">
+                            <input asp-for="Input.RememberMe" />
+                            <label asp-for="Input.RememberMe" style="color: #000000;" data-i18n-key="LoginForm_Var_Remember"></label>
+                        </div>
+                    </div>
+                    <div class="noselect" style="display:none;">
+                        <p>
+                            <a id="forgot-password" asp-page="./ForgotPassword" style="color:#0000FF;" data-i18n-key="LoginForm_Var_ForgotPass"></a>
+                        </p>
+                    </div>
+                </div>
+                <div id="validate-session" class="text-danger">
+                    <ul>
+                        @foreach (var error in ViewData.ModelState.Where(s => s.Value.Errors.Count != 0).SelectMany(s => s.Value.Errors))
+                        {
+                            <li data-i18n-key="@error.ErrorMessage"></li>
+                        }
+                    </ul>
+                </div>
+                <div class="form-group" style="display: flex; justify-content: center;">
+                    <button type="submit" class="btn" style="width: 150px; border-radius: 20px; background-color: #1f6485; color: #ffffff;" data-i18n-key="LoginForm_Button_Login"></button>
+                </div>
+                <partial name="_privacy" />
+            </form>
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,49 @@
+﻿/* Những định dạng căn bản */
+
+.s3tcloud-prefix.form-container.list-lister {
+    width: 100%;
+    height: 100%;
+}
+
+.s3tcloud-prefix.form-container.list-lister .clusterize-scroll {
+    margin-top: 5px;
+}
+
+.s3tcloud-prefix.popup-modal div.merge2codes .popup-modal-body > .form-group {
+    flex-direction: column;
+    border: 1px solid #7d8a9c;
+    border-radius: 3px;
+    display: block;
+}
+
+.s3tcloud-prefix.popup-modal div.merge2codes .popup-modal-body > .form-group >.form-group:first-of-type {
+    height: 42px;
+    padding: 6px;
+    border-bottom: 1px solid #7d8a9c;
+    background-color: var(--form-header-footer);
+}
+
+.s3tcloud-prefix.popup-modal div.merge2codes .popup-modal-body > .form-group > .form-group:not(:first-of-type) {
+    padding: 10px;
+}
+
+.s3tcloud-prefix.popup-modal div.importdata .popup-modal-body > .form-group.importdata {
+    flex-direction: column;
+    border: 1px solid #7d8a9c;
+    border-radius: 3px;
+    display: block;
+}
+
+.s3tcloud-prefix.popup-modal div.importdata .popup-modal-body > .form-group.importdata > .form-group:first-of-type {
+    height: 42px;
+    padding: 6px;
+    border-bottom: 1px solid #7d8a9c;
+    background-color: var(--form-header-footer);
+    justify-content: space-between;
+}
+
+.s3tcloud-prefix.popup-modal div.importdata .import-sample-file {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}

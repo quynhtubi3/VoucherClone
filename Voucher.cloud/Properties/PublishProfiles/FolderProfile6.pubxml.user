@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>E:\Project\3TVoucher\Voucher.cloud\bin\Release\netcoreapp3.1\publish\</_PublishTargetUrl>
+    <History>True|2025-08-27T14:28:19.4919937Z||;True|2025-08-27T21:18:18.9096543+07:00||;True|2025-08-27T19:14:37.9148871+07:00||;True|2025-08-27T19:13:45.8776324+07:00||;True|2025-08-27T17:54:56.1032739+07:00||;True|2025-08-26T22:13:46.5301405+07:00||;True|2025-08-26T16:44:54.2768195+07:00||;True|2025-08-26T14:02:51.7200110+07:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

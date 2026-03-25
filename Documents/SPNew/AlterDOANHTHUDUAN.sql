@@ -1,0 +1,8 @@
+alter table DOANHTHUDUAN
+add THUE T_TIEN null
+
+alter table DOANHTHUDUAN
+add SOTIENNET T_TIEN null
+
+update DOANHTHUDUAN
+set THUE = 0, SOTIENNET = SOTIEN

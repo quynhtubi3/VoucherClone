@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhắc nhở Voucher sắp hết hạn</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+
+        h2 {
+            color: #0073e6;
+        }
+
+        .info {
+            margin: 15px 0;
+        }
+
+            .info strong {
+                display: inline-block;
+                width: 150px;
+            }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .highlight {
+            color: #d9534f;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Thân gửi {ClientName},</h2>
+
+        <p>Chúng tôi xin trân trọng thông báo rằng bạn đang sở hữu một <strong>voucher</strong> sắp hết hạn.</p>
+
+        <div class="info">
+            <p><strong>Tên khách hàng:</strong> {ClientName}</p>
+            <p><strong>Email:</strong> {Email}</p>
+            <p><strong>Số điện thoại:</strong> {Phone}</p>
+            <p><strong>Địa chỉ:</strong> {Address}</p>
+            <p><strong>Serial:</strong> {Serial}</p>
+            <p><strong>Giá tiền:</strong> {Price}</p>
+            <p><strong>Ngày hết hạn:</strong> <span class="highlight">{ExpiryDate}</span></p>
+        </div>
+
+        <p>Vui lòng sử dụng voucher trước ngày hết hạn để đảm bảo quyền lợi của bạn.</p>
+
+        <p>Nếu bạn cần thêm hỗ trợ, đừng ngần ngại liên hệ với chúng tôi.</p>
+
+        <div class="footer">
+            Trân trọng,<br />
+            <strong>Đội ngũ chăm sóc khách hàng</strong><br />
+        </div>
+    </div>
+</body>
+</html>

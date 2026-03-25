@@ -1,0 +1,458 @@
+﻿<style>
+
+    #desk______controlid_____ .form-container {
+        width: 100%;
+        height: calc(100% - 64px);
+        top: 0px !important;
+    }
+
+    #desk______controlid_____ .s3tcloud-prefix .form-body.form-editor {
+        flex-direction: column;
+        justify-content: inherit;
+    }
+
+    #desk______controlid_____ .s3tcloud-prefix .form-footer, .s3tcloud-prefix.form-footer {
+        position: absolute;
+        width: 100%;
+        background-color: var(--form-header-footer);
+        bottom: 4px;
+        display: flex;
+        align-items: center;
+    }
+
+    #desk______controlid_____ .modal-label {
+        flex: 0 0 150px;
+    }
+
+    #desk______controlid_____ div.family {
+        display: flex;
+        margin: 5px 0px;
+    }
+
+    #desk______controlid_____ div.child {
+        display: block;
+        margin: 0px 3px;
+    }
+
+    #desk______controlid_____ .form-group.group-title {
+        height: 42px;
+    }
+
+    #desk______controlid_____ .form-group.niece {
+        height: 30px;
+    }
+
+    #desk______controlid_____ .form-group > .form-group {
+        padding: 0px 5px 0px 5px;
+    }
+
+    #desk______controlid_____ .state {
+        /*color: white;*/
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #desk______controlid_____ .form-group.child .group-title {
+        padding: 6px;
+    }
+
+    #desk______controlid_____ div.child > .form-group {
+        padding: 2px 5px;
+    }
+
+    #desk______controlid_____ div.niece {
+        justify-content: space-between;
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+</style>
+
+<!--Nội dung màn hình thêm/sửa-->
+
+<div class="family">
+    <div class="form-group child" id="_____controlid_____-2fa">
+        <div class='form-group'>
+            <div class="form-group">
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='UserProfile_Var_Avatar'></div>
+                <input id='_____controlid______AvatarPicker' type='file' accept='image/*' validate="false" no-required="true" />
+            </div>
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='UserProfile_Var_NhomQuyen'></div>
+                <input type='text' class='modal-textbox text-search user-role' validate='true' no-required="false" add-function='TextSearchCallback_Role("_____controlid_____", $("#desk______controlid_____ .user-role"))' data-first-filter='' data-table='GrpList' data-field-name='Role' />
+            </div>
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='UserProfile_Var_ChucVu'></div>
+                <select class="ChucVu ChucVu_Id" style="width:100%" no-required="false">
+                </select>
+                <!--<input type='text' class='modal-textbox ChucVu' />-->
+            </div>
+        </div>
+        <!--<div class='form-group'>
+   
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='UserProfile_Var_BoPhan'></div>
+                <input type='text' class='modal-textbox text-search PName' validate='true' no-required="true" add-function='TextSearchCallback_DMPHONGBAN("_____controlid_____", $("#desk______controlid_____ .PName"))' data-first-filter='' data-table='DMPHONGBAN' data-field-name='Name' />
+            </div>
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='UserProfile_Var_VanPhong'></div>
+                <input type='text' class='modal-textbox text-search CTYName' validate='true' no-required="true" add-function='TextSearchCallback_DMCOQUANBO("_____controlid_____", $("#desk______controlid_____ .CTYName"))' data-first-filter='' data-table='DMCOQUANBO' data-field-name='Name' />
+            </div>
+        </div>-->
+    </div>
+</div>
+
+<div class="family">
+    <div class="form-group child">
+        <div class='form-group'>
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='UserProfile_Var_HoVaTen'></div>
+                <input type="text" class="modal-textbox HoVaTen" validate="true" no-required="false" />
+            </div>
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='UserProfile_Var_NgaySinh'></div>
+                <input type="text" class="modal-textbox text-date NgaySinh" no-required="true" validate="true" style="width:120px;" maxlength="10" value="__/__/____" />
+            </div>
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='UserProfile_Var_GioiTinh'></div>
+                <div class='modal-textbox text-select GioiTinh' data-toggle='[{"id":"1", "name":"UserProfile_Var_GT_NAM"},{"id":"0","name":"UserProfile_Var_GT_NU"}]' data-title='1'>Nam</div>
+            </div>
+        </div>
+        <div class='form-group'>
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='UserProfile_Var_MANHANVIEN'></div>
+                <input type="text" class="modal-textbox MANHANVIEN" validate="false" no-required="true" value="" />
+            </div>
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='UserProfile_Var_DienThoai'></div>
+                <input type="text" class="modal-textbox text-phone DienThoai" validate="true" no-required="true" />
+            </div>
+            <div class="form-group">
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='UserProfile_Var_Email'></div>
+                <input type="text" class="modal-textbox text-email user-email" validate="true" no-required="true" />
+            </div>
+
+        </div>
+        <div class='form-group'>
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='UserProfile_Var_CMND'></div>
+                <input type="text" class="modal-textbox text-citizenid SoCCCD" validate="true" no-required="true" />
+            </div>
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='UserProfile_Var_NgayCap'></div>
+                <input type="text" class="modal-textbox text-date  NgayCap" validate="true" no-required="true" style="width:120px;" maxlength="10" value="__/__/____" />
+            </div>
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='UserProfile_Var_NoiCap'></div>
+                <input type="text" class="modal-textbox NoiCap" validate="false" no-required="true" value="Cục cảnh sát QLHC về TTXH" />
+            </div>
+        </div>
+        <div class='form-group'>
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='UserProfile_Var_QueQuan'></div>
+                <input type="text" class="modal-textbox QueQuan" validate="false" no-required="true" value="" />
+            </div>
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='UserProfile_Var_DiaChiHienTai'></div>
+                <input type="text" class="modal-textbox DiaChiHienTai" validate="false" no-required="true" value="" />
+            </div>
+            <div class='form-group'>
+               
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var _____controlid______ChucVuName = '';
+    var _____controlid______NewChecked = false;
+    var _____controlid______current_row_index = -1;
+    var _____controlid______UserDetail;
+    var _____controlid______FromOther = false;
+
+    var _____controlid______Table = 'UserProfile';
+    var _____controlid______TableColumnCode = 'MANHANVIEN';
+
+
+    $(function () {
+        $('#desk______controlid_____ .s3tcloud-prefix.form-container > .form-footer .button-add').remove();
+        $('#_____controlid______AvatarPicker').off('change').on('change', function(event) {
+            _____controlid______ReadURL(this);          
+        });
+        BindDataChucvu();
+        $('#desk______controlid_____ .ChucVu').off('change').on('change', function () {
+            let selected = $(this).find('option:selected');
+            _____controlid______ChucVuName = selected.data('name');
+
+        });
+    });
+
+
+    function BindDataChucvu() {
+        $('#desk______controlid_____ .ChucVu').empty();
+        let model = new Object();
+        model.Name = '';
+        model.Code = '';
+        model.Type = 0;
+        model.DefaultValidityPeriod = 0;
+        $.ajax({
+            type: 'POST',
+            url: '/api/ChucVu/Get',
+            async: false,
+            data: JSON.stringify(model),
+            contentType: 'application/json; charset=utf-8',
+            complete: function () {
+
+            },
+            success: function (response) {
+                $('#desk______controlid_____ .ChucVu').empty();
+                for (var j = 0; j < response.length; j++) {
+                    row = '<option value="' + response[j].Id + '"'
+                        + ' data-HHCaNhan="' + response[j].HHCaNhan + '"'
+                        + ' data-name="' + response[j].Name + '"'
+                        + ' data-HHTruongCuaHang="' + response[j].HHTruongCuaHang + '"'
+                        + ' data-HHPhoCuaHang="' + response[j].HHPhoCuaHang + '"'
+                        + ' data-QuyDoiPhaChe="' + response[j].QuyDoiPhaChe + '"'
+                        + ' data-QuyChung="' + response[j].QuyChung + '">'
+                        + response[j].Name
+                        + '</option>';
+
+                    $('#desk______controlid_____ .ChucVu').append(row);
+                }
+                $('#desk______controlid_____ .ChucVu')[0].selectedIndex = 0;
+
+            },
+            error: function (result) {
+
+            }
+        });
+    }
+
+
+    async function _____controlid______GetUserDetail(row) {
+        $.ajax({
+            type: 'POST',
+            url: 'api/UserProfile/Get_Detail',
+            async: false,
+            data: JSON.stringify(row),
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                _____controlid______UserDetail = data;
+            },
+
+            error: function (result) {
+
+            }
+        });
+    }
+
+
+    function _____controlid______ReadURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#_____controlid______ImagePreview').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    async function _____controlid______Init(screenInfo) {
+        var key = screenInfo.NewChecked ? "User_Var_Add_Title" : "User_Var_Edit_Title";
+        if (_____controlid______FromOther) {
+            key = "UserProfile_Var_TitleDetail"
+        }
+        await translator.translateWithKey($('#desk______controlid_____ .form-title .billingual-wrapper')[0], key);
+        await translator.translateWithKey($('#tab______controlid_____ .billingual-wrapper')[0], key);
+        _____controlid______NewChecked = screenInfo.NewChecked;
+        _____controlid______current_row_index = -1;
+
+        $.ajax({
+            type: 'GET',
+            url: 'api/Admin/User',
+            async: false,
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                if (data.NotDelete == true) {
+                    $('#desk______controlid_____ .user-role').attr('data-first-filter', '');
+                } else {
+                    $('#desk______controlid_____ .user-role').attr('data-first-filter', 'Type = 0');
+                }
+            },
+
+            error: function (result) {
+
+            }
+        });
+        initTextSearch($("#desk______controlid_____ .text-search"));
+        initTextMultiSelect($("#desk______controlid_____ .text-multi-select"));
+    }
+
+    async function _____controlid______OnShow(screenInfo) {        
+        await _____controlid______Init(screenInfo);
+
+        let ClusterizeData = _____parentid______S3Table.ClusterizeData;
+        var index = ClusterizeData.data.findIndex(function (o) {
+            return o.Id === ClusterizeData.current_row_id;
+        });
+
+        let data = new Object;
+        data.uid = ClusterizeData.current_row_id;
+        await _____controlid______GetUserDetail(data);
+        _____controlid______current_row_index = index;
+        $('#desk______controlid_____ .user-email').value(ClusterizeData.data[index].Email);
+        $('#desk______controlid_____ .user-role').value(ClusterizeData.data[index].Role);
+        //$('#desk______controlid_____ .ChucVu').value(_____controlid______UserDetail.ChucVu);
+        $('#desk______controlid_____ .ChucVu_Id').value(_____controlid______UserDetail.ChucVu_Id);
+        $('#desk______controlid_____ .PName').value(_____controlid______UserDetail.PhongBanName);
+        $('#desk______controlid_____ .CTYName').value(_____controlid______UserDetail.CoQuanName);
+        $('#desk______controlid_____ .HoVaTen').value(_____controlid______UserDetail.HoVaTen);
+        $('#desk______controlid_____ .NgaySinh').value(_____controlid______UserDetail.NgaySinh);
+        $('#desk______controlid_____ .GioiTinh').value(_____controlid______UserDetail.GioiTinh);
+        $('#desk______controlid_____ .DienThoai').value(_____controlid______UserDetail.DienThoai);
+        $('#desk______controlid_____ .SoCCCD').value(_____controlid______UserDetail.SoCCCD);
+        $('#desk______controlid_____ .NgayCap').value(_____controlid______UserDetail.NgayCap);
+        $('#desk______controlid_____ .NoiCap').value(_____controlid______UserDetail.NoiCap);
+        $('#desk______controlid_____ .QueQuan').value(_____controlid______UserDetail.QueQuan);
+        $('#desk______controlid_____ .DiaChiHienTai').value(_____controlid______UserDetail.DiaChiHienTai);
+        $('#desk______controlid_____ .MANHANVIEN').value(_____controlid______UserDetail.MANHANVIEN);
+        if (isNullOrEmpty(_____controlid______UserDetail.MANHANVIEN)) {
+            $('#desk______controlid_____ .MANHANVIEN').value(NewDictionaryCode(_____controlid______AlertMessage, _____controlid______Table, _____controlid______TableColumnCode, 'MNV1'));
+        }
+    }
+
+    async function _____controlid______OnShowFromOther(screenInfo) {
+        _____controlid______FromOther = true;
+        await _____controlid______Init(screenInfo);
+
+        let data = new Object;
+        data.uid = ApplicationInstance.UserId;;
+        await _____controlid______GetUserDetail(data);
+        $('#desk______controlid_____ .user-role').attr("readonly", true);
+
+        $('#desk______controlid_____ .PName').attr("readonly", true);//20230516
+        $('#desk______controlid_____ .CTYName').attr("readonly", true);//20230516
+        $('#desk______controlid_____ .PQLName').attr("disabled", true);//20230516
+        $('#desk______controlid_____ .UQLName').attr("disabled", true);//20230516
+        $('#desk______controlid_____ .CapBac').attr("readonly", true);//20230906
+        $('#desk______controlid_____ .HopDongHienTai').attr("readonly", true);//20230906
+        $('#desk______controlid_____ .SoHopDong').attr("readonly", true);//20230906
+        $('#desk______controlid_____ .TuNgay').attr("readonly", true);//20230906
+        $('#desk______controlid_____ .DenNgay').attr("readonly", true);//20230906
+
+        $('#desk______controlid_____ .user-email').value(ApplicationInstance.Email);
+        $('#desk______controlid_____ .user-role').value(ApplicationInstance.Role);
+        //$('#desk______controlid_____ .ChucVu').value(_____controlid______UserDetail.ChucVu);
+        $('#desk______controlid_____ .ChucVu_Id').value(_____controlid______UserDetail.ChucVu_Id);
+        $('#desk______controlid_____ .PName').value(_____controlid______UserDetail.PhongBanName);
+        $('#desk______controlid_____ .CTYName').value(_____controlid______UserDetail.CoQuanName);
+        $('#desk______controlid_____ .HoVaTen').value(_____controlid______UserDetail.HoVaTen);
+        $('#desk______controlid_____ .NgaySinh').value(_____controlid______UserDetail.NgaySinh);
+        $('#desk______controlid_____ .GioiTinh').value(_____controlid______UserDetail.GioiTinh);
+        $('#desk______controlid_____ .DienThoai').value(_____controlid______UserDetail.DienThoai);
+        $('#desk______controlid_____ .SoCCCD').value(_____controlid______UserDetail.SoCCCD);
+        $('#desk______controlid_____ .NgayCap').value(_____controlid______UserDetail.NgayCap);
+        $('#desk______controlid_____ .NoiCap').value(_____controlid______UserDetail.NoiCap);
+        $('#desk______controlid_____ .QueQuan').value(_____controlid______UserDetail.QueQuan);
+        $('#desk______controlid_____ .DiaChiHienTai').value(_____controlid______UserDetail.DiaChiHienTai);
+        $('#desk______controlid_____ .MANHANVIEN').value(_____controlid______UserDetail.MANHANVIEN);
+        if (isNullOrEmpty(_____controlid______UserDetail.MANHANVIEN)) {
+            $('#desk______controlid_____ .MANHANVIEN').value(NewDictionaryCode(_____controlid______AlertMessage, _____controlid______Table, _____controlid______TableColumnCode, 'MNV1'));
+        }
+
+    }
+
+    async function _____controlid______OnSave() {
+        _____controlid______Loading.show();
+
+        
+        let row = new Object();
+        if (!_____controlid______FromOther) {
+            let ClusterizeData = typeof _____parentid______S3Table !== 'undefined' && _____parentid______S3Table ? _____parentid______S3Table.ClusterizeData : null;
+            row.Id = _____controlid______current_row_index == -1 ? "" : ClusterizeData.data[_____controlid______current_row_index].Id;
+            //row.Email = $('#desk______controlid_____ .user-email').value();
+            row.Role = $('#desk______controlid_____ .user-role').value();
+            row.ModifiedAt = _____controlid______current_row_index == -1 ? null : ClusterizeData.data[_____controlid______current_row_index].ModifiedAt;
+            row.ModifiedBy = ApplicationInstance.UserName;
+            //row.Status = _____controlid______NewChecked == true ? true : $('#desk______controlid_____ .lock').value();
+        } else {
+            row.Id = ApplicationInstance.UserId;
+            row.Role = ApplicationInstance.Role;
+        }
+        row.ChucVu = _____controlid______ChucVuName;
+        row.DienThoai = $('#desk______controlid_____ .DienThoai').value();
+        // create user profile data
+        row.profile = _____controlid______buildUserProfile(row.Id);
+        let files = $('#_____controlid______AvatarPicker')[0].files;
+        if (files.length > 0) {
+            let imageFile = files[0];
+            let customJsonFile = await getFile(imageFile);
+            row.Avatar = customJsonFile.base64StringFile;
+        }
+        return _____controlid______CallSaveApi(row);
+    }
+
+    function _____controlid______CallSaveApi(row) {
+        return new Promise(function (resolve, reject) {
+            let url = "";
+            if (_____controlid______NewChecked) {
+                url = 'api/Admin/CreateUser';
+            } else {
+                url = 'api/Admin/EditUser';
+            }
+            $.ajax
+                ({
+                    type: 'POST',
+                    url: url,
+                    //async: false,
+                    data: JSON.stringify(row),
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (data) {
+                        if (data.Code == 1) {
+                            ShowNotification('Thành công!', 'success');
+                            if (eval("typeof _____parentid______S3Table") != 'undefined') {
+                                row.HasAvatar = data.Data.HasAvatar;
+                                row.Avatar = data.Data.Avatar;
+                                row.FullName = row.profile.HoVaTen;
+                                _____parentid______S3Table.Update(row);
+                            }
+                            
+                            _____controlid______Loading.hide();
+                            resolve(0);
+                        } else {
+                            _____controlid______Loading.hide();
+                            handleResponseApiCode(_____controlid______AlertMessage, data);
+                            resolve(-1);
+                        }
+                    },
+
+                    error: function (result) {
+                        _____controlid______Loading.hide();
+                        handleResponseError(_____controlid______AlertMessage, result);
+                        resolve(-1);
+                    }
+                });
+        });
+    }
+
+    function _____controlid______buildUserProfile(uId) {
+        var row1 = new Object();
+        row1.Id = uId;
+        row1.ChucVu_Id = $('#desk______controlid_____ .ChucVu_Id').value();
+        row1.PhongBanId = $('#desk______controlid_____ .PName').data('data-value') ? JSON.parse($('#desk______controlid_____ .PName').data('data-value')).Id : '';
+        row1.CoQuanId = $('#desk______controlid_____ .CTYName').data('data-value') ? JSON.parse($('#desk______controlid_____ .CTYName').data('data-value')).Id : '';
+        row1.HoVaTen = $('#desk______controlid_____ .HoVaTen').value();
+        row1.NgaySinh = $('#desk______controlid_____ .NgaySinh').value();
+        row1.GioiTinh = $('#desk______controlid_____ .GioiTinh').value();
+        row1.DienThoai = $('#desk______controlid_____ .DienThoai').value();
+        row1.SoCCCD = $('#desk______controlid_____ .SoCCCD').value();
+        row1.NgayCap = $('#desk______controlid_____ .NgayCap').value();
+        row1.NoiCap = $('#desk______controlid_____ .NoiCap').value();
+        row1.QueQuan = $('#desk______controlid_____ .QueQuan').value();
+        row1.DiaChiHienTai = $('#desk______controlid_____ .DiaChiHienTai').value();
+        row1.MANHANVIEN = $('#desk______controlid_____ .MANHANVIEN').value();
+        return row1;
+    }
+</script>

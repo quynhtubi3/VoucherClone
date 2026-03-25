@@ -1,0 +1,266 @@
+﻿<style>
+
+    #desk______controlid_____ .form-container {
+        width: 500px;
+        height: 350px;
+        margin: auto;
+    }
+</style>
+
+<!--Nội dung màn hình thêm/sửa-->
+<div class='form-group'>
+    <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Common_Var_Code'>
+
+    </div>
+    <input type='text' class='modal-textbox Code' validate='true' />
+</div>
+<div class='form-group'>
+    <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Common_Var_Name'>
+
+    </div>
+    <input type='text' class='modal-textbox Name' validate='true' no-required="false" />
+</div>
+<div class='form-group'>
+    <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='UserProfile_Var_ChucVu'>
+
+    </div>
+    <select class="ChucVu ChucVuId" style="width:100%" no-required="false">
+    </select>
+</div>
+<div class='form-group'>
+    <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='UserProfile_Var_NgaySinh'>
+
+    </div>
+    <input type="text" class="modal-textbox text-date NamSinh" no-required="false" validate="true" style="width:120px;" maxlength="10" value="__/__/____" />
+
+</div>
+<div class='form-group'>
+    <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='CCCD/CMND'>
+
+    </div>
+    <input type='text' class='modal-textbox text-citizenid Identifier'  validate="true"/>
+</div>
+<div class='form-group'>
+    <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='UserProfile_Var_GioiTinh'>
+
+    </div>
+    <div class='modal-textbox text-select GioiTinh' data-toggle='[{"id":"1", "name":"UserProfile_Var_GT_NAM"},{"id":"0","name":"UserProfile_Var_GT_NU"}]' data-title='1'>Nam</div>
+
+</div>
+<div class='form-group'>
+    <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Common_Var_Phone'>
+
+    </div>
+    <input type="text" class="modal-textbox text-phone DienThoai" validate="true" no-required="false" />
+</div>
+
+<div class='form-group'>
+    <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Common_Var_Address'>
+
+    </div>
+    <input type='text' class='modal-textbox DiaChi' />
+</div>
+
+<div class='form-group'>
+    <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Common_Var_Email'>
+
+    </div>
+    <input type='text' class='modal-textbox Email' />
+</div>
+
+<div class='form-group'>
+    <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Common_Var_Other'>
+
+    </div>
+    <input type='text' class='modal-textbox Other' />
+</div>
+
+
+
+
+<script>
+    var _____controlid______NewChecked = false;
+    var _____controlid______CurrentRowIndex = '';
+    var _____controlid______Table = 'DMNGUOIBAN';
+    var _____controlid______TableColumnCode = 'Code';
+    var _____controlid______ChucVuName = '';
+
+    $(function () {
+        $("#desk______controlid_____ .billingual-wrapper").click(function () {
+            var forElement = $(this).attr('for');
+            if (forElement) {
+                $("#desk______controlid_____ ." + forElement).click();
+            }
+        });
+        BindDataChucvu();
+        $('#desk______controlid_____ .ChucVu').off('change').on('change', function () {
+            let selected = $(this).find('option:selected');
+            _____controlid______ChucVuName = selected.data('name');
+         
+        });
+    })
+
+    function BindDataChucvu() {
+        $('#desk______controlid_____ .ChucVu').empty();
+        let model = new Object();
+        model.Name = '';
+        model.Code = '';
+        $.ajax({
+            type: 'POST',
+            url: '/api/ChucVu/Get',
+            async: false,
+            data: JSON.stringify(model),
+            contentType: 'application/json; charset=utf-8',
+            complete: function () {
+
+            },
+            success: function (response) {
+                $('#desk______controlid_____ .ChucVu').empty();
+                for (var j = 0; j < response.length; j++) {
+                    row = '<option value="' + response[j].Id + '"'
+                        + ' data-HHCaNhan="' + response[j].HHCaNhan + '"'
+                        + ' data-name="' + response[j].Name + '"'
+                        + ' data-HHTruongCuaHang="' + response[j].HHTruongCuaHang + '"'
+                        + ' data-HHPhoCuaHang="' + response[j].HHPhoCuaHang + '"'
+                        + ' data-QuyDoiPhaChe="' + response[j].QuyDoiPhaChe + '"'
+                        + ' data-QuyChung="' + response[j].QuyChung + '">'
+                        +  response[j].Name
+                        + '</option>';
+
+                    $('#desk______controlid_____ .ChucVu').append(row);
+                }
+                $('#desk______controlid_____ .ChucVu')[0].selectedIndex = 0;
+
+            },
+            error: function (result) {
+
+            }
+        });
+    }
+
+    async function _____controlid______Init(screenInfo, fromOther) {
+        await _____controlid______InitControl(screenInfo);
+        if (fromOther) {
+            await translator.translateWithKey($('#desk______controlid_____ .form-title .billingual-wrapper')[0], 'DMNGUOIBAN_Var_Add');
+            await translator.translateWithKey($('#tab______controlid_____ .billingual-wrapper')[0], 'DMNGUOIBAN_Var_Add');
+        }
+    }
+
+    async function _____controlid______OnShow(screenInfo) {
+        await _____controlid______Init(screenInfo, false);
+
+        let ClusterizeData = _____parentid______S3Table.ClusterizeData;
+        var index = ClusterizeData.data.findIndex(function (o) {
+            return o.Id === ClusterizeData.current_row_id;
+        })
+        _____controlid______CurrentRowIndex = index;
+
+        if (!_____controlid______NewChecked && _____controlid______CurrentRowIndex != -1) {
+            $('#desk______controlid_____ .Code').value(ClusterizeData.data[index].Code);
+            $('#desk______controlid_____ .ChucVuId').value(ClusterizeData.data[index].ChucVuId);
+            $('#desk______controlid_____ .Name').value(ClusterizeData.data[index].Name);
+            $('#desk______controlid_____ .DiaChi').value(ClusterizeData.data[index].DiaChi);
+            $('#desk______controlid_____ .DienThoai').value(ClusterizeData.data[index].DienThoai);
+            $('#desk______controlid_____ .Email').value(ClusterizeData.data[index].Email);
+            $('#desk______controlid_____ .GioiTinh').value(ClusterizeData.data[index].GioiTinh);
+            $('#desk______controlid_____ .NamSinh').value(ClusterizeData.data[index].NamSinh);
+            $('#desk______controlid_____ .Other').value(ClusterizeData.data[index].Other);
+            $('#desk______controlid_____ .Identifier').value(ClusterizeData.data[index].Identifier);
+        }
+        if (_____controlid______NewChecked) {
+            $('#desk______controlid_____ .Code').value(NewDictionaryCode(_____controlid______AlertMessage, _____controlid______Table, _____controlid______TableColumnCode, 'MNB0'));
+        }
+        $('#desk______controlid_____ .Code').focus().select();
+    }
+
+
+    async function _____controlid______OnShowFromOther(screenInfo) {
+        await _____controlid______Init(screenInfo, true);
+
+        $('#desk______controlid_____ .Code').focus().select();
+    }
+
+    async function _____controlid______OnAdd() {
+        $('#desk______controlid_____ .Code').value(NewDictionaryCode(_____controlid______AlertMessage, _____controlid______Table, _____controlid______TableColumnCode, 'MNB0'));
+        $('#desk______controlid_____ .Code').focus().select();
+        $('#desk______controlid_____ .ChucVuId').value(null);
+        $('#desk______controlid_____ .Name').value("");
+        $('#desk______controlid_____ .DiaChi').value("");
+        $('#desk______controlid_____ .DienThoai').value("");
+        $('#desk______controlid_____ .Email').value("");
+        $('#desk______controlid_____ .GioiTinh').value(1);
+        $('#desk______controlid_____ .NamSinh').value(null);
+        $('#desk______controlid_____ .Other').value("");
+        $('#desk______controlid_____ .Identifier').value("");
+    }
+
+    async function _____controlid______OnSave() {
+        _____controlid______Loading.show();
+
+        let ClusterizeData = typeof _____parentid______S3Table !== 'undefined' && _____parentid______S3Table ? _____parentid______S3Table.ClusterizeData : null;
+        var row = new Object();
+        row.Id = _____controlid______CurrentRowIndex == -1 ? '' : ClusterizeData.data[_____controlid______CurrentRowIndex].Id;
+        row.ChucVuId = $('#desk______controlid_____ .ChucVuId').value();
+        row.Code = $('#desk______controlid_____ .Code').value();
+        row.Name = $('#desk______controlid_____ .Name').value();
+        row.DiaChi = $('#desk______controlid_____ .DiaChi').value();
+        row.DienThoai = $('#desk______controlid_____ .DienThoai').value();
+        row.Email = $('#desk______controlid_____ .Email').value();
+        row.GioiTinh = $('#desk______controlid_____ .GioiTinh').value();
+        row.NamSinh = $('#desk______controlid_____ .NamSinh').value();
+        row.Other = $('#desk______controlid_____ .Other').value();
+        row.Identifier = $('#desk______controlid_____ .Identifier').value();
+        row.ChucVu = _____controlid______ChucVuName;
+        row.ModifiedAt = _____controlid______NewChecked ? null : ClusterizeData.data[_____controlid______CurrentRowIndex].ModifiedAt;
+        row.ModifiedBy = ApplicationInstance.UserId;
+        row.RowState = _____controlid______NewChecked == true ? 1 : 2;      // 1: add, 2: edit
+
+        return _____controlid______CallSaveApi(row);
+    }
+
+    function _____controlid______CallSaveApi(row) {
+        return new Promise(function (resolve, reject) {
+            $.ajax
+                ({
+                    type: 'POST',
+                    url: 'api/' + _____controlid______Table + '/Save',
+                    headers: {
+                        '3t-action-table': _____controlid______Table,
+                        '3t-action-menu-type': 'I',
+                        '3t-action-type': row.RowState == 1 ? 'CREATE' : 'UPDATE'
+                    },
+                    //async: false,
+                    data: JSON.stringify(row),
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (data) {
+                        let obj = data;
+                        if (obj.Code == 1) {
+                            ShowNotification('Thành công!', 'success');
+                            row.Id = obj.Id;
+                            row.ModifiedAt = obj.ModifiedAt;
+                            if (_____controlid______NewChecked == true) {
+                                if (typeof _____parentid______S3Table !== 'undefined') {
+                                    _____parentid______S3Table.Add(row);
+                                }
+                            } else {
+                                _____parentid______S3Table.Update(row);
+                            }
+
+                            _____controlid______Loading.hide();
+                            resolve(0);
+                        } else {
+                            _____controlid______Loading.hide();
+                            handleResponseApiCode(_____controlid______AlertMessage, obj);
+                            resolve(-1);
+                        }
+                    },
+
+                    error: function (result) {
+                        _____controlid______Loading.hide();
+                        handleResponseError(_____controlid______AlertMessage, result);
+                        resolve(-1);
+                    }
+                });
+        });
+    }
+</script>

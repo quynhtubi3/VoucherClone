@@ -1,0 +1,798 @@
+﻿<style>
+    .s3tcloud-prefix.form-container.list-lister > div.form-body {
+        display: flex;
+        flex-direction: column;
+    }
+
+        .s3tcloud-prefix.form-container.list-lister > div.form-body div.QTLuongThang {
+            margin-top: 20px;
+        }
+
+    .form-body div.Title {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    #desk______controlid_____ .popup-modal-form {
+        height: 170px;
+        width: 510px;
+    }
+
+        #desk______controlid_____ .popup-modal-form .popup-modal-body {
+            justify-content: flex-start;
+        }
+
+    #desk______controlid_____ .modal-label {
+        flex: 0 0 100 !important;
+    }
+
+    #desk______controlid_____ div.family {
+        display: flex;
+        margin: 5px 0px;
+    }
+
+    #desk______controlid_____ div.child {
+        display: block;
+        margin: 0px 3px;
+    }
+
+    #desk______controlid_____ .form-group.group-title {
+        height: 42px;
+    }
+
+    #desk______controlid_____ .form-group > .form-group {
+        padding: 0px 5px 0px 5px;
+    }
+
+        #desk______controlid_____ .form-group > .form-group .modal-label {
+            flex: 0 0 150px;
+        }
+
+    #desk______controlid_____ .form-group.child .group-title {
+        padding: 6px;
+    }
+
+    #desk______controlid_____ div.child > .form-group {
+        padding: 2px 5px;
+    }
+</style>
+<!--
+<div class="Title" style="background-color: var(--breaker-bay);">
+    <div class="billingual-wrapper title-left upper-case" data-i18n-layout="layout0" data-i18n-key="QTLUONG_Var_Title_LuongCTY"></div>
+</div>
+    -->
+<div id='_____controlid______ScrollArea' class='clusterize-scroll' tabindex='0'>
+    <table controlid='_____controlid_____' htmlid='_____htmlid_____' multi-select='true'>
+        <colgroup>
+            <col width='40' noresizeable />
+            <col width='100' />
+            <col width='300' />
+            <col width='100' />
+        </colgroup>
+        <thead>
+            <tr>
+                <td></td>
+                <th colname='Code' data-i18n-layout='layout3' data-i18n-key='Common_Var_Code'></th>
+                <th colname='Name' data-i18n-layout='layout3' data-i18n-key='Common_Var_Company'></th>
+                <th colname='ThaoTac' data-i18n-layout='layout3' data-i18n-key='QTLUONG_Var_ThaoTac'></th>
+            </tr>
+        </thead>
+        <tbody id='_____controlid______ContentArea' class='clusterize-content'>
+        </tbody>
+    </table>
+</div>
+<div class="s3tcloud-prefix QTLuongThang">
+    <div>
+        <div>
+            <div class="Title" style="background-color: var(--breaker-bay);">
+                <div class="billingual-wrapper title-left" data-i18n-layout="layout0" data-i18n-key="QTLUONG_Var_Title_LanChuyenLuong"></div>
+            </div>
+            <div style="flex-direction: column;">
+                <div class='form-group'>
+                    <div id='T00_LUONGTHANG_ScrollArea' class='clusterize-scroll' tabindex='0'>
+                        <table controlid='T00_LUONGTHANG' htmlid='_____htmlid_____' multi-select='true'>
+                            <colgroup>
+                                <col width='40' noresizeable />
+                                <col width='100' />
+                                <col width='300' />
+                                <col width='100' />
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <td></td>
+                                    <th colname='Code' data-i18n-layout='layout3' data-i18n-key='Common_Var_Code'></th>
+                                    <th colname='Name' data-i18n-layout='layout3' data-i18n-key='Common_Var_Company'></th>
+                                    <th colname='ThaoTac' data-i18n-layout='layout3' data-i18n-key='QTLUONG_Var_ThaoTac'></th>
+                                </tr>
+                            </thead>
+                            <tbody id='T00_LUONGTHANG_ContentArea' class='clusterize-content'>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="popup-modal-background" tabindex="0">
+    <div child-form="search">
+        <div class="popup-modal-form">
+            <div class="form-title">
+                <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="Common_Filter_Title">
+                </div>
+                <div class="button-group">
+                    <div class="s3t-tooltip toolbar-button button-close" placement='sw' data-tooltip-key='Common_Button_Close'><i class="fa fa-remove"></i></div>
+                </div>
+            </div>
+            <div class="popup-modal-body">
+                <div class='form-group'>
+                    <div class='modal-label billingual-wrapper' data-i18n-layout='layout1' data-i18n-key='QTLUONG_Var_KyLuong'></div>
+                    <input type="text" class="form-control modal-textbox KyLuong" validate="false" style="width:120px;" />
+                </div>
+            </div>
+            <div class="form-footer">
+                <div class="footer-button button-save">
+                    <div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Button_Agree"></div>
+                </div>
+                <div class="footer-button button-cancel">
+                    <div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Button_Cancel"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="popup-modal-background" tabindex="0">
+    <div child-form="importdata" class="importdata">
+        <div class="popup-modal-form" style="height:230px; width:510px;">
+            <div class="form-title">
+                <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="QTLUONG_Var_Title"></div>
+                <div class="button-group">
+                    <div class='s3t-tooltip toolbar-button button-help' href="ImportExcel" data-tooltip-key='Menu_Var_Help'><i class='fa fa-question-circle-o'></i></div>
+                    <div class='s3t-tooltip toolbar-button button-close' placement='sw' data-tooltip-key='Common_Button_Close'><i class='fa fa-remove'></i></div>
+                </div>
+            </div>
+            <div class="popup-modal-body">
+                <div class="form-group importdata">
+                    <div class="form-group">
+                        <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="Common_Import_Sample"></div>
+                        <div class="import-sample-file">Download</div>
+                    </div>
+                    <div class="form-group" style="padding:10px;">
+                        <div class="form-group">
+                            <input type='file' id="_____controlid______luong_file1" accept=".xlsx,.xls" class='modal-textbox xlsFile' />
+                        </div>
+                    </div>
+                </div>
+                <div class='form-group'>
+                    <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='COQUANBO_Var_Name'></div>
+                    <input id="_____controlid______luong_file1_input" type='text' class='form-control modal-textbox text-search CName' validate='true' no-required="false" add-function='TextSearchCallback_DMCOQUANBO("_____controlid_____", $("#desk______controlid_____ .Code"))' data-first-filter='' data-table='DMCOQUANBO' data-field-name='Code' data-prefix-class='_____controlid______TextSearch_' data-destination-id='Name' style='width:130px;' />
+                    <div class='modal-textbox billingual-wrapper text-search-result'>
+                        <label id='_____controlid______TextSearch_Name' class='main-language'></label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-footer">
+                <div class="footer-button button-save"><div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Button_Import"></div></div>
+                <div class="footer-button button-cancel"><div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Button_Cancel"></div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="popup-modal-background" tabindex="0">
+    <div child-form="importdatathang" class="importdata">
+        <div class="popup-modal-form" style="height:230px; width:510px;">
+            <div class="form-title">
+                <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="QTLUONG_Var_TitleThang"></div>
+                <div class="button-group">
+                    <!--<div class='s3t-tooltip toolbar-button button-help' href="ImportExcel" data-tooltip-key='Menu_Var_Help'><i class='fa fa-question-circle-o'></i></div>-->
+                    <div class='s3t-tooltip toolbar-button button-close' placement='sw' data-tooltip-key='Common_Button_Close'><i class='fa fa-remove'></i></div>
+                </div>
+            </div>
+            <div class="popup-modal-body">
+                <div class="form-group importdata">
+                    <div class="form-group">
+                        <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="Common_Import_Sample"></div>
+                        <div class="import-sample-file">Download</div>
+                    </div>
+                    <div class="form-group" style="padding:10px;">
+                        <div class="form-group">
+                            <input type='file' id="_____controlid______luong_file2" accept=".xlsx,.xls" class='modal-textbox xlsFile' />
+                        </div>
+                    </div>
+                </div>
+                <div class='form-group'>
+                    <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='QTLUONG_Var_KyLuong'></div>
+                    <div class='modal-textbox text-select Lan' data-toggle='[{"id":"1", "name":"QTLUONG_Var_KyLuongLan1"},{"id":"2","name":"QTLUONG_Var_KyLuongLan2"},{"id":"3","name":"QTLUONG_Var_KyLuongLan3"},{"id":"4","name":"QTLUONG_Var_KyLuongLan4"},{"id":"5","name":"QTLUONG_Var_KyLuongLan5"}]' data-title='1'>Lần 1</div>
+
+                </div>
+                <div class='form-group'>
+                    <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='COQUANBO_Var_Name'></div>
+                    <input id="_____controlid______luong_file2_input" type='text' class='form-control modal-textbox text-search CName' validate='true' no-required="false" add-function='TextSearchCallback_DMCOQUANBO("_____controlid_____", $("#desk______controlid_____ .Code"))' data-first-filter='' data-table='DMCOQUANBO' data-field-name='Code' data-prefix-class='_____controlid______TextSearch_C_' data-destination-id='Name' style='width:130px;' />
+                    <div class='modal-textbox billingual-wrapper text-search-result'>
+                        <label id='_____controlid______TextSearch_C_Name' class='main-language'></label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-footer">
+                <div class="footer-button button-save"><div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Button_Import"></div></div>
+                <div class="footer-button button-cancel"><div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Button_Cancel"></div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="popup-modal-background" tabindex="0">
+    <div child-form="detailluong" class="importdata">
+        <div class="popup-modal-form" style="height:500px; width:800px;">
+            <div class="form-title">
+                <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="QTLUONG_Var_Luong_ChiTiet_Title"></div>
+                <div class="button-group">
+                    <!--<div class='s3t-tooltip toolbar-button button-help' href="ImportExcel" data-tooltip-key='Menu_Var_Help'><i class='fa fa-question-circle-o'></i></div>-->
+                    <div class='s3t-tooltip toolbar-button button-close' placement='sw' data-tooltip-key='Common_Button_Close'><i class='fa fa-remove'></i></div>
+                </div>
+            </div>
+            <div class="popup-modal-body">
+                <div class="family">
+                    <div class="form-group child">
+                        <div class='form-group'>
+                            <div class='form-group'>
+                                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='QTLUONG_Var_Luong_ChiTiet_Luong'></div>
+                                <input type='text' readonly class='modal-textbox text-number Luong' allownegative='false' notequalzero='false' hidezero='true' scale='QuantityDecimals' />
+                            </div>
+                        </div>
+                        <div class='form-group'>
+                            <div class='form-group'>
+                                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='QTLUONG_Var_Luong_ChiTiet_XepLoai'></div>
+                                <input type='text' readonly class='modal-textbox XepLoai' />
+                            </div>
+                        </div>
+                        <div class='form-group'>
+                            <div class='form-group'>
+                                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='QTLUONG_Var_Luong_ChiTiet_ThuongHieuQua'></div>
+                                <input type='text' readonly class='modal-textbox text-number ThuongHieuQua' allownegative='false' notequalzero='false' hidezero='true' scale='QuantityDecimals' />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="family">
+                    <div class="form-group child">
+                        <div class="form-group group-title">
+                            <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="QTLUONG_Var_Luong_ChiTiet_SubTitle_PhuCap"></div>
+                        </div>
+                        <div class='form-group'>
+                            <div class='form-group'>
+                                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='QTLUONG_Var_Luong_ChiTiet_TrachNhiem'></div>
+                                <input type='text' readonly class='modal-textbox text-number PCTrachNhiem' allownegative='false' notequalzero='false' hidezero='true' scale='QuantityDecimals' />
+                            </div>
+                        </div>
+                        <div class='form-group'>
+                            <div class='form-group'>
+                                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='QTLUONG_Var_Luong_ChiTiet_AnTrua'></div>
+                                <input type='text' readonly class='modal-textbox text-number PCAnTrua' allownegative='false' notequalzero='false' hidezero='true' scale='QuantityDecimals' />
+                            </div>
+                        </div>
+                        <div class='form-group'>
+                            <div class='form-group'>
+                                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='QTLUONG_Var_Luong_ChiTiet_DienThoai'></div>
+                                <input type='text' readonly class='modal-textbox text-number PCDienThoai' allownegative='false' notequalzero='false' hidezero='true' scale='QuantityDecimals' />
+                            </div>
+                        </div>
+                        <div class='form-group'>
+                            <div class='form-group'>
+                                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='QTLUONG_Var_Luong_ChiTiet_TrangPhuc'></div>
+                                <input type='text' readonly class='modal-textbox text-number PCTrangPhuc' allownegative='false' notequalzero='false' hidezero='true' scale='QuantityDecimals' />
+                            </div>
+                        </div>
+                        <div class='form-group'>
+                            <div class='form-group'>
+                                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='QTLUONG_Var_Luong_ChiTiet_VPP'></div>
+                                <input type='text' readonly class='modal-textbox text-number PCVPP' allownegative='false' notequalzero='false' hidezero='true' scale='QuantityDecimals' />
+                            </div>
+                        </div>
+                        <div class='form-group'>
+                            <div class='form-group'>
+                                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='QTLUONG_Var_Luong_ChiTiet_PCKhac'></div>
+                                <input type='text' readonly class='modal-textbox text-number PCKhac' allownegative='false' notequalzero='false' hidezero='true' scale='QuantityDecimals' />
+                            </div>
+                        </div>
+                        <div class='form-group'>
+                            <div class='form-group'>
+                                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='QTLUONG_Var_Luong_ChiTiet_DieuChinhTruocThue'></div>
+                                <input type='text' readonly class='modal-textbox text-number DieuChinhTruocThue' allownegative='false' notequalzero='false' hidezero='true' scale='QuantityDecimals' />
+                            </div>
+                        </div>
+                        <div class='form-group'>
+                            <div class='form-group'>
+                                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='QTLUONG_Var_Luong_ChiTiet_DieuChinhSauThue'></div>
+                                <input type='text' readonly class='modal-textbox text-number DieuChinhSauThue' allownegative='false' notequalzero='false' hidezero='true' scale='QuantityDecimals' />
+                            </div>
+                        </div>
+                        <div class='form-group'>
+                            <div class='form-group'>
+                                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='QTLUONG_Var_Luong_ChiTiet_GiamTruGiaCanh'></div>
+                                <input type='text' readonly class='modal-textbox text-number GiamTruGiaCanh' allownegative='false' notequalzero='false' hidezero='true' scale='QuantityDecimals' />
+                            </div>
+                        </div>
+                        <div class='form-group'>
+                            <div class='form-group'>
+                                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='QTLUONG_Var_Luong_ChiTiet_NguoiPhuThuoc'></div>
+                                <input type='text' readonly class='modal-textbox NguoiPhuThuoc' />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="family">
+                    <div class="form-group child">
+                        <div class="form-group group-title">
+                            <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="QTLUONG_Var_Luong_ChiTiet_SubTitle_KhauTru"></div>
+                        </div>
+                        <div class='form-group'>
+                            <div class='form-group'>
+                                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='QTLUONG_Var_Luong_ChiTiet_BaoHiem'></div>
+                                <input type='text' readonly class='modal-textbox text-number BaoHiem' allownegative='false' notequalzero='false' hidezero='true' scale='QuantityDecimals' />
+                            </div>
+                        </div>
+                        <div class='form-group'>
+                            <div class='form-group'>
+                                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='QTLUONG_Var_Luong_ChiTiet_CongDoan'></div>
+                                <input type='text' readonly class='modal-textbox text-number CongDoan' allownegative='false' notequalzero='false' hidezero='true' scale='QuantityDecimals' />
+                            </div>
+                        </div>
+                        <div class='form-group'>
+                            <div class='form-group'>
+                                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='QTLUONG_Var_Luong_ChiTiet_ThueTNCN'></div>
+                                <input type='text' readonly class='modal-textbox text-number ThueTNCN' allownegative='false' notequalzero='false' hidezero='true' scale='QuantityDecimals' />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="family">
+                    <div class="form-group child">
+                        <div class="form-group group-title">
+                            <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="QTLUONG_Var_Luong_ChiTiet_SubTitle_ThucLinh"></div>
+                        </div>
+                        <div class='form-group'>
+                            <div class='form-group'>
+                                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='QTLUONG_Var_Luong_ChiTiet_SubTitle_ThucLinh'></div>
+                                <input type='text' readonly class='modal-textbox text-number ThucLinh' allownegative='false' notequalzero='false' hidezero='true' scale='QuantityDecimals' />
+                            </div>
+                        </div>
+                        <div class='form-group'>
+                            <div class='form-group'>
+                                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='QTLUONG_Var_Luong_ChiTiet_GhiChu'></div>
+                                <input type='text' readonly class='modal-textbox GhiChu' />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-footer">
+                <div class="footer-button button-cancel"><div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Button_Cancel"></div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    var T00_LUONGTHANG_S3Table = null;
+
+    T00_LUONGTHANG_S3Table = new S3ttable({
+        Id: "T00_LUONGTHANG_ScrollArea",
+        ClusterizeData: ClusterizeData(),
+        BuildRow: function (model) {
+            let row = model.row;
+
+            let deleteIcon = "<div class='s3t-tooltip' data-tooltip-key='Common_Button_Delete'><i onclick='" + "_____controlid______deleteLuongTheoThang(\"" + row.Id + "\",\"" + row.Thang + "\",\"" + row.Nam + "\",\"" + row.SoLanTrongThang + "\");' class='fa fa-trash-o'></i></div>";
+            let exportDanhSachChuyenKhoanIcon = "<div class='s3t-tooltip' data-tooltip-key='QTLUONG_Var_Button_DanhSachChuyenKhoan'><i onclick='" + "_____controlid______exportDanhSachChuyenKhoan(\"" + row.Name + "\",\"" + row.Id + "\",\"" + row.Thang + "\",\"" + row.Nam + "\",\"" + row.SoLanTrongThang + "\");' class='fa fa-list'></i></div>";
+            let exportLuongThangKCTIcon = "<div class='s3t-tooltip' data-tooltip-key='QTLUONG_Var_Button_LuongThangKTC'><i onclick='" + "_____controlid______exportLuongThangKCT(\"" + row.Name + "\",\"" + row.Id + "\",\"" + row.Thang + "\",\"" + row.Nam + "\",\"" + row.SoLanTrongThang + "\");' class='fa fa-download'></i></div>";
+            let exportLuongThangIcon = "<div class='s3t-tooltip' data-tooltip-key='QTLUONG_Var_Button_LuongThang'><i onclick='" + "_____controlid______exportLuongThang(\"" + row.Name + "\",\"" + row.Id + "\",\"" + row.Thang + "\",\"" + row.Nam + "\",\"" + row.SoLanTrongThang + "\");' class='fa fa-calendar'></i></div>";
+
+            let tr = "<tr>" +
+                "<th clusterize_row_id='" + row.Id + row.Thang + row.Nam + row.SoLanTrongThang + "'>" + "</th>" +
+                "<td class='no-format upper-case'>" + row.Code + "</td>";
+            tr += "<td class='no-format upper-case'>" + row.GhiChuHeThong + "</td>";
+            tr += "<td class='no-format center'><div style='display: flex; flex-direction: row;justify-content: space-evenly;align-items: center;'>" + exportLuongThangKCTIcon + '    ' + exportLuongThangIcon + '    ' + exportDanhSachChuyenKhoanIcon + '    ' + deleteIcon + "</div></td>";
+
+            return translateRow(tr);
+        },
+        Callbacks: {
+            ClusterChanged: function () {
+                buildToolTip($('#desk______controlid_____ .s3t-tooltip'));
+                if (T00_LUONGTHANG_S3Table.ClusterizeData.data.length > 0)
+                    $("#desk_T00 .s3tcloud-prefix.QTLuongThang .clusterize-scroll").css('max-height', $('#desk_T00 .s3tcloud-prefix.QTLuongThang').height() - $('#desk_T00 .s3tcloud-prefix.QTLuongThang .Title').height() - 80);
+            }
+        }
+    });
+
+    $(function () {
+
+        $("#desk______controlid_____ .popup-modal-background>div[child-form='search'] .button-save").on('click', function () {
+            $('#desk______controlid_____ .form-container:first').focus();
+            $('#desk______controlid_____ .popup-modal-background').hide();
+            _____controlid______OnLoad();
+        });
+
+        $("#desk______controlid_____ .popup-modal-background>div[child-form='importdata'] .button-save").on('click', function () {
+            $('#desk______controlid_____ .form-container:first').focus();
+            $('#desk______controlid_____ .popup-modal-background').hide();
+            if (!$(this).closest('.popup-modal-form').find('.text-search').value()) {
+                _____controlid______AlertMessage.showInfo('Common_Msg_NoFileToImport');
+                return;
+            }
+            _____controlid______UploadFile('#_____controlid______luong_file1', false);
+        });
+
+
+        $('#desk______controlid_____ .popup-modal-background>div[child-form="importdatathang"] .button-save').on('click', function () {
+            $('#desk______controlid_____ .form-container:first').focus();
+            $('#desk______controlid_____ .popup-modal-background').hide();
+            if (!$(this).closest('.popup-modal-form').find('.text-search').value()) {
+                _____controlid______AlertMessage.showInfo('Common_Msg_NoFileToImport');
+                return;
+            }
+            _____controlid______UploadFile('#_____controlid______luong_file2', true);
+        })
+
+        $('#desk______controlid_____ .popup-modal-background').on('keydown', function (e) {
+            if (e.ctrlKey && e.keyCode == 13 && _____controlid______Modal == 'search') {
+                e.preventDefault();
+                $('#desk______controlid_____ .form-container:first').focus();
+                $('#desk______controlid_____ .popup-modal-background').hide();
+                _____controlid______OnLoad();
+            }
+        });
+
+        $('#_____controlid______LuongFile').off('change').on('change', function (event) {
+            _____controlid______ReadURL(this);
+        });
+
+        $('#desk______controlid_____ .s3tcloud-prefix.form-container .form-toolbar .button-refresh').remove();
+        $('#desk______controlid_____ .s3tcloud-prefix.form-container .form-toolbar .button-add').remove();
+        $('#desk______controlid_____ .s3tcloud-prefix.form-container .form-toolbar .button-edit').remove();
+        //$('#desk______controlid_____ .s3tcloud-prefix.form-container .form-toolbar .button-delete').remove();
+        $('#desk______controlid_____ .s3tcloud-prefix.form-container .form-toolbar .button-export-excel').remove();
+        $('#desk______controlid_____ .s3tcloud-prefix.form-container .form-toolbar .button-quick-search').remove();
+    })
+    var _____controlid______Table = 'QTTHONGTINLUONG';
+    var _____controlid______TableColumnCode = 'FileName';
+
+    function _____controlid______AddKyLuongControl() {
+        let year = [];
+        let preYear = {};
+        preYear.id = (new Date().getFullYear() - 1).toString();
+        preYear.name = (new Date().getFullYear() - 1).toString();
+        year.push(preYear);
+
+        curYear = {};
+        curYear.id = new Date().getFullYear().toString();
+        curYear.name = new Date().getFullYear().toString();
+        year.push(curYear);
+        if ($(".modal-textbox.text-select.Nam").length == 0) {
+            $("#desk______controlid_____ .popup-modal-background>div[child-form='importdatathang'] .Lan").before("<div class='modal-textbox text-select Nam' translate='false' data-toggle='" + JSON.stringify(year) + "' data-title='" + curYear.id + "'>" + curYear.id + "</div>");
+        }
+
+        let curMonth = (new Date().getMonth() + 1).toString();
+        let month = [];
+        for (i = 1; i < 13; i++) {
+            month.push({ id: i.toString(), name: 'Tháng ' + i });
+        }
+        if ($(".modal-textbox.text-select.Thang").length == 0) {
+            $("#desk______controlid_____ .popup-modal-background>div[child-form='importdatathang'] .Nam").before("<div class='modal-textbox text-select Thang' translate='false' data-toggle='" + JSON.stringify(month) + "' data-title='" + curMonth + "'>Tháng " + curMonth + "</div>");
+        }
+    }
+
+    function _____controlid______downloadLuongFile(id, code, name, ext) {
+        let a = document.createElement('a');
+
+        a.href = 'api/QTTHONGTINLUONG/ExportLuong?Code=' + code + '&Name=' + name + '&Id=' + id;
+        a.click();
+        a.remove();
+    }
+
+    function _____controlid______exportLuongThang(name, id, thang, nam, lan) {
+        let a = document.createElement('a');
+        a.href = 'api/QTTHONGTINLUONG/ExportLuongThang?Name=' + name + '&Id=' + id + '&thang=' + thang + '&nam=' + nam + '&lan=' + lan;
+        a.click();
+        a.remove();
+    }
+
+    function _____controlid______exportLuongThangKCT(name, id, thang, nam, lan) {
+        let a = document.createElement('a');
+
+        a.href = 'api/QTTHONGTINLUONG/ExportLuongThangKCT?Name=' + name + '&Id=' + id + '&thang=' + thang + '&nam=' + nam + '&lan=' + lan;
+        a.click();
+        a.remove();
+    }
+
+    function _____controlid______exportDanhSachChuyenKhoan(name, id, thang, nam, lan) {
+        let a = document.createElement('a');
+        a.href = 'api/QTTHONGTINLUONG/ExportDanhSachChuyenKhoan?Name=' + name + '&Id=' + id + '&thang=' + thang + '&nam=' + nam + '&lan=' + lan;
+        a.click();
+        a.remove();
+    }
+
+    function _____controlid______deleteLuongTheoThang(id, thang, nam, soLan) {
+        _____controlid______DeleteLuongThang(id, thang, nam, soLan);
+    }
+
+    function _____controlid______displayLuongTheoThang(nhanVienId, id, thang, nam, soLan) {
+        _____controlid______Modal = 'importdatathang';
+
+        $("#desk______controlid_____ .popup-modal-background>div[child-form='detailluong']").show();
+        $("#desk______controlid_____ .popup-modal-background>div[child-form!='detailluong']").hide();
+
+        ShowModalCenterOfParent("desk______controlid_____", "desk______controlid_____ .s3tcloud-prefix.form-container", "modal______controlid_____ .popup-modal-background>div[child-form='detailluong'] .popup-modal-form");
+
+        $('#desk______controlid_____ .popup-modal-background').show();
+        $('#desk______controlid_____ .popup-modal-background .popup-modal-body input:visible:first').focus();
+        _____controlid______ShowDetail(nhanVienId, id, thang, nam, soLan);
+    }
+
+    function _____controlid______loadListLuongThang() {
+        let input = new Object();
+        input.NhanVienId = '';
+        $.ajax({
+            type: 'POST',
+            url: 'api/QTTHONGTINLUONG/GetLuongThang',
+            //async: false,
+            data: JSON.stringify(input),
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                T00_LUONGTHANG_S3Table.Refresh(data, true);
+            },
+
+            error: function (result) {
+            }
+        });
+    }
+
+    async function _____controlid______OnLoad() {
+
+        if ($('#desk______controlid_____ .form-toolbar .button-import-thang').length == 0) {
+            $('#desk______controlid_____ .form-toolbar .button-import').after("<div class='s3t-tooltip toolbar-button button-import-thang' data-tooltip-key='Common_Import_Thang_Title'><i class='fa fa fa-upload'></i></div>");
+            buildToolTip($('.button-import-thang'));
+        }
+
+        $('#desk______controlid_____ .form-toolbar .button-import-thang').on('click', function (e) {
+            if (_____controlid______Right.Right_2 == false) return;
+            _____controlid______Modal = 'importdatathang';
+
+            _____controlid______AddKyLuongControl();
+
+            $("#desk______controlid_____ .popup-modal-background>div[child-form='importdatathang']").show();
+            $("#desk______controlid_____ .popup-modal-background>div[child-form!='importdatathang']").hide();
+
+            ShowModalCenterOfParent("desk______controlid_____", "desk______controlid_____ .s3tcloud-prefix.form-container", "modal______controlid_____ .popup-modal-background>div[child-form='importdatathang'] .popup-modal-form");
+
+            $('#desk______controlid_____ .popup-modal-background').show();
+            $('#desk______controlid_____ .popup-modal-background .popup-modal-body input:visible:first').focus();
+        });
+
+        $("#desk______controlid_____ .popup-modal-background>div[child-form='importdata'] .import-sample-file").off('click').on('click', function (e) {
+            if (!$(this).closest('.popup-modal-form').find('.text-search').value()) {
+                _____controlid______AlertMessage.showInfo('QTLUONG_msg_Luong_ExportLuongMau');
+                return;
+            }
+            let a = document.createElement('a');
+            var code = $("#_____controlid______luong_file1" + '_input').data('data-value') ? JSON.parse($("#_____controlid______luong_file1" + '_input').data('data-value')).Code : ''
+            var name = $("#_____controlid______luong_file1" + '_input').data('data-value') ? JSON.parse($("#_____controlid______luong_file1" + '_input').data('data-value')).Name : ''
+            var id = $("#_____controlid______luong_file1" + '_input').data('data-value') ? JSON.parse($("#_____controlid______luong_file1" + '_input').data('data-value')).Id : ''
+
+            a.href = 'api/QTTHONGTINLUONG/ExportLuongMau?Code=' + code + '&Name=' + name + '&Id=' + id + '&IsThang=' + 'false' + '&thang=' + '' + '&nam=' + '';
+            a.click();
+            a.remove();
+        });
+
+        $("#desk______controlid_____ .popup-modal-background>div[child-form='importdatathang'] .import-sample-file").off('click').on('click', function (e) {
+            if (!$(this).closest('.popup-modal-form').find('.text-search').value()) {
+                _____controlid______AlertMessage.showInfo('QTLUONG_msg_Luong_ExportLuongMau');
+                return;
+            }
+            let a = document.createElement('a');
+            var code = $("#_____controlid______luong_file2" + '_input').data('data-value') ? JSON.parse($("#_____controlid______luong_file2" + '_input').data('data-value')).Code : ''
+            var name = $("#_____controlid______luong_file2" + '_input').data('data-value') ? JSON.parse($("#_____controlid______luong_file2" + '_input').data('data-value')).Name : ''
+            var id = $("#_____controlid______luong_file2" + '_input').data('data-value') ? JSON.parse($("#_____controlid______luong_file2" + '_input').data('data-value')).Id : ''
+
+            var thang = $(".modal-textbox.text-select.Thang").value();
+            var nam = $(".modal-textbox.text-select.Nam").value();
+            var lan = $(".modal-textbox.text-select.Lan").value();
+
+            a.href = 'api/QTTHONGTINLUONG/ExportLuongMau?Code=' + code + '&Name=' + name + '&Id=' + id + '&IsThang=' + 'true' + '&thang=' + thang + '&nam=' + nam;
+
+            a.click();
+            a.remove();
+        });
+
+        let toolbar = new Object();
+        toolbar.Search = false;
+        toolbar.Import = false;
+        toolbar.Delete = false;
+        toolbar.Excel = false;
+        _____controlid______DisableToolBar(toolbar);
+
+        let BuildRowModel = new Object();
+        BuildRowModel.ControlId = '_____controlid_____';
+
+        let extra = new Object();
+
+        let screenInfo = $('#desk______controlid_____').data('screen-info');
+        screenInfo = JSON.parse(screenInfo);
+
+        let ScreenTransitionName = ''
+        extra.NhanVienId = '';
+        if (screenInfo.ScreenTransitionName === 'LUONGTHEOTHANG') {
+            extra.NhanVienId = screenInfo.ExtraVar.NhanVienId;
+            $('#desk______controlid_____ .s3tcloud-prefix.form-container .form-toolbar .button-delete').remove();
+            $('#desk______controlid_____ .s3tcloud-prefix.form-container .form-toolbar .button-import').remove();
+            $('#desk______controlid_____ .s3tcloud-prefix.form-container .form-toolbar .button-import-thang').remove();
+
+            $('#desk______controlid_____ .s3tcloud-prefix.QTLuongThang').remove();
+        }
+
+
+        extra.KyLuong = $('#desk______controlid_____ .popup-modal-background .KyLuong').value();
+        let model = new Object();
+        model.ExtraVar = extra;
+        model.ExtraRowModel = BuildRowModel;
+
+        await _____controlid______Loaded(model);
+
+        window._____controlid______ShowEditor = function () {
+            return;
+        }
+
+        T00_LUONGTHANG_S3Table.Init();
+        T00_LUONGTHANG_S3Table.Load([]);
+
+        _____controlid______loadListLuongThang();
+    }
+
+    function _____controlid______ReadURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#_____controlid______ImagePreview').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    async function _____controlid______UploadFile(selector, isThang) {
+
+        let model = new Object();
+        let l = $(selector)[0].files;
+        if (l.length > 0) {
+            let lFile = l[0];
+            let customFile = await getFile(lFile);
+
+            model.CoQuanID = $(selector + '_input').data('data-value') ? JSON.parse($(selector + '_input').data('data-value')).Id : '';
+            model.Code = $(selector + '_input').data('data-value') ? JSON.parse($(selector + '_input').data('data-value')).Code : '';
+            model.LuongFileName = $(selector + '_input').data('data-value') ? JSON.parse($(selector + '_input').data('data-value')).Name : '';
+            model.LuongFile = customFile.base64StringFile;
+            model.LuongFileExtension = lFile.type.split("/").pop();
+        }
+
+        if (isThang) {
+            model.Thang = $(".modal-textbox.text-select.Thang").value();
+            //model.Thang = $('#desk______controlid_____ .popup-modal-background .Thang').value();
+            model.Nam = $(".modal-textbox.text-select.Nam").value();
+            //model.Nam = $('#desk______controlid_____ .popup-modal-background .Nam').value();
+            model.Lan = $(".modal-textbox.text-select.Lan").value();
+            //model.Lan = $('#desk______controlid_____ .popup-modal-background .Lan').value();
+        }
+        model.IsThang = isThang;
+        _____controlid______Loading.show();
+        return new Promise(function (resolve, reject) {
+            $.ajax
+                ({
+                    type: 'POST',
+                    url: 'api/' + _____controlid______Table + '/Upload',
+                    //async: false,
+                    data: JSON.stringify(model),
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (dataout) {
+                        if (dataout.Code == 1) {
+                            _____controlid______Modal_Close();
+                            _____controlid______OnLoad();
+                            setTimeout(function () {
+                                (async () => {
+                                    await _____controlid______OnFilter();
+                                    _____controlid______Loading.hide();
+                                    _____controlid______AlertMessage.showInfo('Common_Msg_ProcessDone');
+                                })();
+                            }, 0);
+                        } else if (dataout.Code == 2) { //Không cập nhật được dòng nào
+                            _____controlid______Loading.hide();
+                        } else { //Có lỗi xảy ra
+                            _____controlid______Loading.hide();
+                            handleResponseApiCode(_____controlid______AlertMessage, dataout);
+                        }
+                    },
+
+                    error: function (result) {
+                        _____controlid______Loading.hide();
+                        handleResponseError(_____controlid______AlertMessage, result);
+                    }
+                });
+        });
+    }
+
+    function _____controlid______ShowDetail(nhanVienId, coQuanId, thang, nam, soLan) {
+        let rows = [];
+
+        let model = new Object();
+        model.NhanVienId = nhanVienId;
+        model.CoQuanId = coQuanId;
+        model.Thang = thang;
+        model.Nam = nam;
+        model.SoLan = soLan;
+        $.ajax({
+            type: 'POST',
+            url: 'api/' + _____controlid______Table + '/GetDetail',
+            async: false,
+            data: JSON.stringify(model),
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+
+                $('#desk______controlid_____ .popup-modal-background .Luong').value(data.Luong);
+                $('#desk______controlid_____ .popup-modal-background .XepLoai').value(data.XepLoai);
+                $('#desk______controlid_____ .popup-modal-background .ThuongHieuQua').value(data.ThuongHieuQua);
+
+                $('#desk______controlid_____ .popup-modal-background .PCTrachNhiem').value(data.PCTrachNhiem);
+                $('#desk______controlid_____ .popup-modal-background .PCAnTrua').value(data.PCAnTrua);
+                $('#desk______controlid_____ .popup-modal-background .PCDienThoai').value(data.PCDienThoai);
+                $('#desk______controlid_____ .popup-modal-background .PCTrangPhuc').value(data.PCTrangPhuc);
+                $('#desk______controlid_____ .popup-modal-background .PCVPP').value(data.PCVPP);
+                $('#desk______controlid_____ .popup-modal-background .PCKhac').value(data.PCKhac);
+                $('#desk______controlid_____ .popup-modal-background .DieuChinhTruocThue').value(data.DieuChinhTruocThue1 + data.DieuChinhTruocThue2);
+                $('#desk______controlid_____ .popup-modal-background .DieuChinhSauThue').value(data.DieuChinhSauThue1 + data.DieuChinhSauThue2);
+                $('#desk______controlid_____ .popup-modal-background .GiamTruGiaCanh').value(data.GiamTruGiaCanh);
+                $('#desk______controlid_____ .popup-modal-background .NguoiPhuThuoc').value(data.NguoiPhuThuoc);
+
+                $('#desk______controlid_____ .popup-modal-background .BaoHiem').value(data.BHXH + data.BHYT + data.BHTN);
+                $('#desk______controlid_____ .popup-modal-background .CongDoan').value(data.CongDoan);
+                $('#desk______controlid_____ .popup-modal-background .ThueTNCN').value(data.ThueTNCN);
+
+                $('#desk______controlid_____ .popup-modal-background .ThucLinh').value(data.ThucLinh);
+                $('#desk______controlid_____ .popup-modal-background .GhiChu').value(data.GhiChu);
+
+            },
+
+            error: function (result) {
+                handleResponseError(_____controlid______AlertMessage, result);
+            }
+        });
+    }
+
+    function _____controlid______DeleteLuongThang(coQuanId, thang, nam, soLan) {
+        let rows = [];
+
+        let model = new Object();
+        model.CoQuanId = coQuanId;
+        model.Thang = thang;
+        model.Nam = nam;
+        model.SoLan = soLan;
+        $.ajax({
+            type: 'POST',
+            url: 'api/' + _____controlid______Table + '/DeleteLuongThang',
+            async: false,
+            data: JSON.stringify(model),
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                _____controlid______OnLoad();
+            },
+
+            error: function (result) {
+                handleResponseError(_____controlid______AlertMessage, result);
+            }
+        });
+    }
+</script>

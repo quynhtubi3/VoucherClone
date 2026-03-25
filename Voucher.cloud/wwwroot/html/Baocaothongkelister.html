@@ -1,0 +1,183 @@
+﻿<style>
+    #container______controlid_____ .form-toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #ccc;
+        border-top: 1px solid #ccc;
+    }
+
+    #container______controlid_____ .list-button {
+        display: flex;
+    }
+
+    #container______controlid_____ .pagination-container {
+        display: flex;
+        align-items: center;
+    }
+
+    #container______controlid_____ .pagination {
+        padding: 0 10px !important;
+    }
+</style>
+
+<!--Giao diện căn bản cho danh sách-->
+<link href="../css/listlister.css" rel="stylesheet" />
+
+<div class="s3tcloud-prefix form-container list-lister" id="container______controlid_____" tabindex="0">
+    <div class="form-title">
+        <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="Menu_Var_Favorite">
+        </div>
+        <div class="button-group">
+            <div class="s3t-tooltip toolbar-button button-favorite" data-tooltip-key='Menu_Var_Favorite'><i class="fa fa-heart"></i></div>
+            <!--<div class="s3t-tooltip toolbar-button button-help" href='_____htmlid_____' data-tooltip-key='Menu_Var_Help'><i class="fa fa-question-circle-o"></i></div>-->
+            <div class="s3t-tooltip toolbar-button button-close" placement='sw' data-tooltip-key='Common_Button_Close'><i class="fa fa-remove"></i></div>
+        </div>
+    </div>
+    <div class="form-toolbar">
+        <div class="list-button">
+            <div class='s3t-tooltip toolbar-button button-refresh blink-background' data-tooltip-key='Common_Button_Refresh' placement='s'><i class='fa fa-play'></i></div>
+            <div class="s3t-tooltip toolbar-button button-export-excel" data-tooltip-key='Common_Tooltip_Button_Export_Excel' data-hot-key='Ctrl<br>F5'><i class="fa fa-file-excel-o"></i></div>
+            <div class="s3t-tooltip toolbar-button button-search" data-tooltip-key='Common_Button_Search'><i class="fa fa-search"></i></div>
+        </div>
+
+        <div class="pagination-container">
+            <ul class="pagination" id="_____controlid______pagination"></ul>
+            <div>
+                <span data-i18n-layout='layout3' data-i18n-key='Common_Var_Display'></span>
+                <select id="_____controlid______pageSizeSelect">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
+                <span data-i18n-layout='layout3' data-i18n-key='Common_Var_Display_Panigation'></span>
+            </div>
+        </div>
+
+    </div>
+    <div class="form-body" tabindex="1">
+    </div>
+</div>
+
+
+<div class="s3tcloud-prefix popup-modal" id="modal______controlid_____" tabindex="0">
+    <div class="popup-modal-background" tabindex="0">
+        <div child-form="search">
+            <div class="popup-modal-form">
+                <div class="form-title">
+                    <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="Common_Filter_Title">
+                    </div>
+                    <div class="button-group">
+                        <div class="s3t-tooltip toolbar-button button-close" placement='sw' data-tooltip-key='Common_Button_Close'><i class="fa fa-remove"></i></div>
+                    </div>
+                </div>
+                <div class="popup-modal-body">
+                    <div class='form-group'>
+                        <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Date_From'></div>
+                        <input type="text" class="modal-textbox text-date fromDate" validate="false" style="width:120px;" maxlength="10" value="__/__/____" />
+                    </div>
+                    <div class='form-group'>
+                        <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Date_To'></div>
+                        <input type="text" class="modal-textbox text-date toDate" validate="false" style="width:120px;" maxlength="10" value="__/__/____" />
+                    </div>
+                </div>
+                <div class="form-footer">
+                    <div class="footer-button button-save">
+                        <div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Button_Agree"></div>
+                    </div>
+                    <div class="footer-button button-cancel">
+                        <div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Button_Cancel"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div child-form="search2">
+            <div class="popup-modal-form">
+                <div class="form-title">
+                    <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="Common_Filter_Title">
+                    </div>
+                    <div class="button-group">
+                        <div class="s3t-tooltip toolbar-button button-close" placement='sw' data-tooltip-key='Common_Button_Close'><i class="fa fa-remove"></i></div>
+                    </div>
+                </div>
+                <div class="popup-modal-body">
+                    <div class='form-group'>
+                        <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Date_From'></div>
+                        <input type="text" class="modal-textbox text-date fromDate" validate="false" style="width:120px;" maxlength="10" value="__/__/____" />
+                    </div>
+                    <div class='form-group'>
+                        <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Date_To'></div>
+                        <input type="text" class="modal-textbox text-date toDate" validate="false" style="width:120px;" maxlength="10" value="__/__/____" />
+                    </div>
+                </div>
+                <div class="form-footer">
+                    <div class="footer-button button-save">
+                        <div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Button_Agree"></div>
+                    </div>
+                    <div class="footer-button button-cancel">
+                        <div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Button_Cancel"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div child-form="search3">
+            <div class="popup-modal-form">
+                <div class="form-title">
+                    <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="Common_Filter_Title">
+                    </div>
+                    <div class="button-group">
+                        <div class="s3t-tooltip toolbar-button button-close" placement='sw' data-tooltip-key='Common_Button_Close'><i class="fa fa-remove"></i></div>
+                    </div>
+                </div>
+                <div class="popup-modal-body">
+                    <div class='form-group'>
+                        <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='VoucherSapHetHan_Week_Var_Title'></div>
+                        <input type="number" class="modal-textbox for-week" style="width:120px;" validate="false" />
+                        <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Week_Var_Title'></div>
+
+                    </div>
+                </div>
+                <div class="form-footer">
+                    <div class="footer-button button-save">
+                        <div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Button_Agree"></div>
+                    </div>
+                    <div class="footer-button button-cancel">
+                        <div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Button_Cancel"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div child-form="search4">
+            <div class="popup-modal-form">
+                <div class="form-title">
+                    <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="Common_Filter_Title">
+                    </div>
+                    <div class="button-group">
+                        <div class="s3t-tooltip toolbar-button button-close" placement='sw' data-tooltip-key='Common_Button_Close'><i class="fa fa-remove"></i></div>
+                    </div>
+                </div>
+                <div class="popup-modal-body">
+                    <div class='form-group'>
+                        <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Date_From'></div>
+                        <input type="text" class="modal-textbox text-date fromDate" validate="false" style="width:120px;" maxlength="10" value="__/__/____" />
+                    </div>
+                    <div class='form-group'>
+                        <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Date_To'></div>
+                        <input type="text" class="modal-textbox text-date toDate" validate="false" style="width:120px;" maxlength="10" value="__/__/____" />
+                    </div>
+                </div>
+                <div class="form-footer">
+                    <div class="footer-button button-save">
+                        <div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Button_Agree"></div>
+                    </div>
+                    <div class="footer-button button-cancel">
+                        <div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Button_Cancel"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head style="background-color: #E5E5E5;">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+
+    <link rel="stylesheet" href="~/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/sweetalert2.min.css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script type="text/javascript" src="~/js/jquery1.11.2.min.js"></script>
+    <script type="text/javascript" src="~/js/translator.js"></script>
+    <script>
+        var modal, loading;
+        function ShowProgress() {
+            modal = document.createElement("DIV");
+            modal.className = "modal";
+            document.body.appendChild(modal);
+            loading = document.getElementsByClassName("loading")[0];
+            loading.style.display = "block";
+            var top = Math.max(window.innerHeight / 2 - loading.offsetHeight / 2, 0);
+            var left = Math.max(window.innerWidth / 2 - loading.offsetWidth / 2, 0);
+            loading.style.top = top + "px";
+            loading.style.left = left + "px";
+        };
+
+        function HideProgress() {
+            document.body.removeChild(modal);
+            loading.style.display = "none";
+        };
+
+        function LoadDatabase(code) {
+            $.ajax({
+                type: 'GET',
+                url: "https://" + "@{@Context.Request.Host}" + '/api/AccountSupport/Get?accountName=' + $("#CompanyCode").val(),
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    $("#Database").empty();
+                    if (data.length > 0) {
+                        if (data[0].Status == true) {
+                            $("#Database").append('<option data-i18n-key="LoginForm_Var_DatabaseName" value=""></option>');
+                            let elements = $("#Database")[0].querySelectorAll("[data-i18n-key]");
+                            let replace = (element) => {
+                                element["innerHTML"] = loginDictionary[element.getAttribute("data-i18n-key")][code];
+                            };
+                            elements.forEach(replace);
+                            $('#DatabaseName').val('');
+                            $("#validate-session ul").empty();
+                            $("#validate-session ul").append("<li data-i18n-key='LoginForm_Validate_UserName_Locked'>" + loginDictionary["LoginForm_Validate_UserName_Locked"][code] + "</li>");
+                        } else {
+                            data.forEach(function (item) {
+                                $("#Database").append('<option value=' + item.Value + '>' + item.Name + '</option>');
+                            });
+                            let index = data.findIndex(function (o) { return o.Value === $('#DatabaseName').val(); });
+                            if (index != -1)
+                                $('#Database').val($('#DatabaseName').val());
+                            else {
+                                $('#Database').val(data[0].Value);
+                                $('#DatabaseName').val(data[0].Value);
+                            }
+                            LoadInfo();
+                        }
+                    } else {
+                        if ($("#Database").length == 0) return;
+                        $("#Database").append('<option data-i18n-key="LoginForm_Var_DatabaseName" value=""></option>');
+                        let elements = $("#Database")[0].querySelectorAll("[data-i18n-key]");
+                        let replace = (element) => {
+                            element["innerHTML"] = loginDictionary[element.getAttribute("data-i18n-key")][code];
+                        };
+                        elements.forEach(replace);
+                        $('#DatabaseName').val('');
+                    }
+                },
+
+                error: function (result) {
+
+                }
+            });
+        }
+        function submitForm(form) {
+            $.validator.unobtrusive.parse(form);
+
+            //form validation is evaluated here
+            if ($(form).valid()) {
+                ShowProgress();
+                return true;
+            }
+            else {
+                let langCode = getParameterByName('lang');
+                if (!langCode) {
+                    langCode = $("#LangCode").val();
+                }
+                if (!langCode) {
+                    langCode = "VN";
+                }
+                $("#validate-session ul").empty();
+                $(form).validate().errorList.forEach(function (validate) {
+                    loginDictionary[validate.message][langCode];
+                    $("#validate-session ul").append("<li data-i18n-key='" + validate.message + "'>" + loginDictionary[validate.message][langCode] + "</li>");
+                });
+            }
+            return false;
+        }
+
+        function updateQueryStringParameter(uri, key, value) {
+            var re = new RegExp("([?&])" + key + "=.*?(&|#|$)", "i");
+            if (value === undefined) {
+                if (uri.match(re)) {
+                    return uri.replace(re, '$1$2').replace(/[?&]$/, '').replaceAll(/([?&])&+/g, '$1').replace(/[?&]#/, '#');
+                } else {
+                    return uri;
+                }
+            } else {
+                if (uri.match(re)) {
+                    return uri.replace(re, '$1' + key + "=" + value + '$2');
+                } else {
+                    var hash = '';
+                    if (uri.indexOf('#') !== -1) {
+                        hash = uri.replace(/.*#/, '#');
+                        uri = uri.replace(/#.*/, '');
+                    }
+                    var separator = uri.indexOf('?') !== -1 ? "&" : "?";
+                    return uri + separator + key + "=" + value + hash;
+                }
+            }
+        }
+
+        function getParameterByName(name, url = window.location.href) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        function LoadInfo() {
+            $.ajax({
+                    type: 'GET',
+                    url: "https://" + "@{@Context.Request.Host}" + '/api/AccountSupport/GetInfo?TK=' + $("#CompanyCode").val() + '&Database=' + $("#Database").val() + '&Username=' + $("#Input_UserName").val(),
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (data) {
+                        $("#Input_Password").val(data.Password);
+                        $("#Input_RememberMe")[0].checked = data.RememberMe;
+                    },
+
+                    error: function (result) {
+                        $("#Input_Password").val('');
+                        $("#Input_RememberMe")[0].checked = false;
+                    }
+                });
+        }
+
+        function translate(code) {
+            let elements = document.querySelectorAll("[data-i18n-key]");
+            let placeholders = document.querySelectorAll("[placeholder-i18n-key]");
+            let replace = (element) => {
+                element["innerHTML"] = loginDictionary[element.getAttribute("data-i18n-key")][code];
+            };
+            let placeholderReplace = (element) => {
+                $(element).attr("placeholder", loginDictionary[element.getAttribute("placeholder-i18n-key")][code]);
+            };
+            elements.forEach(replace);
+            placeholders.forEach(placeholderReplace);
+        }
+
+        var defaultLang = "VN";
+        var translator = new Translator({
+            persist: false,
+            languages: [defaultLang],
+            defaultLanguage: defaultLang,
+            detectLanguage: true,
+            filesLocation: "/i18n"
+        });
+        var loginDictionary = null;
+        translator.loadLogin().then(function () {
+            let langCode = getParameterByName('lang');
+            if (!langCode) {
+                langCode = $("#LangCode").val();
+            }
+            if (langCode) {
+                $(".button-lang").each(function () {
+                    if ($(this).attr("code") == langCode) {
+                        $(this).addClass("active");
+                        translate(langCode);
+                    } else {
+                        $(this).addClass("inactive");
+                    }
+                });
+            } else {
+                langCode = "VN";
+                $(".button-lang[code=VN]").addClass("active");
+                $(".button-lang[code=EN]").addClass("inactive");
+                $(".button-lang[code=JP]").addClass("inactive");
+                $(".button-lang[code=CN]").addClass("inactive");
+                $(".button-lang[code=KR]").addClass("inactive");
+                translate(langCode);
+            }
+            LoadDatabase(langCode);
+        });
+        $(function () {
+            $(".button-lang").off("mousedown").on("mousedown", function () {
+                $(".button-lang").addClass("inactive").removeClass("active");
+                $(this).removeClass("inactive").addClass("active");
+                let code = $(this).attr("code");
+                translate(code);
+                $("#lang").val(code);
+                if ($("#forgot-password").length > 0) {
+                    let href = $("#forgot-password").attr("href");
+                    if (href.includes("?")) {
+                        href = href.split("?")[0];
+                    }
+                    $("#forgot-password").attr("href", href + "?lang=" + code);
+                }
+
+                if (history.pushState) {
+                    var newUrl = updateQueryStringParameter(window.location.href, "lang", code);
+                    window.history.pushState({ path: newUrl }, '', newUrl);
+                }
+            });
+            $("#CompanyCode").off("blur").on("blur", function () {
+                let langCode = getParameterByName('lang');
+                if (!langCode) {
+                    langCode = $("#LangCode").val();
+                }
+                if (!langCode) {
+                    langCode = "VN"
+                }
+                LoadDatabase(langCode);
+            });
+            $("#Database").off("change").on("change", function () {
+                $('#DatabaseName').val($("#Database").val());
+                LoadInfo();
+            });
+            $("#Input_UserName").off("blur").on("blur", function () {
+                LoadInfo();
+            });
+            if ($("#Input_Password_Hidden").val()) $("#Input_Password").val($("#Input_Password_Hidden").val());
+        })
+    </script>
+</head>
+@using Voucher.cloud.Models.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+<body>
+    <div id="particles-js"><canvas class="particles-js-canvas-el" style="width: 100%; height: 100%;"></canvas></div>
+    <div class="container">
+        <main role="main" class="pb-3" style=" padding-top: 50px; ">
+            @RenderBody()
+        </main>
+    </div>
+    <div class="loading" align="center">
+        <br />
+        <img style="width:50px; height:50px;" src="https://www.aspsnippets.com/demos/loader.gif" alt="" />
+        <br />
+        <br />
+        <div data-i18n-key="LoginForm_Loading"></div>
+    </div>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

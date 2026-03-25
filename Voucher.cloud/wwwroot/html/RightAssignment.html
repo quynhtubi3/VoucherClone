@@ -1,0 +1,379 @@
+﻿<style>
+    #desk______controlid_____ .form-container {
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        border: none;
+    }
+
+    #desk______controlid_____ .form-editor {
+        height: calc(100% - 103px) !important;
+    }
+
+    #desk______controlid_____ table input[type=checkbox] {
+        margin: -1.5px 0px !important;
+    }
+    /*#desk______controlid_____ .form-body {
+        height: calc(100% - 64px);
+    }*/
+
+    #desk______controlid_____ .container {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #desk______controlid_____ .container .w3-container.menu-tab {
+        display: none;
+        padding-top: 10px;
+    }
+
+    #desk______controlid_____ table.list {
+        width: 100%;
+        border: 1px solid red;
+    }
+
+    #desk______controlid_____ table td.level1 {
+        padding-left: 50px;
+    }
+
+    #desk______controlid_____ .form-group {
+        margin-top: 0px;
+        margin-bottom: 1px;
+        margin-left: 0px;
+        justify-content: space-between;
+    }
+    #desk______controlid_____ .w3-row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    #desk______controlid_____ a {
+        color: inherit;
+        background-color: transparent;
+    }
+    .w3-padding {
+        padding: 8px 16px !important;
+    }
+    .w3-bottombar {
+        border-bottom: 6px solid #ccc !important;
+    }
+    .w3-third {
+        float: left;
+        width: 20%;
+    }
+    .w3-border-red, .w3-hover-border-red:hover {
+        border-color: var(--theme) !important;
+    }
+</style>
+
+<div id="container______controlid_____" class="s3tcloud-prefix form-container" tabindex="0">
+    <div class="form-body">
+        <div id="_____controlid_______ScrollArea" class="clusterize-scroll" tabindex="0">
+            <table controlid="_____controlid______" htmlid='_____htmlid______Invoice'>
+                <colgroup>
+                    <col width='40' noresizeable />
+                    <col width='200' />
+                    <col width='40' />
+                    <col width='40' />
+                    <col width='40' />
+                    <col width='40' />
+                    <col width='40' />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <td></td>
+
+                        <th colname="Ten_File" data-i18n-layout="layout2" data-i18n-key="Common_Var_FunctionName"></th>
+                        <th colname="Right_1" data-i18n-layout="layout3" data-i18n-key="Common_Button_View"></th>
+                        <th colname="Right_2" data-i18n-layout="layout3" data-i18n-key="Common_Button_Add"></th>
+                        <th colname="Right_3" data-i18n-layout="layout3" data-i18n-key="Common_Button_Edit"></th>
+                        <th colname="Right_4" data-i18n-layout="layout3" data-i18n-key="Common_Button_Delete"></th>
+                        <th colname="Right_5" data-i18n-layout="layout3" data-i18n-key="Common_Var_Export"></th>                        
+                    </tr>
+                </thead>
+                <tbody id="_____controlid_______ContentArea" class="clusterize-content">
+                </tbody>
+            </table>
+        </div>   
+    </div>
+    <div class="form-footer">
+        <div class="footer-button button-save">
+            <div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Button_Agree">
+                
+            </div>
+        </div>
+        <div class="footer-button button-cancel">
+            <div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Button_Cancel">
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>    
+    
+    var _____controlid_______S3Table = new S3ttable({
+        Id: "_____controlid_______ScrollArea",
+        DefaultFocus: false,
+        ClusterizeData: ClusterizeData()
+    });
+
+    $(function () {
+        $('#desk______controlid_____ .form-footer .button-cancel').on('click', function (e) {
+            RemoveTab('_____controlid_____');
+        });
+    })
+
+    function _____controlid_______right1_click(element, id) {
+        let index = _____controlid_______S3Table.ClusterizeData.data.findIndex(function (o) {
+            return o.Id === id;
+        })
+
+        _____controlid_______S3Table.ClusterizeData.data[index].Right_1 = element.checked;
+        let row = _____controlid_______S3Table.ClusterizeData.data[index];
+        _____controlid_______S3Table.ClusterizeData.RowStateModified(row.Id);
+        let model = new Object();
+        model.row = row;
+        model.controlid = "_____controlid_____";
+        _____controlid_______S3Table.ClusterizeData.row_data.splice(index, 1, RightAssignment_BuildRow(model));
+        
+        if (_____controlid_______S3Table.ClusterizeData.data[index].ParentId == '') {
+            let parentId = _____controlid_______S3Table.ClusterizeData.data[index].Id;
+            _____controlid_______S3Table.ClusterizeData.data.filter(arow => arow.ParentId == parentId).forEach(function (arow) {
+                let index = _____controlid_______S3Table.ClusterizeData.data.findIndex(function (o) {
+                    return o.Id === arow.Id;
+                });
+                _____controlid_______S3Table.ClusterizeData.data[index].Right_1 = element.checked;
+                _____controlid_______S3Table.ClusterizeData.RowStateModified(arow.Id);
+                let amodel = new Object();
+                amodel.row = arow;
+                amodel.controlid = "_____controlid_____";
+                _____controlid_______S3Table.ClusterizeData.row_data.splice(index, 1, RightAssignment_BuildRow(amodel));
+            });
+        }
+
+        _____controlid_______S3Table.Clusterize.update(_____controlid_______S3Table.ClusterizeData.row_data);
+    }
+
+    function _____controlid_______right2_click(element, id) {
+        let index = _____controlid_______S3Table.ClusterizeData.data.findIndex(function (o) {
+            return o.Id === id;
+        })
+
+        _____controlid_______S3Table.ClusterizeData.data[index].Right_2 = element.checked;
+        let row = _____controlid_______S3Table.ClusterizeData.data[index];
+        _____controlid_______S3Table.ClusterizeData.RowStateModified(row.Id);
+        let model = new Object();
+        model.row = row;
+        model.controlid = "_____controlid_____";
+        _____controlid_______S3Table.ClusterizeData.row_data.splice(index, 1, RightAssignment_BuildRow(model));
+
+        if (_____controlid_______S3Table.ClusterizeData.data[index].ParentId == '') {
+            let parentId = _____controlid_______S3Table.ClusterizeData.data[index].Id;
+            _____controlid_______S3Table.ClusterizeData.data.filter(arow => arow.ParentId == parentId).forEach(function (arow) {
+                let index = _____controlid_______S3Table.ClusterizeData.data.findIndex(function (o) {
+                    return o.Id === arow.Id;
+                });
+                _____controlid_______S3Table.ClusterizeData.data[index].Right_2 = element.checked;
+                _____controlid_______S3Table.ClusterizeData.RowStateModified(arow.Id);
+                let amodel = new Object();
+                amodel.row = arow;
+                amodel.controlid = "_____controlid_____";
+                _____controlid_______S3Table.ClusterizeData.row_data.splice(index, 1, RightAssignment_BuildRow(amodel));
+            });
+        }
+
+        _____controlid_______S3Table.Clusterize.update(_____controlid_______S3Table.ClusterizeData.row_data);
+    }
+
+    function _____controlid_______right3_click(element, id) {
+        let index = _____controlid_______S3Table.ClusterizeData.data.findIndex(function (o) {
+            return o.Id === id;
+        })
+
+        _____controlid_______S3Table.ClusterizeData.data[index].Right_3 = element.checked;
+        let row = _____controlid_______S3Table.ClusterizeData.data[index];
+        _____controlid_______S3Table.ClusterizeData.RowStateModified(row.Id);
+        let model = new Object();
+        model.row = row;
+        model.controlid = "_____controlid_____";
+        _____controlid_______S3Table.ClusterizeData.row_data.splice(index, 1, RightAssignment_BuildRow(model));
+
+        if (_____controlid_______S3Table.ClusterizeData.data[index].ParentId == '') {
+            let parentId = _____controlid_______S3Table.ClusterizeData.data[index].Id;
+            _____controlid_______S3Table.ClusterizeData.data.filter(arow => arow.ParentId == parentId).forEach(function (arow) {
+                let index = _____controlid_______S3Table.ClusterizeData.data.findIndex(function (o) {
+                    return o.Id === arow.Id;
+                });
+                _____controlid_______S3Table.ClusterizeData.data[index].Right_3 = element.checked;
+                _____controlid_______S3Table.ClusterizeData.RowStateModified(arow.Id);
+                let amodel = new Object();
+                amodel.row = arow;
+                amodel.controlid = "_____controlid_____";
+                _____controlid_______S3Table.ClusterizeData.row_data.splice(index, 1, RightAssignment_BuildRow(amodel));
+            });
+        }
+
+        _____controlid_______S3Table.Clusterize.update(_____controlid_______S3Table.ClusterizeData.row_data);
+    }
+
+    function _____controlid_______right4_click(element, id) {
+        let index = _____controlid_______S3Table.ClusterizeData.data.findIndex(function (o) {
+            return o.Id === id;
+        })
+
+        _____controlid_______S3Table.ClusterizeData.data[index].Right_4 = element.checked;
+        let row = _____controlid_______S3Table.ClusterizeData.data[index];
+        _____controlid_______S3Table.ClusterizeData.RowStateModified(row.Id);
+        let model = new Object();
+        model.row = row;
+        model.controlid = "_____controlid_____";
+        _____controlid_______S3Table.ClusterizeData.row_data.splice(index, 1, RightAssignment_BuildRow(model));
+
+        if (_____controlid_______S3Table.ClusterizeData.data[index].ParentId == '') {
+            let parentId = _____controlid_______S3Table.ClusterizeData.data[index].Id;
+            _____controlid_______S3Table.ClusterizeData.data.filter(arow => arow.ParentId == parentId).forEach(function (arow) {
+                let index = _____controlid_______S3Table.ClusterizeData.data.findIndex(function (o) {
+                    return o.Id === arow.Id;
+                });
+                _____controlid_______S3Table.ClusterizeData.data[index].Right_4 = element.checked;
+                _____controlid_______S3Table.ClusterizeData.RowStateModified(arow.Id);
+                let amodel = new Object();
+                amodel.row = arow;
+                amodel.controlid = "_____controlid_____";
+                _____controlid_______S3Table.ClusterizeData.row_data.splice(index, 1, RightAssignment_BuildRow(amodel));
+            });
+        }
+
+        _____controlid_______S3Table.Clusterize.update(_____controlid_______S3Table.ClusterizeData.row_data);
+    }
+
+    function _____controlid_______right5_click(element, id) {
+        let index = _____controlid_______S3Table.ClusterizeData.data.findIndex(function (o) {
+            return o.Id === id;
+        })
+
+        _____controlid_______S3Table.ClusterizeData.data[index].Right_5 = element.checked;
+        let row = _____controlid_______S3Table.ClusterizeData.data[index];
+        _____controlid_______S3Table.ClusterizeData.RowStateModified(row.Id);
+        let model = new Object();
+        model.row = row;
+        model.controlid = "_____controlid_____";
+        _____controlid_______S3Table.ClusterizeData.row_data.splice(index, 1, RightAssignment_BuildRow(model));
+
+        if (_____controlid_______S3Table.ClusterizeData.data[index].ParentId == '') {
+            let parentId = _____controlid_______S3Table.ClusterizeData.data[index].Id;
+            _____controlid_______S3Table.ClusterizeData.data.filter(arow => arow.ParentId == parentId).forEach(function (arow) {
+                let index = _____controlid_______S3Table.ClusterizeData.data.findIndex(function (o) {
+                    return o.Id === arow.Id;
+                });
+                _____controlid_______S3Table.ClusterizeData.data[index].Right_5 = element.checked;
+                _____controlid_______S3Table.ClusterizeData.RowStateModified(arow.Id);
+                let amodel = new Object();
+                amodel.row = arow;
+                amodel.controlid = "_____controlid_____";
+                _____controlid_______S3Table.ClusterizeData.row_data.splice(index, 1, RightAssignment_BuildRow(amodel));
+            });
+        }
+
+        _____controlid_______S3Table.Clusterize.update(_____controlid_______S3Table.ClusterizeData.row_data);
+    }
+
+    async function _____controlid______OnShow() {
+        var key = !"_____controlid_____".includes("_Role") ? "UserRightAssignment_Title" : "GroupRightAssignment_Title";
+        await translator.translateWithKey($('#desk______controlid_____ .form-title .billingual-wrapper')[0], key);
+        await translator.translateWithKey($('#tab______controlid_____ .billingual-wrapper')[0], key);
+        let BuildRowModel = new Object();
+        BuildRowModel.controlid = "_____controlid_____";
+        _____controlid_______S3Table.SetOptions({
+            BuildRow: RightAssignment_BuildRow,
+            BuildRowModel: BuildRowModel,
+            Callbacks: {
+                ClusterChanged: function () {
+                    /*_____controlid______TreeTableToggle();*/
+                }
+            }
+        });
+        _____controlid_______S3Table.Init();
+
+        _____controlid______Loading = new ItpOverlay("container______controlid_____", "partial-loading");
+        _____controlid______Loading.show();
+        window.setTimeout(function () {
+            let url = 'api/RightAssignment/Get?' + (!"_____controlid_____".includes("_Role") ? 'userId=' : 'roleId=') + _____parentid______S3Table.ClusterizeData.current_row_id;
+            $.ajax({
+                type: 'GET',
+                url: url,
+                //async: false,
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {                    
+                    _____controlid_______S3Table.Load(data);
+                },
+
+                error: function (result) {
+                    _____controlid______Loading.hide();
+                    handleResponseError(_____controlid______AlertMessage, result);
+                },
+                complete: function () {
+                    _____controlid______Loading.hide();
+                },
+            });
+        }, 0);
+    }
+
+    async function _____controlid______OnSave() {
+        var data = [];
+
+        $.map(_____controlid_______S3Table.ClusterizeData.data, function (value, index) {
+            var temp = new Object();
+            temp.UserId = _____parentid______S3Table.ClusterizeData.current_row_id;
+            temp.FuncID = value.Id;
+            temp.FuncType = "I";
+            temp.Right_1 = value.Right_1;
+            temp.Right_2 = value.Right_2;
+            temp.Right_3 = value.Right_3;
+            temp.Right_4 = value.Right_4;
+            temp.Right_5 = value.Right_5;
+            temp.IsUser = !"_____controlid_____".includes("_Role");
+            temp.RowState = value.RowState;
+            data.push(temp);
+        });
+
+        return _____controlid______callSaveApi(data);
+    }
+
+    function _____controlid______callSaveApi(data) {
+        return new Promise(function (resolve, reject) {
+            $.ajax
+            ({
+                type: 'POST',
+                url: 'api/RightAssignment/Save',
+                //async: false,
+                data: JSON.stringify(data),
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    let obj = data;
+
+                    if (obj.Code == 1) {
+                        ShowNotification('Thành công!', 'success');
+                        _____controlid______Loading.hide();
+                        resolve(0);
+                    } else {
+                        _____controlid______Loading.hide();
+                        handleResponseApiCode(_____controlid______AlertMessage, obj);
+                        resolve(-1);
+                    }
+                },
+
+                error: function (result) {
+                    _____controlid______Loading.hide();
+                    handleResponseError(_____controlid______AlertMessage, result);
+                    resolve(-1);
+                }
+            });
+        });
+    }
+
+</script>

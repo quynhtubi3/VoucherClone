@@ -1,0 +1,45 @@
+﻿<!--Giao diện căn bản cho thêm/sửa danh mục-->
+
+<div class="s3tcloud-prefix form-container list-editor" id="container______controlid_____" tabindex="0">
+    <div class="form-title">
+        <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="Common_Title">
+            <!--<label class='main-language'></label>
+            <p class='sub-language'></p>-->
+        </div>
+        <div class="button-group">
+            <!--<div class="s3t-tooltip toolbar-button button-help" href='_____htmlid_____' code='_____controlid______Loai_Ts' data-tooltip-key='Menu_Var_Help'><i class="fa fa-question-circle-o"></i></div>-->
+            <div class="s3t-tooltip toolbar-button button-close" placement='sw' data-tooltip-key='Common_Button_Close'><i class="fa fa-remove"></i></div>
+        </div>
+    </div>
+    <div class="form-body form-editor">
+    </div>
+    <div class="form-footer">
+        <div class="button-group">
+            <div class="footer-button button-save">
+                <div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Button_Save">                    
+                </div>
+            </div>
+            <div class="footer-button button-add">
+                <div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Button_Add">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="free-field-container" style="display:none">
+    <div class="form-group">
+        <div class="modal-label billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="Common_Var_Type">
+
+        </div>
+        <div class="s3t-text-search-container" style="margin-right: 5px;">
+            <input type="text" class="form-control modal-textbox text-search Ma_Loai1" validate="true" no-required="true" add-function='TextSearchCallback_DmLoai("_____controlid_____", $("#desk______controlid_____ .Ma_Loai1"),"#typeCode#1")' data-first-filter="Type = '#typeCode#1'" data-field-name="Ma_Loai" data-table="DmLoai" />
+        </div>
+        <div class="s3t-text-search-container" style="margin-right: 5px;">
+            <input type="text" class="form-control modal-textbox text-search Ma_Loai2" validate="true" no-required="true" add-function='TextSearchCallback_DmLoai("_____controlid_____", $("#desk______controlid_____ .Ma_Loai2"),"#typeCode#2")' data-first-filter="Type = '#typeCode#2'" data-field-name="Ma_Loai" data-table="DmLoai" />
+        </div>
+        <div class="s3t-text-search-container">
+            <input type="text" class="form-control modal-textbox text-search Ma_Loai3" validate="true" no-required="true" add-function='TextSearchCallback_DmLoai("_____controlid_____", $("#desk______controlid_____ .Ma_Loai3"),"#typeCode#3")' data-first-filter="Type = '#typeCode#3'" data-field-name="Ma_Loai" data-table="DmLoai" />
+        </div>        
+    </div>
+</div>
+<div class="s3tcloud-prefix popup-modal" id="modal______controlid_____" tabindex="0"></div>

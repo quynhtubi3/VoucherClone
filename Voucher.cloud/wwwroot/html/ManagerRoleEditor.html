@@ -1,0 +1,179 @@
+﻿<style>
+
+#desk______controlid_____ .form-container {
+	width: 500px;
+	height: 200px;
+    margin: auto;
+}
+
+</style>
+
+<!--Nội dung màn hình thêm/sửa-->
+<div class="form-group">
+    <div class="modal-label billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="Common_Var_Code">
+
+    </div>
+    <input type="text" class="modal-textbox role-code upper-case" validate="true" style="text-transform: uppercase"/>
+</div>
+<div class="form-group">
+    <div class="modal-label billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="RoleList_Var_Name">
+
+    </div>
+    <input type="text" class="modal-textbox role-name"/>
+</div>
+<div class="form-group">
+    <div class="modal-label billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="RoleList_Var_Admin">
+
+    </div>    
+    <label class="checkbox-container">
+        <input class="role-type" type="checkbox" id="role-type" />
+        <span class="checkmark"></span>
+    </label>
+</div>
+<script>
+    var _____controlid______NewChecked = false;
+    var _____controlid______FromOther = false;
+    var _____controlid______current_row_index = "";
+    async function _____controlid______Init(screenInfo, fromOther) {
+        initTextSearch($("#desk_managerusereditor .text-search"));
+        var key = screenInfo.NewChecked ? "Role_Var_Add_Title" : "Role_Var_Edit_Title";
+        await translator.translateWithKey($('#desk______controlid_____ .form-title .billingual-wrapper')[0], key);
+        await translator.translateWithKey($('#tab______controlid_____ .billingual-wrapper')[0], key);
+        _____controlid______NewChecked = screenInfo.NewChecked;
+        _____controlid______current_row_index = -1;
+        _____controlid______FromOther = fromOther;
+        if (screenInfo.Element) {
+            _____controlid______TextSearch = screenInfo.Element;
+        }
+
+        $.ajax({
+            type: 'GET',
+            url: 'api/Admin/User',
+            async: false,
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                if (data.NotDelete == false) {
+                    $('#desk______controlid_____ .role-type').closest(".form-group").remove();
+                    $("#desk______controlid_____ .form-container").height($("#desk______controlid_____ .form-container").height() - 32);
+
+                    if ($(window).height() - $('#desk______controlid_____ .form-container').height() - $('#maintaskbar').height() > 0) {
+                        $('#desk______controlid_____ .form-container').css('top', ($(window).height() - $('#desk______controlid_____ .form-container').height() - $('#maintaskbar').height()) / 2);
+                    }                    
+                } 
+            },
+
+            error: function (result) {
+
+            }
+        });
+    }
+
+    async function _____controlid______OnShowFromOther(screenInfo) {
+        await _____controlid______Init(screenInfo, true);
+        $('#desk______controlid_____ .role-code').focus();
+    }
+
+    async function _____controlid______OnShow(screenInfo) {
+        await _____controlid______Init(screenInfo)
+
+        let ClusterizeData = _____parentid______S3Table.ClusterizeData;
+        var index = ClusterizeData.data.findIndex(function (o) {
+            return o.Id === ClusterizeData.current_row_id;
+        });
+        _____controlid______current_row_index = index;
+        var index = _____controlid______current_row_index;
+        if (index != -1) {
+            $('#desk______controlid_____ .role-code').val(ClusterizeData.data[index].Name);
+            $('#desk______controlid_____ .role-name').val(ClusterizeData.data[index].Description);
+            if (ClusterizeData.data[index].Type == true) {
+                $("#role-type").attr("checked", "checked");
+            } else {
+                $("#role-type").removeAttr("checked");
+            }
+        }
+
+        if (_____controlid______NewChecked) {            
+            $('#desk______controlid_____ .role-code').focus().select();
+        } else {
+            $('#desk______controlid_____ .role-name').focus().select();
+            $('#desk______controlid_____ .role-code').prop('disabled', true);
+        }       
+    }
+
+    async function _____controlid______OnAdd() {
+        $('#desk______controlid_____ .role-code').focus().select();
+        $('#desk______controlid_____ .role-code').prop('disabled', false);
+        $('#desk______controlid_____ .role-code').value("");
+        $('#desk______controlid_____ .role-name').value("");
+    }
+
+    async function _____controlid______OnSave() { 
+        _____controlid______Loading.show();
+
+        let ClusterizeData = typeof _____parentid______S3Table !== 'undefined' && _____parentid______S3Table ? _____parentid______S3Table.ClusterizeData : null;
+        var row = new Object();
+        row.Id = _____controlid______current_row_index == -1 ? "" : ClusterizeData.data[_____controlid______current_row_index].Id;
+        row.Name = $('#desk______controlid_____ .role-code').val().toUpperCase();
+        row.Description = $('#desk______controlid_____ .role-name').val();
+        row.Type = $("#role-type").is(":checked");
+        row.ModifiedAt = _____controlid______current_row_index == -1 ? null : ClusterizeData.data[_____controlid______current_row_index].ModifiedAt;
+        row.ModifiedBy = ApplicationInstance.UserName;
+        return _____controlid______CallSaveApi(row);
+    }
+
+    function _____controlid______CallSaveApi(row) {
+        return new Promise(function (resolve, reject) {
+            let url = "";
+            if (_____controlid______NewChecked) {
+                url = 'api/Admin/CreateRole';
+            } else {
+                url = 'api/Admin/EditRole';
+            }
+            $.ajax
+                ({
+                type: 'POST',
+                url: url,
+                //async: false,
+                data: JSON.stringify(row),
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    let obj = data;
+
+                    if (obj.Code == 1) {
+                        ShowNotification('Thành công!', 'success');
+                        row.Id = obj.Id;
+                        row.ModifiedAt = obj.ModifiedAt;
+                        if (_____controlid______NewChecked) {    
+                            if (_____controlid______FromOther == true) {
+                                $(_____controlid______TextSearch).value(row.Name);
+                                $(_____controlid______TextSearch).focus().select();
+                                setTimeout(function () {
+                                    $(_____controlid______TextSearch).attr("user-value-changed", true);
+                                    $(_____controlid______TextSearch).data("data-value", JSON.stringify(row));
+                                });
+                            }
+                            if (typeof _____parentid______S3Table !== 'undefined') {
+                                _____parentid______S3Table.Add(row);                                
+                            }
+                        } else {
+                            _____parentid______S3Table.Update(row);       
+                        }
+
+                        _____controlid______Loading.hide();
+                        resolve(0);
+                    } else {
+                        _____controlid______Loading.hide();
+                        handleResponseApiCode(_____controlid______AlertMessage, obj);
+                        resolve(-1);
+                    }
+                },
+
+                error: function (result) {
+                    _____controlid______Loading.hide();
+                    handleResponseError(_____controlid______AlertMessage, result);
+                    resolve(-1);
+                }
+            });
+        });
+    }
+</script>

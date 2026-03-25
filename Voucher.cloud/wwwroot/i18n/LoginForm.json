@@ -1,0 +1,303 @@
+{
+  "LoginForm_Privacy": {
+    "VN": "Chính sách quyền riêng tư - Điều khoản dịch vụ",
+    "EN": "Privacy Policy - Terms of Service",
+    "JP": "プライバシーポリシー ・利用規約",
+    "KR": "개인정보 보호정책 - 서비스 사용 약관",
+    "CN": "隐私权政策 - 服务条款"
+  },
+  "LoginForm_Var_Logout": {
+    "VN": "Bạn đã đăng xuất thành công khỏi ứng dụng",
+    "EN": "You have successfully logged out of the application",
+    "JP": "アプリケーションのログアウトに成功した。",
+    "KR": "응용에서 성공적으로 로그아웃하셨습니다",
+    "CN": "您已成功退出应用程序"
+  },
+  "LoginForm_Notice": {
+    "VN": "Thông báo",
+    "EN": "Notice",
+    "JP": "通知",
+    "KR": "알림",
+    "CN": "通知"
+  },
+  "LoginForm_Button_Login": {
+    "VN": "Đăng nhập",
+    "EN": "Login",
+    "JP": "ログイン",
+    "KR": "로그인",
+    "CN": "登录"
+  },
+  "LoginForm_Button_Submit": {
+    "VN": "Thiết lập",
+    "EN": "Submit",
+    "JP": "設定",
+    "KR": "설정",
+    "CN": "设立"
+  },
+  "LoginForm_Var_Remember": {
+    "VN": "Ghi nhớ đăng nhập",
+    "EN": "Remember me",
+    "JP": "ログインを覚える",
+    "KR": "로그인 정보 저장하기",
+    "CN": "登录记住"
+  },
+  "LoginForm_Var_ForgotPassword": {
+    "VN": "Quên mật khẩu",
+    "EN": "Forgot password",
+    "JP": "パスワードを忘れた",
+    "KR": "비밀번호를 잊으 셨나요",
+    "CN": "忘记密码"
+  },
+  "LoginForm_Var_ForgotPass": {
+    "VN": "Quên mật khẩu?",
+    "EN": "Forgot password",
+    "JP": "パスワードを忘れた？",
+    "KR": "비밀번호를 잊으 셨나요?",
+    "CN": "忘记密码？"
+  },
+  "LoginForm_Var_CompanyCode": {
+    "VN": "Tài khoản",
+    "EN": "Account",
+    "JP": "アカウント",
+    "KR": "계정",
+    "CN": "帐户"
+  },
+  "LoginForm_Var_DatabaseName": {
+    "VN": "Tên doanh nghiệp",
+    "EN": "Business name",
+    "JP": "会社名",
+    "KR": "사업자명",
+    "CN": "企业名称"
+  },
+  "LoginForm_Var_Username": {
+    "VN": "Tên đăng nhập",
+    "EN": "Username",
+    "JP": "ユーザー名",
+    "KR": "사용자명",
+    "CN": "用户名"
+  },
+  "LoginForm_Var_Email": {
+    "VN": "Email",
+    "EN": "Email",
+    "JP": "Eメール",
+    "KR": "이메일",
+    "CN": "电子邮件"
+  },
+  "LoginForm_Var_Password": {
+    "VN": "Mật khẩu",
+    "EN": "Password",
+    "JP": "パスワード",
+    "KR": "비밀번호",
+    "CN": "密码"
+  },
+  "LoginForm_Var_ResetPassword": {
+    "VN": "Đặt lại mật khẩu",
+    "EN": "Reset password",
+    "JP": "パスワードを再設定する",
+    "KR": "비밀번호를 재설정하기",
+    "CN": "重设密码"
+  },
+  "LoginForm_Var_ConfirmPassword": {
+    "VN": "Xác nhận mật khẩu",
+    "EN": "Confirm password",
+    "JP": "パスワードを確認する",
+    "KR": "비밀번호를 확인하기",
+    "CN": "确认密码"
+  },
+  "LoginForm_Var_ConfirmMailMessage": {
+    "VN": "Cảm ơn bạn đã xác nhận email. Vui lòng thiết lập mật khẩu.",
+    "EN": "Thank you for your email confirmation. Please set up a password.",
+    "JP": "メールの確認ありがとうございます。 パスワードを設定してください。",
+    "KR": "이메일 확인을 감사합니다. 비밀번호를 설정하십시오.",
+    "CN": "感谢您已确认的电子邮件。请设置密码。"
+  },
+  "LoginForm_Var_TransactionExpired": {
+    "VN": "Phiên giao dịch hết hiệu lực.",
+    "EN": "The transaction has expired.",
+    "JP": "トランザクションの有効期限が切れた。",
+    "KR": "섹션은 만료되었습니다.",
+    "CN": "交易已过期。"
+  },
+  "LoginForm_Var_NotFound": {
+    "VN": "Không tìm thấy trang web này.",
+    "EN": "Web not found.",
+    "JP": "このウェブサイトを見つけできない。",
+    "KR": "이 사이트를 찾을 수 없습니다.",
+    "CN": "没有找到这个网站。"
+  },
+  "LoginForm_Var_ForgotPasswordConfirm": {
+    "VN": "Vui lòng kiểm tra email của bạn để đặt lại mật khẩu",
+    "EN": "Please check your email to reset your password",
+    "JP": "メールをチェックしてパスワードをリセットしてください",
+    "KR": "이메일을 확인하셔 비밀번호를 재설정하십시오",
+    "CN": "请检查您的电子邮件以重置您的密码"
+  },
+  "LoginForm_Var_ResetPasswordForm": {
+    "VN": "<p>Xin chào {0},</p><p></p><p>Vui lòng đặt lại mật khẩu tài khoản của bạn bằng cách sử dụng url này:</p><p></p><p>{1}</p><p></p>",
+    "EN": "<p>Hello {0},</p><p></p><p>Please reset your account password using this url:</p><p></p><p>{1}</p><p></p>",
+    "JP": "<p>こんにちは {0},</p><p></p><p>次のURLでアカウントのパスワードをリセットしてください。</p><p></p><p>{1}</p><p></p>",
+    "KR": "<p>안녕하세요 {0},</p><p></p><p>다음 URL을 사용하여 계정 비밀번호를 재설정하십시오:</p><p></p><p>{1}</p><p></p>",
+    "CN": "<p>你好 {0},</p><p></p><p>请使用以下网址重置您的帐户密码：</p><p></p><p>{1}</p><p></p>"
+  },
+  "LoginForm_Var_ActiveForm": {
+    "VN": "<p>Xin chào {0},</p><p></p><p>Một tài khoản đã được tạo cho bạn tại 3TCloud.</p><p></p><p>Vui lòng truy cập vào url này để kích hoạt tài khoản của bạn và thiết lập mật khẩu. </p><p></p><p>{1}</p><p></p>",
+    "EN": "<p>Hello {0},</p><p></p><p>An account has been created for you at 3TCloud.</p><p></p><p>Please visit this url to activate your account and set up a password.</p><p></p><p>{1}</p><p></p>",
+    "JP": "<p>こんにちは {0},</p><p></p><p>3TCloudでアカウントが作成されました。</p><p></p><p>このURLにアクセスして、アカウントを有効化にして、パスワードを設定してください。</p><p></p><p>{1}</p><p></p>",
+    "KR": "<p>안녕하세요 {0},</p><p></p><p>3TCloud에 계정이 생성되었습니다.</p><p></p><p>이 URL을 방문하여 계정을 활성화하시고 비밀번호를 설정하십시오. </p><p></p><p>{1}</p><p></p>",
+    "CN": "<p>你好 {0},</p><p></p><p>已在 3TCloud 为您创建一个帐户。 </p><p></p><p>请访问此网址以激活您的帐户并设置密码。</p><p></p><p>{1}</p><p></p>"
+  },
+  "LoginForm_Var_ResetPassNotice1": {
+    "VN": "Mật khẩu của bạn đã được thiết lập lại. Vui lòng",
+    "EN": "Your password has been reset. Please",
+    "JP": "パスワードがリセットされた。",
+    "KR": "비밀번호가 초기화되었습니다.",
+    "CN": "您的密码已重置。请"
+  },
+  "LoginForm_Var_ResetPassNotice2": {
+    "VN": "nhấp vào đây để đăng nhập",
+    "EN": "click here to login",
+    "JP": "ログインするにはここをクリックしてください",
+    "KR": "로그인하시려면 여기를 클릭하십시오",
+    "CN": "点击此处登录"
+  },
+  "LoginForm_Var_RememberMachine": {
+    "VN": "Ghi nhớ máy này",
+    "EN": "Remember this machine",
+    "JP": "このマシンを覚える",
+    "KR": "이 장비를 기억하기",
+    "CN": "记住这台机器"
+  },
+  "LoginForm_Var_2FA": {
+    "VN": "Mã xác thực",
+    "EN": "Authentication code",
+    "JP": "認証コード",
+    "KR": "확인번호",
+    "CN": "验证码"
+  },
+  "LoginForm_Var_2FA_Authentication": {
+    "VN": "Xác thực hai yếu tố",
+    "EN": "Two-factor authentication",
+    "JP": "2ファクタ認証",
+    "KR": "이중 확인",
+    "CN": "两步验证"
+  },
+  "LoginForm_Validate_Email_NotRegister": {
+    "VN": "Email chưa được đăng ký",
+    "EN": "Not registered email",
+    "JP": "メールがまだ登録されていない",
+    "KR": "이메일이 등록되지 않았습니다",
+    "CN": "邮箱未注册"
+  },
+  "LoginForm_Validate_CompanyCode_Require": {
+    "VN": "Trường tài khoản là bắt buộc",
+    "EN": "Account field is required",
+    "JP": "アカウントフィールドは必須だ",
+    "KR": "계정 필드는 입력되어야 합니다",
+    "CN": "帐户代码字段为必须填"
+  },
+  "LoginForm_Validate_DatabaseName_Require": {
+    "VN": "Trường tên doanh nghiệp là bắt buộc",
+    "EN": "Business name field is required",
+    "JP": "会社名フィールドは必須だ",
+    "KR": "사업자명 필드는 입력되어야 합니다",
+    "CN": "企业名称字段为必须填"
+  },
+  "LoginForm_Validate_Username_Require": {
+    "VN": "Trường tên đăng nhập là bắt buộc",
+    "EN": "Username field is required",
+    "JP": "ユーザー名フィールドは必須だ",
+    "KR": "사용자명 필드는 입력되어야 합니다",
+    "CN": "用户名字段为必须填"
+  },
+  "LoginForm_Validate_Password_Require": {
+    "VN": "Trường mật khẩu là bắt buộc",
+    "EN": "Password field is required",
+    "JP": "パスワードフィールドは必須だ",
+    "KR": "비밀번호는 입력되어야 합니다",
+    "CN": "密码字段为必须须填"
+  },
+  "LoginForm_Validate_Company_Invalid": {
+    "VN": "Tài khoản không đúng",
+    "EN": "Account is incorrect",
+    "JP": "アカウントが正しくない",
+    "KR": "계정 이름은 올바르지 않습니다",
+    "CN": "公司帐户不正确"
+  },
+  "LoginForm_Validate_UserName_Invalid": {
+    "VN": "Tên đăng nhập không đúng",
+    "EN": "Username is incorrect",
+    "JP": "ユーザー名が正しくない",
+    "KR": "사용자명은 올바르지 않습니다",
+    "CN": "用户名不正确"
+  },
+  "LoginForm_Validate_UserName_Exist": {
+    "VN": "Tên đăng nhập đã tồn tại",
+    "EN": "Username is already existed",
+    "JP": "ユーザー名がぞんざいした",
+    "KR": "사용자명은 존재하고 있습니다",
+    "CN": "用户名已可用"
+  },
+  "LoginForm_Validate_UserName_Locked": {
+    "VN": "Tài khoản đã bị khóa",
+    "EN": "Account has been locked",
+    "JP": "アカウントがロックされた",
+    "KR": "이 계정이 잠겨 있습니다",
+    "CN": "帐户已被锁定"
+  },
+  "LoginForm_Validate_UserName_NotAllowed": {
+    "VN": "Tài khoản chưa được kích hoạt",
+    "EN": "Account has not been activated",
+    "JP": "アカウントが有効化されていない",
+    "KR": "이 계정이 활성화되지 않았습니다",
+    "CN": "帐户尚未激活"
+  },
+  "LoginForm_Validate_Password_Incorrect": {
+    "VN": "Mật khẩu không đúng",
+    "EN": "Password is incorrect",
+    "JP": "パスワードが正しくない",
+    "KR": "비밀번호는 올바르지 않습니다",
+    "CN": "密码错误"
+  },
+  "LoginForm_Validate_Password_Confirm": {
+    "VN": "Mật khẩu và mật khẩu xác nhận không khớp!",
+    "EN": "Password and confirmation password do not match!",
+    "JP": "パスワードと確認のパスワードが一致しない！",
+    "KR": "비밀번호와 확인 비밀번호가 일치하지 않습니다!",
+    "CN": "密码和确认密码不匹配！"
+  },
+  "LoginForm_Validate_Password_Format": {
+    "VN": "Mật khẩu phải dài ít nhất 8 ký tự và chứa ít nhất một chữ hoa, chữ thường, chữ số và ký hiệu (.!@#$%^&*)",
+    "EN": "Password must be at least 8 characters long and contain at least one uppercase letter, lowercase letter, number and symbol (.!@#$%^&*)",
+    "JP": "パスワードは8文字以上で、大文字、小文字、数字、(.!@#$%^&*)という記号が少なくとも1つ含まれている必要がある",
+    "KR": "비밀번호는 8자 이상이어야 하며 대문자, 소문자, 숫자 및 기호(.!@#$%^&*)를 하나 이상 포함해야 합니다",
+    "CN": "密码长度必须至少为 8 个字符，并且至少包含一个大写字母、小写字母、数字和符号 (.!@#$%^&*)"
+  },
+  "LoginForm_Validate_2FA_Invalid": {
+    "VN": "Mã xác thực không hợp lệ",
+    "EN": "Invalid authentication code",
+    "JP": "無効な認証コード",
+    "KR": "확인번호는 유효하지 않습니다",
+    "CN": "验证码无效"
+  },
+  "LoginForm_Loading": {
+    "VN": "Đang tải. Vui lòng chờ…",
+    "EN": "Loading. Please wait…",
+    "JP": "読み込んでいます。 お待ちください…",
+    "KR": "로드 중입니다. 잠시 기다리십시오.",
+    "CN": "在加载中。 请稍等…"
+  },
+  "LoginForm_Expired": {
+    "VN": "Bản quyền doanh nghiệp đã hết hạn",
+    "EN": "Business copyright has been expired",
+    "JP": "企業の著作権が期限切れだ",
+    "KR": "사업자 저작권이 만료되었습니다",
+    "CN": "企业的版权已过期"
+  },
+  "LoginForm_UserNameWarning": {
+    "VN": "* Tên đăng nhập chỉ được thay đổi một lần duy nhất khi kích hoạt tài khoản",
+    "EN": "* Username can only be changed once upon account activation",
+    "JP": "*ユーザー名はアカウントのアクティベーションに1回だけ変更できます。",
+    "KR": "* 사용자 이름은 계정 활성화시에만 변경할 수 있습니다.",
+    "CN": "*用户名只能在帐户激活后更改一次"
+  }
+}

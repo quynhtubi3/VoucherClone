@@ -1,0 +1,2196 @@
+{
+  "Common_Session_Expired": {
+    "main": "Phiên làm việc hết hạn",
+    "sub": ""
+  },
+  "Common_Title": {
+    "main": "{0}",
+    "sub": ""
+  },
+  "Common_Var_Name": {
+    "main": "Tên",
+    "sub": ""
+  },
+  "Common_Var_Adress": {
+    "main": "Địa chỉ",
+    "sub": ""
+  },
+  "Common_Var_Email": {
+    "main": "Email",
+    "sub": ""
+  },
+  "Common_Msg_Delete_Confirm_Message": {
+    "main": "Bạn có chắc chắn xoá không?",
+    "sub": ""
+  },
+  "Common_Msg_DuyetNhieu_Confirm_Message": {
+    "main": "Duyệt những dòng đã chọn?",
+    "sub": ""
+  },
+  "Common_Msg_ResetPassword_Confirm_Message": {
+    "main": "Reset password cho tài khoản đã chọn?",
+    "sub": ""
+  },
+  "Common_Msg_NoPrivilege": {
+    "main": "Bạn không có quyền thực hiện chức năng này!",
+    "sub": ""
+  },
+  "Menu_Var_Report": {
+    "main": "Báo cáo",
+    "sub": ""
+  },
+  "UserList_Var_Status_Locked": {
+    "main": "Bị khóa",
+    "sub": ""
+  },
+  "Common_Button_Update": {
+    "main": "Cập nhật",
+    "sub": ""
+  },
+  "Common_Tooltip_Button_Import_Excel": {
+    "main": "Cập nhật dữ liệu từ excel",
+    "sub": ""
+  },
+  "Common_Update_Success": {
+    "main": "Cập nhật thành công",
+    "sub": ""
+  },
+  "Common_Button_Agree": {
+    "main": "Chấp nhận",
+    "sub": ""
+  },
+  "UserList_Var_Status_Not_Active": {
+    "main": "Chưa kích hoạt",
+    "sub": ""
+  },
+  "Common_Var_Yes": {
+    "main": "Có",
+    "sub": ""
+  },
+  "Common_Msg_ProcessDone": {
+    "main": "Đã xử lý xong!",
+    "sub": ""
+  },
+  "UserProfile_Var_Logout": {
+    "main": "Đăng xuất",
+    "sub": ""
+  },
+  "Menu_Var_List": {
+    "main": "Danh mục",
+    "sub": ""
+  },
+  "Common_Var_To": {
+    "main": "đến",
+    "sub": ""
+  },
+  "Common_Var_ToDate_Full": {
+    "main": "Đến ngày",
+    "sub": ""
+  },
+  "Common_Var_ToDate": {
+    "main": "đến ngày",
+    "sub": ""
+  },
+  "UserProfile_Var_Phone": {
+    "main": "Điện thoại",
+    "sub": ""
+  },
+  "Common_Filter_Title": {
+    "main": "Điều kiện lọc",
+    "sub": ""
+  },
+  "UserProfile_Var_Password": {
+    "main": "Đổi mật khẩu",
+    "sub": ""
+  },
+  "Common_Button_Refresh": {
+    "main": "Làm mới",
+    "sub": ""
+  },
+  "Common_Button_Close": {
+    "main": "Đóng",
+    "sub": ""
+  },
+  "Common_Button_Cancel": {
+    "main": "Hủy",
+    "sub": ""
+  },
+  "Common_Msg_DataChanged": {
+    "main": "Dữ liệu đã bị thay đổi!",
+    "sub": ""
+  },
+  "Common_Msg_ItemInUsed": {
+    "main": "Dữ liệu đã được sử dụng!",
+    "sub": ""
+  },
+  "Common_Msg_CodeExisted": {
+    "main": "Dữ liệu đã tồn tại!",
+    "sub": ""
+  },
+  "Common_Msg_Validate": {
+    "main": "Dữ liệu không hợp lệ!",
+    "sub": ""
+  },
+  "Common_Tooltip_Button_Add_F2": {
+    "main": "F2",
+    "sub": ""
+  },
+  "Common_Tooltip_Button_Delete_F8": {
+    "main": "F8",
+    "sub": ""
+  },
+  "Common_Button_Save": {
+    "main": "Ghi lại",
+    "sub": ""
+  },
+  "Common_Msg_MaxValue": {
+    "main": "Giá trị không được lớn hơn {0}!",
+    "sub": ""
+  },
+  "Common_Msg_MinValue": {
+    "main": "Giá trị không được nhỏ hơn {0}!",
+    "sub": ""
+  },
+  "Common_Msg_NotEqualZero": {
+    "main": "Giá trị phải khác không!",
+    "sub": ""
+  },
+  "Common_Button_Send": {
+    "main": "Gửi",
+    "sub": ""
+  },
+  "BAOCAO_Button_GuiBaoCao": {
+    "main": "Gửi báo cáo",
+    "sub": ""
+  },
+  "BAOCAO_Button_PheDuyet": {
+    "main": "Phê duyệt",
+    "sub": ""
+  },
+  "BAOCAO_Button_BoXung": {
+    "main": "Yêu cầu bổ sung",
+    "sub": ""
+  },
+  "UserProfile_Var_Title": {
+    "main": "Hồ sơ cá nhân",
+    "sub": ""
+  },
+  "UserProfile_Msg_Done": {
+    "main": "Hồ sơ của bạn đã được cập nhật",
+    "sub": ""
+  },
+  "UserList_Var_Status_Active": {
+    "main": "Hoạt động",
+    "sub": ""
+  },
+  "Common_Filter_Clear": {
+    "main": "Hủy bỏ bộ lọc",
+    "sub": ""
+  },
+  "Common_Tooltip_Button_Print": {
+    "main": "In",
+    "sub": ""
+  },
+  "Common_Tooltip_Button_Export_Excel": {
+    "main": "Kết xuất ra excel",
+    "sub": ""
+  },
+  "SystemParameters_Title": {
+    "main": "Quản lý cấu hình hệ thống",
+    "sub": ""
+  },
+  "SystemParameters_Var_KhauTruCaNhan": {
+    "main": "Số tiền khấu trừ thuế thu nhập cá nhân của bản thân người nộp thuế",
+    "sub": ""
+  },
+  "SystemParameters_Var_KhauTruNguoiPhuThuoc": {
+    "main": "Số tiền khấu trừ thuế thu nhập cá nhân đối với mỗi người phụ thuộc",
+    "sub": ""
+  },
+  "SystemParameters_Var_MucDongBHXH": {
+    "main": "Mức (%) đóng bảo hiểm xã hội",
+    "sub": ""
+  },
+  "SystemParameters_Var_MucDongBHYT": {
+    "main": "Mức (%) đóng bảo hiểm y tế",
+    "sub": ""
+  },
+  "SystemParameters_Var_MucDongBHTN": {
+    "main": "Mức (%) đóng bảo hiểm thất nghiệp",
+    "sub": ""
+  },
+  "SystemParameters_Var_MucDongCongDoan": {
+    "main": "Mức (%) đóng công đoàn phí",
+    "sub": ""
+  },
+  "SystemParameters_Var_SoNgayKhoa": {
+    "main": "Số ngày sau khi gửi báo cáo sẽ tự động khoá, ko cho duyệt",
+    "sub": ""
+  },
+  "UserParameters_Title": {
+    "main": "Khai báo tham số người dùng",
+    "sub": ""
+  },
+  "DmFileLister_Title": {
+    "main": "Khai báo tham số tìm kiếm",
+    "sub": ""
+  },
+  "Common_Var_No": {
+    "main": "Không",
+    "sub": ""
+  },
+  "Common_Msg_AllowNegative": {
+    "main": "Không chấp nhận giá trị âm!",
+    "sub": ""
+  },
+  "Common_Msg_NoData": {
+    "main": "Không có dữ liệu!",
+    "sub": ""
+  },
+  "SystemParameters_Var_NoNotice": {
+    "main": "Không thông báo",
+    "sub": ""
+  },
+  "Common_Tooltip_Button_History": {
+    "main": "Lịch sử",
+    "sub": ""
+  },
+  "Common_View_Title": {
+    "main": "Lịch sử {0}",
+    "sub": ""
+  },
+  "Common_Tooltip_Button_Filter": {
+    "main": "Lọc dữ liệu",
+    "sub": ""
+  },
+  "Common_Msg_UnknownError": {
+    "main": "Lỗi chưa xác định!",
+    "sub": ""
+  },
+  "Common_Msg_Chose_Voucher": {
+    "main": "Vui lòng chọn voucher",
+    "sub": ""
+  },
+  "Common_Msg_BaoCaoQuaHan": {
+    "main": "Quá thời hạn báo cáo",
+    "sub": ""
+  },
+  "Common_Msg_SendMail": {
+    "main": "Lỗi gửi mail!",
+    "sub": ""
+  },
+  "Common_Var_Code": {
+    "main": "Mã",
+    "sub": ""
+  },
+  "UserProfile_Var_CurrentPass": {
+    "main": "Mật khẩu",
+    "sub": ""
+  },
+  "UserProfile_Msg_PasswordMismatch": {
+    "main": "Mật khẩu không chính xác",
+    "sub": ""
+  },
+  "UserProfile_Msg_PasswordNotValidFormat": {
+    "main": "Mật khẩu phải dài ít nhất 8 ký tự và chứa ít nhất một chữ hoa, chữ thường, chữ số và ký hiệu (.!@#$%^&*)",
+    "sub": ""
+  },
+  "UserProfile_Var_NewPass": {
+    "main": "Mật khẩu mới",
+    "sub": ""
+  },
+  "UserProfile_Msg_PasswordConfirm": {
+    "main": "Mật khẩu mới và mật khẩu xác nhận không khớp",
+    "sub": ""
+  },
+  "UserProfile_Var_ResetPassword": {
+    "main": "Reset Password",
+    "sub": ""
+  },
+  "Common_Msg_ProcessNotDone": {
+    "main": "Một số mục không thực hiện được. Hãy thực hiện từng mục riêng để biết chi tiết thông báo!",
+    "sub": ""
+  },
+  "Common_Var_Year": {
+    "main": "Năm",
+    "sub": ""
+  },
+  "Common_Var_Display": {
+    "main": "hiển thị",
+    "sub": ""
+  },
+  "Common_Var_Display_Panigation": {
+    "main": "bản ghi / trang",
+    "sub": ""
+  },
+  "Common_Var_YearLower": {
+    "main": "năm",
+    "sub": ""
+  },
+  "Common_Var_Day": {
+    "main": "Ngày",
+    "sub": ""
+  },
+  "Menu_Var_Major": {
+    "main": "Nghiệp vụ",
+    "sub": ""
+  },
+  "Common_Import_Title": {
+    "main": "Nhập dữ liệu từ file",
+    "sub": ""
+  },
+  "Common_Import_Thang_Title": {
+    "main": "Nhập dữ liệu từ file theo tháng",
+    "sub": ""
+  },
+  "Common_Import_YeuCauThanhToan_Title": {
+    "main": "Nhập yêu cầu thanh toán",
+    "sub": ""
+  },
+  "Common_Import_GVDTDK_Title": {
+    "main": "Nhập giá vốn doanh thu dự kiến",
+    "sub": ""
+  },
+  "Common_Import_DanhSachKhachHang_Title": {
+    "main": "Nhập danh sách khách hàng",
+    "sub": ""
+  },
+  "Common_Import_danh_sach_bao_cao_Title": {
+    "main": "Nhập danh sách báo cáo",
+    "sub": ""
+  },
+  "Common_Import_ds_du_an_Title": {
+    "main": "Nhập danh sách dự án",
+    "sub": ""
+  },
+  "Common_Import_ds_luong_Title": {
+    "main": "Nhập danh sách tiền lương",
+    "sub": ""
+  },
+  "Common_Import_DanhSach_tai_khoan_Title": {
+    "main": "Nhập danh sách tài khoản",
+    "sub": ""
+  },
+  "Common_Import_DoanhThu_Title": {
+    "main": "Nhập doanh thu",
+    "sub": ""
+  },
+  "Common_Import_ChiPhi_Title": {
+    "main": "Nhập chi phí",
+    "sub": ""
+  },
+  "Common_Button_Import": {
+    "main": "Nhập vào",
+    "sub": ""
+  },
+  "Common_Export_ChiTiet_Title": {
+    "main": "Kết xuất chi tiết",
+    "sub": ""
+  },
+  "Common_Button_Luong": {
+    "main": "Bảng lương chi tiết",
+    "sub": ""
+  },
+  "Common_Var_Type": {
+    "main": "Phân loại",
+    "sub": ""
+  },
+  "UserRightAssignment_Title": {
+    "main": "Phân quyền người dùng",
+    "sub": ""
+  },
+  "GroupRightAssignment_Title": {
+    "main": "Phân quyền nhóm",
+    "sub": ""
+  },
+  "Common_Var_Qua_Han": {
+    "main": "Quá hạn",
+    "sub": ""
+  },
+  "Menu_Var_System": {
+    "main": "Quản lý hệ thống",
+    "sub": ""
+  },
+  "UserList_Var_Title": {
+    "main": "Quản lý tài khoản",
+    "sub": ""
+  },
+  "VoucherList_Var_Title": {
+    "main": "Quản lý Voucher",
+    "sub": ""
+  },
+  "TypeVoucherList_Var_Title": {
+    "main": "Quản lý loại Voucher",
+    "sub": ""
+  },
+  "RoleList_Var_Title": {
+    "main": "Quản lý vai trò",
+    "sub": ""
+  },
+  "RoleList_Var_Admin": {
+    "main": "Quản trị",
+    "sub": ""
+  },
+  "UserProfile_Button_ForgetBrowser": {
+    "main": "Quên trình duyệt này",
+    "sub": ""
+  },
+  "Common_Tooltip_Button_Copy": {
+    "main": "Sao chép",
+    "sub": ""
+  },
+  "Common_Var_So": {
+    "main": "Số",
+    "sub": ""
+  },
+  "Common_Var_Number": {
+    "main": "Số",
+    "sub": ""
+  },
+  "Common_Var_So_Luong": {
+    "main": "Số lượng",
+    "sub": ""
+  },
+  "Common_Button_Edit": {
+    "main": "Sửa",
+    "sub": ""
+  },
+  "Common_Edit_Title": {
+    "main": "Sửa {0}",
+    "sub": ""
+  },
+  "User_Var_Edit_Title": {
+    "main": "Sửa tài khoản",
+    "sub": ""
+  },
+  "Voucher_Var_Edit_Title": {
+    "main": "Sửa voucher",
+    "sub": ""
+  },
+  "TypeVoucher_Var_Edit_Title": {
+    "main": "Sửa loại voucher",
+    "sub": ""
+  },
+  "Role_Var_Edit_Title": {
+    "main": "Sửa vai trò",
+    "sub": ""
+  },
+  "UserProfile_Button_Disable2FA": {
+    "main": "Tắt 2FA",
+    "sub": ""
+  },
+  "Common_Var_All_Types": {
+    "main": "Tất cả",
+    "sub": ""
+  },
+  "UserProfile_Var_UserName": {
+    "main": "Tên đăng nhập",
+    "sub": ""
+  },
+  "UserProfile_Var_FullName": {
+    "main": "Tên đầy đủ",
+    "sub": ""
+  },
+  "UserList_Var_Username": {
+    "main": "Tên tài khoản",
+    "sub": ""
+  },
+  "UserProfile_Msg_UserNameExist": {
+    "main": "Tên người đùng đã tồn tại",
+    "sub": ""
+  },
+  "UserProfile_Msg_UserNameNotValidFormat": {
+    "main": "Tên người dùng không hợp lệ. Chỉ [a-zA-Z0-9_-.] được phép",
+    "sub": ""
+  },
+  "RoleList_Var_Name": {
+    "main": "Tên vai trò",
+    "sub": ""
+  },
+  "Common_Var_Month": {
+    "main": "Tháng",
+    "sub": ""
+  },
+  "Common_Var_MonthLower": {
+    "main": "tháng",
+    "sub": ""
+  },
+  "Common_Button_Add": {
+    "main": "Thêm mới",
+    "sub": ""
+  },
+  "Common_Add_Title": {
+    "main": "Thêm {0}",
+    "sub": ""
+  },
+  "User_Var_Add_Title": {
+    "main": "Thêm mới tài khoản",
+    "sub": ""
+  },
+  "Voucher_Var_Add_Title": {
+    "main": "Thêm mới voucher",
+    "sub": ""
+  },
+  "TypeVoucher_Var_Add_Title": {
+    "main": "Thêm mới loại voucher",
+    "sub": ""
+  },
+  "Role_Var_Add_Title": {
+    "main": "Thêm mới vai trò",
+    "sub": ""
+  },
+  "Common_Msg_Info": {
+    "main": "Thông báo",
+    "sub": ""
+  },
+  "UserProfile_Var_AcademicLevel": {
+    "main": "Trình độ học vấn",
+    "sub": ""
+  },
+  "UserProfile_Var_InfoUser": {
+    "main": "Thông tin cá nhân",
+    "sub": ""
+  },
+  "UserProfile_Var_LaborContract": {
+    "main": "Hợp đồng lao động",
+    "sub": ""
+  },
+  "UserProfile_Var_Info": {
+    "main": "Thông tin",
+    "sub": ""
+  },
+  "UserProfile_TK_Uy_Quyen": {
+    "main": "Thông tin tài khoản ủy quyền",
+    "sub": ""
+  },
+  "UserProfile_Var_Luong": {
+    "main": "Thông tin lương",
+    "sub": ""
+  },
+  "UserProfile_Button_LuongDetail": {
+    "main": "Xem thông tin lương",
+    "sub": ""
+  },
+  "Common_Tooltip_Button_Sum": {
+    "main": "Tổng cộng",
+    "sub": ""
+  },
+  "Menu_Var_Dashboard": {
+    "main": "Tổng quan",
+    "sub": ""
+  },
+  "Menu_Var_Help": {
+    "main": "Trợ giúp",
+    "sub": ""
+  },
+  "Common_Var_FromDate": {
+    "main": "Từ ngày",
+    "sub": ""
+  },
+  "UserList_Var_Role": {
+    "main": "Vai trò",
+    "sub": ""
+  },
+  "Common_Button_Verify": {
+    "main": "Xác nhận",
+    "sub": ""
+  },
+  "Common_Msg_Confirm": {
+    "main": "Xác nhận",
+    "sub": ""
+  },
+  "UserProfile_Var_ConfirmNewPass": {
+    "main": "Xác nhận mật khẩu mới",
+    "sub": ""
+  },
+  "UserProfile_Var_2FA": {
+    "main": "Xác thực hai yếu tố",
+    "sub": ""
+  },
+  "Common_Button_View": {
+    "main": "Xem",
+    "sub": ""
+  },
+  "Common_Button_Search": {
+    "main": "Tìm kiếm",
+    "sub": ""
+  },
+  "Common_Import_Sample": {
+    "main": "File mẫu",
+    "sub": ""
+  },
+  "Common_Import_NotSample": {
+    "main": "Không đúng file mẫu của chương trình!",
+    "sub": ""
+  },
+  "Common_Button_Delete": {
+    "main": "Xoá",
+    "sub": ""
+  },
+  "Common_Button_Download": {
+    "main": "Tải xuống",
+    "sub": ""
+  },
+  "Common_Button_Many_Download": {
+    "main": "Tải xuống nhiều",
+    "sub": ""
+  },
+  "Common_Button_DuyetNhieu": {
+    "main": "Duyệt nhiều",
+    "sub": ""
+  },
+  "Menu_Var_Favorite": {
+    "main": "Yêu thích",
+    "sub": ""
+  },
+  "Common_Contract_Expire": {
+    "main": "Bản quyền sẽ hết hạn vào ngày {0}. Vui lòng liên hệ với người phụ trách để không làm gián đoạn công việc!",
+    "sub": ""
+  },
+  "Common_Msg_Warning": {
+    "main": "Cảnh báo",
+    "sub": ""
+  },
+  "Common_Var_Company": {
+    "main": "Công ty",
+    "sub": ""
+  },
+  "Common_Var_Address": {
+    "main": "Địa chỉ",
+    "sub": ""
+  },
+  "Common_Var_Phone": {
+    "main": "Điện thoại",
+    "sub": ""
+  },
+  "Common_Var_Other": {
+    "main": "Thông tin khác",
+    "sub": ""
+  },
+  "Common_Var_User_Input": {
+    "main": "Thông tin người tạo",
+    "sub": ""
+  },
+  "Common_Var_Voucher": {
+    "main": "Thông tin voucher",
+    "sub": ""
+  },
+  "TypeVoucher": {
+    "main": "Loại voucher",
+    "sub": ""
+  },
+  "Common_Var_TypeVoucher": {
+    "main": "Thông tin loại voucher",
+    "sub": ""
+  },
+  "Common_Var_NameVoucher": {
+    "main": "Tên voucher",
+    "sub": ""
+  },
+  "Common_Var_NameTypeVoucher": {
+    "main": "Tên loại voucher",
+    "sub": ""
+  },
+  "Common_Var_Status": {
+    "main": "Đang theo dõi",
+    "sub": ""
+  },
+  "Common_Var_Chon": {
+    "main": "Chọn",
+    "sub": ""
+  },
+  "DMKHACHHANG_Var_Name": {
+    "main": "Tên khách hàng",
+    "sub": ""
+  },
+  "DMKHACHHANG_Var_DKKD": {
+    "main": "ĐKKD",
+    "sub": ""
+  },
+  "DMKHACHHANG_Var_So_DKKD": {
+    "main": "Số ĐKKD",
+    "sub": ""
+  },
+  "DUAN_Var_Code": {
+    "main": "Mã dự án",
+    "sub": ""
+  },
+  "DUAN_Var_Name": {
+    "main": "Tên dự án",
+    "sub": ""
+  },
+  "DUAN_Var_SoHD": {
+    "main": "Số hợp đồng",
+    "sub": ""
+  },
+  "DUAN_Var_GiaTriHD": {
+    "main": "Giá trị hợp đồng",
+    "sub": ""
+  },
+  "DUAN_Var_GiaVon": {
+    "main": "Giá vốn mua ngoài dự kiến",
+    "sub": ""
+  },
+  "DUAN_Var_GIAVONMUANGOAITHUCTE": {
+    "main": "Giá vốn mua ngoài thực tế",
+    "sub": ""
+  },
+  "DUAN_Var_DOANHTHUDUKIEN": {
+    "main": "Doanh thu dự kiến",
+    "sub": ""
+  },
+  "DUAN_Var_DOANHTHUTHUCTE": {
+    "main": "Doanh thu thực tế",
+    "sub": ""
+  },
+  "DUAN_Var_INCENTIVE": {
+    "main": "Incentive",
+    "sub": ""
+  },
+  "DUAN_Var_INCENTIVETAMUNG": {
+    "main": "Incentive tạm ứng",
+    "sub": ""
+  },
+  "DUAN_Var_SubTitle_ThongTinChung": {
+    "main": "Thông tin chung",
+    "sub": ""
+  },
+  "DUAN_Var_SubTitle_TTYCTT": {
+    "main": "Thông tin yêu cầu thanh toán",
+    "sub": ""
+  },
+  "DUAN_Var_SubTitle_TTDT": {
+    "main": "Thông tin doanh thu",
+    "sub": ""
+  },
+  "DUAN_Var_SubTitle_TTCPDA": {
+    "main": "Thông tin chi phí dự án",
+    "sub": ""
+  },
+  "DUAN_Var_SubTitle_TTTCDA": {
+    "main": "Thông tin tài chính dự án",
+    "sub": ""
+  },
+  "DUAN_Var_CT_TTYCTT_NGAYYEUCAUTHANHTOAN": {
+    "main": "Ngày yêu cầu",
+    "sub": ""
+  },
+  "DUAN_Var_CT_TTYCTT_DEADLINE": {
+    "main": "Deadline",
+    "sub": ""
+  },
+  "DUAN_Var_CT_TTYCTT_SOTIEN": {
+    "main": "Số tiền",
+    "sub": ""
+  },
+  "DUAN_Var_CT_TTYCTT_DIENGIAI": {
+    "main": "Diễn giải",
+    "sub": ""
+  },
+  "DUAN_Var_CT_TTYCTT_VAT": {
+    "main": "VAT",
+    "sub": ""
+  },
+  "DUAN_Var_CT_TTDT_NGAYNHANTIEN": {
+    "main": "Ngày nhận tiền",
+    "sub": ""
+  },
+  "DUAN_Var_CT_TTDT_LOAIDOANHTHU": {
+    "main": "Loại doanh thu",
+    "sub": ""
+  },
+  "DUAN_Var_CT_TTDT_SOTIEN": {
+    "main": "Số tiền gross",
+    "sub": ""
+  },
+  "DUAN_Var_CT_TTDT_THUE": {
+    "main": "Thuế",
+    "sub": ""
+  },
+  "DUAN_Var_CT_TTDT_SOTIENNET": {
+    "main": "Số tiền net",
+    "sub": ""
+  },
+  "DUAN_Var_CT_TTDT_DIENGIAI": {
+    "main": "Diễn giải",
+    "sub": ""
+  },
+  "DUAN_Var_CT_TTCPDA_NGAYTHANG": {
+    "main": "Ngày",
+    "sub": ""
+  },
+  "DUAN_Var_CT_TTCPDA_SOTIENGROSS": {
+    "main": "Số tiền gross",
+    "sub": ""
+  },
+  "DUAN_Var_CT_TTCPDA_THUE": {
+    "main": "Thuế",
+    "sub": ""
+  },
+  "DUAN_Var_CT_TTCPDA_SOTIEN": {
+    "main": "Số tiền net",
+    "sub": ""
+  },
+  "DUAN_Var_CT_TTCPDA_NOIDUNG": {
+    "main": "Nội dung",
+    "sub": ""
+  },
+  "DUAN_Var_CT_TTCPDA_MALOAICHIPHI": {
+    "main": "Loại chi phí",
+    "sub": ""
+  },
+  "DUAN_Var_CT_TTCPDA_EMAIL": {
+    "main": "Đối tượng thụ hưởng",
+    "sub": ""
+  },
+  "DUAN_Var_KhachHang": {
+    "main": "Khách hàng",
+    "sub": ""
+  },
+  "DUAN_Var_AM": {
+    "main": "AM",
+    "sub": ""
+  },
+  "DUAN_Var_PM": {
+    "main": "PM",
+    "sub": ""
+  },
+  "DUAN_Var_PIC": {
+    "main": "PIC",
+    "sub": ""
+  },
+  "DUAN_Var_QTHD": {
+    "main": "QTHD",
+    "sub": ""
+  },
+  "DUAN_Var_TheoDoi": {
+    "main": "Trạng thái",
+    "sub": ""
+  },
+  "DUAN_Var_TheoDoi_TatCa": {
+    "main": "Tất cả",
+    "sub": ""
+  },
+  "DUAN_Var_TheoDoi_0": {
+    "main": "Đã hoàn thành",
+    "sub": ""
+  },
+  "DUAN_Var_TheoDoi_1": {
+    "main": "Triển khai",
+    "sub": ""
+  },
+  "DUAN_Var_TheoDoi_3": {
+    "main": "Tư vấn",
+    "sub": ""
+  },
+  "DUAN_Var_TheoDoi_4": {
+    "main": "Hồ sơ thầu",
+    "sub": ""
+  },
+  "DUAN_Var_TheoDoi_5": {
+    "main": "Không thực hiện",
+    "sub": ""
+  },
+  "DUAN_Var_TheoDoi_6": {
+    "main": "Trượt thầu",
+    "sub": ""
+  },
+  "DUAN_Var_TheoDoi_8": {
+    "main": "Đàm phán Hợp đồng",
+    "sub": ""
+  },
+  "DUAN_Var_TheoDoi_9": {
+    "main": "Bảo hành",
+    "sub": ""
+  },
+  "DUAN_Var_NamHD": {
+    "main": "Năm hợp đồng",
+    "sub": ""
+  },
+  "DUAN_Var_NAMQUYETTOAN": {
+    "main": "Năm quyết toán",
+    "sub": ""
+  },
+  "DUAN_Var_Mota": {
+    "main": "Mô tả",
+    "sub": ""
+  },
+  "DUAN_Var_PhongBan": {
+    "main": "Thuộc bộ phận",
+    "sub": ""
+  },
+  "DUAN_Var_NgayKyHD": {
+    "main": "Ngày ký HD",
+    "sub": ""
+  },
+  "COQUANBO_Var_Name": {
+    "main": "Tên công ty",
+    "sub": ""
+  },
+  "PHONGBAN_Var_Code": {
+    "main": "Mã phòng ban",
+    "sub": ""
+  },
+  "PHONGBAN_Var_Name": {
+    "main": "Tên phòng ban",
+    "sub": ""
+  },
+  "UserList_Var_Locked": {
+    "main": "Khóa",
+    "sub": ""
+  },
+  "UserList_Var_UnLocked": {
+    "main": "Mở",
+    "sub": ""
+  },
+  "UserList_Var_Activation": {
+    "main": "Gửi lại Mail kích hoạt",
+    "sub": ""
+  },
+  "NHATKY_Var_ChucNang": {
+    "main": "Chức năng",
+    "sub": ""
+  },
+  "NHATKY_Var_HanhDong": {
+    "main": "Hành động",
+    "sub": ""
+  },
+  "NHATKY_Var_ThoiGian": {
+    "main": "Thời gian",
+    "sub": ""
+  },
+  "NHATKY_Var_ThoiGianThaoTac": {
+    "main": "Thời gian giao tác",
+    "sub": ""
+  },
+  "BAOCAOEditor_Var_PhongBan": {
+    "main": "Phòng ban",
+    "sub": ""
+  },
+  "BAOCAOEditor_Var_NoiDung": {
+    "main": "Nội dung công việc",
+    "sub": ""
+  },
+  "BAOCAOEditor_Var_DuAn": {
+    "main": "Dự án",
+    "sub": ""
+  },
+  "BAOCAOEditor_Var_TrongGio1": {
+    "main": "Trong giờ",
+    "sub": ""
+  },
+  "BAOCAOEditor_Var_NgoaiGio1": {
+    "main": "Ngoài giờ",
+    "sub": ""
+  },
+  "BAOCAOEditor_Var_TrongGio": {
+    "main": "Thời lượng(trong giờ)",
+    "sub": ""
+  },
+  "BAOCAOEditor_Var_NgoaiGio": {
+    "main": "Thời lượng(ngoài giờ)",
+    "sub": ""
+  },
+  "BAOCAOEditor_Var_YKienBaoCao": {
+    "main": "Ý kiến người báo cáo",
+    "sub": ""
+  },
+  "BAOCAOEditor_Var_YKienKhac": {
+    "main": "Ý kiến khác",
+    "sub": ""
+  },
+  "BAOCAOEditor_Var_ViecThucHien": {
+    "main": "Việc thực hiện",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_NguoiGuiBaoCao": {
+    "main": "Người Gửi",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_NguoiThucHien": {
+    "main": "Người thực hiện",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_NoiDungBaoCao": {
+    "main": "Nội dung báo cáo",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_NguoiDuyet": {
+    "main": "Người duyệt",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_BaoCaoChoNgay": {
+    "main": "Báo cáo cho ngày",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_ThoiGianGui": {
+    "main": "Thời gian gửi",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_ThoiGianDuyet": {
+    "main": "Thời gian duyệt",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_TrongGio": {
+    "main": "Trong giờ",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_GioCongTieuChuan": {
+    "main": "Giờ tiêu chuẩn",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_TyLeGioCong": {
+    "main": "Busy Rate",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_TyLe": {
+    "main": "Tỷ lệ",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_TongTrongGio": {
+    "main": "Tổng thời gian làm trong giờ",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_NgayBaoCao": {
+    "main": "Ngày báo cáo",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_NgoaiGio": {
+    "main": "Ngoài giờ",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_TongNgoaiGio": {
+    "main": "Tổng thời gian làm ngoài giờ",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_ChiPhi": {
+    "main": "Chi phí",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_ChiPhiTrongGio": {
+    "main": "Chi phí trong giờ",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_ChiPhiTrongGioDaDuyet": {
+    "main": "Chi phí trong giờ đã duyệt",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_ChiPhiNgoaiGio": {
+    "main": "Chi phí ngoài giờ",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_ChiPhiNgoaiGioDaDuyet": {
+    "main": "Chi phí ngoài giờ đã duyệt",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_TongChiPhiDaDuyet": {
+    "main": "Tổng chi phí đã duyệt",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_TongChiPhi": {
+    "main": "Tổng chi phí",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_TongChiPhiTinhTien": {
+    "main": "Tổng chi phí được tính",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_TotalDuAn": {
+    "main": "Total",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_TongCong": {
+    "main": "Tổng cộng",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_NhanXetChung": {
+    "main": "Ý kiến người duyệt",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_TrangThai_CHODUYET": {
+    "main": "Chờ duyệt",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_TrangThai_TAMLUU": {
+    "main": "Tạm lưu",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_TrangThai_TRALAI": {
+    "main": "Trả lại",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_TrangThai_DAPHEDUYET": {
+    "main": "Đã phê duyệt",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_ThoiGianDuyetBC": {
+    "main": "Thời gian duyệt {0}",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_ThoiGianGuiBC": {
+    "main": "Thời gian gửi {0}",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_ThoiGianBaoCao": {
+    "main": "Thời gian báo cáo",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_HeSoThemGio": {
+    "main": "Hệ số tính thêm giờ",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_DoanhThu": {
+    "main": "Doanh thu",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_DoanhThuDuKien": {
+    "main": "Doanh thu dự kiến",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_DoanhThuThucTe": {
+    "main": "Doanh thu thực tế",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_GiaVonMuaNgoaiDuKien": {
+    "main": "Giá vốn mua ngoài dự kiến",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_GiaVon_Ngoai": {
+    "main": "Giá vốn mua ngoài thực tế",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_LaiGop": {
+    "main": "Lãi gộp",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_GiaVon_NoiBo": {
+    "main": "Giá vốn nội bộ",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_ChiPhiKD": {
+    "main": "Chi phí KD trực tiếp",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_ChiPhiTaiChinh": {
+    "main": "Chi phí tài chính",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_ChiPhiKhac": {
+    "main": "Chi phí khác",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_HieuQuaKD": {
+    "main": "Hiệu quả kinh doanh",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_GhiChu": {
+    "main": "Ghi chú",
+    "sub": ""
+  },
+  "BAOCAOCHITIET_Var_NgayGhiNhan": {
+    "main": "Ngày ghi nhận doanh thu",
+    "sub": ""
+  },
+  "DuyetBaoCao_Var_LevelE": {
+    "main": "Cấp E - Đơn giá giờ công: 100.000đ/1 giờ",
+    "sub": ""
+  },
+  "DuyetBaoCao_Var_LevelN": {
+    "main": "Cấp N - Đơn giá giờ công: 150.000đ/1 giờ",
+    "sub": ""
+  },
+  "DuyetBaoCao_Var_LevelC": {
+    "main": "Cấp C - Đơn giá giờ công: 200.000đ/1 giờ",
+    "sub": ""
+  },
+  "DuyetBaoCao_Var_LevelD": {
+    "main": "Cấp D - Đơn giá giờ công: 300.000đ/1 giờ",
+    "sub": ""
+  },
+  "DuyetBaoCao_Var_LevelS": {
+    "main": "Cấp S - Đơn giá giờ công: 600.000đ/1 giờ",
+    "sub": ""
+  },
+  "DuyetBaoCao_Var_ThemGio_NgayThuong": {
+    "main": "Làm thêm giờ vào ngày thường: 150%",
+    "sub": ""
+  },
+  "DuyetBaoCao_Var_ThemGio_NgayNghi": {
+    "main": "Làm thêm giờ vào ngày nghỉ: 200%",
+    "sub": ""
+  },
+  "DuyetBaoCao_Var_ThemGio_NgayLe": {
+    "main": "Làm thêm giờ vào ngày lễ, tết: 300%",
+    "sub": ""
+  },
+  "UserProfile_Var_GT_NAM": {
+    "main": "Nam",
+    "sub": ""
+  },
+  "UserProfile_Var_GT_NU": {
+    "main": "Nữ",
+    "sub": ""
+  },
+  "UserProfile_Var_TinhTrang_1": {
+    "main": "Đang làm việc",
+    "sub": ""
+  },
+  "UserProfile_Var_TinhTrang_0": {
+    "main": "Đã nghỉ việc",
+    "sub": ""
+  },
+  "UserProfile_Var_TinhTrang_2": {
+    "main": "Đang nghỉ chế độ",
+    "sub": ""
+  },
+  "UserProfile_Var_TinhTrang_3": {
+    "main": "Nhân viên không phải gửi báo cáo ngày",
+    "sub": ""
+  },
+  "UserProfile_Var_TinhTrang_99": {
+    "main": "Chọn",
+    "sub": ""
+  },
+  "UserProfile_Var_TinhTrangHonNhan_DocThan": {
+    "main": "Độc thân",
+    "sub": ""
+  },
+  "UserProfile_Var_TinhTrangHonNhan_CoGiaDinh": {
+    "main": "Có gia đình",
+    "sub": ""
+  },
+  "UserProfile_Var_TinhTrangHonNhan_LyHon": {
+    "main": "Ly hôn",
+    "sub": ""
+  },
+  "UserProfile_Var_NgoaiNgu_Conversation": {
+    "main": "Conversation",
+    "sub": ""
+  },
+  "UserProfile_Var_NgoaiNgu_Communication": {
+    "main": "Communication",
+    "sub": ""
+  },
+  "UserProfile_Var_NgoaiNgu_Business": {
+    "main": "Business",
+    "sub": ""
+  },
+  "UserProfile_Var_NgoaiNgu_Native": {
+    "main": "Native",
+    "sub": ""
+  },
+  "UserProfile_Var_Vaccine_CHUATIEM": {
+    "main": "Chưa tiêm",
+    "sub": ""
+  },
+  "UserProfile_Var_Vaccine_MUI1": {
+    "main": "Mũi 1",
+    "sub": ""
+  },
+  "UserProfile_Var_Vaccine_MUI2": {
+    "main": "Mũi 2",
+    "sub": ""
+  },
+  "UserProfile_Var_Vaccine_MUI3": {
+    "main": "Mũi 3",
+    "sub": ""
+  },
+  "UserProfile_Var_Vaccine_MUI4": {
+    "main": "Mũi 4",
+    "sub": ""
+  },
+  "UserProfile_Var_LevelE": {
+    "main": "Cấp E - Đơn giá giờ công: 100.000đ/1 giờ",
+    "sub": ""
+  },
+  "UserProfile_Var_LevelN": {
+    "main": "Cấp N - Đơn giá giờ công: 150.000đ/1 giờ",
+    "sub": ""
+  },
+  "UserProfile_Var_LevelC": {
+    "main": "Cấp C - Đơn giá giờ công: 200.000đ/1 giờ",
+    "sub": ""
+  },
+  "UserProfile_Var_LevelD": {
+    "main": "Cấp D - Đơn giá giờ công: 300.000đ/1 giờ",
+    "sub": ""
+  },
+  "UserProfile_Var_LevelS": {
+    "main": "Cấp S - Đơn giá giờ công: 600.000đ/1 giờ",
+    "sub": ""
+  },
+  "UserProfile_Var_PhanCap": {
+    "main": "Phân cấp",
+    "sub": ""
+  },
+  "Common_Var_Avatar": {
+    "main": "Ảnh đại diện",
+    "sub": ""
+  },
+  "UserProfile_Button_Enable2FA": {
+    "main": "Bật 2FA",
+    "sub": ""
+  },
+  "UserProfile_Var_Detail": {
+    "main": "Chi tiết",
+    "sub": ""
+  },
+  "UserProfile_Var_TitleDetail": {
+    "main": "Thông tin hồ sơ cá nhân",
+    "sub": ""
+  },
+  "UserProfile_Var_Avatar": {
+    "main": "Ảnh chân dung",
+    "sub": ""
+  },
+  "UserProfile_Var_NhanVienLevel": {
+    "main": "Phân cấp cán bộ",
+    "sub": ""
+  },
+  "UserProfile_Var_BaoCaoDen": {
+    "main": "Báo cáo đến",
+    "sub": ""
+  },
+  "UserProfile_Var_ChucVu": {
+    "main": "Chức vụ",
+    "sub": ""
+  },
+  "UserProfile_Var_BoPhan": {
+    "main": "Bộ phận công tác",
+    "sub": ""
+  },
+  "UserProfile_Var_VanPhong": {
+    "main": "Văn phòng làm việc",
+    "sub": ""
+  },
+  "UserProfile_Var_NhomQuyen": {
+    "main": "Nhóm quyền",
+    "sub": ""
+  },
+  "UserProfile_Var_PhongBanQuanLy": {
+    "main": "Phòng ban quản lý",
+    "sub": ""
+  },
+  "UserProfile_Var_NhanVienQuanLy": {
+    "main": "Danh sách nhân viên quản lý",
+    "sub": ""
+  },
+  "UserProfile_Var_HoVaTen": {
+    "main": "Họ và tên",
+    "sub": ""
+  },
+  "UserProfile_Var_NgaySinh": {
+    "main": "Ngày sinh",
+    "sub": ""
+  },
+  "UserProfile_Var_GioiTinh": {
+    "main": "Giới tính",
+    "sub": ""
+  },
+  "UserProfile_Var_DienThoai": {
+    "main": "Điện thoại",
+    "sub": ""
+  },
+  "UserProfile_Var_Email": {
+    "main": "Email",
+    "sub": ""
+  },
+  "UserProfile_Var_TinhTrang": {
+    "main": "Tình trạng",
+    "sub": ""
+  },
+  "UserProfile_Var_CMND": {
+    "main": "Số CMND/CCCD",
+    "sub": ""
+  },
+  "UserProfile_Var_NgayCap": {
+    "main": "Ngày cấp",
+    "sub": ""
+  },
+  "UserProfile_Var_NoiCap": {
+    "main": "Nơi cấp",
+    "sub": ""
+  },
+  "UserProfile_Var_QueQuan": {
+    "main": "Quê quán",
+    "sub": ""
+  },
+  "UserProfile_Var_DiaChiHienTai": {
+    "main": "Địa chỉ hiện tại",
+    "sub": ""
+  },
+  "UserProfile_Var_TinhTrangHonNhan": {
+    "main": "Tình trạng hôn nhân",
+    "sub": ""
+  },
+  "UserProfile_Var_ThongTinGiaDinh": {
+    "main": "Thông tin gia đình",
+    "sub": ""
+  },
+  "UserProfile_Var_CV": {
+    "main": "CV (file PDF,DOC,DOCX)",
+    "sub": ""
+  },
+  "UserProfile_Var_MST": {
+    "main": "Mã số thuế",
+    "sub": ""
+  },
+  "UserProfile_Var_BHXH": {
+    "main": "Số BHXH",
+    "sub": ""
+  },
+  "UserProfile_Var_MANHANVIEN": {
+    "main": "Mã nhân viên",
+    "sub": ""
+  },
+  "UserProfile_Var_TruongHoc": {
+    "main": "Trường học",
+    "sub": ""
+  },
+  "UserProfile_Var_NghanhHoc": {
+    "main": "Ngành học",
+    "sub": ""
+  },
+  "UserProfile_Var_NamTotNghiep": {
+    "main": "Năm tốt nghiệp",
+    "sub": ""
+  },
+  "UserProfile_Var_TrinhDoTiengAnh": {
+    "main": "Trình độ tiếng Anh",
+    "sub": ""
+  },
+  "UserProfile_Var_NgonNguKhac": {
+    "main": "Ngôn ngữ khác",
+    "sub": ""
+  },
+  "UserProfile_Var_NghanhHocKhac": {
+    "main": "Ngành học khác",
+    "sub": ""
+  },
+  "UserProfile_Var_LoaiHopDong": {
+    "main": "Loại hợp đồng hiện tại",
+    "sub": ""
+  },
+  "UserProfile_Var_SoHD": {
+    "main": "Số hợp đồng",
+    "sub": ""
+  },
+  "UserProfile_Var_SoTaiKhoanLuong": {
+    "main": "Số tài khoản lương",
+    "sub": ""
+  },
+  "UserProfile_Var_TuNgay": {
+    "main": "Từ ngày",
+    "sub": ""
+  },
+  "UserProfile_Var_DenNgay": {
+    "main": "Đến ngày",
+    "sub": ""
+  },
+  "UserProfile_Var_BangLuongChiTiet": {
+    "main": "Bảng lương chi tiết",
+    "sub": ""
+  },
+  "UserProfile_Var_NgayBatDauLamViec": {
+    "main": "Ngày bắt đầu làm việc",
+    "sub": ""
+  },
+  "UserProfile_Var_SoNguoiPhuThuoc": {
+    "main": "Số người phụ thuộc",
+    "sub": ""
+  },
+  "UserProfile_Var_MaSoNguoiPhuThuoc": {
+    "main": "Mã số người phụ thuộc",
+    "sub": ""
+  },
+  "UserProfile_Var_NguoiLienHeKhiCan": {
+    "main": "Người liên hệ khi cần",
+    "sub": ""
+  },
+  "UserProfile_Var_QuanHe": {
+    "main": "Quan hệ",
+    "sub": ""
+  },
+  "UserProfile_Var_SDTLienHe": {
+    "main": "SĐT liên hệ",
+    "sub": ""
+  },
+  "UserProfile_Var_BSX": {
+    "main": "Biển số xe",
+    "sub": ""
+  },
+  "UserProfile_Var_Vaccine": {
+    "main": "Thông tin Vaccine",
+    "sub": ""
+  },
+  "UserProfile_Var_LoaiVaccine": {
+    "main": "Loại Vaccine",
+    "sub": ""
+  },
+  "DMPHONGBAN_Var_Add": {
+    "main": "Thêm phòng ban",
+    "sub": ""
+  },
+  "DMCOQUANBO_Var_Add": {
+    "main": "Thêm công ty",
+    "sub": ""
+  },
+  "DMKHACHHANG_Var_Add": {
+    "main": "Thêm khách hàng",
+    "sub": ""
+  },
+  "DMNGUOIBAN_Var_Add": {
+    "main": "Thêm người bán",
+    "sub": ""
+  },
+  "CHUCVU_Var_Add": {
+    "main": "Thêm chức vụ",
+    "sub": ""
+  },
+  "DMDUAN_Var_Add": {
+    "main": "Thêm dự án",
+    "sub": ""
+  },
+  "BAOCAOEditor_Var_TotalWorkingHour": {
+    "main": "Thời gian làm việc phải > 0 và <= 24",
+    "sub": ""
+  },
+  "BAOCAOEditor_Var_TotalTrongGio": {
+    "main": "Trong giờ không được > 8",
+    "sub": ""
+  },
+  "BAOCAO_Var_DAThuocPhong": {
+    "main": "Dự án của bộ phận",
+    "sub": ""
+  },
+  "BAOCAO_Var_NhanVien": {
+    "main": "Nhân viên",
+    "sub": ""
+  },
+  "BAOCAO_Var_Title": {
+    "main": "Báo cáo công việc hằng ngày",
+    "sub": ""
+  },
+  "BAOCAO_Var_TongHopTheoPhong_Title": {
+    "main": "Tổng hợp nguồn lực đã thực hiện - Công ty",
+    "sub": ""
+  },
+  "BAOCAO_Var_TongHopTheoAm_Title": {
+    "main": "Tổng hợp nguồn lực đã sử dụng - Công ty",
+    "sub": ""
+  },
+  "BAOCAO_Var_TongHopNguonLucSuDungTheoPhong_Title": {
+    "main": "Chi tiết nguồn lực đã sử dụng - Theo bộ phận",
+    "sub": ""
+  },
+  "BAOCAO_Var_TongHopNguonLucAMSuDungTheoDuAn_Title": {
+    "main": "Chi tiết nguồn lực đã sử dụng - Theo dự án",
+    "sub": ""
+  },
+  "BAOCAO_Var_TongHopNguonLucAMSuDungTheoNV_Title": {
+    "main": "Chi tiết nguồn lực đã sử dụng - Theo NV",
+    "sub": ""
+  },
+  "BAOCAO_Var_TongHopNguonLucAMSuDungTheoNVKT_Title": {
+    "main": "Chi tiết nguồn lực đã sử dụng - Theo NV KT",
+    "sub": ""
+  },
+  "BAOCAO_Var_TongHopNguonLucTheoNV_Title": {
+    "main": "Tổng hợp nguồn lực đã thực hiện - Nhân viên",
+    "sub": ""
+  },
+  "BAOCAO_Var_TongHopTheoKHDA_Title": {
+    "main": "Tổng hợp chi phí nhân công theo khách hàng/dự án",
+    "sub": ""
+  },
+  "Common_Msg_NoFileToImport": {
+    "main": "Chưa chọn file dữ liệu cần cập nhật!",
+    "sub": ""
+  },
+  "Common_Var_Formula_Copy": {
+    "main": "Phương thức",
+    "sub": ""
+  },
+  "Common_Var_Formula_Copy_Missing": {
+    "main": "Phần thiếu",
+    "sub": ""
+  },
+  "Common_Var_Formula_Copy_All": {
+    "main": "Toàn bộ",
+    "sub": ""
+  },
+  "Common_Var_FunctionName": {
+    "main": "Tên chức năng",
+    "sub": ""
+  },
+  "Common_Var_Export": {
+    "main": "Kết xuất",
+    "sub": ""
+  },
+  "Common_Var_FindPhone": {
+    "main": "Tìm số điện thoại",
+    "sub": ""
+  },
+  "Common_Var_FindDuAn": {
+    "main": "Tìm dự án",
+    "sub": ""
+  },
+  "Common_Var_FinVoucher": {
+    "main": "Tìm voucher",
+    "sub": ""
+  },
+  "Common_Var_FindVoucherText": {
+    "main": "Nhập thông tin liên quan đến voucher (Tên voucher, Tên AM, Email AM, Tên khách hàng):",
+    "sub": ""
+  },
+  "QTLUONG_Var_ThaoTac": {
+    "main": "Thao tác",
+    "sub": ""
+  },
+  "QTLUONG_Var_KyLuong": {
+    "main": "Kỳ lương",
+    "sub": ""
+  },
+  "QTLUONG_Var_FileBangLuong": {
+    "main": "File bảng lương",
+    "sub": ""
+  },
+  "QTLUONG_Var_Title": {
+    "main": "Tải file bảng lương",
+    "sub": ""
+  },
+
+  "QTLUONG_msg_Luong_ExportLuongMau": {
+    "main": "Chưa chọn tên công ty để export file lương mẫu",
+    "sub": ""
+  },
+  "QTLUONG_Var_Luong_ChiTiet_Title": {
+    "main": "Thông tin thu nhập cá nhân",
+    "sub": ""
+  },
+  "QTLUONG_Var_Luong_ChiTiet_Luong": {
+    "main": "Lương",
+    "sub": ""
+  },
+  "QTLUONG_Var_Luong_ChiTiet_XepLoai": {
+    "main": "Xếp loại",
+    "sub": ""
+  },
+  "QTLUONG_Var_Luong_ChiTiet_ThuongHieuQua": {
+    "main": "Thưởng hiệu quả",
+    "sub": ""
+  },
+  "QTLUONG_Var_Luong_ChiTiet_SubTitle_PhuCap": {
+    "main": "Phụ cấp",
+    "sub": ""
+  },
+  "QTLUONG_Var_Luong_ChiTiet_TrachNhiem": {
+    "main": "Trách nhiệm",
+    "sub": ""
+  },
+  "QTLUONG_Var_Luong_ChiTiet_AnTrua": {
+    "main": "Ăn trưa",
+    "sub": ""
+  },
+  "QTLUONG_Var_Luong_ChiTiet_DienThoai": {
+    "main": "Điện thoại",
+    "sub": ""
+  },
+  "QTLUONG_Var_Luong_ChiTiet_TrangPhuc": {
+    "main": "Trang phục",
+    "sub": ""
+  },
+  "QTLUONG_Var_Luong_ChiTiet_VPP": {
+    "main": "Văn phòng phẩm",
+    "sub": ""
+  },
+  "QTLUONG_Var_Luong_ChiTiet_PCKhac": {
+    "main": "Khác",
+    "sub": ""
+  },
+  "QTLUONG_Var_Luong_ChiTiet_DieuChinhTruocThue": {
+    "main": "Điều chỉnh trước thuế",
+    "sub": ""
+  },
+  "QTLUONG_Var_Luong_ChiTiet_DieuChinhSauThue": {
+    "main": "ĐIều chỉnh sau thuế",
+    "sub": ""
+  },
+  "QTLUONG_Var_Luong_ChiTiet_GiamTruGiaCanh": {
+    "main": "Giảm trừ gia cảnh",
+    "sub": ""
+  },
+  "QTLUONG_Var_Luong_ChiTiet_NguoiPhuThuoc": {
+    "main": "Người phụ thuộc",
+    "sub": ""
+  },
+  "QTLUONG_Var_Luong_ChiTiet_SubTitle_KhauTru": {
+    "main": "Khấu trừ",
+    "sub": ""
+  },
+  "QTLUONG_Var_Luong_ChiTiet_BaoHiem": {
+    "main": "BHXH, BHYT, BHTN",
+    "sub": ""
+  },
+  "QTLUONG_Var_Luong_ChiTiet_CongDoan": {
+    "main": "Công đoàn",
+    "sub": ""
+  },
+  "QTLUONG_Var_Luong_ChiTiet_ThueTNCN": {
+    "main": "Thuế TNCN",
+    "sub": ""
+  },
+  "QTLUONG_Var_Luong_ChiTiet_SubTitle_ThucLinh": {
+    "main": "Thực lĩnh",
+    "sub": ""
+  },
+  "QTLUONG_Var_Luong_ChiTiet_GhiChu": {
+    "main": "Ghi chú",
+    "sub": ""
+  },
+  "QTLUONG_Var_Title_LanChuyenLuong": {
+    "main": "Lần chuyển lương",
+    "sub": ""
+  },
+  "QTLUONG_Var_Title_LuongCTY": {
+    "main": "Bảng lương công ty",
+    "sub": ""
+  },
+  "QTLUONG_Var_TitleThang": {
+    "main": "Tải file bảng lương tháng",
+    "sub": ""
+  },
+  "QTLUONG_Var_KyLuongThang1": {
+    "main": "Tháng 1",
+    "sub": ""
+  },
+  "QTLUONG_Var_KyLuongThang2": {
+    "main": "Tháng 2",
+    "sub": ""
+  },
+  "QTLUONG_Var_KyLuongThang3": {
+    "main": "Tháng 3",
+    "sub": ""
+  },
+  "QTLUONG_Var_KyLuongThang4": {
+    "main": "Tháng 4",
+    "sub": ""
+  },
+  "QTLUONG_Var_KyLuongThang5": {
+    "main": "Tháng 5",
+    "sub": ""
+  },
+  "QTLUONG_Var_KyLuongThang6": {
+    "main": "Tháng 6",
+    "sub": ""
+  },
+  "QTLUONG_Var_KyLuongThang7": {
+    "main": "Tháng 7",
+    "sub": ""
+  },
+  "QTLUONG_Var_KyLuongThang8": {
+    "main": "Tháng 8",
+    "sub": ""
+  },
+  "QTLUONG_Var_KyLuongThang9": {
+    "main": "Tháng 9",
+    "sub": ""
+  },
+  "QTLUONG_Var_KyLuongThang10": {
+    "main": "Tháng 10",
+    "sub": ""
+  },
+  "QTLUONG_Var_KyLuongThang11": {
+    "main": "Tháng 11",
+    "sub": ""
+  },
+  "QTLUONG_Var_KyLuongThang12": {
+    "main": "Tháng 12",
+    "sub": ""
+  },
+  "QTLUONG_Var_KyLuongLan1": {
+    "main": "Lần 1",
+    "sub": ""
+  },
+  "QTLUONG_Var_KyLuongLan2": {
+    "main": "Lần 2",
+    "sub": ""
+  },
+  "QTLUONG_Var_KyLuongLan3": {
+    "main": "Lần 3",
+    "sub": ""
+  },
+  "QTLUONG_Var_KyLuongLan4": {
+    "main": "Lần 4",
+    "sub": ""
+  },
+  "QTLUONG_Var_KyLuongLan5": {
+    "main": "Lần 5",
+    "sub": ""
+  },
+  "QTLUONG_Var_Button_DanhSachChuyenKhoan": {
+    "main": "Kết xuất danh sách chuyển khoản",
+    "sub": ""
+  },
+  "QTLUONG_Var_Button_LuongThangKTC": {
+    "main": "Kết xuất bảng lương tháng không có công thức",
+    "sub": ""
+  },
+  "QTLUONG_Var_Button_LuongThang": {
+    "main": "Kết xuất bảng lương tháng có công thức",
+    "sub": ""
+  },
+  "QTLUONG_Var_Button_LuongCty": {
+    "main": "Kết xuất bảng lương",
+    "sub": ""
+  },
+  "BCHIEUQUADUANBU_Var_TuyChonTimKiem": {
+    "main": "Tùy chọn",
+    "sub": ""
+  },
+  "BCNGUONLUCTHEOAM_Var_PhongBanAM": {
+    "main": "Phòng ban AM",
+    "sub": ""
+  },
+  "BCNGUONLUCTHEOAM_Var_BoPhanNguonLuc": {
+    "main": "Nguồn lực thuộc",
+    "sub": ""
+  },
+  "BCNGUONLUCTHEOAM_Var_BoPhanNguonLuc_TatCa": {
+    "main": "Tất cả",
+    "sub": ""
+  },
+  "BCNGUONLUCTHEOAM_Var_BoPhanNguonLuc_1": {
+    "main": "BO",
+    "sub": ""
+  },
+  "BCNGUONLUCTHEOAM_Var_BoPhanNguonLuc_3": {
+    "main": "Kỹ thuật",
+    "sub": ""
+  },
+  "BCHIEUQUADUANBU_Var_TuyChonTimKiem1": {
+    "main": "Chỉ hiển thị dự án có doanh thu trong kỳ > 0",
+    "sub": ""
+  },
+  "BCHIEUQUADUANBU_Var_TuyChonTimKiem0": {
+    "main": "Hiển thị tất cả dự án",
+    "sub": ""
+  },
+  "UserProfile_Var_UserName_Employee": {
+    "main": "Tên nhân viên",
+    "sub": ""
+  },
+  "UserProfile_Var_SoTaiKhoannganhang": {
+    "main": "Số tài khoản ngân hàng",
+    "sub": ""
+  },
+  "UserProfile_Var_BankName": {
+    "main": "Tên ngân hàng",
+    "sub": ""
+  },
+  "UserProfile_Var_BankBranh": {
+    "main": "Chi nhánh",
+    "sub": ""
+  },
+  "UserProfile_Var_Payment_Authorization": {
+    "main": "Giấy ủy quyền thanh toán",
+    "sub": ""
+  },
+  "PREVIEW": {
+    "main": "Xem trước",
+    "sub": ""
+  },
+  "File-not-uploaded-yet": {
+    "main": "File chưa được tải lên",
+    "sub": ""
+  },
+  "Serial": {
+    "main": "Serial",
+    "sub": ""
+  },
+  "NGAYBAN": {
+    "main": "Ngày bán",
+    "sub": ""
+  },
+  "Type_Voucher": {
+    "main": "Loại voucher",
+    "sub": ""
+  },
+  "Type_Code_Voucher": {
+    "main": "Mã loại voucher",
+    "sub": ""
+  },
+  "Voucher_value": {
+    "main": "Voucher có giá trị",
+    "sub": ""
+  },
+  "Free_Voucher": {
+    "main": "Voucher miễn phí",
+    "sub": ""
+  },
+  "Seller": {
+    "main": "Người bán",
+    "sub": ""
+  },
+  "Seller_Code": {
+    "main": "Mã người bán",
+    "sub": ""
+  },
+  "Expire_date": {
+    "main": "Thời hạn sử dụng",
+    "sub": ""
+  },
+  "Gia_ban": {
+    "main": "Giá bán",
+    "sub": ""
+  },
+  "Number_of_uses": {
+    "main": "Số lần sử dụng",
+    "sub": ""
+  },
+  "Number_of_uses_remaining": {
+    "main": "Số lần sử dụng còn lại",
+    "sub": ""
+  },
+  "Number_of_free": {
+    "main": "Số lần miễn phí",
+    "sub": ""
+  },
+  "Number_of_free_remaining": {
+    "main": "Số lần miễn phí còn lại",
+    "sub": ""
+  },
+  "Real_value": {
+    "main": "Giá trị thực",
+    "sub": ""
+  },
+  "Hoa_hong_ca_nhan": {
+    "main": "Hoa hồng cá nhân",
+    "sub": ""
+  },
+  "Hoa_hong_nhom": {
+    "main": "Hoa hồng nhóm",
+    "sub": ""
+  },
+  "Hoa_hong_ca_nhan1": {
+    "main": "Hoa hồng cá nhân (%)",
+    "sub": ""
+  },
+  "Hoa_hong_truong_cua_hang": {
+    "main": "Hoa hồng trưởng của hàng",
+    "sub": ""
+  },
+  "Hoa_hong_pho_cua_hang": {
+    "main": "Hoa hồng phó của hàng",
+    "sub": ""
+  },
+  "Quy_doi_pha_che": {
+    "main": "Quỹ đội pha chế",
+    "sub": ""
+  },
+  "Quy_chung": {
+    "main": "Quỹ chung",
+    "sub": ""
+  },
+  "Hoa_hong_nhom1": {
+    "main": "Hoa hồng nhóm",
+    "sub": ""
+  },
+
+  "Hoa_hong_truong_cua_hang1": {
+    "main": "Hoa hồng trưởng của hàng (%)",
+    "sub": ""
+  },
+  "Hoa_hong_pho_cua_hang1": {
+    "main": "Hoa hồng phó của hàng (%)",
+    "sub": ""
+  },
+  "Quy_doi_pha_che1": {
+    "main": "Quỹ đội pha chế (%)",
+    "sub": ""
+  },
+  "Quy_chung1": {
+    "main": "Quỹ chung (%)",
+    "sub": ""
+  },
+  "Dia_chi_co_so_ap_dung": {
+    "main": "Địa chỉ cơ sở áp dụng",
+    "sub": ""
+  },
+  "Ngay_kich_hoat": {
+    "main": "Ngày kích hoạt",
+    "sub": ""
+  },
+  "Ngay_het_han": {
+    "main": "Ngày hết hạn",
+    "sub": ""
+  },
+  "Ten_nguoi_mua": {
+    "main": "Tên người mua",
+    "sub": ""
+  },
+  "Sdt_nguoi_mua": {
+    "main": "Số điện thoại người mua",
+    "sub": ""
+  },
+  "3_month": {
+    "main": "3 Tháng",
+    "sub": ""
+  },
+  "6_month": {
+    "main": "6 Tháng",
+    "sub": ""
+  },
+  "9_month": {
+    "main": "9 Tháng",
+    "sub": ""
+  },
+  "12_month": {
+    "main": "12 Tháng",
+    "sub": ""
+  },
+  "INFO_ACTIVE": {
+    "main": "Thông tin kích hoạt",
+    "sub": ""
+  },
+  "INFO_SELLER": {
+    "main": "Thông tin người bán",
+    "sub": ""
+  },
+  "Voucher_Default": {
+    "main": "Voucher khởi tạo",
+    "sub": ""
+  },
+  "Pending": {
+    "main": "Chưa bán",
+    "sub": ""
+  },
+  "Sold": {
+    "main": "Đã bán",
+    "sub": ""
+  },
+  "Activated": {
+    "main": "Đã kích hoạt",
+    "sub": ""
+  },
+  "Chart_Var_Voucher": {
+    "main": "Thống kế lượng voucher",
+    "sub": ""
+  },
+  "SoldCount": {
+    "main": "Số lượng voucher bán",
+    "sub": ""
+  },
+  "TotalRevenue": {
+    "main": "Tổng doanh thu",
+    "sub": ""
+  },
+  "IndividualCommission": {
+    "main": "Hoa hồng cá nhân",
+    "sub": ""
+  },
+  "GroupCommission": {
+    "main": "Hoa hồng nhóm",
+    "sub": ""
+  },
+  "Doanhthunguoiban_Var_Title": {
+    "main": "Doanh thu theo người bán",
+    "sub": ""
+  },
+  "Hoahongtuguoiban_Var_Title": {
+    "main": "Hoa hồng từ người bán",
+    "sub": ""
+  },
+  "DoanhthunTheoLoaiVoucher_Var_Title": {
+    "main": "Doanh thu theo loại voucher",
+    "sub": ""
+  },
+  "TiLeKichHoatVoucher_Var_Title": {
+    "main": "Tỉ lệ kích hoạt voucher",
+    "sub": ""
+  },
+  "VoucherSapHetHan_Var_Title": {
+    "main": "Voucher sắp hết hạn",
+    "sub": ""
+  },
+  "SendMail_remind_Var_Title": {
+    "main": "Gửi Mail nhắc voucher sắp hết hạn",
+    "sub": ""
+  },
+  "VoucherSapHetHan_Week_Var_Title": {
+    "main": "Thời gian sắp hết hạn",
+    "sub": ""
+  },
+  "Week_Var_Title": {
+    "main": " Tuần",
+    "sub": ""
+  },
+  "Month_Var_Title": {
+    "main": "Tháng",
+    "sub": ""
+  },
+  "UsageRate_Var_Title": {
+    "main": "Tỉ lệ sử dụng %",
+    "sub": ""
+  },
+  "SalesQuantity": {
+    "main": "Số lượng bán",
+    "sub": ""
+  },
+  "History_voucher": {
+    "main": "Xem lịch sử voucher",
+    "sub": ""
+  },
+  "Date_From": {
+    "main": "Từ ngày",
+    "sub": ""
+  },
+  "Date_To": {
+    "main": "Đến ngày",
+    "sub": ""
+  },
+  "Create_Date_From": {
+    "main": "Ngày tạo từ ngày",
+    "sub": ""
+  },
+  "Create_Date_To": {
+    "main": "Ngày tạo đến ngày",
+    "sub": ""
+  },
+  "VoucherDefault_Required": {
+    "main": "Chọn Voucher khởi tạo để tạo voucher",
+    "sub": ""
+  },
+  "Common_Msg_CloseTab_WithChildren": {
+    "main": "Tab này đang có tab con !",
+    "sub": ""
+  },
+  "Hoa_Hong_Duoc_Huong": {
+    "main": "Hoa hồng được hưởng",
+    "sub": ""
+  },
+  "Cost_saving": {
+    "main": "Tiết kiệm",
+    "sub": ""
+  },
+  "plus_num_user": {
+    "main": "Tăng số lần sử dụng",
+    "sub": ""
+  },
+  "minus_num_user": {
+    "main": "Giảm số lần sử dụng",
+    "sub": ""
+  },
+  "KHACHHANG_NO_EXIS": {
+    "main": "Khách hàng không tồn tại! Vui lòng chọn trong danh sách khách hàng",
+    "sub": ""
+  },
+  "COSOCUAHANGHANG_NO_EXIS": {
+    "main": "Cơ sở của hàng không tồn tại! Vui lòng chọn trong danh sách cơ sở của hàng",
+    "sub": ""
+  },
+  "CCCD/CMND": {
+    "main": "Số CMND/CCCD",
+    "sub": ""
+  }
+}

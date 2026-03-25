@@ -1,0 +1,538 @@
+﻿<style>
+    #desk______controlid_____ .popup-modal-form {
+        height: 250px;
+        width: 460px;
+    }
+
+    #desk______controlid_____ .modal-label {
+        flex: 0 0 120px !important;
+    }
+    #desk______controlid_____ .pagination-container {
+        margin: 0px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--breaker-bay);
+        height: 40px;
+        padding: 10px;
+    }
+    #desk______controlid_____ .pagination {
+        display: flex;
+        list-style: none;
+        padding: 0;
+    }
+
+        #desk______controlid_____ .pagination li {
+            margin: 0 1px;
+        }
+
+        #desk______controlid_____ .pagination button {
+            border: 1px solid #ddd;
+            padding: 5px 10px;
+            background: #fff;
+            background: #fff;
+            cursor: pointer;
+            border-radius: 2px;
+        }
+
+            #desk______controlid_____ .pagination button.active {
+                background: var(--breaker-bay);
+                color: #fff;
+            }
+
+            #desk______controlid_____ .pagination button:disabled {
+                opacity: 0.8;
+                cursor: not-allowed;
+            }
+</style>
+
+<div id="_____controlid______ScrollArea" class="clusterize-scroll" tabindex="0">
+    <table controlid="_____controlid_____" htmlid='_____htmlid_____'>
+        <colgroup>
+            <col width='40' noresizeable />
+            <col width='30' noresizeable />
+            <col width='30' noresizeable />
+            <col width='100' />
+            <col width='100' />
+            <col width='200' />
+            <col width='200' />
+            <col width='70' />
+            <col width='140' />
+            <!--<col width='200' />-->
+        </colgroup>
+        <thead>
+            <tr>
+                <td></td>
+                <th></th>
+                <th></th>
+                <th colname="UserName" data-i18n-layout="layout2" data-i18n-key="UserList_Var_Username"></th>
+                <th colname="Email">Email</th>
+                <th colname="FullName" data-i18n-layout="layout2" data-i18n-key="UserProfile_Var_FullName"></th>
+                <th colname="Role" data-i18n-layout="layout2" data-i18n-key="UserList_Var_Role"></th>
+                <th colname="DienThoai" data-i18n-layout="layout2" data-i18n-key="UserProfile_Var_DienThoai"></th>
+                <th colname="ChucVu" data-i18n-layout="layout2" data-i18n-key="UserProfile_Var_ChucVu"></th>
+                <!--<th colname="PhongBanName" data-i18n-layout="layout2" data-i18n-key="UserProfile_Var_BoPhan"></th>-->
+            </tr>
+        </thead>
+        <tbody id="_____controlid______ContentArea" class="clusterize-content">
+        </tbody>
+    </table>
+    <!--<div class="pagination-container">
+        <ul class="pagination" id="_____controlid______pagination"></ul>
+        <div>
+            <span data-i18n-layout='layout3' data-i18n-key='Common_Var_Display'></span>
+            <select id="_____controlid______pageSizeSelect">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+            <span data-i18n-layout='layout3' data-i18n-key='Common_Var_Display_Panigation'></span>
+        </div>
+    </div>-->
+</div>
+<script>
+    let _____controlid______currentPage = 1;
+    let _____controlid______pageSize = 10;
+    let _____controlid______totalPage = 1;
+    $(function () {
+        $("#container______controlid_____ table tbody").contextMenu({
+            selector: "tr",
+            items: {
+                "lock": {
+                    name: "UserList_Var_Locked",
+                    icon: "fa-lock",
+                    callback: function () {
+                        _____controlid______Lock($(this).find("th").attr("clusterize_row_id"), true);
+                    },
+                    disabled: function (key, opt) {
+                        if (_____controlid______S3Table.ClusterizeData.CurrentRowData().Id == ApplicationInstance.UserId) return true;
+                        let id = $(this).find("th").attr("clusterize_row_id");
+                        let index = _____controlid______S3Table.ClusterizeData.data.findIndex(function (o) {
+                            return o.Id == id;
+                        });
+                        return _____controlid______S3Table.ClusterizeData.data[index].LockoutEnd != null;
+                    }
+                },
+                "unlock": {
+                    name: "UserList_Var_UnLocked",
+                    icon: "fa-unlock",
+                    callback: function () {
+                        _____controlid______Lock($(this).find("th").attr("clusterize_row_id"), false);
+                    },
+                    disabled: function (key, opt) {
+                        if (_____controlid______S3Table.ClusterizeData.CurrentRowData().Id == ApplicationInstance.UserId) return true;
+                        let id = $(this).find("th").attr("clusterize_row_id");
+                        let index = _____controlid______S3Table.ClusterizeData.data.findIndex(function (o) {
+                            return o.Id == id;
+                        });
+                        return _____controlid______S3Table.ClusterizeData.data[index].LockoutEnd == null;
+                    }
+                },
+                "activation": {
+                    name: "UserList_Var_Activation",
+                    icon: "fa-key",
+                    callback: function () {
+                        _____controlid______Activation($(this).find("th").attr("clusterize_row_id"));
+                    },
+                    disabled: function (key, opt) {
+                        return _____controlid______S3Table.ClusterizeData.CurrentRowData().EmailConfirmed == true;
+                    }
+                }
+            }
+        });
+
+        $('#desk______controlid_____ .s3tcloud-prefix.form-container:first').on('keyup', function (e) {
+            switch (e.keyCode) {
+                case 33: //PageUp
+                    e.preventDefault();
+                    _____controlid______GetPermision();
+                    break;
+                case 34: //PageDown
+                    e.preventDefault();
+                    _____controlid______GetPermision();
+                    break;
+                case 38: //Up
+                    _____controlid______GetPermision();
+                    break;
+                case 40: //Down
+                    _____controlid______GetPermision();
+                    break;
+            }
+        });
+
+        $('#desk______controlid_____ .s3tcloud-prefix.form-container .form-toolbar .button-export-excel').off('click').on('click', function () {
+            let dt = new Date();
+            let day = dt.getDate();
+            let month = dt.getMonth() + 1;
+            let year = dt.getFullYear();
+            let hour = dt.getHours();
+            let mins = dt.getMinutes();
+            let postfix = day + "." + month + "." + year + "_" + hour + "." + mins;
+            let a = document.createElement('a');
+            a.href = 'api/Admin/Export';
+            a.click();
+            a.remove();
+        })
+
+        $('#desk______controlid_____ .popup-modal-background>div[child-form="search"] .button-save').on('click', function () {
+            $('#desk______controlid_____ .form-container:first').focus();
+            $('#desk______controlid_____ .popup-modal-background').hide();
+            _____controlid______OnLoad();
+        })
+
+        $('#desk______controlid_____ .popup-modal-background').on('keydown', function (e) {
+            if (e.ctrlKey && e.keyCode == 13 && _____controlid______Modal == 'search') {
+                e.preventDefault();
+                $('#desk______controlid_____ .form-container:first').focus();
+                $('#desk______controlid_____ .popup-modal-background').hide();
+                _____controlid______OnLoad();
+            }
+        })
+
+        $('#_____controlid______pageSizeSelect').on('change', function () {
+            _____controlid______pageSize = parseInt($(this).val());
+            _____controlid______currentPage = 1;
+            _____controlid______OnLoad();
+        });
+        _____controlid______renderPagination();
+
+        $('#desk______controlid_____ .form-toolbar .button-refresh').on('click', function (e) {
+            _____controlid______OnLoad();
+        });
+    })
+    function _____controlid______renderPagination() {
+        const pagination = document.getElementById("_____controlid______pagination");
+        pagination.innerHTML = "";
+        pagination.innerHTML += `<li><button onclick="_____controlid______goToPage(1)" ${_____controlid______currentPage === 1 ? "disabled" : ""}>«</button></li>`;
+        pagination.innerHTML += `<li><button onclick="_____controlid______goToPage(${_____controlid______currentPage - 1})" ${_____controlid______currentPage === 1 ? "disabled" : ""}>‹</button></li>`;
+        let start = Math.max(1, _____controlid______currentPage - 2);
+        let end = Math.min(_____controlid______totalPage, _____controlid______currentPage + 2);
+        for (let i = start; i <= end; i++) {
+            pagination.innerHTML += `<li><button onclick="_____controlid______goToPage(${i})" class="${i === _____controlid______currentPage ? "active" : ""}">${i}</button></li>`;
+        }
+        pagination.innerHTML += `<li><button onclick="_____controlid______goToPage(${_____controlid______currentPage + 1})" ${_____controlid______currentPage === _____controlid______totalPage ? "disabled" : ""}>›</button></li>`;
+        pagination.innerHTML += `<li><button onclick="_____controlid______goToPage(${_____controlid______totalPage})" ${_____controlid______currentPage === _____controlid______totalPage ? "disabled" : ""}>»</button></li>`;
+    }
+    function _____controlid______goToPage(page) {
+        if (page < 1 || page > _____controlid______totalPage) return;
+        _____controlid______currentPage = page;
+        _____controlid______renderPagination();
+        _____controlid______OnLoad();
+    }
+
+    function _____controlid______GetPermision() {
+        if (_____controlid______S3Table.ClusterizeData.CurrentRowData() == null || _____controlid______S3Table.ClusterizeData.CurrentRowData().Id == ApplicationInstance.UserId) {
+            _____controlid______Right1 = true;
+            _____controlid______Right2 = false;
+            _____controlid______Right3 = false;
+            //$('#desk______controlid_____ .button-edit').removeClass("toolbar-button").addClass("toolbar-button-disabled");
+            $('#desk______controlid_____ .button-delete').removeClass("toolbar-button").addClass("toolbar-button-disabled");
+            $('#desk______controlid_____ .button-right').removeClass("toolbar-button").addClass("toolbar-button-disabled");
+        } else {
+            if (_____controlid______S3Table.ClusterizeData.CurrentRowData().LockoutEnd != null) {
+                _____controlid______Right1 = true;
+                _____controlid______Right2 = false;
+                _____controlid______Right3 = false;
+                $('#desk______controlid_____ .button-edit').removeClass("toolbar-button-disabled").addClass("toolbar-button");
+                $('#desk______controlid_____ .button-delete').removeClass("toolbar-button").addClass("toolbar-button-disabled");
+                $('#desk______controlid_____ .button-right').removeClass("toolbar-button").addClass("toolbar-button-disabled");
+            } else {
+                if (_____controlid______S3Table.ClusterizeData.CurrentRowData().EmailConfirmed == true) {
+                    _____controlid______Right1 = true;
+                    _____controlid______Right2 = false;
+                    _____controlid______Right3 = true;
+                    $('#desk______controlid_____ .button-edit').removeClass("toolbar-button-disabled").addClass("toolbar-button");
+                    $('#desk______controlid_____ .button-delete').removeClass("toolbar-button").addClass("toolbar-button-disabled");
+                    $('#desk______controlid_____ .button-right').removeClass("toolbar-button-disabled").addClass("toolbar-button");
+                } else {
+                    _____controlid______Right1 = true;
+                    _____controlid______Right2 = true;
+                    _____controlid______Right3 = true;
+                    $('#desk______controlid_____ .button-edit').removeClass("toolbar-button-disabled").addClass("toolbar-button");
+                    $('#desk______controlid_____ .button-delete').removeClass("toolbar-button-disabled").addClass("toolbar-button");
+                    $('#desk______controlid_____ .button-right').removeClass("toolbar-button-disabled").addClass("toolbar-button");
+                }
+            }
+        }
+
+        //20230613 Start: Khong phai admin thi an phan quyen di
+        if (ApplicationInstance.UserType != 1) {            
+            $('#desk______controlid_____ .button-right').removeClass("toolbar-button").addClass("toolbar-button-disabled");
+            $('#desk______controlid_____ .button-luong').removeClass("toolbar-button").addClass("toolbar-button-disabled");
+            $('#desk______controlid_____ .button-resetpassword').removeClass("toolbar-button").addClass("toolbar-button-disabled");
+                      
+            $('#desk______controlid_____ .button-right').hide();
+            $('#desk______controlid_____ .button-luong').hide();
+            $('#desk______controlid_____ .button-resetpassword').hide();
+        }
+        //End
+
+        $('#desk______controlid_____ .button-delete').removeClass("toolbar-button").addClass("toolbar-button-disabled");
+        $('#desk______controlid_____ .button-delete').hide();
+        $('#desk______controlid_____ .button-role').removeClass("toolbar-button").addClass("toolbar-button-disabled");
+        $('#desk______controlid_____ .button-role').hide();
+    }
+
+    _____controlid______Type = "USER";
+    async function _____controlid______OnLoad() {
+        if ($('#desk______controlid_____ .form-toolbar .button-resetpassword').length == 0)
+        {//20230808: Reset password
+            $('#desk______controlid_____ .form-toolbar .button-right').after("<div class='s3t-tooltip toolbar-button button-resetpassword' data-tooltip-key='UserProfile_Var_ResetPassword'><i class='fa fa-key'></i></div>");
+            buildToolTip($('.button-resetpassword'));
+        }
+
+        $('#desk______controlid_____ .form-toolbar .button-luong').on('click', function (e) {
+            let row = _____controlid______S3Table.ClusterizeData.CurrentRowData();
+            let screenInfo = new Object();
+
+            screenInfo.Title = translator._getValueFromJSON("QTLUONG_Var_Luong_ChiTiet_Title.main", applicationDictionary, false);
+            screenInfo.Title_E = '';
+            screenInfo.TabId = CreateUUIDNoSaperate();
+            screenInfo.Id = 'QTTHONGTINLUONGLister';
+            screenInfo.Type = 'listlister';
+            screenInfo.Dock = 'full';
+            screenInfo.ScreenTransitionName = 'LUONGTHEOTHANG';
+            let extraVar = new Object();
+            extraVar.NhanVienId = row.Id;
+            screenInfo.ExtraVar = extraVar;
+            AddTab(screenInfo);
+        });
+
+        $('#desk______controlid_____ .form-toolbar .button-resetpassword').on('click', function (e)
+        {//20230808: Reset password
+            _____controlid______AlertMessage.showConfirmResetPassword(_____controlid______ResetPassword);
+
+        });
+
+        _____controlid______S3Table.SetOptions({
+            HasImage: true,
+            SortCondition: sort_by({ name: 'UserName', reverse: false }),
+            DetailCallback: _____controlid______GetPermision
+        })
+
+        await translator.translateWithKey($('#tab______controlid_____ .billingual-wrapper')[0], "UserList_Var_Title");
+
+        _____controlid______Loading.show();
+
+        window.setTimeout(function () {
+            //$.ajax({
+            //    type: 'GET',
+            //    url: 'api/Admin/Users',
+            //    //async: false,
+            //    contentType: 'application/json; charset=utf-8',
+            //    success: function (data) {
+            //        _____controlid______S3Table.Load(data);
+            //    },
+
+            //    error: function (result) {
+            //        _____controlid______Loading.hide();
+            //        handleResponseError(_____controlid______AlertMessage, result);
+            //    },
+            //    complete: function () {
+            //        _____controlid______Loading.hide();
+            //    },
+            //});
+
+            let model = new Object();
+            model.UserName = $('#desk______controlid_____ .popup-modal-background .UserName').value();
+            model.HoVaTen = $('#desk______controlid_____ .popup-modal-background .HoVaTen').value();
+            model.ChucVu = $('#desk______controlid_____ .popup-modal-background .ChucVu').value();
+            model.MaPhongBan = $('#desk______controlid_____ .popup-modal-background .PName').data('data-value') ? JSON.parse($('#desk______controlid_____ .popup-modal-background .PName').data('data-value')).Id : '';
+            model.TinhTrangCongViec = $('#desk______controlid_____ .popup-modal-background .TinhTrangCongViec').value();
+            model.PageNumber = _____controlid______currentPage;
+            model.PageSize = _____controlid______pageSize;
+            $.ajax({
+                type: 'POST',
+                url: 'api/Admin/Users3',
+                //async: false,
+                data: JSON.stringify(model),
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    _____controlid______S3Table.Load(data.Data);
+                    _____controlid______Loading.hide();
+                    _____controlid______totalPage = Math.ceil(data.TotalCount / _____controlid______pageSize);
+                    _____controlid______renderPagination();
+                },
+
+                error: function (result) {
+                    _____controlid______Loading.hide();
+                    handleResponseError(_____controlid______AlertMessage, result, "_____controlid_____");
+                }
+            });
+
+        }, 0);
+    }
+
+    function _____controlid______OnDelete() {
+        let canDelete = true;
+        if (_____controlid______S3Table.ClusterizeData.CurrentRowData().LockoutEnd != null) {
+            canDelete = false;
+        } else {
+            if (_____controlid______S3Table.ClusterizeData.CurrentRowData().EmailConfirmed == true) {
+                canDelete = false;
+            }
+        }
+        if (canDelete == true)
+            _____controlid______AlertMessage.showConfirm(_____controlid______Delete);
+        else
+            _____controlid______AlertMessage.showInfo('Common_Msg_NoPrivilege');
+    }
+
+    function _____controlid______Lock(id, status) {
+        let index = _____controlid______S3Table.ClusterizeData.data.findIndex(function (o) {
+            return o.Id == id;
+        });
+        let row = new Object();
+        row.Id = _____controlid______S3Table.ClusterizeData.data[index].Id;
+        row.Email = _____controlid______S3Table.ClusterizeData.data[index].Email;
+        row.ModifiedBy = ApplicationInstance.UserName;
+        row.Status = status;
+        _____controlid______Loading.show();
+        $.ajax
+            ({
+                type: 'POST',
+                url: 'api/Admin/LockUser',
+                //async: false,
+                data: JSON.stringify(row),
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    let obj = data;
+                    if (obj.Code == 1) {
+                        ShowNotification('Thành công!', 'success');
+                        row.Id = obj.Id;
+                        row.UserName = obj.Data.UserName;
+                        row.PhoneNumber = obj.Data.PhoneNumber;
+                        row.Role = obj.Data.Role;
+                        row.EmailConfirmed = obj.Data.EmailConfirmed;
+                        row.LockoutEnd = obj.Data.LockoutEnd;
+                        row.ModifiedAt = obj.ModifiedAt;
+                        _____controlid______S3Table.Update(row);
+                        _____controlid______GetPermision();
+                        _____controlid______Loading.hide();
+                    } else {
+                        _____controlid______Loading.hide();
+                        handleResponseApiCode(_____controlid______AlertMessage, obj);
+                    }
+                },
+                error: function (result) {
+                    _____controlid______Loading.hide();
+                    handleResponseError(_____controlid______AlertMessage, result);
+                }
+            });
+    }
+
+    function _____controlid______Activation(id) {
+        let index = _____controlid______S3Table.ClusterizeData.data.findIndex(function (o) {
+            return o.Id == id;
+        });
+        let row = new Object();
+        row.Id = _____controlid______S3Table.ClusterizeData.data[index].Id;
+        row.Email = _____controlid______S3Table.ClusterizeData.data[index].Email;
+        row.ModifiedBy = ApplicationInstance.UserName;
+        _____controlid______Loading.show();
+        $.ajax
+            ({
+                type: 'POST',
+                url: 'api/Admin/Activation',
+                //async: false,
+                data: JSON.stringify(row),
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    let obj = data;
+                    if (obj.Code == 1) {
+                        ShowNotification('Thành công!', 'success');
+                        row.Id = obj.Id;
+                        row.UserName = obj.Data.UserName;
+                        row.PhoneNumber = obj.Data.PhoneNumber;
+                        row.Role = obj.Data.Role;
+                        row.EmailConfirmed = obj.Data.EmailConfirmed;
+                        row.LockoutEnd = obj.Data.LockoutEnd;
+                        row.ModifiedAt = obj.ModifiedAt;
+                        _____controlid______S3Table.Update(row);
+                        _____controlid______GetPermision();
+                        _____controlid______Loading.hide();
+                    } else {
+                        _____controlid______Loading.hide();
+                        handleResponseApiCode(_____controlid______AlertMessage, obj);
+                    }
+                },
+                error: function (result) {
+                    _____controlid______Loading.hide();
+                    handleResponseError(_____controlid______AlertMessage, result);
+                }
+            });
+    }
+
+    function _____controlid______Delete() {
+        var id = _____controlid______S3Table.ClusterizeData.current_row_id;
+        let index = _____controlid______S3Table.ClusterizeData.data.findIndex(function (o) {
+            return o.Id === id;
+        });
+        _____controlid______Loading.show();
+        $.ajax
+            ({
+                type: 'DELETE',
+                url: 'api/Admin/DeleteUser?id=' + id,
+                async: false,
+                contentType: 'application/json; charset =utf-8',
+                success: function (data) {
+                    if (data.Code == 1) {
+                        ShowNotification('Thành công!', 'success');
+                        _____controlid______S3Table.Delete(id);
+                        _____controlid______Loading.hide();
+                    } else {
+                        _____controlid______Loading.hide();
+                        window.setTimeout(function () {
+                            handleResponseApiCode(_____controlid______AlertMessage, data)
+                        }, 100);
+                    }
+                },
+
+                error: function (result) {
+                    _____controlid______Loading.hide();
+                    window.setTimeout(function () {
+                        window.setTimeout(handleResponseError(_____controlid______AlertMessage, result));
+                    }, 100);
+                }
+            });
+    }
+
+    function _____controlid______ResetPassword()
+    {//20230808: Reset password
+
+        var id = _____controlid______S3Table.ClusterizeData.current_row_id;
+        let index = _____controlid______S3Table.ClusterizeData.data.findIndex(function (o) {
+            return o.Id == id;
+        });
+        let row = new Object();
+        row.Id = _____controlid______S3Table.ClusterizeData.data[index].Id;
+
+        _____controlid______Loading.show();
+        $.ajax
+            ({
+                type: 'POST',
+                url: 'api/Admin/ResetPassword',
+                //async: false,
+                data: JSON.stringify(row),
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    let obj = data;
+                    if (obj.Code == 1) {
+                        ShowNotification('Thành công!', 'success');
+                        _____controlid______Loading.hide();
+                    } else {
+                        _____controlid______Loading.hide();
+                        handleResponseApiCode(_____controlid______AlertMessage, obj);
+                    }
+                },
+                error: function (result) {
+                    _____controlid______Loading.hide();
+                    handleResponseError(_____controlid______AlertMessage, result);
+                }
+            });
+
+    }
+
+</script>
+

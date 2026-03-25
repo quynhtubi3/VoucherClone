@@ -1,0 +1,326 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+@using Microsoft.AspNetCore.Identity
+@using Voucher.cloud.Models
+@using Voucher.cloud.Models.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@inject Voucher.cloud.DatabaseFrameworks.Interfaces.IUserRightDataRepository RightManager
+@inject Voucher.cloud.DatabaseFrameworks.Interfaces.IMemvarDataRepository MemvarManager
+@{
+    var t = (DateTime.Now).Ticks;// TODO remove
+    var disableCache = "t=" + t.ToString();
+    ApplicationUser user = null;
+    UservarModel uservar = null;
+    var defaultLang = "VN";
+    var theme = "s3t-theme1";
+}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/s3t-theme1/styleguide.css?@disableCache" type="text/css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="~/css/bootstrap-icon.css" type="text/css">
+    <link rel="stylesheet" href="~/css/jquery.powertip.css" type="text/css">
+    <link rel="stylesheet" href="~/css/stimulsoft.viewer.office2013.whiteblue.css" type="text/css">
+    <link rel="stylesheet" href="~/css/clusterize.css" type="text/css">
+    <link rel="stylesheet" href="~/css/jquery.contextMenu.css?@disableCache" type="text/css">
+    <link rel="stylesheet" href="~/css/menu.bar.css?@disableCache" type="text/css" />
+    <link rel="stylesheet" href="~/css/tab.bar.css?@disableCache" type="text/css" />
+    <link rel="stylesheet" href="./css/chosen.css?@disableCache" type="text/css" />
+    <link rel="stylesheet" href="./css/form.container.css?@disableCache" type="text/css" />
+    <link rel="stylesheet" href="./css/table.css?@disableCache" type="text/css" />
+    <link rel="stylesheet" href="./css/controls.css?@disableCache" type="text/css" />
+    <link rel="stylesheet" href="./css/main.css?@disableCache" type="text/css" />
+    <link rel="stylesheet" href="./css/listlister.css?@disableCache" type="text/css" />
+    <link rel="stylesheet" href="./css/invoicelister.css?@disableCache" type="text/css" />
+    <script type="text/javascript" src="~/js/chart.min.js"></script>
+    <script type="text/javascript" src="~/js/jquery1.11.2.min.js"></script>
+    <script type="text/javascript" src="~/js/jquery-ui.min.js?@disableCache"></script>
+    <script type="text/javascript" src="~/js/xlsx.full.min.js"></script>
+    <script type="text/javascript" src="~/js/jszip.js"></script>
+    <script type="text/javascript" src="~/js/jquery.powertip.js?@disableCache"></script>
+    <script type="text/javascript" src="~/js/stimulsoft.reports.js?@disableCache"></script>
+    <script type="text/javascript" src="~/js/stimulsoft.viewer.js?@disableCache"></script>
+    <script type="text/javascript" src="~/js/jquery.contextMenu.js?@disableCache"></script>
+    <script type="text/javascript" src="~/js/clusterize.js?@disableCache"></script>
+    <script type="text/javascript" src="~/js/clusterizeDatabase.js?@disableCache"></script>
+    <script type="text/javascript" src="~/js/colResizable-1.6.js?@disableCache"></script>
+    <script type="text/javascript" src="~/js/multithread.js?@disableCache"></script>
+    <script type="text/javascript" src="~/js/translator.js?@disableCache"></script>
+    <script type="text/javascript" src="~/js/sort.js?@disableCache"></script>
+    <script type="text/javascript" src="~/js/chosen.jquery.js?@disableCache"></script>
+    <script type="text/javascript" src="~/js/s3ttable.js?@disableCache"></script>
+    <script type="text/javascript" src="~/lib/ckeditor/ckeditor.js?@disableCache"></script>
+    <script type="text/javascript" src="~/lib/qrcode.js"></script>
+    <script>
+
+        var num_threads = 8;
+        var MT = new Multithread(num_threads);
+        var defaultLang = "@defaultLang";
+
+        var translator = new Translator({
+            persist: false,
+            languages: [defaultLang],
+            defaultLanguage: defaultLang,
+            detectLanguage: true,
+            filesLocation: "/i18n"
+        });
+
+    </script>
+    <script type="text/javascript" src="~/js/main.js?@disableCache"></script>
+    <script type="text/javascript" src="~/js/table-render.js?@disableCache"></script>
+    <script type="text/javascript" src="~/js/text-search-callback.js?@disableCache"></script>
+    <script type="text/javascript" src="~/js/public.js?@disableCache"></script>
+    <script>
+        var applicationDictionary = null;
+        var helpDictionary = null;
+        translator.load(defaultLang).then(async function () {
+            //Init memvar
+            let cb = function () {
+                let menus = $("#mainmenu .billingual-wrapper");
+                $.map(menus, function (elm, index) {
+                    translateMenu(elm, index);
+                });
+                translator.translateById("mainmenu");
+                translator.translateById("desk_T00");
+                translator.translateById("topnav");
+                translator.translateById("sidenav-user");
+            }
+
+            InitMemvar(cb);
+            buildToolTip($('.s3t-tooltip'));
+
+            $("#maintaskbar").on("mousedown", function (e) {
+                if (e.button == 1) {
+                    let id = $(e.target).closest(".tab").attr("id").replace("tab_", "");
+                    if (id) {
+                        RemoveTab(id);
+                    }
+                }
+            });
+
+            $("#invisibleitemsmenu").on("mousedown", function (e) {
+                if (e.button == 1) {
+                    let id = $(e.target).closest(".tab").attr("id").replace("tab_", "");
+                    if (id) {
+                        RemoveTab(id);
+                    }
+                }
+            });
+
+        });
+    </script>
+
+    <script>
+        let idleTimeout;
+        const MAX_IDLE_TIME = 15 * 60 * 1000; // 15 phút
+
+        function resetIdleTimer() {
+            clearTimeout(idleTimeout);
+            idleTimeout = setTimeout(logoutUser, MAX_IDLE_TIME);
+        }
+
+        function logoutUser() {
+            $.ajax
+                ({
+                    type: 'GET',
+                    url: 'api/Admin/IsAuthorize',
+                    async: false,
+                    contentType: 'application/json; charset =utf-8',
+                    success: function (data) {
+                        $("#Logout_Form")[0].submit();
+                    },
+                    error: function (data) {
+                        let a = document.createElement('a');
+                        a.href = "Account/Login";
+                        a.click();
+                        a.remove();
+                    },
+                });
+        }
+
+        ["mousemove", "keydown", "click", "scroll"].forEach(event => {
+            document.addEventListener(event, resetIdleTimer);
+        });
+
+        resetIdleTimer();
+    </script>
+</head>
+
+<body id="s3t-cloud-body">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        user = await UserManager.GetUserAsync(User);
+        uservar = await MemvarManager.GetUservar(user);
+        List<Menu> menu = await RightManager.GetAllMenu(user);
+
+        var mainlang = "active";
+        var sublang = "active";
+
+        <div id="topnav" class="topnav">
+            <div style="flex:1;">
+                <div id="topnav-list" class='modal-label billingual-wrapper subsidiary-info'></div>
+            </div>
+        </div>
+        <div id="maintoolbar">
+            <nav>
+                <ul>
+                    <li class="nav-item" style="display: none;">
+                        <button type="button" class="navbar-toggle">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0)">
+                            <div class="group-574-AJW6bn">
+                                <img class="mask-group-k4V219" src="img/mask-group@2x.png">
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="einvoice-incame-button" href="javascript:void(0)">
+                            <div class="einvoice-incame-hotbox" style="position:relative;">
+                                <div class="einvoice-incame-count" ecommingcount="0" style="display:none;"><span>9+</span></div>
+                                <div class="einvoice-incame-bell"></div>
+                            </div>
+                        </a>
+                    </li>
+                    @foreach (var m in menu)
+                    {
+                        if (m.Type != null && m.Type.Equals("S") && m.ParentId != null)
+                        {
+                            <li class="nav-item s3t-tooltip" data-mainlanguage="@m.Bar" placement="e">
+                                <a class="main-menu-toolbar" href="javascript:void(0)" extravar="@m.ExtraVar" rightid="@m.Id" righttype="@m.Type" menurighttype="@m.MenuRightType" controlid="@m.ControlId" controltype="@m.ControlType" dockstyle="@m.DockStyle" childcontrolid="@m.ChildControlId" mainlanguage="@m.Bar">
+                                    <div class="menu-toolbar">
+                                        <div style="background: url(/img/@m.Image_Name) no-repeat;background-position: center center;"></div>
+                                    </div>
+                                </a>
+                            </li>
+                        }
+                    }
+                </ul>
+            </nav>
+            <form id="Logout_Form" class="form-inline" asp-area="Identity" asp-page="/Account/Logout">
+            </form>
+        </div>
+        <div id="mainmenu">
+            <div style="width:100%;height:100%">
+                <div class="navbar">
+                    @{
+                        Newtonsoft.Json.Linq.JArray fvs = null;
+
+                        List<object> favorites = new List<object>();
+                        using (var httpClient = new System.Net.Http.HttpClient())
+                        {
+                            try
+                            {
+                                //var json = await httpClient.GetStringAsync($"{Context.Request.Scheme}://{Context.Request.Host}/{Common.MetadataFolder}/{user.TK}/{user.Database}/Favorites/{user.Id}.json");
+                                var json = "";
+                                fvs = Newtonsoft.Json.Linq.JArray.Parse(json);
+                                foreach (var f in fvs)
+                                {
+                                    favorites.Add(Newtonsoft.Json.JsonConvert.DeserializeObject(f.Value<String>("Value")));
+                                }
+                            }
+                            catch (Exception e)
+                            {
+
+                            }
+                        }
+                        var fMajor = Newtonsoft.Json.JsonConvert.SerializeObject(favorites);
+                    }
+                    <a class="main-menu-button" href="javascript:void(0)" major="@fMajor">
+                        <div class="menu-icon">
+                            <div style="background: url(/img/@uservar.Theme/menu_favorite.svg) no-repeat;background-position: center center;"></div>
+                        </div>
+                        <div class='modal-label billingual-wrapper' data-i18n-layout='layout1' data-i18n-key='Menu_Var_Favorite'>
+                        </div>
+                    </a>
+                    <a id="Button_Dashboard" class="main-menu-button" href="javascript:void(0)">
+                        <div class="menu-icon">
+                            <div style="background: url(/img/@uservar.Theme/menu_dashboard.svg) no-repeat;background-position: center center;"></div>
+                        </div>
+                        <div class='modal-label billingual-wrapper' data-i18n-layout='layout1' data-i18n-key='Menu_Var_Dashboard'>
+                        </div>
+                    </a>
+
+                    @{
+                        var mainMenu = menu.Where(x => x.Type != null && x.Type.Equals("M")).ToList();
+                    }
+                    @if (mainMenu.Count > 0)
+                    {
+                        <li class="divider"></li>
+                    }
+                    @foreach (var m in mainMenu)
+                    {
+                        var major = Newtonsoft.Json.JsonConvert.SerializeObject(menu.Where(x => x.ParentId != null && x.ParentId.Equals(m.Id)).OrderBy(x => x.OrderId).ToList());
+
+                        <a class="main-menu-button@(m.IsContract ? "" : " no-accessible")" href="javascript:void(0)" major="@major">
+                            <div class="menu-icon">
+                                <div style="background: url(/img/@uservar.Theme/@m.Image_Name) no-repeat;background-position: center center;"></div>
+                            </div>
+                            <div class="billingual-wrapper"><label class="main-language">@m.Bar</label><p class="sub-language">@m.Bar</p></div>
+                        </a>
+                    }
+
+
+                    <div id="mainmenu-user" style="position: absolute; bottom: 40px;padding: 0px!important;">
+                        <div style="padding-left:0px;">
+                            <div class="user-online-avatar" style="background: url(@(uservar.Has_Avatar ? "/Metadata/" + user.TK + "/" + user.Database + "/UserList/" + user.Id + ".jpg?" + disableCache : "/img/" + uservar.Theme + "/avatar.svg")) no-repeat;"></div>
+                        </div>
+                        <div class="fullname" style="padding-left: 0px;font-weight: bold;">@(!String.IsNullOrEmpty(user.FullName) ? user.FullName : @user.UserName2)</div>
+                        <img class="menu-user-open-menu" src="/img/polygon-open.png" style="width: 13px; padding-left: 7px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sidenav-major" class="sidenav" style="display:none;">
+            <div class="navbar">
+                <div>
+                    <div class="modal-label billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="Menu_Var_Major"></div>
+                </div>
+                <li class="divider"></li>
+            </div>
+        </div>
+        <div id="sidenav-report" class="sidenav" style="display:none;">
+            <div class="navbar">
+                <div>
+                    <div class="modal-label billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="Menu_Var_Report"></div>
+                </div>
+                <li class="divider"></li>
+                <div class="report-body"></div>
+            </div>
+        </div>
+        <div id="sidenav-user" class="" style="display:none;">
+            <div class="navbar">
+                <a id="Button_Profie" class="main-menu-button" href="javascript:void(0)">
+                    <div class="menu-icon">
+                        <div style="background: url(/img/Profile.svg) no-repeat;background-position: center center;"></div>
+                    </div>
+                    <div class='modal-label billingual-wrapper' data-i18n-layout='layout1' data-i18n-key='UserProfile_Var_Title'>
+                    </div>
+                </a>
+                <a id="Button_Logout" class="main-menu-button" href="javascript:void(0)">
+                    <div class="menu-icon">
+                        <div style="background: url(/img/Log_Out.svg) no-repeat;background-position: center center;"></div>
+                    </div>
+                    <div class='modal-label billingual-wrapper' data-i18n-layout='layout1' data-i18n-key='UserProfile_Var_Logout'>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div id="mainbody">
+            @RenderBody()
+        </div>
+        <div id="stimusoft-report"></div>
+        <div id="main-alert"></div>
+        <div class="toast-container" id="toastContainer"></div>
+
+        @RenderSection("Scripts", required: false)
+    }
+</body>
+</html>

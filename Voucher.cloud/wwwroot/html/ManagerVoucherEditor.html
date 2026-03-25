@@ -1,0 +1,806 @@
+﻿<style>
+
+    #desk______controlid_____ .form-container {
+        width: 100%;
+        height: calc(100% - 64px);
+        top: 0px !important;
+    }
+
+    #desk______controlid_____ .s3tcloud-prefix .form-body.form-editor {
+        flex-direction: column;
+        justify-content: inherit;
+    }
+
+    #desk______controlid_____ .s3tcloud-prefix .form-footer, .s3tcloud-prefix.form-footer {
+        position: absolute;
+        width: 100%;
+        background-color: var(--form-header-footer);
+        bottom: 4px;
+        display: flex;
+        align-items: center;
+    }
+
+    #desk______controlid_____ .modal-label {
+        flex: 0 0 150px;
+    }
+
+    #desk______controlid_____ div.family {
+        display: flex;
+        margin: 5px 0px;
+    }
+
+
+    #desk______controlid_____ div.child {
+        display: block;
+        margin: 0px 3px;
+    }
+
+    #desk______controlid_____ .form-group.group-title {
+        height: 42px;
+    }
+
+    #desk______controlid_____ .form-group.niece {
+        height: 30px;
+    }
+
+    #desk______controlid_____ .form-group > .form-group {
+        padding: 0px 5px 0px 5px;
+    }
+
+    #desk______controlid_____ .state {
+        /*color: white;*/
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #desk______controlid_____ .form-group.child .group-title {
+        padding: 6px;
+    }
+
+    #desk______controlid_____ div.child > .form-group {
+        padding: 2px 5px;
+    }
+
+    #desk______controlid_____ div.niece {
+        justify-content: space-between;
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+    #desk______controlid_____ .toolbar-button {
+        background-color: var( --tool-bar);
+        width: 23px;
+        height: 20px
+    }
+</style>
+
+<!--Nội dung màn hình thêm/sửa-->
+<!--Nội dung màn hình thêm/sửa-->
+
+<div class="family">
+    <div class="form-group child" id="_____controlid_____-2fa">
+        <div class="form-group group-title">
+            <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="Common_Var_User_Input"></div>
+        </div>
+        <div class='form-group'>
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='UserProfile_Var_HoVaTen'></div>
+                <input type="text" class="modal-textbox HoVaTen" validate="false" readonly />
+            </div>
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='UserProfile_Var_DienThoai'></div>
+                <input type="text" class="modal-textbox DienThoai" validate="false" readonly />
+            </div>
+            <div class="form-group">
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='UserProfile_Var_Email'></div>
+                <input type="text" class="modal-textbox user-email" validate="false" readonly />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="family">
+    <div class="form-group child" id="_____controlid_____-2fa">
+        <div class="form-group group-title">
+            <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="Common_Var_Voucher"></div>
+        </div>
+        <div class='form-group'>
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Serial'></div>
+                <input type="text" class="modal-textbox Serial" validate="true" no-required="false" />
+            </div>
+
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Voucher_Default'></div>
+                <select class="Type_Voucher VoucherTypeId" style="width:100%" no-required="false">
+                </select>
+            </div>
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='DUAN_Var_TheoDoi'></div>
+                <div class='modal-textbox text-select Status' no-required="false" data-toggle='[{"id":"1", "name":"Pending"},{"id":"2","name":"Sold"},{"id":"3","name":"Activated"}]' data-title='1'>Chưa bán</div>
+            </div>
+        </div>
+
+        <div class='form-group'>
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Gia_ban'></div>
+                <input type="text" style="width:100%" class="text-number SalePrice" no-required="false" validate="true" />
+            </div>
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Expire_date'></div>
+                <div class='modal-textbox text-select ValidityPeriod' no-required="false" data-toggle='[{"id":"1", "name":"3_month"},{"id":"2","name":"6_month"},{"id":"3","name":"9_month"},{"id":"4","name":"12_month"}]' data-title='1'>3 Tháng</div>
+            </div>
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Type_Voucher'></div>
+                <div class='modal-textbox text-select VoucherType' no-required="false" data-toggle='[{"id":"1", "name":"Free_Voucher"},{"id":"2","name":"Voucher_value"}]' data-title='1'>Voucher miễn phí</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="family">
+    <div class="form-group child" id="_____controlid_____-2fa">
+        <div class="form-group group-title">
+            <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="INFO_SELLER"></div>
+        </div>
+        <div class='form-group'>
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Seller'></div>
+                <select class="SellerId" style="width:100%">
+                </select>
+            </div>
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='NGAYBAN'></div>
+                <input type="text" class="modal-textbox text-date SaleDate" validate="true" no-required="true" style="width:120px;" maxlength="10" value="__/__/____" />
+            </div>
+            <div class='form-group'>
+
+            </div>
+        </div>
+
+        <div class='form-group'>
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='UserProfile_Var_ChucVu'></div>
+                <input type="text" class="modal-textbox ChucVu" readonly />
+            </div>
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Hoa_hong_ca_nhan1'></div>
+                <input type="text" class="modal-textbox text-number IndividualCommission" validate="true" readonly allownegative="false" style="width:120px;" />
+            </div>
+            <div class='form-group'>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="family">
+    <div class="form-group child" id="_____controlid_____-2fa">
+        <div class="form-group group-title">
+            <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="INFO_ACTIVE"></div>
+        </div>
+        <div class='form-group'>
+
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='DUAN_Var_KhachHang'>
+                </div>
+                <input type='text' class='form-control modal-textbox text-search BuyerName' validate='false' no-required="false" data-callback="_____controlid_____KhachHangSearhSelect" add-function='TextSearchCallback_DMKHACHHANG("_____controlid_____", $("#desk______controlid_____ .KName"))' data-first-filter='' data-table='DMKHACHHANG' data-field-name='Name' data-prefix-class='_____controlid______TextSearch_KH_' data-destination-id='Name' />
+            </div>
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Sdt_nguoi_mua'></div>
+                <input type="text" class="modal-textbox text-phone BuyerPhone" readonly validate="true" no-required="true" />
+            </div>
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Number_of_uses_remaining'></div>
+                <input type="text" style="width:120px;" class="modal-textbox NumberOfUseRemaining" validate="true" no-required="false" disabled />
+                <div disabled class="s3t-tooltip toolbar-button button-Subtraction-NumberOfUseRemaining" data-tooltip-key="minus_num_user"><i class="fa fa-minus"></i></div>
+                <div class="s3t-tooltip toolbar-button button-Addition-NumberOfUseRemaining" data-tooltip-key="plus_num_user"><i class="fa fa-plus"></i></div>
+            </div>
+        </div>
+        <div class='form-group'>
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Common_Var_Address'></div>
+                <input type="text" class="modal-textbox BuyerAddress" readonly validate="false" />
+            </div>
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Common_Var_Email'></div>
+                <input type="number" class="modal-textbox text-email BuyerEmail" validate="true" readonly no-required="true" />
+            </div>
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Number_of_free_remaining'></div>
+                <input type="text" style="width:120px;" class="modal-textbox NumberOfFreeRemaining" validate="true" no-required="false" disabled />
+                <div class="s3t-tooltip toolbar-button button-Subtraction-NumberOfFreeRemaining" data-tooltip-key="minus_num_user"><i class="fa fa-minus"></i></div>
+                <div class="s3t-tooltip toolbar-button button-Addition-NumberOfFreeRemaining" data-tooltip-key="plus_num_user"><i class="fa fa-plus"></i></div>
+            </div>
+        </div>
+        <div class='form-group'>
+
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Dia_chi_co_so_ap_dung'>
+                </div>
+                <input type='text' class='form-control modal-textbox text-search ApplicableLocation' validate='false' no-required="false" data-callback="_____controlid_____CoSoCuaHangSearhSelect" add-function='TextSearchCallback_DMKHACHHANG("_____controlid_____", $("#desk______controlid_____ .ApplicableLocation"))' data-first-filter='' data-table='DMCOSOCUAHANG' data-field-name='Name' data-prefix-class='_____controlid______TextSearch_ApplicableLocation_' data-destination-id='Name' />
+            </div>
+
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Ngay_kich_hoat'></div>
+                <input type="text" class="modal-textbox text-date ActivationDate" no-required="true" validate="true" style="width:120px;" maxlength="10" value="__/__/____" />
+            </div>
+            <div class='form-group'>
+                <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Ngay_het_han'></div>
+                <input type="text" class="modal-textbox text-date ExpiryDate" validate="true" no-required="true" style="width:120px;" maxlength="10" value="__/__/____" />
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+    $( function () {
+        $('#desk______controlid_____ .s3tcloud-prefix.form-container > .form-footer .button-add').remove();
+        BindDataType_Voucher();
+        BindDataSeller();
+        $('#desk______controlid_____ .SellerId').off('change').on('change', function () {
+            let selected = $(this).find('option:selected');
+            $('#desk______controlid_____ .ChucVu').value(selected.data('chucvu'));
+            $('#desk______controlid_____ .IndividualCommission').value(selected.data('hhcanhan'));
+
+        });
+
+        $(document).on("change", "#desk______controlid_____ .Status", function () {
+            var value = $('#desk______controlid_____ .Status').value();
+            if (value == 3 || value == '3') {
+                $('#desk______controlid_____ .button-Addition-NumberOfUseRemaining').show();
+                $('#desk______controlid_____ .button-Subtraction-NumberOfUseRemaining').show();
+                $('#desk______controlid_____ .button-Addition-NumberOfFreeRemaining').show();
+                $('#desk______controlid_____ .button-Subtraction-NumberOfFreeRemaining').show();
+            }         
+        });
+        $(document)
+            .off("click", "#desk______controlid_____ .button-Subtraction-NumberOfUseRemaining")
+            .on("click", "#desk______controlid_____ .button-Subtraction-NumberOfUseRemaining", function () {
+                let $input = $('#desk______controlid_____ .NumberOfUseRemaining');
+                let curValue = parseInt($input.value() || 0);
+                if (curValue > 0) {
+                    $input.val(curValue - 1);
+                }
+            });
+
+        $(document)
+            .off("click", "#desk______controlid_____ .button-Addition-NumberOfUseRemaining")
+            .on("click", "#desk______controlid_____ .button-Addition-NumberOfUseRemaining", function () {
+                let $input = $('#desk______controlid_____ .NumberOfUseRemaining');
+                let curValue = parseInt($('#desk______controlid_____ .NumberOfUseRemaining').value() || 0);
+                if (curValue < _____controlid______voucherData.NumberOfUse) {
+                    $input.val(curValue + 1);
+                } else {
+                    ShowNotification(`Voucher ${_____controlid______voucherData.Serial} có ${_____controlid______voucherData.NumberOfUse} lần sử dụng. Bạn đã tăng quá giới hạn sử dụng của voucher`, 'error');
+                }
+            });
+
+        $(document)
+            .off("click", "#desk______controlid_____ .button-Subtraction-NumberOfFreeRemaining")
+            .on("click", "#desk______controlid_____ .button-Subtraction-NumberOfFreeRemaining", function () {
+                let $input = $('#desk______controlid_____ .NumberOfFreeRemaining');
+                let curValue = parseInt($input.value() || 0);
+                if (curValue > 0) {
+                    $input.val(curValue - 1);
+                }
+            });
+
+        $(document)
+            .off("click", "#desk______controlid_____ .button-Addition-NumberOfFreeRemaining")
+            .on("click", "#desk______controlid_____ .button-Addition-NumberOfFreeRemaining", function () {
+                let $input = $('#desk______controlid_____ .NumberOfFreeRemaining');
+                let curValue = parseInt($('#desk______controlid_____ .NumberOfFreeRemaining').value() || 0);
+                if (curValue < _____controlid______voucherData.NumberOfFree) {
+                    $input.val(curValue + 1);
+                } else {
+
+                    ShowNotification(`Voucher ${_____controlid______voucherData.Serial} có ${_____controlid______voucherData.NumberOfFree} lần sử dụng miễn phí. Bạn đã tăng quá giới hạn sử dụng của voucher`, 'error');
+                }
+            });
+        $("#desk______controlid_____ .BuyerName").on("input", function () {
+            let value = $("#desk______controlid_____ .BuyerName").value();
+            if (isNullOrEmpty(value)) {
+                $('#desk______controlid_____ .Status').value(1);
+                _____controlid______choseKH = true;
+            } else {
+                _____controlid______choseKH = false;
+            }
+
+        });
+        $("#desk______controlid_____ .ApplicableLocation").on("input", function () {
+            let value = $("#desk______controlid_____ .ApplicableLocation").value();
+            if (isNullOrEmpty(value)) {
+                _____controlid______choseCS = true;
+            } else {
+                _____controlid______choseCS = false;
+            }
+        });
+
+    });
+    var _____controlid______Table = 'Voucher';
+
+    var _____controlid______TableColumnCode = 'Serial';
+
+    var _____controlid______UserDetail;
+    var _____controlid______voucherData;
+    var _____controlid______FromOther = false;
+    var _____controlid_____CoSoCuaHangSearhItemSelect;
+    var _____controlid_____KhachHangSearhItemSelect;
+    var _____controlid______IsFromOther = false;
+    var _____controlid______DataSourceOther;
+    var _____controlid______choseKH = true;
+    var _____controlid______choseCS = true;
+
+
+    function _____controlid_____KhachHangSearhSelect(item, element) {
+        _____controlid_____KhachHangSearhItemSelect = item;
+        _____controlid______choseKH = true;
+        $('#desk______controlid_____ .BuyerPhone').value(item.DienThoai);
+        $('#desk______controlid_____ .BuyerAddress').value(item.DiaChi);
+        $('#desk______controlid_____ .BuyerEmail').value(item.Email);
+
+        $('#desk______controlid_____ .button-Addition-NumberOfUseRemaining').show();
+        $('#desk______controlid_____ .button-Subtraction-NumberOfUseRemaining').show();
+        $('#desk______controlid_____ .button-Addition-NumberOfFreeRemaining').show();
+        $('#desk______controlid_____ .button-Subtraction-NumberOfFreeRemaining').show();
+
+        var value = $('#desk______controlid_____ .Status').value();
+        if (value != '3') {
+            $('#desk______controlid_____ .Status').value(2);
+        }
+
+    }
+    function _____controlid_____CoSoCuaHangSearhSelect(item, element) {
+        _____controlid_____CoSoCuaHangSearhItemSelect = item;
+        _____controlid______choseCS = true;
+    }
+    
+
+    async function _____controlid______GetUserDetail(row) {
+        $.ajax({
+            type: 'POST',
+            url: 'api/UserProfile/Get_Detail',
+            async: false,
+            data: JSON.stringify(row),
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                _____controlid______UserDetail = data;
+            },
+
+            error: function (result) {
+
+            }
+        });
+    }
+
+    function BindDataType_Voucher() {
+        $('#desk______controlid_____ .Type_Voucher').empty();
+        let model = new Object();
+        model.Name = '';
+        model.Code = '';
+        model.Type = 0;
+        model.DefaultValidityPeriod = 0;
+        model.DefaultPrice = 0;
+        model.DefaultRealPrice = 0;
+        model.DefaultNumberOfUse = 0;
+        model.DefaultNumberOfFree = 0;
+        model.PageNumber = 1;
+        model.PageSize = 99999;
+        $.ajax({
+            type: 'POST',
+            url: '/api/VoucherType/Get',
+            async: false,
+            data: JSON.stringify(model),
+            contentType: 'application/json; charset=utf-8',
+            complete: function () {
+
+            },
+            success: function (res) {
+                var response = res.Data;
+                $('#desk______controlid_____ .Type_Voucher').empty();
+                //$('#desk______controlid_____ .Type_Voucher').append('<option value="">-- Chọn loại voucher --</option>');
+                for (var j = 0; j < response.length; j++) {
+                    row = '<option value="' + response[j].Id + '"'
+                        + ' data-defaultprice="' + response[j].DefaultPrice + '"'
+                        + ' data-defaultvalidity="' + response[j].DefaultValidityPeriod + '"'
+                        + ' data-defaultnumberofuse="' + response[j].DefaultNumberOfUse + '"'
+                        + ' data-defaultnumberoffree="' + response[j].DefaultNumberOfFree + '"'
+                        + ' data-type="' + response[j].Type + '">'
+                        +  response[j].Code + '-' + response[j].Name
+                        + '</option>';
+
+                    $('#desk______controlid_____ .Type_Voucher').append(row);
+                }
+                $('#desk______controlid_____ .Type_Voucher')[0].selectedIndex = 0;
+
+            },
+            error: function (result) {
+
+            }
+        });
+    }
+
+
+
+    function BindDataSeller() {
+        $('#desk______controlid_____ .SellerId').empty();
+        let model = new Object();
+        model.Name = '';
+        model.DienThoai = '';
+        $.ajax({
+            type: 'POST',
+            url: '/api/DMNGUOIBAN/Get',
+            async: false,
+            data: JSON.stringify(model),
+            contentType: 'application/json; charset=utf-8',
+            complete: function () {
+
+            },
+            success: function (response) {
+                $('#desk______controlid_____ .SellerId').empty();
+                $('#desk______controlid_____ .SellerId').append('<option value="">-- Chọn người bán --</option>');
+                for (var j = 0; j < response.length; j++) {
+                    row = '<option value="' + response[j].Id + '"'
+                        + ' data-HHCaNhan="' + response[j].HHCaNhan + '"'
+                        + ' data-name="' + response[j].Name + '"'
+                        + ' data-chucvu="' + response[j].ChucVu + '"'
+                        + ' data-HHTruongCuaHang="' + response[j].HHTruongCuaHang + '"'
+                        + ' data-HHPhoCuaHang="' + response[j].HHPhoCuaHang + '"'
+                        + ' data-QuyDoiPhaChe="' + response[j].QuyDoiPhaChe + '"'
+                        + ' data-QuyChung="' + response[j].QuyChung + '">'
+                        + response[j].Name + ' -- ' + response[j].DienThoai
+                        + '</option>';
+
+                    $('#desk______controlid_____ .SellerId').append(row);
+                }
+                $('#desk______controlid_____ .SellerId')[0].selectedIndex = 0;
+
+            },
+            error: function (result) {
+
+            }
+        });
+    }
+
+    $('#desk______controlid_____ .Type_Voucher').on('change', function () {
+        const selected = $(this).find('option:selected');
+        const defaultPrice = selected.data('defaultprice');
+        const defaultValidity = selected.data('defaultvalidity');
+        const type = selected.data('type');
+        const defaultnumberofuse = selected.data('defaultnumberofuse');
+        const defaultnumberoffree = selected.data('defaultnumberoffree');
+        if (!isNullOrEmpty(defaultPrice)) {
+            $('#desk______controlid_____ .SalePrice').value(defaultPrice);
+        } else {
+            $('#desk______controlid_____ .SalePrice').value(0);
+        }
+
+        if (!isNullOrEmpty(defaultValidity)) {
+            $('#desk______controlid_____ .ValidityPeriod').value(defaultValidity);
+        } else {
+            $('#desk______controlid_____ .ValidityPeriod').value(0);
+        }
+
+        if (!isNullOrEmpty(type)) {
+            $('#desk______controlid_____ .VoucherType').value(type);
+        } else {
+            $('#desk______controlid_____ .VoucherType').value(0);
+        }
+
+        if (!isNullOrEmpty(defaultnumberofuse)) {
+            $('#desk______controlid_____ .NumberOfUseRemaining').value(defaultnumberofuse);
+            _____controlid______voucherData.NumberOfUse = defaultnumberofuse;
+
+        } else {
+            $('#desk______controlid_____ .NumberOfUseRemaining').value(0);
+        }
+        if (!isNullOrEmpty(defaultnumberoffree)) {
+            _____controlid______voucherData.NumberOfFree = defaultnumberoffree;
+            $('#desk______controlid_____ .NumberOfFreeRemaining').value(defaultnumberoffree);
+        } else {
+            $('#desk______controlid_____ .NumberOfFreeRemaining').value(0);
+        }
+
+
+        var activationDateStr = $('#desk______controlid_____ .ActivationDate').value();
+        if (!isNullOrEmpty(defaultValidity) && !isNullOrEmpty(activationDateStr)) {
+            _____controlid______CalExpiryDate();
+        }
+    });
+
+    $('#desk______controlid_____ .ValidityPeriod').on('change', function () {
+        var activationDateStr = $('#desk______controlid_____ .ActivationDate').value();
+        var defaultValidity = $('#desk______controlid_____ .ValidityPeriod').value();
+        if (!isNullOrEmpty(defaultValidity) && !isNullOrEmpty(activationDateStr)) {
+            _____controlid______CalExpiryDate();
+        }
+
+    });
+    $('#desk______controlid_____ .ActivationDate').on('blur', function () {
+        _____controlid______CalExpiryDate();
+    });
+    function _____controlid______CalExpiryDate() {
+        var activationDateStr = $('#desk______controlid_____ .ActivationDate').value();
+        var validityId = $('#desk______controlid_____ .ValidityPeriod').value();
+        // Ánh xạ số tháng từ ID
+        var monthMap = {
+            "1": 3,
+            "2": 6,
+            "3": 9,
+            "4": 12
+        };
+
+        var monthsToAdd = monthMap[validityId];
+        if (!monthsToAdd) return;
+
+        // Parse chuỗi yyyy/MM/dd thành Date object
+        var dateParts = activationDateStr.split(' ')[0].split('/'); // "2025/03/12" → ["2025", "03", "12"]
+        if (dateParts.length !== 3) return;
+
+        var year = parseInt(dateParts[0], 10);
+        var month = parseInt(dateParts[1], 10) - 1; // JS month: 0-indexed
+        var day = parseInt(dateParts[2], 10);
+
+        var activationDate = new Date(year, month, day);
+        if (isNaN(activationDate)) return;
+
+        // Cộng thêm tháng
+        var expiryDate = new Date(activationDate);
+        expiryDate.setMonth(expiryDate.getMonth() + monthsToAdd);
+
+        // Format: dd/MM/yyyy
+        var dd = String(expiryDate.getDate()).padStart(2, '0');
+        var mm = String(expiryDate.getMonth() + 1).padStart(2, '0');
+        var yyyy = expiryDate.getFullYear();
+        var expiryDateStr = `${yyyy}/${mm}/${dd}`;
+        //$('.ExpiryDate').val(expiryDateStr);
+        $('#desk______controlid_____ .ExpiryDate').value(expiryDate);
+    }
+    function _____controlid______ReadURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#_____controlid______ImagePreview').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    async function _____controlid______Init(screenInfo) {
+        var key = screenInfo.NewChecked ? "Voucher_Var_Add_Title" : "Voucher_Var_Edit_Title";
+        if (_____controlid______FromOther) {
+            key = "UserProfile_Var_TitleDetail"
+        }
+        await translator.translateWithKey($('#desk______controlid_____ .form-title .billingual-wrapper')[0], key);
+        await translator.translateWithKey($('#tab______controlid_____ .billingual-wrapper')[0], key);
+
+        $.ajax({
+            type: 'GET',
+            url: 'api/Admin/User',
+            async: false,
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                if (data.NotDelete == true) {
+                    $('#desk______controlid_____ .user-role').attr('data-first-filter', '');
+                } else {
+                    $('#desk______controlid_____ .user-role').attr('data-first-filter', 'Type = 0');
+                }
+            },
+
+            error: function (result) {
+
+            }
+        });
+        initTextSearch($("#desk______controlid_____ .text-search"));
+        initTextMultiSelect($("#desk______controlid_____ .text-multi-select"));
+    }
+
+
+    function parseDate(dateStr) {
+        return new Date(dateStr.replace(/\//g, "-"));
+    }
+
+    async function _____controlid______OnShow(screenInfo) {
+        await _____controlid______Init(screenInfo);
+        if (!isNullOrEmpty(screenInfo.DataSource)) {
+            _____controlid______voucherData = screenInfo.DataSource;
+            _____controlid______IsFromOther = true;
+            _____controlid______DataSourceOther = screenInfo.DataSourceOther;
+        }
+        else {
+            let ClusterizeData = _____parentid______S3Table.ClusterizeData;
+            var index = ClusterizeData.data.findIndex(function (o) {
+                return o.Id === ClusterizeData.current_row_id;
+            });
+            if (index !== -1) {
+                _____controlid______voucherData = ClusterizeData.data[index];
+            }
+        }
+        let data = new Object;
+        data.uid = _____controlid______voucherData.CreatedBy;
+        await _____controlid______GetUserDetail(data);
+        $('#desk______controlid_____ .user-email').value(_____controlid______UserDetail.Email);
+        $('#desk______controlid_____ .HoVaTen').value(_____controlid______UserDetail.HoVaTen);
+        $('#desk______controlid_____ .DienThoai').value(_____controlid______UserDetail.DienThoai);
+        $('#desk______controlid_____ .user-email').attr("readonly", true);//20230516
+        $('#desk______controlid_____ .HoVaTen').attr("readonly", true);//20230516
+        $('#desk______controlid_____ .DienThoai').attr("readonly", true);//20230516
+        $('#desk______controlid_____ .Serial').value(_____controlid______voucherData.Serial);
+        $('#desk______controlid_____ .Status').value(_____controlid______voucherData.Status);
+        $('#desk______controlid_____ .VoucherTypeId').value(_____controlid______voucherData.VoucherTypeId);
+        $('#desk______controlid_____ .ValidityPeriod').value(_____controlid______voucherData.ValidityPeriod);
+        $('#desk______controlid_____ .SalePrice').value(_____controlid______voucherData.SalePrice);
+        $('#desk______controlid_____ .VoucherType').value(_____controlid______voucherData.VoucherType);
+        $('#desk______controlid_____ .SellerId').value(_____controlid______voucherData.SellerId);
+        $('#desk______controlid_____ .SaleDate').value(_____controlid______voucherData.SaleDate);
+        $('#desk______controlid_____ .IndividualCommission').value(_____controlid______voucherData.IndividualCommission);
+        $('#desk______controlid_____ .GroupCommission').value(_____controlid______voucherData.GroupCommission);
+        $('#desk______controlid_____ .ApplicableLocation').value(_____controlid______voucherData.ApplicableLocation);
+        $('#desk______controlid_____ .BuyerName').value(_____controlid______voucherData.BuyerName);
+        $('#desk______controlid_____ .BuyerPhone').value(_____controlid______voucherData.BuyerPhone);
+        $('#desk______controlid_____ .BuyerAddress').value(_____controlid______voucherData.BuyerAddress);
+        $('#desk______controlid_____ .BuyerEmail').value(_____controlid______voucherData.BuyerEmail);
+        $('#desk______controlid_____ .ActivationDate').value(_____controlid______voucherData.ActivationDate);
+        $('#desk______controlid_____ .ExpiryDate').value(_____controlid______voucherData.ExpiryDate);
+        $('#desk______controlid_____ .NumberOfUseRemaining').value(_____controlid______voucherData.NumberOfUseRemaining);
+        $('#desk______controlid_____ .NumberOfFreeRemaining').value(_____controlid______voucherData.NumberOfFreeRemaining);
+        _____controlid_____CoSoCuaHangSearhItemSelect = { Id: _____controlid______voucherData.CoSoCuaHangId }
+        _____controlid_____KhachHangSearhItemSelect = { Id: _____controlid______voucherData.KhachHangId }
+
+        let isExpiry = false;
+        let expiryRaw = _____controlid______voucherData.ExpiryDate;
+        if (expiryRaw) {
+            let expiryDate = parseDate(expiryRaw);
+            let now = new Date();
+
+            if (expiryDate < now) {
+                isExpiry = true
+            }
+        }
+        if (!isNullOrEmpty(_____controlid______voucherData.SellerId)) {
+            $('#desk______controlid_____ .Type_Voucher').prop("disabled", true);
+            $('#desk______controlid_____ .SalePrice').prop("disabled", true);
+            $('#desk______controlid_____ .ValidityPeriod').prop("disabled", true);
+            $('#desk______controlid_____ .VoucherType').prop("disabled", true);
+        }
+        if (isNullOrEmpty(_____controlid______voucherData.ActivationDate) || isNullOrEmpty(_____controlid______voucherData.KhachHangId) || _____controlid______voucherData.Status != 3 || isExpiry) {
+            $('#desk______controlid_____ .button-Addition-NumberOfUseRemaining').hide();
+            $('#desk______controlid_____ .button-Subtraction-NumberOfUseRemaining').hide();
+            $('#desk______controlid_____ .button-Addition-NumberOfFreeRemaining').hide();
+            $('#desk______controlid_____ .button-Subtraction-NumberOfFreeRemaining').hide();
+        } else {
+            if (_____controlid______voucherData.NumberOfUseRemaining > 0) {
+                $('#desk______controlid_____ .button-Addition-NumberOfUseRemaining').show();
+                $('#desk______controlid_____ .button-Subtraction-NumberOfUseRemaining').show();
+            } else {
+                $('#desk______controlid_____ .button-Addition-NumberOfUseRemaining').hide();
+                $('#desk______controlid_____ .button-Subtraction-NumberOfUseRemaining').hide();
+            }
+
+            if (_____controlid______voucherData.NumberOfFreeRemaining > 0) {
+                $('#desk______controlid_____ .button-Addition-NumberOfFreeRemaining').show();
+                $('#desk______controlid_____ .button-Subtraction-NumberOfFreeRemaining').show();
+            } else {
+                $('#desk______controlid_____ .button-Addition-NumberOfFreeRemaining').hide();
+                $('#desk______controlid_____ .button-Subtraction-NumberOfFreeRemaining').hide();
+            }
+        }
+
+        $('#desk______controlid_____ .Serial').focus().select();
+        $('#desk______controlid_____ .Serial').prop('disabled', true);
+
+    }
+
+    async function _____controlid______OnShowFromOther(screenInfo) {
+        _____controlid______FromOther = true;
+        await _____controlid______Init(screenInfo);
+        let data = new Object;
+        data.uid = ApplicationInstance.UserId;;
+        await _____controlid______GetUserDetail(data);
+        $('#desk______controlid_____ .user-role').attr("readonly", true);
+
+    }
+
+    async function _____controlid______OnSave() {
+        _____controlid______Loading.show();
+        var EmptyGuid = "00000000-0000-0000-0000-000000000000";
+        var row = new Object();
+        let ClusterizeData = typeof _____parentid______S3Table !== 'undefined' && _____parentid______S3Table ? _____parentid______S3Table.ClusterizeData : null;
+        row.Id = _____controlid______voucherData.Id;
+        row.Serial = $('#desk______controlid_____ .Serial').value();
+        row.SaleDate = $('#desk______controlid_____ .SaleDate').value();
+        row.BatchId = $('#desk______controlid_____ .BatchId').value();
+        row.SellerId = $('#desk______controlid_____ .SellerId').value();
+        row.SellerCode = $('#desk______controlid_____ .SellerCode').value();
+        row.VoucherTypeId = $('#desk______controlid_____ .VoucherTypeId').value();
+        row.ValidityPeriod = $('#desk______controlid_____ .ValidityPeriod').value();
+        row.SalePrice = $('#desk______controlid_____ .SalePrice').value();
+        row.VoucherType = $('#desk______controlid_____ .VoucherType').value();
+        row.IndividualCommission = isNullOrEmpty($('#desk______controlid_____ .IndividualCommission').value()) ? 0 : $('#desk______controlid_____ .IndividualCommission').value();
+        row.GroupCommission = isNullOrEmpty($('#desk______controlid_____ .GroupCommission').value()) ? 0 : $('#desk______controlid_____ .GroupCommission').value();
+        row.ActivationDate = $('#desk______controlid_____ .ActivationDate').value();
+        row.ApplicableLocation = $('#desk______controlid_____ .ApplicableLocation').value();
+        row.ExpiryDate = $('#desk______controlid_____ .ExpiryDate').value();
+        row.BuyerName = $('#desk______controlid_____ .BuyerName').value();
+        row.BuyerPhone = $('#desk______controlid_____ .BuyerPhone').value();
+        row.BuyerEmail = $('#desk______controlid_____ .BuyerEmail').value();
+        row.BuyerAddress = $('#desk______controlid_____ .BuyerAddress').value();
+        row.Status = $('#desk______controlid_____ .Status').value();
+        row.NumberOfFree = _____controlid______voucherData.NumberOfFree;
+        row.NumberOfUse = _____controlid______voucherData.NumberOfUse;
+        row.NumberOfUseRemaining = $('#desk______controlid_____ .NumberOfUseRemaining').value();
+        row.NumberOfFreeRemaining = $('#desk______controlid_____ .NumberOfFreeRemaining').value();
+        row.CosoCuaHangId = _____controlid_____CoSoCuaHangSearhItemSelect?.Id;
+        row.KhachHangId = _____controlid_____KhachHangSearhItemSelect?.Id;
+        row.UpdateAt = _____controlid______voucherData.UpdateAt;
+        row.Updateby = ApplicationInstance.UserId;
+        row.RowState = 2;      // 1: add, 2: edit
+        return _____controlid______CallSaveApi(row);
+    }
+
+    function _____controlid______CallSaveApi(row) {
+
+        return new Promise(function (resolve, reject) {
+            if (!_____controlid______choseKH) {
+                _____controlid______AlertMessage.showInfo("KHACHHANG_NO_EXIS");
+                _____controlid______Loading.hide();
+                resolve(-1);
+                return;
+            }
+            if (!_____controlid______choseCS) {
+                _____controlid______AlertMessage.showInfo("COSOCUAHANGHANG_NO_EXIS");
+                _____controlid______Loading.hide();
+                resolve(-1);
+                return;
+            }
+            $.ajax
+                ({
+                    type: 'POST',
+                    url: 'api/Voucher/Save',    
+                    //async: false,
+                    data: JSON.stringify(row),
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (data) {
+                        if (data.Code == 1) {
+                            ShowNotification('Thành công!', 'success');
+                            if (!isNullOrEmpty(_____controlid______DataSourceOther)) {
+                                var index = _____controlid______DataSourceOther.Vouchers.findIndex(x => x.Serial == row.Serial);
+                                if (index > -1) {
+                                    _____controlid______DataSourceOther.Vouchers[index].NumberOfUseRemaining = row.NumberOfUseRemaining;
+                                    _____controlid______DataSourceOther.Vouchers[index].NumberOfFreeRemaining = row.NumberOfFreeRemaining;
+                                    _____controlid______DataSourceOther.Vouchers[index].UpdateAt = data.ModifiedAt;
+                                    _____parentid______S3Table.Update(_____controlid______DataSourceOther);
+                                }
+                            } else {
+                                if (eval("typeof _____parentid______S3Table") != 'undefined') {
+                                    row.Id = data.Id;
+                                    row.UpdateAt = data.ModifiedAt;
+                                    _____parentid______S3Table.Update(row);
+                                }
+                            }
+                            _____controlid______Loading.hide();
+                            resolve(0);
+                            
+                        } else {
+                            _____controlid______Loading.hide();
+                            handleResponseApiCode(_____controlid______AlertMessage, data);
+                            resolve(-1);
+                        }
+                    },
+
+                    error: function (result) {
+                        _____controlid______Loading.hide();
+                        handleResponseError(_____controlid______AlertMessage, result);
+                        resolve(-1);
+                    }
+                });
+          
+        });
+    }
+</script>

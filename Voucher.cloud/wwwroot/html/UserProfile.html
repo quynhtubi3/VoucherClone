@@ -1,0 +1,937 @@
+﻿<style>
+    #desk______controlid_____ .form-container {
+        width: 830px;
+        height: 600px;
+        margin: auto;
+    }
+
+    #desk______controlid_____ .form-body {
+        height: calc(100% - 64px);
+        flex-direction: column;
+        justify-content: start;
+        padding: 5px;
+    }
+    #desk______controlid_____ .modal-label {
+        flex: 0 0 150px;
+    }
+    #desk______controlid_____ div.family {
+        display: flex;
+        margin: 5px 0px;
+    }
+
+    #desk______controlid_____ div.child {
+        display: block;
+        margin: 0px 3px;
+    }
+
+    #desk______controlid_____ .form-group.group-title {
+        height: 42px;
+    }
+
+    #desk______controlid_____ .form-group.niece {
+        height: 30px;
+    }
+
+    #desk______controlid_____ .state {
+        /*color: white;*/
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    #desk______controlid_____ .form-group.child .group-title {
+        padding: 6px;        
+    }
+
+    #desk______controlid_____ div.child > .form-group {
+        padding: 2px 5px;
+    }
+
+    #desk______controlid_____ div.niece {
+        justify-content: space-between;
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
+    #desk______controlid_____ .img-wrap .delete-image {
+        position: absolute;
+        top: 2px;
+        left: 24px;
+        z-index: 100;
+        padding: 5px 2px 2px;
+        color: #000;
+        font-weight: bold;
+        cursor: pointer;
+        opacity: .2;
+        text-align: center;
+        font-size: 22px;
+        line-height: 10px;
+        border-radius: 50%;
+    }
+
+    #desk______controlid_____ .img-wrap .add-image {
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        z-index: 100;
+        padding: 5px 2px 2px;
+        color: #000;
+        font-weight: bold;
+        cursor: pointer;
+        opacity: .2;
+        text-align: center;
+        font-size: 22px;
+        line-height: 10px;
+        border-radius: 50%;
+    }
+
+    #desk______controlid_____ .form-footer {
+        justify-content: space-between;
+    }
+
+    #desk______controlid_____ .avatar {
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        width: 150px;
+        height: 150px;
+    }
+
+    #desk______controlid_____ .avatar-button {
+        padding-right: 3px;
+        cursor: pointer;
+    }
+
+    #desk______controlid_____ .avatar-button label {
+        cursor: pointer;
+    }
+
+    #desk______controlid_____ .img-wrap:hover .delete-image, #desk______controlid_____ .img-wrap:hover .add-image {
+        opacity: 1;
+    }
+    #desk______controlid_____ .popup-modal-form-preview {
+        width: 680px !important;
+        height: 525px !important;
+    }
+
+    #desk______controlid_____ .modal-label {
+        flex: 0 0 120px !important;
+    }
+    .s3tcloud-prefix .popup-modal-background-preview {
+        z-index: 20;
+        height: calc(100% - 75px);
+        width: 100%;
+        display: none;
+        top: 35px !important;
+        left: 75px !important;
+        position: absolute;
+    }
+    #desk______controlid_____ .popup-modal-form-preview .footer-button:hover a {
+        color: white !important;
+    }
+
+</style>
+
+<div class="s3tcloud-prefix form-container list-editor" id="container______controlid_____" tabindex="0">
+    <div class="form-title">
+        <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="UserProfile_Var_Title">
+        </div>
+        <div class="button-group">
+            <div class="s3t-tooltip toolbar-button button-favorite" data-tooltip-key='Menu_Var_Favorite'><i class="fa fa-heart"></i></div>
+            <!--<div class="s3t-tooltip toolbar-button button-help" href="UserProfile" data-tooltip-key='Menu_Var_Help'><i class="fa fa-question-circle-o"></i></div>-->
+            <div class="s3t-tooltip toolbar-button button-close" placement='sw' data-tooltip-key='Common_Button_Close'><i class="fa fa-remove"></i></div>
+        </div>
+    </div>
+
+    <div class="form-body">
+        <div class="family">
+            <div class="form-group child" id="_____controlid_____-profile">
+                <div class="form-group group-title" style="justify-content: space-between;">
+                    <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="UserProfile_Var_Info"></div>
+                    <div class="footer-button">
+                        <div id="ChiTiet" class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="UserProfile_Var_Detail">
+                        </div>
+                    </div>
+                    <!--<div id="ChiTiet" class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="UserProfile_Var_Detail"></div>-->
+                </div>
+                <div class='form-group'>
+                    <div class='modal-label billingual-wrapper' data-i18n-layout='layout1' data-i18n-key='UserProfile_Var_UserName'>
+
+                    </div>
+                    <input type='text' validate="true" class='modal-textbox UserName' style="text-transform:uppercase;" readonly />
+                </div>
+                <div class='form-group'>
+                    <div class='modal-label billingual-wrapper' data-i18n-layout='layout1' data-i18n-key='UserProfile_Var_Phone'>
+
+                    </div>
+                    <input type='text' class='modal-textbox Phone' />
+                </div>
+                <div class='form-group'>
+                    <div class='modal-label billingual-wrapper' data-i18n-layout='layout1' data-i18n-key='UserProfile_Var_FullName'>
+
+                    </div>
+                    <input type='text' class='modal-textbox FullName' />
+                </div>
+                <div class='form-group'>
+                    <div class="form-footer" style="position: unset;">
+                        <div class="button-group">
+                            <div class="footer-button button-save">
+                                <div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Button_Update">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="state">
+                            <div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Update_Success">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group child" id="_____controlid_____-change-pass">
+                <div class="form-group group-title">
+                    <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="UserProfile_Var_Password"></div>
+                </div>
+                <div class='form-group'>
+                    <div class='modal-label billingual-wrapper' data-i18n-layout='layout1' data-i18n-key='UserProfile_Var_CurrentPass'>
+
+                    </div>
+                    <input type='password' norequire class='modal-textbox CurrentPass' />
+                </div>
+                <div class='form-group'>
+                    <div class='modal-label billingual-wrapper' data-i18n-layout='layout1' data-i18n-key='UserProfile_Var_NewPass'>
+
+                    </div>
+                    <input type='password' class='modal-textbox NewPass' />
+                </div>
+                <div class='form-group'>
+                    <div class='modal-label billingual-wrapper' data-i18n-layout='layout1' data-i18n-key='UserProfile_Var_ConfirmNewPass'>
+
+                    </div>
+                    <input type='password' class='modal-textbox ConfirmNewPass' />
+                </div>
+                <div class='form-group'>
+                    <div class="form-footer" style="position: unset;">
+                        <div class="button-group">
+                            <div class="footer-button button-save">
+                                <div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Button_Update">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="state">
+                            <div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Update_Success">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="family" style="display:none;">
+            <div class="form-group child" id="_____controlid_____-2fa">
+                <div class="form-group group-title">
+                    <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="UserProfile_Var_2FA"></div>
+                </div>
+                <div class='form-group'>
+                    <div class="form-footer" style="position: unset;">
+                        <div class="button-group">
+                            <div class="footer-button button-enable-2fa">
+                                <div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="UserProfile_Button_Enable2FA">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button-group">
+                            <div class="footer-button button-disable-2fa">
+                                <div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="UserProfile_Button_Disable2FA">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button-group">
+                            <div class="footer-button button-forget-browser" style="width:260px;">
+                                <div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="UserProfile_Button_ForgetBrowser">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="form-footer">
+        <div class="footer-button button-close">
+            <div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Button_Close">
+
+            </div>
+        </div>
+    </div>
+    <div class="popup-modal-background-preview" tabindex="0">
+        <div child-form="preview">
+            <div class="popup-modal-form popup-modal-form-preview">
+                <div class="form-title">
+                    <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="PREVIEW">
+                    </div>
+                    <div class="button-group">
+                        <div class="s3t-tooltip toolbar-button button-close-preview" placement='sw' data-tooltip-key='Common_Button_Close'><i class="fa fa-remove"></i></div>
+                    </div>
+                </div>
+                <div class="popup-modal-body">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    var _____controlid______AlertMessage = new AlertMessage("container______controlid_____");
+
+    $(function () {
+
+        $('#desk______controlid_____ .s3tcloud-prefix.form-container > .form-footer')
+            .append("<div id='_____controlid______avatar' class='billingual-wrapper avatar-button' data-i18n-layout='layout2' data-i18n-key='Common_Var_Avatar'></div>")
+            .ready(() => {
+                translator.translateElement($("#_____controlid______avatar")[0]);
+            });
+        $('#desk______controlid_____ .s3tcloud-prefix.form-container > .form-footer')
+            .append("<div class='avatar hide'><div class='img-wrap' for='_____controlid______ImagePicker'><label class='fa add-image' for='_____controlid______ImagePicker'>&#xf067;</label><span class='fa delete-image' style='display:none;'>&#xf014;</span><img id='_____controlid______ImagePreview' src='/img/150.png' style='width:150px;height:150px' /></div><input id='_____controlid______ImagePicker' type='file' accept='image/*' class='Image hide' /></div>")
+            .ready(() => {
+                $('#desk______controlid_____ .delete-image').on('click', function (e) {
+                    _____controlid______SaveAvatar(true);
+                });
+
+                $('#_____controlid______ImagePicker').change(function (event) {
+                    _____controlid______ReadURL(this);
+                    _____controlid______SaveAvatar(false);
+                });
+            });
+
+        $('#desk______controlid_____ .s3tcloud-prefix.form-container > .form-footer .avatar-button').mouseover(function () {
+            $('#desk______controlid_____ .s3tcloud-prefix.form-container.form-footer .avatar').css('bottom', $('#desk______controlid_____ .form-footer').height());
+            $('#desk______controlid_____ .s3tcloud-prefix.form-container > .form-footer .avatar').removeClass('hide');
+        })
+
+        $('#desk______controlid_____ .s3tcloud-prefix.form-container > .form-footer .avatar').mouseleave(function () {
+            $('#desk______controlid_____ .s3tcloud-prefix.form-container > .form-footer .avatar').addClass('hide');
+        })
+
+        $('#ChiTiet').off('click').on('click', function () {
+            var data = $('#desk______controlid_____').data('screen-info');
+            var screenInfo = new Object();
+
+            screenInfo.Id = "ManagerUserEditor";
+
+            screenInfo.Type = "listeditor";
+            screenInfo.Dock = "full";
+            screenInfo.ParentId = '_____controlid_____';
+            screenInfo.NewChecked = false;
+            
+            screenInfo.TabId = CreateUUIDNoSaperate() + '_Editor';
+            screenInfo.Callback = screenInfo.TabId + "_OnShowFromOther";            
+
+            AddTab(screenInfo);
+        })
+
+        $('#desk______controlid_____ .form-title .button-favorite').on('click', function (e) {
+            if ($(this).hasClass("active")) {
+                $(this).removeClass("active");
+                RemoveTabFromFavorite('#desk______controlid_____');
+            } else {
+                $(this).addClass("active");
+                AddTabToFavorite('#desk______controlid_____');
+            }
+        });
+
+        if (GetFavorite('#desk______controlid_____') == true) {
+            $('#desk______controlid_____ .form-title .button-favorite').addClass("active");
+        }
+
+        $('#desk______controlid_____ .button-close').on('click', function (e) {
+            RemoveTab('_____controlid_____');
+        });
+
+        $('#_____controlid_____-profile .button-save').on('click', function (e) {
+            FormElementValidate($("#desk______controlid_____")).then(function (result) {
+                if (result == true) {
+                    _____controlid______Loading.show();
+                    window.setTimeout(function () {
+                        let model = new Object();
+                        model.UserName = $('#_____controlid_____-profile .UserName').value();
+                        model.PhoneNumber = $('#_____controlid_____-profile .Phone').value();
+                        model.FullName = $('#_____controlid_____-profile .FullName').value();
+                        $.ajax
+                            ({
+                                type: 'POST',
+                                url: 'api/UserProfile/Save',
+                                async: false,
+                                data: JSON.stringify(model),
+                                contentType: 'application/json; charset=utf-8',
+                                success: function (data) {
+                                    _____controlid______Loading.hide();
+
+                                    if (data.Code == 1) {
+                                        ShowNotification('Thành công!', 'success');
+                                        if (data.Data) {
+                                            _____controlid______AlertMessage.showError(data.Data);
+                                        } else {
+                                            ApplicationInstance.UserName = model.UserName;
+                                            ApplicationInstance.FullName = model.FullName;
+                                            $('#_____controlid_____-profile .state').show();
+                                            setTimeout(function () {
+                                                $('#_____controlid_____-profile .state').hide();
+                                            }, 2000);
+                                            $("#mainmenu-user .fullname").text(ApplicationInstance.FullName);
+                                        }
+                                    } else {
+                                        _____controlid______Loading.hide();
+                                        handleResponseApiCode(_____controlid______AlertMessage, data);
+                                    }
+                                },
+
+                                error: function (result) {
+                                    _____controlid______Loading.hide();
+                                    handleResponseError(_____controlid______AlertMessage, result);
+                                }
+                            });
+                    }, 0);
+                }
+            });             
+        });
+
+        $('#_____controlid_____-change-pass .button-save').on('click', function (e) {
+            let elements = $("#_____controlid_____-change-pass input").not(".CurrentPass");
+            let patt = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[0-9])(?=.*[.!@#$%^&*])[a-zA-Z0-9.!@#$%^&*]{8,}$/;
+            for (var i = 0; i < elements.length; i++) {
+                let value = $(elements[i]).value();
+                var match = value.match(patt);
+                if (match == null) {
+                    _____controlid______AlertMessage.showError("UserProfile_Msg_PasswordNotValidFormat");
+                    return;
+                }
+            }
+
+            let NewPass = $('#_____controlid_____-change-pass .NewPass').value();
+            let ConfirmNewPass = $('#_____controlid_____-change-pass .ConfirmNewPass').value();
+            let CurrentPass = $('#_____controlid_____-change-pass .CurrentPass').value();
+            if (NewPass != ConfirmNewPass) {
+                _____controlid______AlertMessage.showError("UserProfile_Msg_PasswordConfirm");
+                return;
+            }
+
+            _____controlid______Loading.show();
+            window.setTimeout(function () {
+                $.ajax
+                    ({
+                        type: 'POST',
+                        url: 'api/UserProfile/ChangePass',
+                        async: false,
+                        data: JSON.stringify({ NewPass: NewPass, ConfirmNewPass: ConfirmNewPass, CurrentPass: CurrentPass }),
+                        contentType: 'application/json; charset=utf-8',
+                        success: function (data) {
+                            _____controlid______Loading.hide();
+
+                            if (data.Code == 1) {
+                                ShowNotification('Thành công!', 'success');
+                                if (data.Data) {
+                                    _____controlid______AlertMessage.showError(data.Data);
+                                } else {
+                                    $('#_____controlid_____-change-pass .state').show();
+                                    setTimeout(function () {
+                                        $('#_____controlid_____-change-pass .state').hide();
+                                    }, 2000);
+                                }
+                            } else {
+                            _____controlid______Loading.hide();
+                                handleResponseApiCode(_____controlid______AlertMessage, data);
+                            }
+                        },
+
+                        error: function (result) {
+                            _____controlid______Loading.hide();
+                            handleResponseError(_____controlid______AlertMessage, result);
+                        }
+                    });
+            }, 0);
+        });      
+
+        $('#_____controlid_____-2fa .button-enable-2fa').off('click').on('click', function (e) {  
+            _____controlid______TriggerEnable();                  
+        });
+
+        $('#_____controlid_____-2fa .button-disable-2fa').off('click').on('click', function (e) {
+            let t = new Date().getMilliseconds();
+            $.ajax({
+                url: "./html/2FADisable.html?t=" + t,
+                type: "GET",
+                dataType: "html",
+
+                success: function (code) {                    
+                    $('#_____controlid_____-2fa .form-group:not(.group-title)').remove();
+                    $('#_____controlid_____-2fa')
+                        .append(code)
+                        .ready(function () {
+                            translator.translateById('_____controlid_____-2fa');
+                            
+                        });
+
+                    $('#_____controlid_____-2fa .disable-2fa .button-save').on('click', function (e) {
+                        let model = new Object();
+                        model.Code = $('#_____controlid_____-2fa .code').value();
+                        $.ajax
+                            ({
+                                type: 'POST',
+                                url: 'api/UserProfile/Disable2FA',
+                                async: false,
+                                data: JSON.stringify(model),
+                                contentType: 'application/json; charset=utf-8',
+                                success: function (data) {
+                                    if (data.Code == 1) {
+                                        ShowNotification('Thành công!', 'success');
+                                        $('#_____controlid_____-2fa .form-group:not(.group-title)').remove();
+                                        $('#_____controlid_____-2fa').append('<div class="form-group"><div class="form-footer" style="position: unset;"><div class="button-group"><div class="footer-button button-enable-2fa"><div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="UserProfile_Button_Enable2FA"></div></div></div></div></div>')
+                                            .ready(function () {
+                                                translator.translateById('_____controlid_____-2fa');
+                                                $('#_____controlid_____-2fa .button-enable-2fa').off('click').on('click', function (e) {  
+                                                    _____controlid______TriggerEnable();
+                                                });
+                                            });                                      
+                                    } else {
+                                        handleResponseApiCode(_____controlid______AlertMessage, data);
+                                    }
+                                },
+
+                                error: function (result) {
+                                    handleResponseError(_____controlid______AlertMessage, result);
+                                }
+                            });
+                    });
+                }
+            });
+        });
+
+        $('#_____controlid_____-profile-TKUyQuyen .button-save').on('click', function (e) {
+            FormElementValidate($("#desk______controlid_____")).then(function (result) {
+                if (result == true) {
+                    // Bọc logic trong một hàm async
+                    async function saveProfile() {
+                        let model = new Object();
+                        model.TAIKHOANNGANHANG_UYQUYEN = $('#_____controlid_____-profile-TKUyQuyen .TAIKHOANNGANHANG_UYQUYEN').val();
+                        model.TENNGANHANG_UYQUYEN = $('#_____controlid_____-profile-TKUyQuyen .TENNGANHANG_UYQUYEN').val();
+                        model.CHINHANH_UYQUYEN = $('#_____controlid_____-profile-TKUyQuyen .CHINHANH_UYQUYEN').val();
+                        let files = $('#_____controlid______File_Payment_Authorization')[0].files;
+                        if (files.length > 0) {
+                            let avatarFile = files[0];
+                            let customJsonFile = await getFile(avatarFile); // Sử dụng await trong hàm async
+                            model.GIAYTHANHTOAN_UYQUYEN = customJsonFile.base64StringFile;
+                            model.NAMEGIAYTHANHTOAN_UYQUYEN = customJsonFile.fileName;
+                        }
+                        _____controlid______Loading.show();
+                        $.ajax({
+                            type: 'POST',
+                            url: 'api/UserProfile/Save_UyQuyen',
+                            async: true, // Thay async: false thành async: true (khuyến nghị)
+                            data: JSON.stringify(model),
+                            contentType: 'application/json; charset=utf-8',
+                            success: function (data) {
+                                _____controlid______Loading.hide();
+                                if (data.Code == 1) {
+                                    ShowNotification('Thành công!', 'success');
+                                    if (data.Data) {
+                                        _____controlid______AlertMessage.showError(data.Data);
+                                    } else {
+                                        ApplicationInstance.UserName = model.UserName;
+                                        ApplicationInstance.FullName = model.FullName;
+                                        ApplicationInstance.UserProfile.TAIKHOANNGANHANG_UYQUYEN = model.TAIKHOANNGANHANG_UYQUYEN;
+                                        ApplicationInstance.UserProfile.TENNGANHANG_UYQUYEN = model.TENNGANHANG_UYQUYEN;
+                                        ApplicationInstance.UserProfile.CHINHANH_UYQUYEN = model.CHINHANH_UYQUYEN;
+                                        ApplicationInstance.UserProfile.GIAYTHANHTOAN_UYQUYEN = model.GIAYTHANHTOAN_UYQUYEN;
+                                        ApplicationInstance.UserProfile.NAMEGIAYTHANHTOAN_UYQUYEN = model.NAMEGIAYTHANHTOAN_UYQUYEN;
+                                        //displayFileInfo(ApplicationInstance.UserProfile.GIAYTHANHTOAN_UYQUYEN, ApplicationInstance.UserProfile.NAMEGIAYTHANHTOAN_UYQUYEN, '_____controlid______File_Payment_Authorization');
+                                        $('#_____controlid_____-profile-TKUyQuyen .state').show();
+                                        setTimeout(function () {
+                                            $('#_____controlid_____-profile-TKUyQuyen .state').hide();
+                                        }, 2000);
+                                        $("#mainmenu-user .fullname").text(ApplicationInstance.FullName);
+                                    }
+                                } else {
+                                    _____controlid______Loading.hide();
+                                    handleResponseApiCode(_____controlid______AlertMessage, data);
+                                }
+                            },
+                            error: function (result) {
+                                _____controlid______Loading.hide();
+                                handleResponseError(_____controlid______AlertMessage, result);
+                            }
+                        });
+                    }
+
+                    // Gọi hàm async
+                    saveProfile();
+                }
+            });
+        });
+
+
+
+        //20230613 Start: Them Xem thong tin luong
+        $('#_____controlid_____-UserProfileLuong .button-UserProfileLuong').on('click', function (e) {
+
+            let screenInfo = new Object();
+
+            screenInfo.Title = translator._getValueFromJSON("QTLUONG_Var_Luong_ChiTiet_Title.main", applicationDictionary, false);
+            screenInfo.Title_E = '';
+            screenInfo.TabId = CreateUUIDNoSaperate();
+            screenInfo.Id = 'XEMLUONGCANHANLister';
+            screenInfo.Type = 'listlister';
+            screenInfo.Dock = 'full';
+            screenInfo.ScreenTransitionName = 'XEMLUONGTHANGCANHAN';
+            let extraVar = new Object();
+            extraVar.NhanVienId = '';
+            screenInfo.ExtraVar = extraVar;
+            AddTab(screenInfo);
+
+        });
+        //End
+
+        $('#desk______controlid_____ .container').on('keydown', function (e) {
+            if (e.key == 'Escape') {
+                e.preventDefault();
+                RemoveTab('_____controlid_____');
+            }
+        });
+        $('#desk______controlid_____ .state').hide();
+        _____controlid______Loading.show();
+
+        setTimeout(function () {
+            _____controlid______OnLoad();
+        }, 0);
+    });
+
+    var _____controlid______Loading = new ItpOverlay("container______controlid_____", "partial-loading");
+    var _____controlid______AlertMessage = new AlertMessage("container______controlid_____");
+
+    function _____controlid______TriggerEnable() {
+        $.ajax
+            ({
+                type: 'GET',
+                url: 'api/UserProfile/Enable2FA_Key',
+                async: false,
+                contentType: 'application/json; charset =utf-8',
+                success: function (data) {
+                    if (data) {
+                        let t = new Date().getMilliseconds();
+                        let SharedKey = data.SharedKey;
+                        let AuthenticatorUri = data.AuthenticatorUri;
+                        $.ajax({
+                            url: "./html/2FAEnable.html?t=" + t,
+                            type: "GET",
+                            dataType: "html",
+
+                            success: function (code) {
+                                code = code.replace(/\#SharedKey#/g, SharedKey);
+                                code = code.replace(/\#AuthenticatorUri#/g, AuthenticatorUri);
+                                $('#_____controlid_____-2fa .form-group:not(.group-title)').remove();
+                                $('#_____controlid_____-2fa')
+                                    .append(code)
+                                    .ready(function () {
+                                        translator.translateById('_____controlid_____-2fa');
+                                        new QRCode(document.getElementById("qrCode"),
+                                            {
+                                                text: AuthenticatorUri,
+                                                width: 150,
+                                                height: 150
+                                            });
+                                    });
+
+                                $('#_____controlid_____-2fa .enable-2fa .button-save').on('click', function (e) {
+                                    let model = new Object();
+                                    model.Code = $('#_____controlid_____-2fa .code').value();
+                                    $.ajax
+                                        ({
+                                            type: 'POST',
+                                            url: 'api/UserProfile/Enable2FA',
+                                            async: false,
+                                            data: JSON.stringify(model),
+                                            contentType: 'application/json; charset=utf-8',
+                                            success: function (data) {
+                                                if (data.Code == 1) {
+                                                    if (data.Data) {
+                                                        $.ajax({
+                                                            url: "./html/2FARecoveryCode.html?t=" + t,
+                                                            type: "GET",
+                                                            dataType: "html",
+                                                            success: function (code) {
+                                                                $('#_____controlid_____-2fa .form-group:not(.group-title)').remove();
+                                                                $('#_____controlid_____-2fa')
+                                                                    .append(code)
+                                                                    .ready(function () {
+                                                                        for (let i = 0; i < data.Data.length; i++) {
+                                                                            if (i == 0) {
+                                                                                $('#_____controlid_____-2fa .recovery-code-session').append("<div class='code1'></div>");
+                                                                            }
+                                                                            if (i == 5) {
+                                                                                $('#_____controlid_____-2fa .recovery-code-session').append("<div class='code2'></div>");
+                                                                            }
+                                                                            if (i < 5) {
+                                                                                $('#_____controlid_____-2fa .recovery-code-session .code1').append("<div class='recovery-code'>" + data.Data[i] + "</div>");
+                                                                            } else {
+                                                                                $('#_____controlid_____-2fa .recovery-code-session .code2').append("<div class='recovery-code'>" + data.Data[i] + "</div>");
+                                                                            }
+                                                                        }
+                                                                    });
+                                                            }
+                                                        });
+                                                    }
+                                                } else {
+                                                    handleResponseApiCode(_____controlid______AlertMessage, data);
+                                                }
+                                            },
+
+                                            error: function (result) {
+                                                handleResponseError(_____controlid______AlertMessage, result);
+                                            }
+                                        });
+                                });
+                            }
+                        });
+                    }
+                },
+
+                error: function (result) {
+                    handleResponseError(_____controlid______AlertMessage, result);
+                }
+            });  
+    }
+
+    async function _____controlid______OnLoad() {
+        await translator.translateWithKey($('#desk______controlid_____ .form-title .billingual-wrapper')[0], "UserProfile_Var_Title");
+        await translator.translateWithKey($('#tab______controlid_____ .billingual-wrapper')[0], "UserProfile_Var_Title");
+
+        $.ajax({
+            type: 'GET',
+            url: 'api/UserProfile/Get',
+            async: false,
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                if (data) {
+                    $("#desk______controlid_____ .UserName").value(data.User.UserName);
+                    $("#desk______controlid_____ .Phone").value(data.User.PhoneNumber);
+                    $("#desk______controlid_____ .FullName").value(data.User.FullName);
+                    if (!isEmpty(ApplicationInstance.UserProfile)) {
+                        $("#desk______controlid_____ .Department").value(ApplicationInstance.UserProfile.PhongBanName);
+                        $("#desk______controlid_____ .Position").value(ApplicationInstance.UserProfile.ChucVu);
+                        $('#_____controlid_____-profile-TKUyQuyen .TAIKHOANNGANHANG_UYQUYEN').value(ApplicationInstance.UserProfile.TAIKHOANNGANHANG_UYQUYEN);
+                        $('#_____controlid_____-profile-TKUyQuyen .TENNGANHANG_UYQUYEN').value(ApplicationInstance.UserProfile.TENNGANHANG_UYQUYEN);
+                        $('#_____controlid_____-profile-TKUyQuyen .CHINHANH_UYQUYEN').value(ApplicationInstance.UserProfile.CHINHANH_UYQUYEN);
+                        if (!isEmpty(ApplicationInstance.UserProfile.GIAYTHANHTOAN_UYQUYEN)) {
+                            const base64String = ApplicationInstance.UserProfile.GIAYTHANHTOAN_UYQUYEN
+                            const fileName = ApplicationInstance.UserProfile.NAMEGIAYTHANHTOAN_UYQUYEN
+                            const inputId = '_____controlid______File_Payment_Authorization';
+                            // Gán file vào input
+                            setFileToInput(inputId, base64String, fileName);
+                            // Hiển thị thông tin file (tùy chọn)
+                        //    displayFileInfo(base64String, fileName, inputId);
+                        }
+                  
+                    }
+                    if (data.User.AvatarFile) {                        
+                        $('#_____controlid______ImagePreview').attr('src', ApplicationInstance.AvatarFilePath + '?' + (new Date()).getTime());
+                        $('#desk______controlid_____ .delete-image').show();
+                    }
+
+                    if (data.Is2faEnabled == true) {
+                        $("#desk______controlid_____ .button-enable-2fa").remove();
+                    } else {
+                        $("#desk______controlid_____ .button-disable-2fa").remove();
+                    }
+
+                    if (data.IsMachineRemembered == false) {
+                        $("#desk______controlid_____ .button-forget-browser").remove();
+                    }
+                }                
+                _____controlid______Loading.hide();
+            },
+
+            error: function (result) {
+                _____controlid______Loading.hide();
+                handleResponseError(_____controlid______AlertMessage,result, "_____controlid_____");
+            }
+        });
+    }
+
+    function _____controlid______ReadURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#_____controlid______ImagePreview').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    async function _____controlid______SaveAvatar(isDeleted) {
+        _____controlid______Loading.show();
+
+        let model = {};
+        model.IsDeleted = isDeleted;
+
+        if (!isDeleted) {
+            let files = $('#desk______controlid_____ .Image')[0].files;
+            if (files.length > 0) {
+                let avatarFile = files[0];
+                let customJsonFile = await getFile(avatarFile);
+                model.AvatarData = customJsonFile.base64StringFile;
+            }
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: 'api/UserProfile/SaveAvatar',
+            async: false,
+            data: JSON.stringify(model),
+            contentType: 'application/json; charset=utf-8',
+            success: function (dataout) {
+                if (dataout) {
+                    if (isDeleted) {
+                        $('#_____controlid______ImagePreview').attr('src', '/img/150.png');
+                        $('#desk______controlid_____ .delete-image').hide();
+
+                        $('#mainmenu-user .user-online-avatar', $('#mainmenu', $('body'))).css('background', 'url(/img/' + ApplicationInstance.Uservar.Theme + '/avatar.svg) no-repeat');
+                    } else {
+                        $('#desk______controlid_____ .delete-image').show();
+
+                        $('#mainmenu-user .user-online-avatar', $('#mainmenu', $('body'))).css('background', 'url(/Metadata/UserList/' + ApplicationInstance.UserId + '.jpg' + '?' + (new Date()).getTime() + ') no-repeat');
+                    }
+                }
+                _____controlid______Loading.hide();
+            },
+
+            error: function (result) {
+                _____controlid______Loading.hide();
+                handleResponseError(_____controlid______AlertMessage, result, "_____controlid_____");
+            }
+        });
+    }
+    // Hàm hiển thị popup preview
+    function showFilePreviewPopup() {
+        const base64String = ApplicationInstance.UserProfile.GIAYTHANHTOAN_UYQUYEN
+        const fileName = ApplicationInstance.UserProfile.NAMEGIAYTHANHTOAN_UYQUYEN
+        if (isEmpty(base64String) || isEmpty(fileName)) {
+            _____controlid______AlertMessage.showError("File-not-uploaded-yet");
+            return;
+        }
+
+
+        $("#desk______controlid_____ .popup-modal-background-preview>div[child-form='preview']").show();
+        $("#desk______controlid_____ .popup-modal-background-preview>div[child-form!='preview']").hide();
+
+        ShowModalCenterOfParent("desk______controlid_____", "desk______controlid_____ .s3tcloud-prefix.form-container", "modal______controlid_____ .popup-modal-background-preview>div[child-form='preview'] .popup-modal-form");
+
+        $('#desk______controlid_____ .popup-modal-background-preview').show();
+        $('#desk______controlid_____ .popup-modal-background-preview .popup-modal-body input:visible:first').focus();
+
+
+
+        if (!base64String || typeof base64String !== 'string') {
+            console.error('base64String không hợp lệ hoặc rỗng');
+            return;
+        }
+
+        if (!fileName || typeof fileName !== 'string') {
+            console.error('fileName không hợp lệ hoặc rỗng');
+            return;
+        }
+
+        // Xác định mime type
+        let mime = 'application/octet-stream';
+        const ext = fileName.split('.').pop().toLowerCase();
+        const mimeTypes = {
+            jpg: 'image/jpeg',
+            jpeg: 'image/jpeg',
+            png: 'image/png',
+            pdf: 'application/pdf',
+            doc: 'application/msword',
+            docx: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+            xls: 'application/vnd.ms-excel',
+            xlsx: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        };
+        mime = mimeTypes[ext] || 'application/octet-stream';
+
+        // Thêm tiêu đề mime type cho base64String
+        const base64WithHeader = base64String.startsWith('data:')
+            ? base64String
+            : `data:${mime};base64,${base64String}`;
+
+
+        // Get the popup modal body
+        const modalBody = document.querySelector('#desk______controlid_____ .popup-modal-form-preview .popup-modal-body');
+        modalBody.innerHTML = ''; // Clear previous content
+
+        // Create container for preview content
+        const previewContainer = document.createElement('div');
+        previewContainer.style.display = 'flex';
+        previewContainer.style.justifyContent = 'center';
+        previewContainer.style.alignItems = 'center';
+        previewContainer.style.flexDirection = 'column';
+        previewContainer.style.minHeight = '80%';
+
+        // Set title in the form-title
+        const titleElement = document.querySelector('#desk______controlid_____ .popup-modal-form-preview .form-title .billingual-wrapper');
+        if (titleElement) {
+            titleElement.textContent = `Xem trước: ${fileName}`;
+        }
+
+        // Create content based on file type
+        if (mime.startsWith('image/')) {
+            // Image preview
+            const img = document.createElement('img');
+            img.src = base64WithHeader;
+            img.style.maxWidth = '100%';
+            img.style.maxHeight = '100%';
+            previewContainer.appendChild(img);
+        } else if (mime === 'application/pdf') {
+            // PDF preview
+            const iframe = document.createElement('iframe');
+            iframe.src = base64WithHeader;
+            iframe.style.width = '100%';
+            iframe.style.height = '500px';
+            previewContainer.appendChild(iframe);
+        } else {
+            // Fallback for unsupported file types
+            const message = document.createElement('p');
+            message.textContent = 'Loại tệp không hỗ trợ xem trước.Chỉ hỗ trợ xem trước với tài liệu PDF,Image. Vui lòng tải xuống.';
+            message.style.color = 'var(--theme)';
+            message.style.marginBottom = '15px';
+            message.style.textAlign = 'center';
+            previewContainer.appendChild(message);
+
+            const downloadLinkParent = document.createElement('div');
+            downloadLinkParent.className = 'footer-button';
+
+            const downloadLink = document.createElement('a');
+            downloadLink.href = base64WithHeader;
+            downloadLink.download = fileName;
+            downloadLink.textContent = 'Tải xuống tệp';
+            downloadLink.style.color = 'var(--theme)';
+            downloadLink.style.textDecoration = 'none';
+            downloadLinkParent.appendChild(downloadLink);
+            previewContainer.appendChild(downloadLinkParent);
+        }
+
+        // Append preview container to modal body
+        modalBody.appendChild(previewContainer);
+
+        // Update close button functionality
+        const closeButton = document.querySelector('#desk______controlid_____ .popup-modal-form-preview .button-close-preview');
+        if (closeButton) {
+            closeButton.onclick = () => {
+                $('#desk______controlid_____ .popup-modal-background-preview').hide();
+                modalBody.innerHTML = ''; // Clear content when closing
+            };
+        }
+
+    }
+</script>

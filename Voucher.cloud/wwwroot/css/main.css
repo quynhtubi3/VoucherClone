@@ -1,0 +1,444 @@
+﻿/* Những định dạng tại màn hình chính */
+
+body, textarea, select {
+    font-family: var(--font-family-noto_sans);
+    font-size: 13px;
+}
+
+#mainbody {
+    position: fixed;
+    left: 296px;
+    width: 100%;
+    height: 100%;
+    min-width: 800px;
+    min-height: 600px;
+    background-color: #f0f2f5;
+    z-index: -1;
+}
+
+.main-desktop {
+    background-color: #F9FAFC;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    outline: none;
+    overflow: auto;
+}
+
+.image-tooltip {
+    width: 100px;
+    height: 100px;
+}
+
+#partial-loading {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    z-index: 1002;
+    background-position: center;
+    background-color: rgba(192, 192, 192, 0.5);
+    background-image: url(../img/loading.gif);
+    background-repeat: no-repeat
+}
+
+#main-loading {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    z-index: 1002;
+    background-position: center;
+    background-color: rgba(192, 192, 192, 0.5);
+    background-image: url(../img/loading.gif);
+    background-repeat: no-repeat
+}
+
+/* 20230517 Start: Sua loi khong select de copy duoc */
+/*label, td, th, p, ul, li, div  {
+    -webkit-touch-callout: none;*/ /* iOS Safari */
+    /*-webkit-user-select: none;*/ /* Safari */
+    /*-khtml-user-select: none;*/ /* Konqueror HTML */
+    /*-moz-user-select: none;*/ /* Firefox */
+    /*-ms-user-select: none;*/ /* Internet Explorer/Edge */
+    /*user-select: none;*/ /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+/*}*/
+/* 20230517 End */
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .showSumTooltip {
+    visibility: hidden;
+    width: 140px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .showSumTooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .showSumTooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+td.level1 {
+    padding-left: 40px;
+}
+
+.collapse .toggle {
+    background: url("/img/collapse.gif");
+}
+
+.expand .toggle {
+    background: url("/img/expand.gif");
+}
+
+.toggle {
+    height: 9px;
+    width: 9px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+td.center {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.text-italic {
+    font-style: italic;
+}
+
+.text-top-left {
+    vertical-align: top;
+    text-align: left;
+}
+
+.text-top-right {
+    vertical-align: top;
+    text-align: right;
+}
+
+@keyframes border {
+    0% {
+        width: 0;
+        height: 0;
+    }
+
+    25% {
+        width: 100%;
+        height: 0;
+    }
+
+    50% {
+        width: 100%;
+        height: 100%;
+    }
+
+    100% {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 310px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+}
+
+.dropdown-menu-left {
+    left: 0;
+}
+
+.dropdown-menu-right {
+    right: 0;
+}
+
+.dropdown-menu .divider {
+    height: 1px;
+    margin: 9px 0;
+    overflow: hidden;
+    background-color: #e5e5e5;
+}
+
+.dropdown-menu .dropdown-menu-item {
+    position: relative;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    padding: .2em 2em;
+    color: #2f2f2f;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #fff;
+}
+
+.dropdown-menu-item:hover {
+    color: var(--breaker-bay);
+    cursor: pointer;
+    background-color: var(--menu-focus);
+}
+
+.dropdown-menu-icon.dropdown-menu-icon--fa {
+    display: list-item;
+    font-family: inherit;
+    line-height: inherit;
+}
+
+.dropdown-menu-icon.dropdown-menu-icon--fa::before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 2em;
+    font-family: FontAwesome;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-align: center;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 20230517 Start: Sua loi khong select de copy duoc */
+/*::-moz-selection {*/ /* Code for Firefox */
+    /*color: white;
+    background: var(--theme);
+}
+
+::selection {
+    color: white;
+    background: var(--theme);
+}*/
+/* 20230517 End*/
+
+/*customize radio button*/
+/* Customize the label (the container) */
+.radio-container {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 17px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radio-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom radio button */
+.radio-container .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 21px;
+    width: 21px;
+    background:  var(--radio-uncheck);
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.radio-container .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio-container .checkmark:after {
+    width: 21px;
+    height: 21px;
+    background: var(--radio-checked);
+}
+/*customize radio button*/
+
+/*customize checkbox input*/
+/* Customize the label (the container) */
+.checkbox-container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+table .checkbox-container{
+    margin-left: calc(50% - 9px);
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkbox-container .checkmark {
+    position: absolute;
+    top: 5px;
+    left: 0px;
+    height: 17px;
+    width: 17px;
+    background-color: white;
+    border: 2px solid var(--theme);
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkmark {
+    background-color: var(--theme);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkbox-container .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .checkmark:after {
+    left: 4px;
+    width: 3px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+/*customize checkbox input*/
+
+
+.toast-container {
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    z-index: 1055;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    min-width: 250px;
+    padding: 10px 16px;
+    color: #fff;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.5s ease;
+    border: 2px solid hsl(0, 0%, 70%);
+    box-shadow: 0 0 0 2px hsl(0, 0%, 90%), 0 0 0 4px hsl(0, 0%, 80%);
+    -webkit-box-shadow: 0 0 0 2px hsl(0, 0%, 90%), 0 0 0 4px hsl(0, 0%, 80%);
+}
+
+    .toast.show {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    /* Loại thông báo */
+    .toast.success {
+        background-color: var(--theme);
+    }
+
+    .toast.error {
+        background-color: #dc3545;
+    }
+
+    .toast.info {
+        background-color: var(--theme);
+    }
+
+    .toast.warning {
+        background-color: #ffce56;
+        color: #000;
+    }

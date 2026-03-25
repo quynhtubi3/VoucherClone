@@ -1,0 +1,149 @@
+﻿<style>
+
+    #desk______controlid_____ .form-container {
+        width: 500px;
+        height: 155px;
+        margin: auto;
+    }
+</style>
+<!--Nội dung màn hình thêm/sửa-->
+<div class='form-group'>
+    <div class='form-group'>
+        <div class='modal-label billingual-wrapper' data-i18n-layout='layout1' data-i18n-key='Common_Var_Code'>
+
+        </div>
+        <input type='text' class='modal-textbox Code' validate='true' />
+    </div>
+</div>
+
+<div class='form-group'>
+    <div class='modal-label billingual-wrapper' data-i18n-layout='layout1' data-i18n-key='Common_Var_Name'>
+
+    </div>
+    <div class='modal-textbox billingual-wrapper'>
+        <input type='text' class='modal-textbox main-language Name' validate='true' />
+        <input type='text' class='modal-textbox sub-language Name' />
+    </div>
+</div>
+
+<div class='form-group'>
+    <div class='form-group'>
+        <div class='modal-label billingual-wrapper' data-i18n-layout='layout1' data-i18n-key='Common_Var_Adress'>
+
+        </div>
+        <input type='text' class='modal-textbox Address' validate='false' />
+    </div>
+</div>
+
+
+
+<script>
+    var _____controlid______NewChecked = false;
+    var _____controlid______CurrentRowIndex = '';
+    var _____controlid______Table = 'DMCOSOCUAHANG';
+    var _____controlid______TableColumnCode = 'Code';
+
+    async function _____controlid______Init(screenInfo, fromOther) {
+        await _____controlid______InitControl(screenInfo);
+        if (fromOther) {
+            await translator.translateWithKey($('#desk______controlid_____ .form-title .billingual-wrapper')[0], 'DMCOQUANBO_Var_Add');
+            await translator.translateWithKey($('#tab______controlid_____ .billingual-wrapper')[0], 'DMCOQUANBO_Var_Add');
+        }
+    }
+
+    async function _____controlid______OnShow(screenInfo) {
+        await _____controlid______Init(screenInfo, false);
+
+        let ClusterizeData = _____parentid______S3Table.ClusterizeData;
+        var index = ClusterizeData.data.findIndex(function (o) {
+            return o.Id === ClusterizeData.current_row_id;
+        })
+        _____controlid______CurrentRowIndex = index;
+
+        if (!_____controlid______NewChecked && _____controlid______CurrentRowIndex != -1) {
+            $('#desk______controlid_____ .Code').value(ClusterizeData.data[index].Code);
+            $('#desk______controlid_____ .Name').value(ClusterizeData.data[index].Name);
+            $('#desk______controlid_____ .Address').value(ClusterizeData.data[index].Address);
+        }
+
+        if (_____controlid______NewChecked) {
+            $('#desk______controlid_____ .Code').value(NewDictionaryCode(_____controlid______AlertMessage, _____controlid______Table, _____controlid______TableColumnCode, $('#desk______controlid_____ .Code').value()));
+        }
+
+        $('#desk______controlid_____ .Code').focus().select();
+    }
+
+    async function _____controlid______OnShowFromOther(screenInfo) {
+        await _____controlid______Init(screenInfo, true);
+
+        $('#desk______controlid_____ .Code').focus().select();
+    }
+
+    async function _____controlid______OnAdd() {
+        $('#desk______controlid_____ .Code').value(NewDictionaryCode(_____controlid______AlertMessage, _____controlid______Table, _____controlid______TableColumnCode, $('#desk______controlid_____ .Code').value()));
+        $('#desk______controlid_____ .Code').focus().select();
+        $('#desk______controlid_____ .Name').value("");
+        $('#desk______controlid_____ .Address').value("");
+    }
+
+    async function _____controlid______OnSave() {
+        _____controlid______Loading.show();
+
+        let ClusterizeData = typeof _____parentid______S3Table !== 'undefined' && _____parentid______S3Table ? _____parentid______S3Table.ClusterizeData : null;
+        var row = new Object();
+        row.Id = _____controlid______CurrentRowIndex == -1 ? '' : ClusterizeData.data[_____controlid______CurrentRowIndex].Id;
+        row.Code = $('#desk______controlid_____ .Code').value().toUpperCase();
+        row.Name = $('#desk______controlid_____ .Name').value();
+        row.Address = $('#desk______controlid_____ .Address').value();
+        row.ModifiedAt = _____controlid______CurrentRowIndex == -1 ? null : ClusterizeData.data[_____controlid______CurrentRowIndex].ModifiedAt;
+        row.ModifiedBy = ApplicationInstance.UserId;
+        row.RowState = _____controlid______NewChecked == true ? 1 : 2;      // 1: add, 2: edit
+        return _____controlid______CallSaveApi(row);
+    }
+
+    function _____controlid______CallSaveApi(row) {
+        return new Promise(function (resolve, reject) {
+            $.ajax
+                ({
+                    type: 'POST',
+                    url: 'api/' + _____controlid______Table + '/Save',
+                    headers: {
+                        '3t-action-table': _____controlid______Table,
+                        '3t-action-menu-type': 'I',
+                        '3t-action-type': row.RowState == 1 ? 'CREATE' : 'UPDATE'
+                    },
+                    //async: false,
+                    data: JSON.stringify(row),
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (data) {
+                        let obj = data;
+                        if (obj.Code == 1) {
+                            ShowNotification('Thành công!', 'success');
+                            row.Id = obj.Id;
+                            row.ModifiedAt = obj.ModifiedAt;
+                            if (_____controlid______NewChecked == true) {
+                                if (typeof _____parentid______S3Table !== 'undefined') {
+                                    _____parentid______S3Table.Add(row);
+                                }
+                            } else {
+                                _____parentid______S3Table.Update(row);
+                            }
+
+                            _____controlid______Loading.hide();
+                            resolve(0);
+                        } else {
+                            _____controlid______Loading.hide();
+                            handleResponseApiCode(_____controlid______AlertMessage, obj);
+                            resolve(-1);
+                        }
+                    },
+
+                    error: function (result) {
+                        _____controlid______Loading.hide();
+                        handleResponseError(_____controlid______AlertMessage, result);
+                        resolve(-1);
+                    }
+                });
+        });
+    }
+</script>

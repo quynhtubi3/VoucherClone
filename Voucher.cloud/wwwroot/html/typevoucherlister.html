@@ -1,0 +1,124 @@
+﻿<style>
+    #container______controlid_____ .form-toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #ccc;
+        border-top: 1px solid #ccc;
+    }
+
+    #container______controlid_____ .list-button {
+        display: flex;
+    }
+
+    #container______controlid_____ .pagination-container {
+        display: flex;
+        align-items: center;
+    }
+
+    #container______controlid_____ .pagination {
+        padding: 0 10px !important;
+    }
+</style>
+<!--Giao diện căn bản cho danh sách-->
+<link href="../css/listlister.css" rel="stylesheet" />
+
+<div class="s3tcloud-prefix form-container list-lister" id="container______controlid_____" tabindex="0">
+    <div class="form-title">
+        <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="TypeVoucherList_Var_Title">
+        </div>
+        <div class="button-group">
+            <div class="s3t-tooltip toolbar-button button-favorite" data-tooltip-key='Menu_Var_Favorite'><i class="fa fa-heart"></i></div>
+            <!--<div class="s3t-tooltip toolbar-button button-help" href='_____htmlid_____' data-tooltip-key='Menu_Var_Help'><i class="fa fa-question-circle-o"></i></div>-->
+            <div class="s3t-tooltip toolbar-button button-close" placement='sw' data-tooltip-key='Common_Button_Close'><i class="fa fa-remove"></i></div>
+        </div>
+    </div>
+    <div class="form-toolbar">
+
+        <div class="list-button">
+            <div class='s3t-tooltip toolbar-button button-refresh blink-background' data-tooltip-key='Common_Button_Refresh' placement='s'><i class='fa fa-play'></i></div>
+            <div class="s3t-tooltip toolbar-button button-add" data-tooltip-key='Common_Button_Add'><i class="fa fa-plus"></i></div>
+            <div class="s3t-tooltip toolbar-button button-edit" data-tooltip-key='Common_Button_Edit'><i class="fa fa-pencil"></i></div>
+            <div class="s3t-tooltip toolbar-button button-delete" data-tooltip-key='Common_Button_Delete'><i class="fa fa-trash-o"></i></div>
+            <div class="s3t-tooltip toolbar-button button-search" data-tooltip-key='Common_Button_Search'><i class="fa fa-search"></i></div>
+        </div>
+        <div class="pagination-container">
+            <ul class="pagination" id="_____controlid______pagination"></ul>
+            <div>
+                <span data-i18n-layout='layout3' data-i18n-key='Common_Var_Display'></span>
+                <select id="_____controlid______pageSizeSelect">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
+                <span data-i18n-layout='layout3' data-i18n-key='Common_Var_Display_Panigation'></span>
+            </div>
+        </div>
+     
+    </div>
+    <div class="form-body" tabindex="1">
+    </div>
+</div>
+<div class="s3tcloud-prefix popup-modal" id="modal______controlid_____" tabindex="0">
+    <div class="popup-modal-background" tabindex="0">
+        
+        <div child-form="search">
+            <div class="popup-modal-form">
+                <div class="form-title">
+                    <div class="billingual-wrapper" data-i18n-layout="layout1" data-i18n-key="Common_Filter_Title">
+                    </div>
+                    <div class="button-group">
+                        <div class="s3t-tooltip toolbar-button button-close" placement='sw' data-tooltip-key='Common_Button_Close'><i class="fa fa-remove"></i></div>
+                    </div>
+                </div>
+                <div class="popup-modal-body">
+
+                    <div class='form-group niece'>
+                        <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Type_Code_Voucher'></div>
+                        <input type="text" class="modal-textbox Code" validate="false" />
+                    </div>
+                    <div class='form-group niece'>
+                        <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Common_Var_NameTypeVoucher'></div>
+                        <input type="text" class="modal-textbox Name" validate="false" />
+                    </div>
+                    <div class='form-group niece'>
+                        <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Gia_ban'></div>
+                        <input type="text" style="width:100%" class="text-number DefaultPrice" validate="true" />
+                    </div>
+                    <div class='form-group niece'>
+                        <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Real_value'></div>
+                        <input type="text" style="width:100%" class="text-number DefaultRealPrice" validate="true" />
+                    </div>
+                    <div class='form-group niece'>
+                        <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Number_of_uses'></div>
+                        <input type="text" style="width:100%" class="text-number DefaultNumberOfUse" validate="true" />
+                    </div>
+                    <div class='form-group niece'>
+                        <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Number_of_free'></div>
+                        <input type="text" style="width:100%" class="text-number DefaultNumberOfFree" validate="true"/>
+                    </div>
+
+                    <div class='form-group niece'>
+                        <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Expire_date'></div>
+                        <div class='modal-textbox text-select DefaultValidityPeriod' data-toggle='[{"id":"1", "name":"3_month"},{"id":"2","name":"6_month"},{"id":"3","name":"9_month"},{"id":"4","name":"12_month"}]' data-title='0'>Chọn</div>
+                    </div>
+                    <div class='form-group niece'>
+                        <div class='modal-label' data-i18n-layout='layout1' data-i18n-key='Type_Voucher'></div>
+                        <div class='modal-textbox text-select Type' data-toggle='[{"id":"1", "name":"Free_Voucher"},{"id":"2","name":"Voucher_value"}]' data-title='0'>Chọn</div>
+                    </div>
+                </div>
+                <div class="form-footer">
+                    <div class="footer-button button-save">
+                        <div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Button_Agree"></div>
+                    </div>
+                    <div class="footer-button button-cancel">
+                        <div class="billingual-wrapper" data-i18n-layout="layout2" data-i18n-key="Common_Button_Cancel"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
